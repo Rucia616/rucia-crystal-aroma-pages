@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>玄学晶石香薰报告</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --ink: #171514;
+      --muted: #706961;
+      --line: rgba(23, 21, 20, 0.16);
+      --panel: #fffaf0;
+      --teal: #166d6a;
+      --plum: #7c315f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(23, 21, 20, 0.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(23, 21, 20, 0.055) 1px, transparent 1px),
+        var(--bg);
+      background-size: 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    main {
+      width: min(calc(100% - 40px), 960px);
+      margin: 0 auto;
+      padding: 72px 0;
+    }
+    .eyebrow {
+      color: var(--plum);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    h1 {
+      margin: 10px 0 16px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+    p {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    a.card {
+      display: block;
+      min-height: 210px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: inherit;
+      background: rgba(255, 250, 240, 0.84);
+      text-decoration: none;
+      box-shadow: 0 20px 55px rgba(39, 31, 21, 0.1);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+    a.card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(22, 109, 106, 0.42);
+    }
+    .card span {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .card h2 {
+      margin: 12px 0 12px;
+      font-size: 26px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+    .card p { font-size: 14px; }
+    footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 720px) {
+      main { width: min(calc(100% - 28px), 960px); padding: 42px 0; }
+      .links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Rucia Crystal Aroma</div>
+    <h1>玄学晶石香薰项目报告</h1>
+    <p>这里是公开阅读版，只发布报告页面；内部项目资料、成本、供应链、品牌草案仍保留在私有仓库。</p>
+
+    <div class="links">
+      <a class="card" href="./crystal-aroma-competitive-research-2026-06-14.html">
+        <span>Report 01</span>
+        <h2>竞品调研报告</h2>
+        <p>中国与北美市场竞品、价格、机会点、必须做和不要碰的方向。</p>
+      </a>
+      <a class="card" href="./north-america-consumer-research-crystal-aroma-2026-06-14.html">
+        <span>Report 02</span>
+        <h2>北美消费者调研报告</h2>
+        <p>购买动机、现有方案不满、消费者证据、目标人群和验证路径。</p>
+      </a>
+    </div>
+
+    <footer>Published for Rucia616. Report date: 2026-06-14.</footer>
+  </main>
+</body>
+</html>
