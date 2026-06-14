@@ -81,7 +81,7 @@
     }
     .links {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
       margin-top: 40px;
     }
@@ -136,6 +136,9 @@
       color: var(--muted);
       font-size: 13px;
     }
+    @media (max-width: 980px) {
+      .links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 720px) {
       main { width: min(calc(100% - 28px), 960px); padding: 42px 0; }
       .links { grid-template-columns: 1fr; }
@@ -164,9 +167,14 @@
         <h2>北美消费者调研报告</h2>
         <p>购买动机、现有方案不满、消费者证据、目标人群和验证路径。</p>
       </a>
+      <a class="card" href="./north-america-scent-research-crystal-aroma-2026-06-15.html">
+        <span>Report 03</span>
+        <h2>北美香味调研报告</h2>
+        <p>香味购买理由、复购逻辑、轻玄学入口、首发 scent signs 和小样测试计划。</p>
+      </a>
     </div>
 
-    <footer>Published for Rucia616. Report date: 2026-06-14.</footer>
+    <footer>Published for Rucia616. Latest report date: 2026-06-15.</footer>
   </main>
 </body>
 </html>

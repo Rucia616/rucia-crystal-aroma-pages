@@ -1,0 +1,173 @@
+{
+  "report": "north-america-scent-research-crystal-aroma-2026-06-15.html",
+  "reportDate": "2026-06-15",
+  "retrievedAt": "2026-06-15",
+  "mode": "standard secondary research",
+  "assumptions": [
+    "North America insights are primarily U.S.-weighted because most public consumer fragrance data is U.S.-based.",
+    "Consumer reviews and Reddit threads are treated as qualitative signals, not representative survey samples.",
+    "The product is positioned as home fragrance and self-care entertainment, not a medical or therapeutic product."
+  ],
+  "sources": [
+    {
+      "id": "circana-genz",
+      "type": "Category Survey",
+      "name": "Circana, Fragrance Consumer Report release",
+      "short": "Circana 2023",
+      "url": "https://www.circana.com/post/gen-z-accounts-for-the-highest-bump-in-fragrance-usage-circana-reports",
+      "note": "U.S. Gen Z fragrance usage rose to 83%; Gen Z over-indexes for heavy usage and self-purchase; 80% of fragrance users say fragrance helps lift or enhance mood."
+    },
+    {
+      "id": "nca-facts",
+      "type": "Category Association",
+      "name": "National Candle Association, Facts & Figures",
+      "short": "NCA",
+      "url": "https://candles.org/facts-figures/",
+      "note": "Fragrance is the most important candle purchase factor; 9 in 10 candle users use candles to make rooms comfortable or cozy; candles are accepted as gifts across occasions."
+    },
+    {
+      "id": "scent-framework",
+      "type": "Academic Review",
+      "name": "Herz et al., Cognitive Research",
+      "short": "Scent Framework",
+      "url": "https://link.springer.com/article/10.1186/s41235-022-00378-6",
+      "note": "Open-access review proposes functional, in-use experience, and emotional benefit framework for scented household products; survey included 2,000 U.S. respondents."
+    },
+    {
+      "id": "mintel-2025",
+      "type": "Trend Analysis",
+      "name": "Mintel, Make Sense of Scents",
+      "short": "Mintel 2025",
+      "url": "https://www.mintel.com/insights/beauty-and-personal-care/make-sense-of-scents-current-and-future-fragrance-trends/",
+      "note": "Fragrance trends are shaped by identity, wellness, climate, and digital culture; under-45 consumers use fragrance for self-expression; quizzes and diagnostics help scent discovery."
+    },
+    {
+      "id": "mintel-gourmand",
+      "type": "Trend Analysis",
+      "name": "Mintel, Social Media Fuels Fragrance Sampling",
+      "short": "Mintel Gourmand",
+      "url": "https://www.mintel.com/press-centre/fragrance-trends-2025-gen-z-gen-alpha-social-media-sampling/",
+      "note": "Mintel GNPD notes global gourmand fragrance launches grew by seven percentage points between 2022 and 2024."
+    },
+    {
+      "id": "wsl-genz",
+      "type": "Retail Analysis",
+      "name": "WSL Strategic Retail, Gen Z Fragrance Boom",
+      "short": "WSL / BOF",
+      "url": "https://wslstrategicretail.com/blog/gen-z-fragrance-boom/",
+      "note": "Reports Circana data that 73% of Gen Z wears fragrance at least three times per week; TikTok and Instagram are major Gen Z fragrance purchase influences."
+    },
+    {
+      "id": "spate-2026",
+      "type": "Search & Social Trend",
+      "name": "Spate, 2026 Fragrance Trends Report",
+      "short": "Spate",
+      "url": "https://www.spate.nyc/reports/2026-fragrance-report-key-trends-brands-and-scents",
+      "note": "Spate positions rising gourmand profiles, new scent directions, and Google/TikTok/Instagram attention as 2026 fragrance trend signals."
+    },
+    {
+      "id": "tff-npd",
+      "type": "Industry Presentation",
+      "name": "The Fragrance Foundation / NPD, The New Fragrance Consumer",
+      "short": "TFF / NPD",
+      "url": "https://fragrance.org/wp-content/uploads/2021/09/TFF-Fragrance-Insights-Sep-2021-HL.pdf",
+      "note": "NPD reported that 3 out of 4 consumers felt fragrance helps lift or enhance mood or bring back memories; nearly 80% consider long-lasting important when buying fragrance."
+    },
+    {
+      "id": "grandview-home",
+      "type": "Market Sizing",
+      "name": "Grand View Research, Home Fragrance Market",
+      "short": "Grand View",
+      "url": "https://www.grandviewresearch.com/industry-analysis/home-fragrance-market",
+      "note": "Estimates global home fragrance at USD 13.16B in 2025, North America as largest market in 2025, and growth driven by comfortable personalized living spaces."
+    },
+    {
+      "id": "pura-app",
+      "type": "Competitor Product",
+      "name": "Pura App, Google Play Listing",
+      "short": "Pura App",
+      "url": "https://play.google.com/store/apps/details?hl=en_US&id=com.purascents.android",
+      "note": "Smart diffuser app emphasizes intensity control, custom schedules, timers, ambient light, away mode, and mood personalization."
+    },
+    {
+      "id": "pura-trustpilot",
+      "type": "Consumer Reviews",
+      "name": "Trustpilot, Pura Reviews",
+      "short": "Pura Reviews",
+      "url": "https://www.trustpilot.com/review/www.trypura.com",
+      "note": "Review summary and recent reviews surface common complaints around weak fragrance, coverage, subscription terms, refill cost, device problems, and customer service."
+    },
+    {
+      "id": "reddit-big-room",
+      "type": "Consumer Voice",
+      "name": "Reddit CleaningTips, diffusers in big rooms",
+      "short": "Reddit Big Room",
+      "url": "https://www.reddit.com/r/CleaningTips/comments/1qur3yy/do_diffusers_even_work_in_big_rooms_or_am_i_doing/",
+      "note": "Consumer voice example: diffuser scent can work in a bedroom but disappear in larger rooms, pointing to throw and room-size expectations."
+    },
+    {
+      "id": "reddit-home-smell",
+      "type": "Consumer Voice",
+      "name": "Reddit CleaningTips, I want house to smell",
+      "short": "Reddit House Smell",
+      "url": "https://www.reddit.com/r/CleaningTips/comments/1fw8f5d/i_want_house_to_smell/",
+      "note": "Consumer voice example: reed diffusers are discussed as noticeable but less headache-inducing, with multiple units needed in larger homes."
+    },
+    {
+      "id": "reddit-relax-candle",
+      "type": "Consumer Voice",
+      "name": "Reddit Bath & Body Works, relaxing candle scents",
+      "short": "Reddit Relax",
+      "url": "https://www.reddit.com/r/bathandbodyworks/comments/qxjyp9/whats_everyones_single_favorite_candle_scent_that/",
+      "note": "Consumer scent mentions cluster around eucalyptus, vanilla, white eucalyptus, sage, tea, pumpkin, caramel, and cozy seasonal scent language."
+    },
+    {
+      "id": "reddit-repurchase",
+      "type": "Consumer Voice",
+      "name": "Reddit Bath & Body Works, always repurchase scents",
+      "short": "Reddit Repurchase",
+      "url": "https://www.reddit.com/r/bathandbodyworks/comments/1c3kdmg/what_are_your_top_3_candle_scents_that_you_will/",
+      "note": "Repurchase mentions include lavender vanilla, eucalyptus mint, champagne toast, fruity/floral and sweet scent families."
+    },
+    {
+      "id": "pew-astrology",
+      "type": "Survey",
+      "name": "Pew Research Center, Astrology, Tarot and Fortune Tellers",
+      "short": "Pew 2025",
+      "url": "https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/",
+      "note": "30% of U.S. adults consult astrology, tarot, or fortune tellers at least annually; most engage for fun; younger women and LGBT adults over-index."
+    },
+    {
+      "id": "pew-spirituality",
+      "type": "Survey",
+      "name": "Pew Research Center, Spirituality Among Americans",
+      "short": "Pew Spirituality",
+      "url": "https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/",
+      "note": "26% of U.S. adults believe spiritual energy can reside in certain objects such as crystals, jewels, or stones."
+    },
+    {
+      "id": "yougov-newage",
+      "type": "Survey",
+      "name": "YouGov, New-Age Beliefs and Practices Toplines",
+      "short": "YouGov 2022",
+      "url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/toplines_New-age_beliefs_and_practices.pdf",
+      "note": "Aromatherapy and essential oils show broader openness than healing crystals; spiritual energy in objects also has meaningful belief/open-to-belief signals."
+    },
+    {
+      "id": "fda-aroma",
+      "type": "Regulatory",
+      "name": "FDA, Aromatherapy",
+      "short": "FDA",
+      "url": "https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy",
+      "note": "FDA says therapeutic claims such as treating depression, anxiety, pain, or helping sleep can make aromatherapy products drug claims."
+    },
+    {
+      "id": "ftc-health",
+      "type": "Regulatory",
+      "name": "FTC, Health Claims",
+      "short": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/advertising-marketing/health-claims",
+      "note": "FTC guidance says companies must have appropriate substantiation to support health-related product claims."
+    }
+  ]
+}
