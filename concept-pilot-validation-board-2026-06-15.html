@@ -131,7 +131,8 @@
     .hero-card,
     .panel,
     .concept,
-    .file-card {
+    .file-card,
+    .trail-board {
       border: 1px solid var(--line);
       background: var(--surface-2);
       box-shadow: var(--shadow);
@@ -307,6 +308,138 @@
     .status-lilac { border-top: 8px solid var(--lilac); }
     .status-coral { border-top: 8px solid var(--coral); }
 
+    .trail-board {
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .trail-legend {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(50, 214, 198, 0.16), transparent 34%),
+        linear-gradient(90deg, transparent 50%, rgba(247, 164, 216, 0.14));
+    }
+
+    .trail-state {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      border: 2px solid var(--text);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .trail-state.done {
+      background: var(--green);
+      box-shadow: 3px 3px 0 var(--cyan);
+    }
+
+    .trail-state.pending {
+      background: var(--surface);
+      box-shadow: 3px 3px 0 var(--pink);
+    }
+
+    .trail-legend a {
+      margin-left: auto;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--cyan);
+    }
+
+    .trail-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .trail-item {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      min-height: 138px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trail-item:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+
+    .trail-check {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 3px solid var(--text);
+      border-radius: 11px;
+      background: var(--green);
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 950;
+      line-height: 1;
+      box-shadow: 4px 4px 0 var(--cyan);
+    }
+
+    .trail-item.pending .trail-check {
+      background: var(--surface);
+      box-shadow: 4px 4px 0 var(--pink);
+    }
+
+    .trail-item.pending .trail-check::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--text);
+      border-radius: 50%;
+    }
+
+    .trail-date {
+      display: inline-flex;
+      margin-bottom: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .trail-title {
+      display: block;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 950;
+      line-height: 1.1;
+    }
+
+    .trail-item p {
+      margin: 8px 0 0;
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .trail-item a {
+      color: var(--text);
+      font-weight: 900;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--pink);
+    }
+
     .concepts {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -470,7 +603,8 @@
       }
 
       .metrics,
-      .files {
+      .files,
+      .trail-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -498,7 +632,8 @@
 
       .metrics,
       .concepts,
-      .files {
+      .files,
+      .trail-list {
         grid-template-columns: 1fr;
       }
 
@@ -509,6 +644,15 @@
 
       .gate {
         grid-template-columns: 1fr;
+      }
+
+      .trail-item:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .trail-legend a {
+        width: 100%;
+        margin-left: 0;
       }
     }
   </style>
@@ -526,8 +670,8 @@
         <h1>Concept Pilot Validation Board</h1>
         <p class="lead">第一轮不测香味、不测复购、不烧广告。只验证美国消费者能不能一眼看懂：这是一个 fragrance-first 的无火晶石扩香礼盒，并且 quiz / scent sign 是否足够吸引人。它不是万无一失的市场证明，只是小额排雷。</p>
         <div class="chips" aria-label="测试标签">
-          <span class="chip cyan">PickFu 30-person pilot</span>
-          <span class="chip pink">$80 first-spend cap</span>
+          <span class="chip cyan">PickFu 50-person pilot</span>
+          <span class="chip pink">Paid $35 after SMART50</span>
           <span class="chip lilac">Launch risk: concept clarity</span>
         </div>
       </section>
@@ -539,7 +683,7 @@
     <section class="section" aria-labelledby="status-title">
       <div class="section-head">
         <h2 id="status-title">Pilot Snapshot</h2>
-        <p class="section-note">这是给自掏钱创业用的低风险验证，不是品牌最终定稿。第一笔付费测试封顶 80 美元；超过就缩小到一个 head-to-head。</p>
+        <p class="section-note">这是给自掏钱创业用的低风险验证，不是品牌最终定稿。原计划第一笔付费测试封顶 80 美元；实际使用 SMART50 后支付 35 美元。</p>
       </div>
       <div class="metrics">
         <article class="panel status-green">
@@ -562,6 +706,150 @@
           <strong>&gt;$80 Pause</strong>
           <p>不要为了第一轮概念测试烧太多钱。</p>
         </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="trail-title">
+      <div class="section-head">
+        <h2 id="trail-title">Execution Trail</h2>
+        <p class="section-note">这块是项目溯源用的 todo list：已经做过的打勾，下一步保持未完成。公开页只记录动作和金额，不公开付款截图、邮箱、银行卡尾号等私密信息。</p>
+      </div>
+      <div class="trail-board">
+        <div class="trail-legend" aria-label="todo 状态说明">
+          <span class="trail-state done">Done</span>
+          <span class="trail-state pending">Next</span>
+          <a href="https://www.pickfu.com/vPfCGDoZr8">Open PickFu poll reference</a>
+        </div>
+        <ol class="trail-list">
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Concept pilot package created</span>
+              <p>本地建立 `validation/concept-pilot/`，保存问卷、评分表、结果模板和概念板源文件。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Four concept boards archived</span>
+              <p>A/B/C/D 四张图已归档；本轮实际先拿 A `Scent Sign` 和 C `Room Mood` 做 head-to-head。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Public board deployed</span>
+              <p>这张 GitHub Pages 看板已作为项目公开存档入口，后续结果会继续追加在这里。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">PickFu A/C poll built</span>
+              <p>题目要求受访者选择更可能点击的概念，并解释产品理解、吸引点、困惑和可信度问题。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">SMART50 discount applied</span>
+              <p>原显示约 80 美元，使用官方折扣后实际支付 35 美元，仍符合自费验证纪律。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Poll launched</span>
+              <p>样本为 50 位美国女性 18-34；不要中途 stop early，不要在第一轮完成前加样本。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Poll link saved</span>
+              <p>公开参考链接已放在本区顶部；后台结果页和原始截图保存在本地项目资料里。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Receipt archived privately</span>
+              <p>付款记录已写入本地 `finance/spend-ledger.csv` 和 receipt markdown；公开页不放付款截图。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Next</span>
+              <span class="trail-title">Wait for 50/50 responses</span>
+              <p>等 PickFu 跑满样本后再看结论；0/50 或中途样本都不能判断概念胜负。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Next</span>
+              <span class="trail-title">Export results and screenshots</span>
+              <p>保存投票比例、受访者原话、PickFu summary、结果页截图，避免后面只剩模糊印象。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Next</span>
+              <span class="trail-title">Code every response</span>
+              <p>按模板标记 clarity、fragrance recall、quiz appeal、giftability、too witchy、confusing 等信号。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Next</span>
+              <span class="trail-title">Judge A/C with the rubric</span>
+              <p>不是只看票数；还要看用户是否真的明白这是香氛、是否喜欢 quiz、是否觉得可信。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Next</span>
+              <span class="trail-title">Decide the branch</span>
+              <p>可能结果是 A 赢、C 赢、A+C 合并、或者两边都弱需要重做概念，不强行宣布胜利。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Next</span>
+              <span class="trail-title">Update this board with evidence</span>
+              <p>把结果、原话摘要、下一轮动作和不做事项追加到公开看板，保持可回溯。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Hold</span>
+              <span class="trail-title">Do not buy samples yet</span>
+              <p>概念清晰度没过之前，不进入打样、红人、广告和库存动作。</p>
+            </div>
+          </li>
+          <li class="trail-item pending">
+            <span class="trail-check" aria-label="待做"></span>
+            <div>
+              <span class="trail-date">Hold</span>
+              <span class="trail-title">Do not increase sample size yet</span>
+              <p>如果 A/C 平掉，先分析原话和混淆点，再决定是否补测，不被平台 upsell 带节奏。</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -624,7 +912,7 @@
         <h2>Continue Only If</h2>
         <div class="gate-list">
           <div class="gate"><b>75%+</b><span>能说清这是 fragrance / diffuser / room scent / aroma。</span></div>
-          <div class="gate"><b>35%+</b><span>第一名概念得票超过 35%，且领先第二名至少 10 个百分点。</span></div>
+          <div class="gate"><b>55%+</b><span>A/C 胜出方至少拿到 55%，也就是领先另一方至少 10 个百分点。</span></div>
           <div class="gate"><b>&lt;20%</b><span>负面词如 scam / fake / too witchy / confusing / childish 不超过 20%。</span></div>
           <div class="gate"><b>50%+</b><span>吸引点来自 scent / smell / fragrance / room feeling，而不只是晶石。</span></div>
           <div class="gate"><b>40%+</b><span>理解 quiz / match / result 是购买路径的一部分。</span></div>
@@ -640,7 +928,7 @@
           <li>PickFu 受访者不等于 TikTok / Pinterest 香氛买家。</li>
           <li>概念板测试会混入视觉、文案、颜色偏好，不是纯产品测试。</li>
           <li>图片无法证明香味好闻、留香、扩香和复购。</li>
-          <li>20-30 人只能抓明显问题，小差距不能当结论。</li>
+          <li>50 人也只能抓明显问题，小差距不能当结论。</li>
           <li>购买意愿回答不等于真实下单。</li>
         </ol>
       </article>
