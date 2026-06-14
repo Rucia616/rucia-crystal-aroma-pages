@@ -6,13 +6,32 @@
   <title>玄学晶石香薰报告</title>
   <style>
     :root {
+      color-scheme: light;
       --bg: #f7f4ee;
       --ink: #171514;
       --muted: #706961;
       --line: rgba(23, 21, 20, 0.16);
       --panel: #fffaf0;
+      --panel-alpha: rgba(255, 250, 240, 0.84);
       --teal: #166d6a;
       --plum: #7c315f;
+      --shadow: 0 20px 55px rgba(39, 31, 21, 0.1);
+      --grid: rgba(23, 21, 20, 0.055);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #101217;
+        --ink: #f6efe4;
+        --muted: #b4aa9d;
+        --line: rgba(246, 239, 228, 0.2);
+        --panel: #1b2029;
+        --panel-alpha: rgba(27, 32, 41, 0.9);
+        --teal: #83d9d1;
+        --plum: #f0a7d2;
+        --shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
+        --grid: rgba(246, 239, 228, 0.07);
+      }
     }
     * { box-sizing: border-box; }
     body {
@@ -20,8 +39,8 @@
       min-width: 320px;
       color: var(--ink);
       background:
-        linear-gradient(90deg, rgba(23, 21, 20, 0.055) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(23, 21, 20, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
         var(--bg);
       background-size: 72px 72px, 72px 72px, auto;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
@@ -64,9 +83,9 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       color: inherit;
-      background: rgba(255, 250, 240, 0.84);
+      background: var(--panel-alpha);
       text-decoration: none;
-      box-shadow: 0 20px 55px rgba(39, 31, 21, 0.1);
+      box-shadow: var(--shadow);
       transition: transform 180ms ease, border-color 180ms ease;
     }
     a.card:hover {

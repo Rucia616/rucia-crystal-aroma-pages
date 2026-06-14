@@ -7,48 +7,60 @@
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #edf3f0;
-      --bg-2: #f8fbf8;
-      --panel: #fbfffc;
-      --panel-2: #eef6f3;
-      --ink: #0f1918;
-      --body: #34423f;
-      --muted: #64736f;
-      --line: rgba(15, 25, 24, 0.12);
-      --hair: rgba(15, 25, 24, 0.07);
-      --accent: #1f6f68;
-      --accent-strong: #134843;
-      --accent-soft: #d6ece7;
-      --risk: #a94652;
-      --risk-soft: #f3dde1;
-      --warn: #776033;
-      --warn-soft: #f1e7cb;
-      --good: #246a43;
-      --good-soft: #ddefe3;
-      --shadow: 0 28px 80px rgba(23, 46, 42, 0.14);
-      --radius: 22px;
-      --radius-sm: 14px;
+      --bg: #f7f4ee;
+      --bg-2: #ece7dd;
+      --panel: #fffaf0;
+      --panel-2: #f4eadb;
+      --ink: #161616;
+      --body: #3f3a35;
+      --muted: #746c62;
+      --line: rgba(22, 22, 22, 0.15);
+      --hair: rgba(22, 22, 22, 0.06);
+      --accent: #166d6a;
+      --accent-strong: #166d6a;
+      --accent-soft: #d8ece6;
+      --risk: #9a3434;
+      --risk-soft: #f1d7d2;
+      --warn: #a76418;
+      --warn-soft: #f5e2bf;
+      --good: #2f7045;
+      --good-soft: #dbe9d6;
+      --accent-fill: #166d6a;
+      --inverse-bg: #161616;
+      --inverse-ink: #fffaf0;
+      --inverse-muted: rgba(255, 250, 240, 0.82);
+      --shadow: 0 20px 55px rgba(39, 31, 21, 0.12);
+      --radius: 8px;
+      --radius-sm: 8px;
       --max: 1180px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0e1514;
-        --bg-2: #111d1b;
-        --panel: #172320;
-        --panel-2: #1b2c28;
-        --ink: #f0f7f4;
-        --body: #c6d4d0;
-        --muted: #91a19d;
-        --line: rgba(232, 246, 241, 0.14);
-        --hair: rgba(232, 246, 241, 0.08);
-        --accent: #58b8ad;
-        --accent-strong: #a2ded6;
-        --accent-soft: rgba(88, 184, 173, 0.16);
-        --risk-soft: rgba(169, 70, 82, 0.22);
-        --warn-soft: rgba(119, 96, 51, 0.26);
-        --good-soft: rgba(36, 106, 67, 0.28);
-        --shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+        color-scheme: dark;
+        --bg: #101217;
+        --bg-2: #171b23;
+        --panel: #1b2029;
+        --panel-2: #222836;
+        --ink: #f6efe4;
+        --body: #d9d0c2;
+        --muted: #afa598;
+        --line: rgba(246, 239, 228, 0.19);
+        --hair: rgba(246, 239, 228, 0.075);
+        --accent: #83d9d1;
+        --accent-strong: #83d9d1;
+        --accent-soft: #163f3d;
+        --risk: #ff9d91;
+        --risk-soft: #4a2825;
+        --warn: #f3c277;
+        --warn-soft: #3e2d17;
+        --good: #94d7a6;
+        --good-soft: #203c2a;
+        --accent-fill: #1e756d;
+        --inverse-bg: #07090d;
+        --inverse-ink: #fffaf0;
+        --inverse-muted: rgba(255, 250, 240, 0.82);
+        --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
       }
     }
 
@@ -190,9 +202,9 @@
       transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
     .btn.primary {
-      color: #f7fffc;
-      border-color: var(--accent-strong);
-      background: var(--accent-strong);
+      color: var(--inverse-ink);
+      border-color: var(--accent-fill);
+      background: var(--accent-fill);
       box-shadow: 0 18px 42px color-mix(in srgb, var(--accent) 30%, transparent);
     }
     .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
@@ -242,8 +254,8 @@
       flex: 0 0 auto;
       padding: 10px 12px;
       border-radius: 999px;
-      color: #f7fffc;
-      background: var(--ink);
+      color: var(--inverse-ink);
+      background: var(--inverse-bg);
       font-size: 12px;
       font-weight: 850;
     }
@@ -278,13 +290,13 @@
       aspect-ratio: 1;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: var(--ink);
-      color: #f7fffc;
+      background: var(--inverse-bg);
+      color: var(--inverse-ink);
       text-align: center;
       box-shadow: 0 22px 52px rgba(16, 25, 24, 0.26);
     }
     .center-orbit strong { font-size: 26px; line-height: 1; letter-spacing: -0.04em; }
-    .center-orbit small { display: block; margin-top: 8px; color: rgba(247,255,252,.72); font-size: 12px; }
+    .center-orbit small { display: block; margin-top: 8px; color: var(--inverse-muted); font-size: 12px; }
     .radar-node {
       position: absolute;
       width: min(168px, 42vw);
@@ -503,8 +515,8 @@
       transition: background 180ms ease, color 180ms ease, transform 180ms ease;
     }
     .battle-tabs button.active {
-      color: #f7fffc;
-      background: var(--accent-strong);
+      color: var(--inverse-ink);
+      background: var(--accent-fill);
     }
     .battle-tabs button:hover { transform: translateY(-1px); }
     .battle-panel {
@@ -547,7 +559,7 @@
       color: var(--ink) !important;
       background: var(--accent-soft) !important;
     }
-    .heat.high { color: #f7fffc !important; background: var(--accent-strong) !important; }
+    .heat.high { color: var(--inverse-ink) !important; background: var(--accent-fill) !important; }
     .heat.mid { background: color-mix(in srgb, var(--accent-soft) 78%, var(--panel)) !important; }
     .heat.low { background: color-mix(in srgb, var(--accent-soft) 34%, var(--panel)) !important; }
     .battle-matrix {
@@ -580,11 +592,11 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 24px;
-      color: #f7fffc;
-      background: var(--ink);
+      color: var(--inverse-ink);
+      background: var(--inverse-bg);
     }
     .price-title strong { font-size: 30px; line-height: 1; letter-spacing: -0.045em; }
-    .price-title p { color: rgba(247,255,252,.72); font-size: 13px; }
+    .price-title p { color: var(--inverse-muted); font-size: 13px; }
     .tier {
       display: flex;
       flex-direction: column;
@@ -653,11 +665,11 @@
     .point small { color: var(--muted); font-weight: 700; }
     .point.us {
       width: 190px;
-      color: #f7fffc;
-      border-color: var(--accent-strong);
-      background: var(--accent-strong);
+      color: var(--inverse-ink);
+      border-color: var(--accent-fill);
+      background: var(--accent-fill);
     }
-    .point.us small { color: rgba(247,255,252,.78); }
+    .point.us small { color: var(--inverse-muted); }
 
     .rules-grid {
       display: grid;
@@ -693,8 +705,8 @@
       width: 28px;
       height: 28px;
       border-radius: 999px;
-      color: #f7fffc;
-      background: var(--accent-strong);
+      color: var(--inverse-ink);
+      background: var(--accent-fill);
       font-size: 13px;
       font-weight: 900;
     }
@@ -759,8 +771,8 @@
 
     footer {
       padding: 34px 0;
-      color: rgba(247,255,252,.78);
-      background: var(--ink);
+      color: var(--inverse-muted);
+      background: var(--inverse-bg);
       font-size: 12px;
     }
     footer .inner {

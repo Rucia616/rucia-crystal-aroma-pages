@@ -25,9 +25,40 @@
       --red-soft: #f1d7d2;
       --green: #2f7045;
       --green-soft: #dbe9d6;
+      --inverse-bg: #161616;
+      --inverse-text: #fffaf0;
+      --inverse-muted: rgba(255, 250, 240, 0.82);
       --max: 1200px;
       --radius: 8px;
       --shadow: 0 20px 55px rgba(39, 31, 21, 0.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #101217;
+        --paper-2: #171b23;
+        --ink: #f6efe4;
+        --body: #d9d0c2;
+        --muted: #afa598;
+        --line: rgba(246, 239, 228, 0.19);
+        --hair: rgba(246, 239, 228, 0.075);
+        --panel: #1b2029;
+        --teal: #83d9d1;
+        --teal-soft: #163f3d;
+        --plum: #f0a7d2;
+        --plum-soft: #44243a;
+        --amber: #f3c277;
+        --amber-soft: #3e2d17;
+        --red: #ff9d91;
+        --red-soft: #4a2825;
+        --green: #94d7a6;
+        --green-soft: #203c2a;
+        --inverse-bg: #07090d;
+        --inverse-text: #fffaf0;
+        --inverse-muted: rgba(255, 250, 240, 0.82);
+        --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+      }
     }
 
     * { box-sizing: border-box; }
@@ -543,6 +574,58 @@
       padding: 34px 0 46px;
       color: var(--muted);
       font-size: 13px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background:
+          linear-gradient(90deg, var(--hair) 1px, transparent 1px),
+          linear-gradient(180deg, var(--hair) 1px, transparent 1px),
+          linear-gradient(135deg, var(--paper), #121721 52%, var(--paper-2));
+      }
+      .topbar {
+        background: rgba(16, 18, 23, 0.9);
+      }
+      .nav,
+      .method-card,
+      .finding,
+      .pain,
+      .segment,
+      .source-card,
+      .action-card,
+      .limit-card {
+        background: rgba(27, 32, 41, 0.88);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+      }
+      .finding-top {
+        background: linear-gradient(135deg, rgba(22, 63, 61, 0.84), rgba(68, 36, 58, 0.74));
+      }
+      .segment h3 {
+        background: rgba(68, 36, 58, 0.76);
+      }
+      .tag {
+        background: rgba(27, 32, 41, 0.9);
+      }
+      .verdict {
+        background: var(--inverse-bg);
+        color: var(--inverse-text);
+      }
+      .verdict h2 {
+        color: var(--inverse-text);
+      }
+      .verdict p,
+      .verdict li {
+        color: var(--inverse-muted);
+      }
+      .verdict .pill {
+        border-color: rgba(255, 250, 240, 0.22);
+      }
+      .numbered li::before {
+        color: #07100f;
+      }
+      .no-list li::before {
+        color: #160807;
+      }
     }
 
     @media (max-width: 980px) {
