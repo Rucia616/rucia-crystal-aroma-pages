@@ -9,6 +9,8 @@
     "Because the founder is China-based, scent validation and creator seeding require a U.S. sample node or qualified in-home testing partner before inventory decisions.",
     "Online panels can validate concept clarity, pricing, and quiz/landing-page comprehension, but they cannot substitute for real scent use tests.",
     "Fragrance sample shipping should be checked against SDS/MSDS, carrier rules, and HAZMAT restrictions before sending product to testers or creators.",
+    "Public platform prices are cited where available; sample-node labor, product sample costs, China-to-U.S. freight, breakage, and creator response rates are execution estimates that require direct quotes or live tests.",
+    "UserTesting and full-service IHUT providers are treated as optional or quote-based paths, not assumed low-budget default tools.",
     "Health and therapeutic claims should be avoided unless substantiated through qualified legal and scientific review."
   ],
   "sources": [
@@ -85,6 +87,22 @@
       "note": "Supports market and user research with 200k+ active and verified participants, including product testing, concept validation, and consumer insights."
     },
     {
+      "id": "prolific-pricing",
+      "type": "Remote Testing Pricing",
+      "name": "Prolific, Pricing",
+      "short": "Prolific Pricing",
+      "url": "https://www.prolific.com/pricing",
+      "note": "Pay-as-you-go pricing is participant reward plus a platform fee; Prolific states the corporate platform fee is usually 42.8%."
+    },
+    {
+      "id": "prolific-study-cost",
+      "type": "Remote Testing Pricing",
+      "name": "Prolific Researcher Help, Study Cost",
+      "short": "Prolific Cost",
+      "url": "https://researcher-help.prolific.com/en/articles/445129-study-cost",
+      "note": "Prolific states a minimum participant reward of $8 per hour and recommends at least $12 per hour."
+    },
+    {
       "id": "respondent",
       "type": "Participant Recruitment",
       "name": "Respondent, Recruit Research Participants",
@@ -99,6 +117,38 @@
       "short": "UserTesting",
       "url": "https://www.usertesting.com/",
       "note": "Used to validate concepts, prototypes, landing pages, websites, and app designs with real shoppers before launch spend."
+    },
+    {
+      "id": "userbrain-pricing",
+      "type": "Remote UX Testing",
+      "name": "Userbrain, Pricing",
+      "short": "Userbrain",
+      "url": "https://www.userbrain.com/en/pricing",
+      "note": "Self-serve unmoderated tests are available pay-as-you-go at $39 per tester with no minimum order; a free trial includes two testers and five own-user invites."
+    },
+    {
+      "id": "carrd-pro",
+      "type": "Landing Page Tool",
+      "name": "Carrd, Pro Plans",
+      "short": "Carrd",
+      "url": "https://carrd.co/docs/pro/plans",
+      "note": "Carrd Pro Standard is $19 per year and includes custom domains, forms, embeds, and analytics, making it a low-cost landing-page prototype option."
+    },
+    {
+      "id": "tally-forms",
+      "type": "Survey Tool",
+      "name": "Tally, Free Form Builder",
+      "short": "Tally",
+      "url": "https://tally.so/",
+      "note": "Tally supports unlimited free forms and submissions within fair-use limits and includes logic, rating/ranking, hidden fields, and redirects."
+    },
+    {
+      "id": "usertesting-physical",
+      "type": "Physical Product Testing",
+      "name": "UserTesting Help, Physical Product Testing",
+      "short": "UT Physical",
+      "url": "https://help.usertesting.com/hc/en-us/articles/11880366422557-Physical-product-testing",
+      "note": "UserTesting recommends planning a one-month lead time, recruiting and shipping to 25-50% more participants than needed, and using one test to collect shipping information before follow-up testing."
     },
     {
       "id": "highlight-fragrance",
@@ -227,6 +277,14 @@
       "short": "USPS HAZMAT",
       "url": "https://www.usps.com/ship/shipping-restrictions.htm",
       "note": "USPS notes that some hazardous materials are prohibited or restricted and that some mailable HAZMAT can only travel by domestic ground transportation."
+    },
+    {
+      "id": "usps-ground-advantage",
+      "type": "Shipping Rules",
+      "name": "USPS, Ground Advantage",
+      "short": "USPS Ground",
+      "url": "https://www.usps.com/ship/ground-advantage.htm",
+      "note": "USPS Ground Advantage ships to all 50 states, is the primary option for HAZMAT that cannot travel by air, and starts at $7.90 at a Post Office location."
     }
   ]
 }
