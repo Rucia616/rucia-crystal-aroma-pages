@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>北美 Launch Concept & Offer Validation / 玄学能量晶石香薰 / 2026-06-15</title>
+  <link rel="icon" href="data:," />
   <style>
     :root {
       color-scheme: light;
@@ -256,6 +257,7 @@
     .summary-main,
     .side-note,
     .module-card,
+    .china-card,
     .concept-card,
     .callout,
     .panel {
@@ -383,17 +385,23 @@
       gap: 16px;
     }
 
-    .module-card {
+    .module-card,
+    .china-card {
       min-height: 315px;
       padding: 22px;
       background: var(--surface);
     }
 
-    .module-card.cyan { border-top: 7px solid var(--cyan); }
-    .module-card.pink { border-top: 7px solid var(--pink); }
-    .module-card.lilac { border-top: 7px solid var(--lilac); }
-    .module-card.green { border-top: 7px solid var(--green); }
-    .module-card.coral { border-top: 7px solid var(--coral); }
+    .module-card.cyan,
+    .china-card.cyan { border-top: 7px solid var(--cyan); }
+    .module-card.pink,
+    .china-card.pink { border-top: 7px solid var(--pink); }
+    .module-card.lilac,
+    .china-card.lilac { border-top: 7px solid var(--lilac); }
+    .module-card.green,
+    .china-card.green { border-top: 7px solid var(--green); }
+    .module-card.coral,
+    .china-card.coral { border-top: 7px solid var(--coral); }
 
     .module-top {
       display: flex;
@@ -431,6 +439,61 @@
       font-size: 11px;
       font-weight: 900;
       text-decoration: none;
+    }
+
+    .china-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .china-card {
+      min-height: 360px;
+    }
+
+    .china-card > strong {
+      display: inline-flex;
+      margin-bottom: 6px;
+      color: var(--link);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .china-card p {
+      margin-top: 13px;
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .china-card b {
+      color: var(--text);
+      font-weight: 950;
+    }
+
+    .china-node {
+      margin-bottom: 16px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-left: 7px solid var(--cyan);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 42%),
+        var(--surface-2);
+      box-shadow: var(--shadow);
+    }
+
+    .china-node h3 {
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 26px;
+      line-height: 1.08;
+    }
+
+    .china-node p {
+      max-width: 980px;
+      color: var(--body);
+      font-size: 15px;
     }
 
     .module-card h3,
@@ -656,6 +719,7 @@
       .hero-grid,
       .section-head,
       .summary,
+      .china-grid,
       .do-dont,
       .question-grid {
         grid-template-columns: 1fr;
@@ -678,6 +742,7 @@
       .hero-sub { font-size: 17px; }
       .metric-grid,
       .module-grid,
+      .china-grid,
       .concept-grid {
         grid-template-columns: 1fr;
       }
@@ -707,6 +772,7 @@
       <nav class="nav" aria-label="Report navigation">
         <a href="#summary">结论</a>
         <a href="#modules">模块</a>
+        <a href="#china">中国验证</a>
         <a href="#concepts">概念</a>
         <a href="#sprint">路线</a>
         <a href="#questions">问卷</a>
@@ -722,7 +788,7 @@
           <div class="eyebrow">Report 04 / Launch Validation</div>
           <h1>北美 Launch Concept & Offer Validation</h1>
           <p class="hero-sub">这份报告把前三份调研转成 launch 前的验证方案：我们不再问“这个品类有没有机会”，而是问“用哪个概念卖、先推哪几个味道、什么价格能成立、quiz 是否真的提高转化、红人怎么讲才不尴尬”。</p>
-          <p class="hero-note">核心判断：接下来最值钱的调研不是更大的市场报告，而是用小预算把五个失败风险打穿。先验证概念、香味、价格、quiz 和内容，再投入包装大货和广告。</p>
+          <p class="hero-note">核心判断：接下来最值钱的调研不是更大的市场报告，而是用小预算把五个失败风险打穿。即使创始人在中国，也要把“远程用户测试”和“美国样品节点”分开搭起来，再投入包装大货和广告。</p>
         </div>
         <aside class="hero-card" aria-label="Key metrics">
           <div class="head">
@@ -743,12 +809,12 @@
 
   <article class="metric-card">
     <strong>2</strong>
-    <span>pricing methods recommended for gift kit and refill <sup class="cite"><a href="#source-surveymonkey-pricing">[14]</a></sup></span>
+    <span>pricing methods recommended for gift kit and refill <sup class="cite"><a href="#source-surveymonkey-pricing">[18]</a></sup></span>
   </article>
 
   <article class="metric-card">
     <strong>20+</strong>
-    <span>micro creator seeding assets before paid scale <sup class="cite"><a href="#source-wsl-genz">[18]</a></sup></span>
+    <span>micro creator seeding assets before paid scale <sup class="cite"><a href="#source-wsl-genz">[22]</a></sup></span>
   </article>
 
           </div>
@@ -770,7 +836,7 @@
             <p>Report 01 已经显示，这个项目不能落入传统 crystal shop、低价能量套装、真假晶石争议和重玄学恐吓话术；我们要做的是更现代、更社媒化、更以 fragrance 为核心的礼盒品牌<sup class="cite"><a href="#source-internal-competitive">[1]</a></sup>。Report 02 进一步说明，北美目标用户多数不是严肃玄学信徒，而是把 astrology、crystals、ritual 当作娱乐、自我理解和生活小仪式的一部分<sup class="cite"><a href="#source-internal-consumer">[2]</a></sup>。Report 03 则把关键商业点说清楚：复购不太可能来自晶石本体，复购更可能来自她真的喜欢这个味道、愿意买 refill、愿意换一个 scent sign<sup class="cite"><a href="#source-internal-scent">[3]</a></sup>。</p>
             <p>因此，下一轮调研不能再停留在“竞品好不好”“消费者喜不喜欢香薰”这种大问题。Qualtrics 将 concept testing 定义为早期市场研究，用来提高推出消费者想买产品的概率<sup class="cite"><a href="#source-qualtrics-concept">[4]</a></sup>；Highlight 也建议在 launch 前测试消费者接受度、定价策略、品牌定位、功能、购买意图和复购意图<sup class="cite"><a href="#source-highlight-concept">[5]</a></sup>。对我们来说，concept testing 不是学院派流程，而是省钱工具：在自掏钱创业的情况下，任何能在下单大货前暴露问题的测试都值得做。</p>
             <p>这份报告建议采用五个验证模块：Concept、Scent、Price、Quiz、Creator。Concept 解决“用户到底以为我们卖什么”；Scent 解决“哪些味道能复购”；Price 解决“礼盒和 refill 能不能跑出利润”；Quiz 解决“轻玄学入口是否真的提高转化”；Creator 解决“这个产品能不能被自然讲出来”。这五个模块共同决定 launch 的成败，而不是单独由 VI 或某一个香型决定。</p>
-            <p>最重要的执行顺序是：先做 4 张 concept board，再做 6 个 scent signs 的盲闻和小型 in-home test，然后做价格与 offer 测试，最后做 quiz landing 和 micro creator seeding。这个顺序能避免一个常见错误：先被包装和玄学故事打动，后面才发现香味、价格、转化或内容传播不成立。</p>
+            <p>最重要的执行顺序是：先做 4 张 concept board，再做 6 个 scent signs 的盲闻和小型 in-home test，然后做价格与 offer 测试，最后做 quiz landing 和 micro creator seeding。人在中国不是不能做美国市场验证，真正的边界是：概念、价格、quiz 可以远程跑；香味、红人寄样、履约体验必须接美国本地样品节点。</p>
           </article>
           <aside class="side-note">
             <h3>一句话结论</h3>
@@ -844,6 +910,80 @@
     <p><strong>Method:</strong> 20 位 micro creator 小样寄送，测试 first sniff、room reset、scent sign reveal 三种脚本</p>
     <p><strong>Output:</strong> 找出能自然卖点的内容角度，再决定是否上付费广告。</p>
     <p><strong>Gate:</strong> 如果 creator 只能讲晶石、讲不出香味，说明产品传播重心偏了。</p>
+  </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="china">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">China-Based Founder Playbook</div>
+            <h2>人在中国也能验证美国市场，但必须分清远程测试和美国样品节点。</h2>
+          </div>
+          <p>这个项目最容易踩的坑，是用线上问卷证明“大家喜欢概念”，却没有验证真实闻香、美国寄样、creator 拍摄和退换货体验。</p>
+        </div>
+        <article class="china-node">
+          <h3>最低配置：一个美国样品节点</h3>
+          <p>你本人不一定要在美国，但首发前需要一个可靠美国地址来收样、拍照验货、盲码分装、美国本地寄样、追踪反馈和处理退样。这样才能把真实香味测试、creator seeding 和履约体验从“中国直邮的不确定性”里拆出来。</p>
+        </article>
+        <div class="china-grid">
+
+  <article class="china-card cyan">
+    <div class="module-top">
+      <span>Concept</span>
+      <div class="source-chips"><a href="#source-pickfu">PickFu</a><a href="#source-prolific-researchers">Prolific</a><a href="#source-respondent">Respondent</a></div>
+    </div>
+    <strong>100% remote</strong>
+    <p><b>Setup:</b> 人在中国可以完成；用 PickFu / Prolific / Respondent 找美国目标用户，看 4 张 concept board。</p>
+    <p><b>Workflow:</b> 上传同结构概念图，筛选美国 18-34 岁、近 6 个月买过 home fragrance / candles / diffusers、对 astrology / self-care 有开放度的人群。</p>
+    <p><b>Proof:</b> 看 10 秒理解度、purchase intent、是否觉得尴尬、用户会用什么词复述产品。线上概念测试只能判断“能不能被理解和想点”，不能判断真实香味。</p>
+  </article>
+
+  <article class="china-card pink">
+    <div class="module-top">
+      <span>Scent</span>
+      <div class="source-chips"><a href="#source-highlight-fragrance">Highlight Fragrance</a><a href="#source-benchmark-fragrance">Benchmarking Co.</a><a href="#source-usps-hazmat">USPS HAZMAT</a></div>
+    </div>
+    <strong>needs US sample node</strong>
+    <p><b>Setup:</b> 不要从中国逐个直邮测试者。先把 6 个 scent signs 批量发到一个美国样品节点：美国朋友、留学生兼职、小型 3PL 或产品测试服务商。</p>
+    <p><b>Workflow:</b> 美国节点收样、拍照验货、按 A/B/C/D/E/F 盲码分装，再用美国本地 ground service 寄给 24-36 位测试者。发货前让工厂提供 SDS/MSDS，确认是否易燃、是否需要 HAZMAT 处理。</p>
+    <p><b>Proof:</b> 记录 10 秒喜欢度、30 分钟后喜欢度、房间适配、是否愿意买 refill。香味不过关就不要让包装救它。</p>
+  </article>
+
+  <article class="china-card lilac">
+    <div class="module-top">
+      <span>Price</span>
+      <div class="source-chips"><a href="#source-van-westendorp">Van Westendorp</a><a href="#source-gabor-granger">Gabor-Granger</a><a href="#source-surveymonkey-pricing">SurveyMonkey</a></div>
+    </div>
+    <strong>remote with offer mockup</strong>
+    <p><b>Setup:</b> 价格测试可以线上做，但必须给完整 offer 图：礼盒内容、容量、晶石、ritual card、运费/退货、refill 价格。</p>
+    <p><b>Workflow:</b> 用 Van Westendorp 先找可接受区间，再用 Gabor-Granger 测 $49 / $59 / $69 / $79 的购买意愿；不要让用户凭空回答。</p>
+    <p><b>Proof:</b> 判断 $59-$79 是否能成立；如果只有低价才有人买，要先改 offer 或成本结构。</p>
+  </article>
+
+  <article class="china-card green">
+    <div class="module-top">
+      <span>Quiz</span>
+      <div class="source-chips"><a href="#source-usertesting">UserTesting</a><a href="#source-internal-consumer">Report 02</a><a href="#source-internal-scent">Report 03</a></div>
+    </div>
+    <strong>100% remote</strong>
+    <p><b>Setup:</b> 做一个不用收款的 landing page / quiz prototype。人在中国可以完成页面、埋点、问卷和录屏测试。</p>
+    <p><b>Workflow:</b> 测试 quiz-first、product-first、gift finder 三版；用 UserTesting 看美国用户录屏反馈，用轻量广告或 creator link 看 start / completion / email capture。</p>
+    <p><b>Proof:</b> 如果 room mood quiz 比 astrology-first 更高完成率、更少尴尬，就锁定 scent finder / vibe quiz 的入口。</p>
+  </article>
+
+  <article class="china-card coral">
+    <div class="module-top">
+      <span>Creator</span>
+      <div class="source-chips"><a href="#source-wsl-genz">WSL</a><a href="#source-circana-perfumetok">PerfumeTok</a><a href="#source-mintel-social">Mintel Social</a></div>
+    </div>
+    <strong>needs US sample node</strong>
+    <p><b>Setup:</b> 你不需要人在美国，但需要美国寄样地址。先找 20 位 micro creator，寄 3 个小样 + result card。</p>
+    <p><b>Workflow:</b> 要求拍 first sniff、scent sign reveal、room reset 三种内容，不要求硬广；观察她们自然会讲香味还是只讲晶石。</p>
+    <p><b>Proof:</b> 如果 creator 自然说得出 scent notes、room mood、giftability，就能进入 paid ads；如果只会讲 crystal magic，传播重心偏了。</p>
   </article>
 
         </div>
@@ -931,13 +1071,13 @@
               
   <tr>
     <th><span>Week 1</span><small>Concept Board Sprint</small></th>
-    <td>做 4 张同结构 concept board，统一价格未知、统一产品图，不让视觉强弱干扰概念判断。</td>
+    <td>做 4 张同结构 concept board，统一价格未知、统一产品图；用 PickFu / Prolific / Respondent 远程测试美国目标用户。</td>
     <td>淘汰难懂、太玄、太普通或让用户尴尬的表达。</td>
   </tr>
 
   <tr>
     <th><span>Week 2</span><small>Scent Blind Test</small></th>
-    <td>6 个 scent signs 做编码盲闻；先不出现晶石、星座、包装，只测香味本身。</td>
+    <td>搭美国样品节点，6 个 scent signs 做编码盲闻；先不出现晶石、星座、包装，只测香味本身。</td>
     <td>选出 2 个 hero scent、2 个 supporting scent、淘汰或返工其余方向。</td>
   </tr>
 
@@ -949,13 +1089,13 @@
 
   <tr>
     <th><span>Week 4</span><small>Quiz + Landing Test</small></th>
-    <td>做低成本 landing page 原型，测试 quiz-first、product-first、gift-finder 三种入口。</td>
+    <td>做低成本 landing page 原型，测试 quiz-first、product-first、gift-finder 三种入口，并用录屏测试看美国用户卡在哪里。</td>
     <td>确定首页第一屏、quiz 题目顺序、email capture 和结果卡文案。</td>
   </tr>
 
   <tr>
     <th><span>Week 5</span><small>Creator Seeding Test</small></th>
-    <td>寄送小样和结果卡，不要求硬广，收集 first sniff、room update、giftability 内容。</td>
+    <td>由美国样品节点寄送小样和结果卡，不要求硬广，收集 first sniff、room update、giftability 内容。</td>
     <td>确定首批内容脚本和是否值得进入 paid ads。</td>
   </tr>
 
@@ -1043,7 +1183,7 @@
           </article>
           <article class="next-step">
             <h3>下一步最该做</h3>
-            <p>做 4 张统一结构的 concept board，然后招募 80-120 位北美目标用户在线测试。只有概念 winner 出来以后，再把钱花到包装打样、香味批量小样和红人寄样上。</p>
+            <p>做 4 张统一结构的 concept board，同时开始找美国样品节点。只有概念 winner 和美国寄样路径都清楚以后，再把钱花到包装打样、香味批量小样和红人寄样上。</p>
           </article>
         </div>
       </div>
@@ -1061,11 +1201,11 @@
         <div class="do-dont">
           <article class="callout good">
             <h3>必须做</h3>
-            <ul><li>先测概念和香味，再决定包装大货；不要先把钱压进库存。</li><li>所有测试都要拆开：先 blind scent，再 concept board，再 complete offer。</li><li>把 crystal 当作礼盒和内容的增值层，而不是复购主因。</li><li>所有问卷都要有 open-ended question，收集真实用户会怎么讲这个产品。</li><li>价格测试必须同时测 kit 和 refill，否则看不到长期利润。</li><li>creator seeding 先看自然表达，不要一开始用重广告脚本。</li></ul>
+            <ul><li>先测概念和香味，再决定包装大货；不要先把钱压进库存。</li><li>所有测试都要拆开：先 blind scent，再 concept board，再 complete offer。</li><li>把 crystal 当作礼盒和内容的增值层，而不是复购主因。</li><li>所有问卷都要有 open-ended question，收集真实用户会怎么讲这个产品。</li><li>价格测试必须同时测 kit 和 refill，否则看不到长期利润。</li><li>creator seeding 先看自然表达，不要一开始用重广告脚本。</li><li>人在中国也要先搭一个美国样品节点：收样、盲码、寄样、追踪反馈。</li><li>把平台验证和真实闻香拆开：在线 panel 只能验证概念、价格、页面，不等于验证香味。</li></ul>
           </article>
           <article class="callout bad">
             <h3>不要碰</h3>
-            <ul><li>不要把所有玄学符号一次性塞进首发：星座、五行、水逆、塔罗、晶石、生日全上会变乱。</li><li>不要只问“你喜不喜欢这个概念”，必须问 purchase intent、price、giftability、repeat。</li><li>不要用包装遮住香味问题；香味不过关，VI 再强也只会带来一次性购买。</li><li>不要在健康、睡眠、焦虑等方向做强 claim；合规风险不值得。</li><li>不要把 micro creator 当投放机器，要把他们当真实语言和内容格式的测试样本。</li><li>不要让首发 SKU 太多，库存复杂度会吃掉现金和判断力。</li></ul>
+            <ul><li>不要把所有玄学符号一次性塞进首发：星座、五行、水逆、塔罗、晶石、生日全上会变乱。</li><li>不要只问“你喜不喜欢这个概念”，必须问 purchase intent、price、giftability、repeat。</li><li>不要用包装遮住香味问题；香味不过关，VI 再强也只会带来一次性购买。</li><li>不要在健康、睡眠、焦虑等方向做强 claim；合规风险不值得。</li><li>不要把 micro creator 当投放机器，要把他们当真实语言和内容格式的测试样本。</li><li>不要让首发 SKU 太多，库存复杂度会吃掉现金和判断力。</li><li>不要从中国逐个直邮测试者做香味测试；时效、破损、退货和运输限制都会污染测试结果。</li><li>不要让美国用户感受到“跨境小店”的履约体验；至少要有美国寄样/退货节点。</li></ul>
           </article>
         </div>
       </div>
@@ -1075,7 +1215,7 @@
       <div class="inner">
         <article class="panel">
           <h3>限制和不确定性</h3>
-          <p>本报告是 launch validation 方案，不是消费者实测结果。这里的门槛和样本量是早期创业的建议值，必须在真实问卷、盲闻、小样寄送和 landing page 数据出来后调整。公开资料能支持“为什么要做这些测试”，但不能替代真实用户闻香、看 offer、输入邮箱和掏钱的行为。</p>
+          <p>本报告是 launch validation 方案，不是消费者实测结果。这里的门槛和样本量是早期创业的建议值，必须在真实问卷、盲闻、小样寄送和 landing page 数据出来后调整。公开资料能支持“为什么要做这些测试”，但不能替代真实用户闻香、看 offer、输入邮箱和掏钱的行为。因为创始人在中国，香味测试和 creator 寄样还需要额外验证 SDS/MSDS、运输限制、美国节点执行质量和样品破损率。</p>
         </article>
       </div>
     </section>
@@ -1154,8 +1294,44 @@
     </div>
   </article>
 
-  <article class="source-card" id="source-highlight-fragrance">
+  <article class="source-card" id="source-pickfu">
     <div class="source-index">[8]</div>
+    <div>
+      <h3>PickFu, Instant Consumer Feedback and Market Research</h3>
+      <p><span>Remote Testing Panel</span> Lets brands test products, campaigns, and ideas with a target audience in minutes, with audience targeting and e-commerce use cases.</p>
+      <a href="https://www.pickfu.com/" target="_blank" rel="noreferrer">https://www.pickfu.com/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-prolific-researchers">
+    <div class="source-index">[9]</div>
+    <div>
+      <h3>Prolific, Researchers</h3>
+      <p><span>Remote Testing Panel</span> Supports market and user research with 200k+ active and verified participants, including product testing, concept validation, and consumer insights.</p>
+      <a href="https://www.prolific.com/researchers" target="_blank" rel="noreferrer">https://www.prolific.com/researchers</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-respondent">
+    <div class="source-index">[10]</div>
+    <div>
+      <h3>Respondent, Recruit Research Participants</h3>
+      <p><span>Participant Recruitment</span> Recruiting platform with B2C panels and 4M+ participants from 150+ countries, useful for interviews, surveys, and focus groups.</p>
+      <a href="https://www.respondent.io/recruit-participants" target="_blank" rel="noreferrer">https://www.respondent.io/recruit-participants</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-usertesting">
+    <div class="source-index">[11]</div>
+    <div>
+      <h3>UserTesting, Human Insight Platform</h3>
+      <p><span>Remote UX Testing</span> Used to validate concepts, prototypes, landing pages, websites, and app designs with real shoppers before launch spend.</p>
+      <a href="https://www.usertesting.com/" target="_blank" rel="noreferrer">https://www.usertesting.com/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-highlight-fragrance">
+    <div class="source-index">[12]</div>
     <div>
       <h3>Highlight, Best Fragrance Testing Providers</h3>
       <p><span>Fragrance Testing</span> For fragrance launch validation, recommends measuring initial reaction, strength, dry down, longevity, emotional response, product fit, and purchase intent.</p>
@@ -1164,7 +1340,7 @@
   </article>
 
   <article class="source-card" id="source-blueyonder-fragrance">
-    <div class="source-index">[9]</div>
+    <div class="source-index">[13]</div>
     <div>
       <h3>Blue Yonder, Effective Fragrance Testing</h3>
       <p><span>Fragrance Testing</span> Recommends blind fragrance testing, varied question types, benchmark fragrances, and in-context testing because fragrance perception changes with context.</p>
@@ -1173,7 +1349,7 @@
   </article>
 
   <article class="source-card" id="source-benchmark-fragrance">
-    <div class="source-index">[10]</div>
+    <div class="source-index">[14]</div>
     <div>
       <h3>The Benchmarking Company, Fragrance Product Testing</h3>
       <p><span>Fragrance Testing</span> Positions in-home use tests as a way to capture scent perception, product performance, emotional impact, and alignment with consumer preferences.</p>
@@ -1182,7 +1358,7 @@
   </article>
 
   <article class="source-card" id="source-pubmed-perfume">
-    <div class="source-index">[11]</div>
+    <div class="source-index">[15]</div>
     <div>
       <h3>PubMed, A Comparison of Product Testing Methodologies for Perfume</h3>
       <p><span>Academic Abstract</span> Compares in-home tests and sniff tests for the same perfumes, illustrating limitations of sniff-only fragrance testing.</p>
@@ -1191,7 +1367,7 @@
   </article>
 
   <article class="source-card" id="source-van-westendorp">
-    <div class="source-index">[12]</div>
+    <div class="source-index">[16]</div>
     <div>
       <h3>Conjointly, Van Westendorp Price Sensitivity Meter</h3>
       <p><span>Pricing Method</span> Used to estimate psychologically acceptable price ranges through too-cheap, cheap, expensive, and too-expensive thresholds.</p>
@@ -1200,7 +1376,7 @@
   </article>
 
   <article class="source-card" id="source-gabor-granger">
-    <div class="source-index">[13]</div>
+    <div class="source-index">[17]</div>
     <div>
       <h3>Conjointly, Gabor-Granger Pricing Method</h3>
       <p><span>Pricing Method</span> Uses purchase-intent questions at different prices to estimate willingness to pay and revenue-optimizing price points.</p>
@@ -1209,7 +1385,7 @@
   </article>
 
   <article class="source-card" id="source-surveymonkey-pricing">
-    <div class="source-index">[14]</div>
+    <div class="source-index">[18]</div>
     <div>
       <h3>SurveyMonkey, Gabor-Granger vs. Van Westendorp</h3>
       <p><span>Pricing Method</span> Compares price-testing methods and notes Gabor-Granger's use of purchase-intent questions at specific prices.</p>
@@ -1218,7 +1394,7 @@
   </article>
 
   <article class="source-card" id="source-circana-genz">
-    <div class="source-index">[15]</div>
+    <div class="source-index">[19]</div>
     <div>
       <h3>Circana, Gen Z Fragrance Usage</h3>
       <p><span>Category Survey</span> Gen Z fragrance usage rose to 83%; 80% of fragrance users say scent helps lift or enhance mood.</p>
@@ -1227,7 +1403,7 @@
   </article>
 
   <article class="source-card" id="source-nca-facts">
-    <div class="source-index">[16]</div>
+    <div class="source-index">[20]</div>
     <div>
       <h3>National Candle Association, Facts &amp; Figures</h3>
       <p><span>Category Association</span> Fragrance is the most important candle purchase factor, and candle use is tied to comfort, coziness, decor, relaxation, and gifting.</p>
@@ -1236,7 +1412,7 @@
   </article>
 
   <article class="source-card" id="source-pew-astrology">
-    <div class="source-index">[17]</div>
+    <div class="source-index">[21]</div>
     <div>
       <h3>Pew Research Center, Astrology, Tarot and Fortune Tellers</h3>
       <p><span>Survey</span> 30% of U.S. adults consult astrology, tarot, or fortune tellers at least annually, with most using it for fun.</p>
@@ -1245,7 +1421,7 @@
   </article>
 
   <article class="source-card" id="source-wsl-genz">
-    <div class="source-index">[18]</div>
+    <div class="source-index">[22]</div>
     <div>
       <h3>WSL Strategic Retail, Gen Z Fragrance Boom</h3>
       <p><span>Retail Analysis</span> Reports Circana data that 73% of Gen Z wears fragrance at least three times weekly; TikTok and Instagram strongly influence Gen Z fragrance purchase.</p>
@@ -1254,7 +1430,7 @@
   </article>
 
   <article class="source-card" id="source-circana-perfumetok">
-    <div class="source-index">[19]</div>
+    <div class="source-index">[23]</div>
     <div>
       <h3>Circana, The Evolution of PerfumeTok</h3>
       <p><span>Social Commerce</span> NPD/Circana described TikTok as a major U.S. social driver of fragrance purchases and tied with Instagram for Gen Z fragrance influence.</p>
@@ -1263,7 +1439,7 @@
   </article>
 
   <article class="source-card" id="source-mintel-social">
-    <div class="source-index">[20]</div>
+    <div class="source-index">[24]</div>
     <div>
       <h3>Mintel, Social Media Fuels Fragrance Sampling</h3>
       <p><span>Trend Analysis</span> Gen Z and Gen Alpha seek affordable prestige and trend-recognizable scents; social media fuels fragrance sampling.</p>
@@ -1272,7 +1448,7 @@
   </article>
 
   <article class="source-card" id="source-fda-aroma">
-    <div class="source-index">[21]</div>
+    <div class="source-index">[25]</div>
     <div>
       <h3>FDA, Aromatherapy</h3>
       <p><span>Regulatory</span> FDA warns that claims about treating anxiety, depression, pain, or sleep problems can move aromatherapy into drug-claim territory.</p>
@@ -1281,11 +1457,20 @@
   </article>
 
   <article class="source-card" id="source-ftc-health">
-    <div class="source-index">[22]</div>
+    <div class="source-index">[26]</div>
     <div>
       <h3>FTC, Health Products Compliance Guidance</h3>
       <p><span>Regulatory</span> FTC requires a reasonable basis and appropriate substantiation for advertising claims, especially health-related claims.</p>
       <a href="https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance" target="_blank" rel="noreferrer">https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-usps-hazmat">
+    <div class="source-index">[27]</div>
+    <div>
+      <h3>USPS, Shipping Restrictions and HAZMAT</h3>
+      <p><span>Shipping Rules</span> USPS notes that some hazardous materials are prohibited or restricted and that some mailable HAZMAT can only travel by domestic ground transportation.</p>
+      <a href="https://www.usps.com/ship/shipping-restrictions.htm" target="_blank" rel="noreferrer">https://www.usps.com/ship/shipping-restrictions.htm</a>
     </div>
   </article>
 

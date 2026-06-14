@@ -6,6 +6,9 @@
   "assumptions": [
     "This report converts prior project research into launch validation decisions rather than replacing primary consumer testing.",
     "Suggested thresholds are decision heuristics for early-stage validation, not externally proven category benchmarks.",
+    "Because the founder is China-based, scent validation and creator seeding require a U.S. sample node or qualified in-home testing partner before inventory decisions.",
+    "Online panels can validate concept clarity, pricing, and quiz/landing-page comprehension, but they cannot substitute for real scent use tests.",
+    "Fragrance sample shipping should be checked against SDS/MSDS, carrier rules, and HAZMAT restrictions before sending product to testers or creators.",
     "Health and therapeutic claims should be avoided unless substantiated through qualified legal and scientific review."
   ],
   "sources": [
@@ -64,6 +67,38 @@
       "short": "Kadence",
       "url": "https://kadence.com/en-us/knowledge/concept-testing-how-brands-design-and-launch-winning-products/",
       "note": "Concept testing helps brands understand real consumer reaction before investing major time, money, and resources."
+    },
+    {
+      "id": "pickfu",
+      "type": "Remote Testing Panel",
+      "name": "PickFu, Instant Consumer Feedback and Market Research",
+      "short": "PickFu",
+      "url": "https://www.pickfu.com/",
+      "note": "Lets brands test products, campaigns, and ideas with a target audience in minutes, with audience targeting and e-commerce use cases."
+    },
+    {
+      "id": "prolific-researchers",
+      "type": "Remote Testing Panel",
+      "name": "Prolific, Researchers",
+      "short": "Prolific",
+      "url": "https://www.prolific.com/researchers",
+      "note": "Supports market and user research with 200k+ active and verified participants, including product testing, concept validation, and consumer insights."
+    },
+    {
+      "id": "respondent",
+      "type": "Participant Recruitment",
+      "name": "Respondent, Recruit Research Participants",
+      "short": "Respondent",
+      "url": "https://www.respondent.io/recruit-participants",
+      "note": "Recruiting platform with B2C panels and 4M+ participants from 150+ countries, useful for interviews, surveys, and focus groups."
+    },
+    {
+      "id": "usertesting",
+      "type": "Remote UX Testing",
+      "name": "UserTesting, Human Insight Platform",
+      "short": "UserTesting",
+      "url": "https://www.usertesting.com/",
+      "note": "Used to validate concepts, prototypes, landing pages, websites, and app designs with real shoppers before launch spend."
     },
     {
       "id": "highlight-fragrance",
@@ -184,6 +219,14 @@
       "short": "FTC",
       "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
       "note": "FTC requires a reasonable basis and appropriate substantiation for advertising claims, especially health-related claims."
+    },
+    {
+      "id": "usps-hazmat",
+      "type": "Shipping Rules",
+      "name": "USPS, Shipping Restrictions and HAZMAT",
+      "short": "USPS HAZMAT",
+      "url": "https://www.usps.com/ship/shipping-restrictions.htm",
+      "note": "USPS notes that some hazardous materials are prohibited or restricted and that some mailable HAZMAT can only travel by domestic ground transportation."
     }
   ]
 }
