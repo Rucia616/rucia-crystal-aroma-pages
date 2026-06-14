@@ -6,60 +6,65 @@
   <title>玄学能量晶石香薰竞品调研报告 / 中国与北美 / 2026-06-14</title>
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #f7f4ee;
-      --bg-2: #ece7dd;
-      --panel: #fffaf0;
-      --panel-2: #f4eadb;
-      --ink: #161616;
-      --body: #3f3a35;
-      --muted: #746c62;
-      --line: rgba(22, 22, 22, 0.15);
-      --hair: rgba(22, 22, 22, 0.06);
-      --accent: #166d6a;
-      --accent-strong: #166d6a;
-      --accent-soft: #d8ece6;
-      --risk: #9a3434;
-      --risk-soft: #f1d7d2;
-      --warn: #a76418;
-      --warn-soft: #f5e2bf;
-      --good: #2f7045;
-      --good-soft: #dbe9d6;
-      --accent-fill: #166d6a;
-      --inverse-bg: #161616;
-      --inverse-ink: #fffaf0;
-      --inverse-muted: rgba(255, 250, 240, 0.82);
-      --shadow: 0 20px 55px rgba(39, 31, 21, 0.12);
-      --radius: 8px;
-      --radius-sm: 8px;
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --bg-2: #ffffff;
+      --panel: #ffffff;
+      --panel-2: #f2fbf9;
+      --ink: #111111;
+      --body: #333333;
+      --muted: #676767;
+      --line: rgba(17, 17, 17, 0.14);
+      --hair: rgba(17, 17, 17, 0.055);
+      --accent: #32d6c6;
+      --accent-strong: #007d73;
+      --accent-soft: #dcfbf7;
+      --pink: #f7a4d8;
+      --blue: #9ed1ff;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --green-pop: #70e5a8;
+      --risk: #b42318;
+      --risk-soft: #ffe3de;
+      --warn: #a14a00;
+      --warn-soft: #ffe8d9;
+      --good: #087443;
+      --good-soft: #dff8eb;
+      --accent-fill: #111111;
+      --inverse-bg: #111111;
+      --inverse-ink: #f8f8f4;
+      --inverse-muted: rgba(248, 248, 244, 0.78);
+      --shadow: 0 20px 55px rgba(17, 17, 17, 0.12);
+      --radius: 16px;
+      --radius-sm: 12px;
       --max: 1180px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
-        --bg: #101217;
-        --bg-2: #171b23;
-        --panel: #1b2029;
-        --panel-2: #222836;
-        --ink: #f6efe4;
-        --body: #d9d0c2;
-        --muted: #afa598;
-        --line: rgba(246, 239, 228, 0.19);
-        --hair: rgba(246, 239, 228, 0.075);
-        --accent: #83d9d1;
-        --accent-strong: #83d9d1;
+        --bg: #111217;
+        --bg-2: #191d25;
+        --panel: #1c1f27;
+        --panel-2: #232833;
+        --ink: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --hair: rgba(250, 248, 242, 0.07);
+        --accent: #7ceade;
+        --accent-strong: #7ceade;
         --accent-soft: #163f3d;
         --risk: #ff9d91;
         --risk-soft: #4a2825;
-        --warn: #f3c277;
-        --warn-soft: #3e2d17;
+        --warn: #ffb86b;
+        --warn-soft: #442711;
         --good: #94d7a6;
         --good-soft: #203c2a;
-        --accent-fill: #1e756d;
-        --inverse-bg: #07090d;
-        --inverse-ink: #fffaf0;
-        --inverse-muted: rgba(255, 250, 240, 0.82);
+        --accent-fill: #32d6c6;
+        --inverse-bg: #f8f8f4;
+        --inverse-ink: #111111;
+        --inverse-muted: rgba(17, 17, 17, 0.68);
         --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
       }
     }
@@ -71,10 +76,13 @@
       min-width: 320px;
       color: var(--ink);
       background:
+        radial-gradient(circle at 12% 8%, rgba(247, 164, 216, 0.34), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(50, 214, 198, 0.28), transparent 30%),
+        radial-gradient(circle at 70% 78%, rgba(155, 124, 255, 0.18), transparent 32%),
         linear-gradient(90deg, var(--hair) 1px, transparent 1px),
         linear-gradient(180deg, var(--hair) 1px, transparent 1px),
-        linear-gradient(135deg, var(--bg), var(--bg-2) 58%, var(--bg));
-      background-size: 72px 72px, 72px 72px, auto;
+        var(--bg);
+      background-size: auto, auto, auto, 72px 72px, 72px 72px, auto;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
       line-height: 1.55;
       overflow-x: hidden;
@@ -92,7 +100,7 @@
       z-index: 20;
       height: 68px;
       border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--bg-2) 88%, transparent);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -205,7 +213,7 @@
       color: var(--inverse-ink);
       border-color: var(--accent-fill);
       background: var(--accent-fill);
-      box-shadow: 0 18px 42px color-mix(in srgb, var(--accent) 30%, transparent);
+      box-shadow: 0 18px 42px color-mix(in srgb, var(--pink) 32%, transparent);
     }
     .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
     .btn:active { transform: translateY(0); }
@@ -857,6 +865,7 @@
     <div class="inner">
       <div class="brand">玄学能量晶石香薰<small>Competitive report / 2026-06-14</small></div>
       <div class="nav-links">
+        <a href="./brand-vi-prismatic-scent-quiz.html">VI</a>
         <a href="#summary">摘要</a>
         <a href="#china">中国平台</a>
         <a href="#battle">竞品</a>
@@ -871,9 +880,9 @@
   <header class="hero">
     <div class="inner hero-grid">
       <div class="reveal">
-        <span class="micro-label">给自筹创业者的冷静版判断</span>
+        <span class="micro-label">Prismatic Scent Quiz / 给自筹创业者的冷静版判断</span>
         <h1>玄学能量晶石香薰，机会在香气。</h1>
-        <p class="hero-sub">中国验证形态，北美缺少把星座测试、香气和能量晶石连成一套的 DTC 礼物品牌。</p>
+        <p class="hero-sub">中国验证形态，北美缺少把 vibe quiz、scent sign、香气和能量晶石连成一套的 DTC 礼物品牌。</p>
         <div class="hero-actions">
           <a class="btn primary" href="#opportunity">看机会点</a>
           <a class="btn" href="#rules">先看别碰什么</a>

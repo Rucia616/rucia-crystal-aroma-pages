@@ -7,56 +7,60 @@
   <style>
     :root {
       color-scheme: light;
-      --paper: #f7f4ee;
-      --paper-2: #ece7dd;
-      --ink: #161616;
-      --body: #3f3a35;
-      --muted: #746c62;
-      --line: rgba(22, 22, 22, 0.15);
-      --hair: rgba(22, 22, 22, 0.06);
-      --panel: #fffaf0;
-      --teal: #166d6a;
-      --teal-soft: #d8ece6;
-      --plum: #7c315f;
-      --plum-soft: #efdce8;
-      --amber: #a76418;
-      --amber-soft: #f5e2bf;
-      --red: #9a3434;
-      --red-soft: #f1d7d2;
-      --green: #2f7045;
-      --green-soft: #dbe9d6;
-      --inverse-bg: #161616;
-      --inverse-text: #fffaf0;
-      --inverse-muted: rgba(255, 250, 240, 0.82);
+      --paper: #f8f8f4;
+      --paper-2: #ffffff;
+      --ink: #111111;
+      --body: #333333;
+      --muted: #676767;
+      --line: rgba(17, 17, 17, 0.14);
+      --hair: rgba(17, 17, 17, 0.055);
+      --panel: #ffffff;
+      --teal: #007d73;
+      --teal-soft: #dcfbf7;
+      --plum: #c33788;
+      --plum-soft: #ffe2f4;
+      --amber: #a14a00;
+      --amber-soft: #ffe8d9;
+      --red: #b42318;
+      --red-soft: #ffe3de;
+      --green: #087443;
+      --green-soft: #dff8eb;
+      --pink: #f7a4d8;
+      --blue: #9ed1ff;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --inverse-bg: #111111;
+      --inverse-text: #f8f8f4;
+      --inverse-muted: rgba(248, 248, 244, 0.78);
       --max: 1200px;
-      --radius: 8px;
-      --shadow: 0 20px 55px rgba(39, 31, 21, 0.12);
+      --radius: 14px;
+      --shadow: 0 20px 55px rgba(17, 17, 17, 0.12);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
-        --paper: #101217;
-        --paper-2: #171b23;
-        --ink: #f6efe4;
-        --body: #d9d0c2;
-        --muted: #afa598;
-        --line: rgba(246, 239, 228, 0.19);
-        --hair: rgba(246, 239, 228, 0.075);
-        --panel: #1b2029;
-        --teal: #83d9d1;
+        --paper: #111217;
+        --paper-2: #191d25;
+        --ink: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --hair: rgba(250, 248, 242, 0.07);
+        --panel: #1c1f27;
+        --teal: #7ceade;
         --teal-soft: #163f3d;
-        --plum: #f0a7d2;
+        --plum: #f7a4d8;
         --plum-soft: #44243a;
-        --amber: #f3c277;
-        --amber-soft: #3e2d17;
+        --amber: #ffb86b;
+        --amber-soft: #442711;
         --red: #ff9d91;
         --red-soft: #4a2825;
         --green: #94d7a6;
         --green-soft: #203c2a;
-        --inverse-bg: #07090d;
-        --inverse-text: #fffaf0;
-        --inverse-muted: rgba(255, 250, 240, 0.82);
+        --inverse-bg: #f8f8f4;
+        --inverse-text: #111111;
+        --inverse-muted: rgba(17, 17, 17, 0.68);
         --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
       }
     }
@@ -68,10 +72,13 @@
       min-width: 320px;
       color: var(--ink);
       background:
+        radial-gradient(circle at 12% 8%, rgba(247, 164, 216, 0.34), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(50, 214, 198, 0.28), transparent 30%),
+        radial-gradient(circle at 70% 78%, rgba(155, 124, 255, 0.18), transparent 32%),
         linear-gradient(90deg, var(--hair) 1px, transparent 1px),
         linear-gradient(180deg, var(--hair) 1px, transparent 1px),
-        linear-gradient(135deg, var(--paper), #fbfaf7 52%, var(--paper-2));
-      background-size: 72px 72px, 72px 72px, auto;
+        var(--paper);
+      background-size: auto, auto, auto, 72px 72px, 72px 72px, auto;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
       line-height: 1.58;
       overflow-x: hidden;
@@ -86,7 +93,7 @@
       z-index: 30;
       height: 64px;
       border-bottom: 1px solid var(--line);
-      background: rgba(247, 244, 238, 0.88);
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -118,7 +125,7 @@
       padding: 4px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 250, 240, 0.76);
+      background: color-mix(in srgb, var(--panel) 76%, transparent);
     }
     .nav::-webkit-scrollbar { display: none; }
     .nav a {
@@ -460,7 +467,7 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      color: #fffaf0;
+      color: var(--inverse-text);
       background: var(--teal);
       font-size: 12px;
       font-weight: 900;
@@ -524,7 +531,7 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       color: var(--muted);
-      background: rgba(255, 250, 240, 0.72);
+      background: rgba(248, 248, 244, 0.72);
       font-size: 11px;
       font-weight: 800;
       white-space: nowrap;
@@ -536,12 +543,12 @@
       padding: 24px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: #161616;
-      color: #fffaf0;
+      background: var(--inverse-bg);
+      color: var(--inverse-text);
       box-shadow: var(--shadow);
     }
     .verdict h2 {
-      color: #fffaf0;
+      color: var(--inverse-text);
     }
     .verdict p {
       color: rgba(255, 250, 240, 0.78);
@@ -579,12 +586,16 @@
     @media (prefers-color-scheme: dark) {
       body {
         background:
+          radial-gradient(circle at 12% 8%, rgba(247, 164, 216, 0.2), transparent 30%),
+          radial-gradient(circle at 88% 12%, rgba(50, 214, 198, 0.18), transparent 32%),
+          radial-gradient(circle at 70% 78%, rgba(155, 124, 255, 0.16), transparent 34%),
           linear-gradient(90deg, var(--hair) 1px, transparent 1px),
           linear-gradient(180deg, var(--hair) 1px, transparent 1px),
-          linear-gradient(135deg, var(--paper), #121721 52%, var(--paper-2));
+          var(--paper);
+        background-size: auto, auto, auto, 72px 72px, 72px 72px, auto;
       }
       .topbar {
-        background: rgba(16, 18, 23, 0.9);
+        background: color-mix(in srgb, var(--paper) 90%, transparent);
       }
       .nav,
       .method-card,
@@ -594,11 +605,11 @@
       .source-card,
       .action-card,
       .limit-card {
-        background: rgba(27, 32, 41, 0.88);
+        background: color-mix(in srgb, var(--panel) 88%, transparent);
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
       }
       .finding-top {
-        background: linear-gradient(135deg, rgba(22, 63, 61, 0.84), rgba(68, 36, 58, 0.74));
+        background: linear-gradient(135deg, rgba(22, 63, 61, 0.84), rgba(68, 36, 58, 0.74), rgba(155, 124, 255, 0.22));
       }
       .segment h3 {
         background: rgba(68, 36, 58, 0.76);
@@ -683,10 +694,11 @@
   <header class="topbar">
     <div class="inner">
       <div class="brand">
-        Crystal Aroma Evidence
+        VIBE SIGN Evidence
         <small>North America consumer research / 2026-06-14</small>
       </div>
       <nav class="nav" aria-label="Report sections">
+        <a href="./brand-vi-prismatic-scent-quiz.html">VI</a>
         <a href="#method">证据方法</a>
         <a href="#motivations">购买动机</a>
         <a href="#pain">不满</a>
@@ -701,9 +713,9 @@
     <section class="hero">
       <div class="inner hero-grid">
         <div>
-          <span class="eyebrow">Consumer Evidence First</span>
+          <span class="eyebrow">Prismatic Scent Quiz / Consumer Evidence First</span>
           <h1>北美消费者到底为什么会买玄学能量晶石香薰？</h1>
-          <p class="hero-sub">这份报告不先定策略。它先回答三个问题：消费者为什么买类似产品，他们对现有方案哪里不满，以及哪些证据足以支持我们继续小批量验证。</p>
+          <p class="hero-sub">这份报告不先定策略。它先回答三个问题：消费者为什么会被 scent sign / vibe quiz 吸引，他们对现有方案哪里不满，以及哪些证据足以支持我们继续小批量验证。</p>
           <p class="hero-note">核心判断：最大入口不是“硬核晶石疗愈”，而是香味带来的情绪和空间体验；玄学、星座、五行、晶石的价值在于让产品更可解释、可送礼、可拍摄、可个性化。</p>
         </div>
         <aside class="hero-card" aria-label="Key quantified signals">
