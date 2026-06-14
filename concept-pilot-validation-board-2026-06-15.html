@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concept Pilot Validation Board | Rucia Crystal Aroma</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --surface: #ffffff;
+      --surface-2: rgba(255, 255, 255, 0.86);
+      --text: #111111;
+      --body: #333333;
+      --muted: #676767;
+      --line: rgba(17, 17, 17, 0.14);
+      --cyan: #32d6c6;
+      --sky: #9ed1ff;
+      --pink: #f7a4d8;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --green: #70e5a8;
+      --success-text: #087443;
+      --success-bg: rgba(112, 229, 168, 0.28);
+      --warning-text: #a14a00;
+      --warning-bg: rgba(255, 107, 74, 0.13);
+      --shadow: 0 24px 70px rgba(17, 17, 17, 0.13);
+      --grid: rgba(17, 17, 17, 0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --surface: #1c1f27;
+        --surface-2: rgba(29, 31, 38, 0.9);
+        --text: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --cyan: #7ceade;
+        --sky: #9ed1ff;
+        --pink: #f7a4d8;
+        --lilac: #b6a0ff;
+        --coral: #ff8b72;
+        --green: #96f2bd;
+        --success-text: #94d7a6;
+        --success-bg: rgba(150, 242, 189, 0.13);
+        --warning-text: #ffb86b;
+        --warning-bg: rgba(255, 184, 107, 0.13);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+        --grid: rgba(250, 248, 242, 0.07);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 6%, rgba(247, 164, 216, 0.36), transparent 28%),
+        radial-gradient(circle at 84% 12%, rgba(50, 214, 198, 0.28), transparent 28%),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, 64px 64px, 64px 64px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(calc(100% - 40px), 1180px);
+      margin: 0 auto;
+      padding: 34px 0 70px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 46px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 34px;
+      height: 34px;
+      border: 4px solid var(--text);
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--surface) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--text);
+      flex: 0 0 auto;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .panel,
+    .concept,
+    .file-card {
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      min-height: 520px;
+      padding: clamp(28px, 5vw, 52px);
+      border-radius: 22px;
+      background:
+        linear-gradient(112deg, rgba(50, 214, 198, 0.18), transparent 40%),
+        var(--surface-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -120px;
+      width: 330px;
+      height: 330px;
+      border: 30px solid rgba(247, 164, 216, 0.45);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--success-text);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 2px solid var(--text);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(46px, 7vw, 88px);
+      line-height: 0.94;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--body);
+      font-size: clamp(18px, 2.1vw, 24px);
+      font-weight: 720;
+      line-height: 1.22;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 2px solid var(--text);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .chip.cyan { box-shadow: 4px 4px 0 var(--cyan); }
+    .chip.pink { box-shadow: 4px 4px 0 var(--pink); }
+    .chip.lilac { box-shadow: 4px 4px 0 var(--lilac); }
+
+    .hero-card {
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .hero-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section-note {
+      max-width: 480px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .panel {
+      min-height: 150px;
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    .panel .label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .panel strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 28px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .panel p {
+      margin: 12px 0 0;
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .status-green {
+      background:
+        linear-gradient(135deg, var(--success-bg), transparent 70%),
+        var(--surface-2);
+      border-top: 8px solid var(--cyan);
+    }
+
+    .status-pink { border-top: 8px solid var(--pink); }
+    .status-lilac { border-top: 8px solid var(--lilac); }
+    .status-coral { border-top: 8px solid var(--coral); }
+
+    .concepts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .concept {
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .concept img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--surface);
+    }
+
+    .concept-body {
+      padding: 18px 18px 20px;
+    }
+
+    .concept-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 3px solid var(--text);
+      border-radius: 50%;
+      background: var(--cyan);
+      color: var(--text);
+      font-weight: 950;
+    }
+
+    .concept:nth-child(2) .badge { background: var(--lilac); }
+    .concept:nth-child(3) .badge { background: var(--green); }
+    .concept:nth-child(4) .badge { background: var(--coral); }
+
+    h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .concept p {
+      margin: 10px 0 0;
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .concept a,
+    .file-card a,
+    .source-row a {
+      color: var(--text);
+      font-weight: 900;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--cyan);
+    }
+
+    .rules {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+    }
+
+    .steps {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--body);
+    }
+
+    .steps li + li { margin-top: 9px; }
+
+    .gate-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .gate {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .gate b {
+      color: var(--success-text);
+      font-size: 13px;
+    }
+
+    .gate span {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .files {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .file-card {
+      min-height: 132px;
+      padding: 18px;
+      border-radius: 16px;
+    }
+
+    .file-card span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .source-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .source-row a {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-2);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .rules {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics,
+      .files {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-card img {
+        min-height: auto;
+        aspect-ratio: 16 / 10;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .wrap {
+        width: min(calc(100% - 28px), 1180px);
+        padding-top: 22px;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 26px;
+      }
+
+      .hero-copy {
+        min-height: 0;
+      }
+
+      .metrics,
+      .concepts,
+      .files {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .gate {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="页面导航">
+      <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <a href="./index.html">返回项目首页</a>
+    </nav>
+
+    <header class="hero">
+      <section class="hero-copy">
+        <div class="eyebrow">GREEN / Remote from China</div>
+        <h1>Concept Pilot Validation Board</h1>
+        <p class="lead">第一轮不测香味、不测复购、不烧广告。只验证美国消费者能不能一眼看懂：这是一个 fragrance-first 的无火晶石扩香礼盒，并且 quiz / scent sign 是否足够吸引人。它不是万无一失的市场证明，只是小额排雷。</p>
+        <div class="chips" aria-label="测试标签">
+          <span class="chip cyan">PickFu 30-person pilot</span>
+          <span class="chip pink">$80 first-spend cap</span>
+          <span class="chip lilac">Launch risk: concept clarity</span>
+        </div>
+      </section>
+      <aside class="hero-card" aria-label="四张概念板预览">
+        <img src="./assets/concept-pilot/all-concept-boards.png" alt="四张 crystal aroma concept pilot boards 的合并预览" />
+      </aside>
+    </header>
+
+    <section class="section" aria-labelledby="status-title">
+      <div class="section-head">
+        <h2 id="status-title">Pilot Snapshot</h2>
+        <p class="section-note">这是给自掏钱创业用的低风险验证，不是品牌最终定稿。第一笔付费测试封顶 80 美元；超过就缩小到一个 head-to-head。</p>
+      </div>
+      <div class="metrics">
+        <article class="panel status-green">
+          <span class="label">Stage</span>
+          <strong>Concept</strong>
+          <p>验证概念理解、点击意愿、轻玄学接受度。</p>
+        </article>
+        <article class="panel status-pink">
+          <span class="label">Audience</span>
+          <strong>US Women 18-34</strong>
+          <p>若定向太贵，退到美国女性 18-44。</p>
+        </article>
+        <article class="panel status-lilac">
+          <span class="label">Assets</span>
+          <strong>4 Boards</strong>
+          <p>同结构，只比较概念表达，不比较版式运气。</p>
+        </article>
+        <article class="panel status-coral">
+          <span class="label">Stop Rule</span>
+          <strong>&gt;$80 Pause</strong>
+          <p>不要为了第一轮概念测试烧太多钱。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="concepts-title">
+      <div class="section-head">
+        <h2 id="concepts-title">4 Concept Routes</h2>
+        <p class="section-note">四张图可以归档和备用。花钱时优先只跑 A vs C；B/D 是用来判断更强玄学是否值得继续，不默认先花钱测完。</p>
+      </div>
+      <div class="concepts">
+        <article class="concept">
+          <img src="./assets/concept-pilot/01-scent-sign-diffuser-kit.png" alt="Option A Scent Sign Diffuser Kit concept board" />
+          <div class="concept-body">
+            <div class="concept-top"><span class="badge">A</span><h3>Scent Sign Diffuser Kit</h3></div>
+            <p>测试 `scent sign` 能不能成为我们自己的选择机制：quiz -> result -> room reset。</p>
+            <p><a href="./assets/concept-pilot/01-scent-sign-diffuser-kit.png">打开 PNG</a></p>
+          </div>
+        </article>
+        <article class="concept">
+          <img src="./assets/concept-pilot/02-vibe-matched-crystal-aroma.png" alt="Option B Vibe-Matched Crystal Aroma concept board" />
+          <div class="concept-body">
+            <div class="concept-top"><span class="badge">B</span><h3>Vibe-Matched Crystal Aroma</h3></div>
+            <p>测试 crystal + current energy 语言是否提升吸引力，还是会让人觉得太玄、太假。</p>
+            <p><a href="./assets/concept-pilot/02-vibe-matched-crystal-aroma.png">打开 PNG</a></p>
+          </div>
+        </article>
+        <article class="concept">
+          <img src="./assets/concept-pilot/03-room-mood-ritual-kit.png" alt="Option C Room Mood Ritual Kit concept board" />
+          <div class="concept-body">
+            <div class="concept-top"><span class="badge">C</span><h3>Room Mood Ritual Kit</h3></div>
+            <p>测试更低玄学、更 room fragrance / self-care 的表达是否更容易被大众买单。</p>
+            <p><a href="./assets/concept-pilot/03-room-mood-ritual-kit.png">打开 PNG</a></p>
+          </div>
+        </article>
+        <article class="concept">
+          <img src="./assets/concept-pilot/04-birth-chart-for-your-room.png" alt="Option D Birth Chart for Your Room concept board" />
+          <div class="concept-body">
+            <div class="concept-top"><span class="badge">D</span><h3>Birth Chart for Your Room</h3></div>
+            <p>测试 astrology hook 是否有传播记忆点，还是会过度 gimmicky / confusing。</p>
+            <p><a href="./assets/concept-pilot/04-birth-chart-for-your-room.png">打开 PNG</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section rules" aria-labelledby="run-title">
+      <article class="panel">
+        <span class="label">How To Run</span>
+        <h2 id="run-title">PickFu Setup</h2>
+        <ol class="steps">
+          <li>先创建 Head-to-Head image poll：A vs C。</li>
+          <li>只上传 A/C 两张 PNG，不要改图。</li>
+          <li>受众先选美国女性 18-34，贵了就改 18-44。</li>
+          <li>最终报价超过 80 美元就不发起。</li>
+          <li>A/C 有清晰结果后，再决定是否花钱测 B/D。</li>
+          <li>导出结果，用模板编码 clarity / scent / quiz / gift / negative flags。</li>
+        </ol>
+      </article>
+      <article class="panel">
+        <span class="label">Pass Gate</span>
+        <h2>Continue Only If</h2>
+        <div class="gate-list">
+          <div class="gate"><b>75%+</b><span>能说清这是 fragrance / diffuser / room scent / aroma。</span></div>
+          <div class="gate"><b>35%+</b><span>第一名概念得票超过 35%，且领先第二名至少 10 个百分点。</span></div>
+          <div class="gate"><b>&lt;20%</b><span>负面词如 scam / fake / too witchy / confusing / childish 不超过 20%。</span></div>
+          <div class="gate"><b>50%+</b><span>吸引点来自 scent / smell / fragrance / room feeling，而不只是晶石。</span></div>
+          <div class="gate"><b>40%+</b><span>理解 quiz / match / result 是购买路径的一部分。</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section rules" aria-labelledby="blind-title">
+      <article class="panel">
+        <span class="label">Not Foolproof</span>
+        <h2 id="blind-title">Blind Spots</h2>
+        <ol class="steps">
+          <li>PickFu 受访者不等于 TikTok / Pinterest 香氛买家。</li>
+          <li>概念板测试会混入视觉、文案、颜色偏好，不是纯产品测试。</li>
+          <li>图片无法证明香味好闻、留香、扩香和复购。</li>
+          <li>20-30 人只能抓明显问题，小差距不能当结论。</li>
+          <li>购买意愿回答不等于真实下单。</li>
+        </ol>
+      </article>
+      <article class="panel">
+        <span class="label">Cash Discipline</span>
+        <h2>Insurance Rules</h2>
+        <div class="gate-list">
+          <div class="gate"><b>先 A/C</b><span>先比 `Scent Sign` 和 `Room Mood`，这是最可能商业化的两条。</span></div>
+          <div class="gate"><b>不加项</b><span>不要为了平台推荐的 add-ons 超预算。</span></div>
+          <div class="gate"><b>不硬判</b><span>如果差距小、解释弱，就当没结论，不强行选方向。</span></div>
+          <div class="gate"><b>不跳级</b><span>概念没过，不做样品、不找红人、不投广告。</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" aria-labelledby="files-title">
+      <div class="section-head">
+        <h2 id="files-title">Archived Files</h2>
+        <p class="section-note">这些是公开存档版文件。内部工作文件仍在本地项目目录，不把供应链和未定稿草案混进公开页。</p>
+      </div>
+      <div class="files">
+        <article class="file-card">
+          <span>Execution</span>
+          <a href="./assets/concept-pilot/README.md">README.md</a>
+        </article>
+        <article class="file-card">
+          <span>Survey Copy</span>
+          <a href="./assets/concept-pilot/pickfu-questionnaire.md">pickfu-questionnaire.md</a>
+        </article>
+        <article class="file-card">
+          <span>Scoring</span>
+          <a href="./assets/concept-pilot/scoring-rubric.csv">scoring-rubric.csv</a>
+        </article>
+        <article class="file-card">
+          <span>Results Template</span>
+          <a href="./assets/concept-pilot/pickfu-results-template.csv">pickfu-results-template.csv</a>
+        </article>
+      </div>
+      <div class="source-row" aria-label="官方参考链接">
+        <a href="https://www.pickfu.com/pricing">PickFu Pricing</a>
+        <a href="https://www.pickfu.com/general-polls/image-comparisons">Image Comparisons</a>
+        <a href="https://www.pickfu.com/help/en/articles/1984322-how-do-i-add-images-to-my-poll">Add Images</a>
+        <a href="https://www.pickfu.com/help/en/articles/1984354-how-do-i-target-a-specific-audience">Audience Targeting</a>
+      </div>
+    </section>
+
+    <footer>Rucia Crystal Aroma public archive. Concept pilot page created on 2026-06-15.</footer>
+  </div>
+</body>
+</html>
