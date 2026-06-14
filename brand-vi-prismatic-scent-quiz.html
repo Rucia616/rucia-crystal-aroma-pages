@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VIBE SIGN VI | Prismatic Scent Quiz</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-2: #ffffff;
+      --text: #111111;
+      --body: #333333;
+      --muted: #676767;
+      --line: rgba(17, 17, 17, 0.14);
+      --accent-text: #007d73;
+      --accent-fill: #32d6c6;
+      --pink: #f7a4d8;
+      --blue: #9ed1ff;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --green: #70e5a8;
+      --inverse-bg: #111111;
+      --inverse-text: #f8f8f4;
+      --inverse-muted: rgba(248, 248, 244, 0.72);
+      --shadow: 0 26px 80px rgba(17, 17, 17, 0.16);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --surface: rgba(29, 31, 38, 0.86);
+        --surface-2: #1c1f27;
+        --text: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --accent-text: #7ceade;
+        --accent-fill: #32d6c6;
+        --inverse-bg: #faf8f2;
+        --inverse-text: #111111;
+        --inverse-muted: rgba(17, 17, 17, 0.68);
+        --shadow: 0 26px 80px rgba(0, 0, 0, 0.42);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(247, 164, 216, 0.42), transparent 30%),
+        radial-gradient(circle at 78% 12%, rgba(50, 214, 198, 0.34), transparent 28%),
+        radial-gradient(circle at 70% 78%, rgba(155, 124, 255, 0.26), transparent 32%),
+        var(--bg);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap {
+      width: min(calc(100% - 40px), 1180px);
+      margin: 0 auto;
+      padding: 32px 0 72px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0 36px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--body);
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+    .hero-copy {
+      min-height: 540px;
+      padding: clamp(24px, 4.2vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -82px;
+      bottom: -82px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: conic-gradient(from 110deg, var(--pink), var(--blue), var(--green), var(--coral), var(--pink));
+      filter: blur(2px);
+      opacity: 0.48;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: #111111;
+      background: var(--accent-fill);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 24px 0 18px;
+      font-size: clamp(58px, 9vw, 126px);
+      line-height: 0.82;
+      letter-spacing: -0.08em;
+      text-transform: uppercase;
+    }
+    .hero-copy p {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      margin: 0;
+      color: var(--body);
+      font-size: clamp(17px, 2vw, 21px);
+      font-weight: 650;
+    }
+    .tags {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--body);
+      background: var(--surface-2);
+      font-size: 13px;
+      font-weight: 850;
+    }
+    .board {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--inverse-bg);
+      box-shadow: var(--shadow);
+    }
+    .board img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 680px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #f8f8f4;
+    }
+    .section {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      min-height: 188px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .swatches {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .swatch {
+      min-height: 96px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: end;
+      color: #111111;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+    .swatch.black { color: #f8f8f4; }
+    footer {
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { min-height: 420px; }
+      .section { grid-template-columns: 1fr; }
+      .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 28px), 1180px); padding-top: 18px; }
+      nav { align-items: flex-start; flex-direction: column; padding-bottom: 22px; }
+      h1 { font-size: clamp(50px, 18vw, 78px); }
+      .hero-copy { min-height: 360px; border-radius: 16px; }
+      .board { border-radius: 16px; }
+      .board img { border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="brand">Rucia Crystal Aroma / VI Archive</div>
+      <a class="back" href="./">返回项目入口</a>
+    </nav>
+
+    <main class="hero">
+      <section class="hero-copy" aria-labelledby="page-title">
+        <div class="eyebrow">Prismatic Scent Quiz</div>
+        <h1 id="page-title">VIBE<br>SIGN</h1>
+        <p>当前保留方向：用明亮色彩、香氛玻璃、晶石折射和测试结果卡，建立一个可被 TikTok / Pinterest / KOL 开箱传播的玄学能量晶石香薰品牌。</p>
+        <div class="tags" aria-label="VI keywords">
+          <span class="tag">fragrance first</span>
+          <span class="tag">vibe quiz</span>
+          <span class="tag">prismatic crystal</span>
+          <span class="tag">bold black type</span>
+          <span class="tag">social shelfie</span>
+        </div>
+      </section>
+
+      <figure class="board">
+        <img src="./assets/vi-final-prismatic-scent-quiz.png" alt="VIBE SIGN prismatic scent quiz visual identity board showing a colorful flameless reed diffuser kit, crystals, quiz UI, scent result cards, and SKU system." />
+      </figure>
+    </main>
+
+    <section class="section" aria-label="Direction notes">
+      <article class="card">
+        <strong>核心判断</strong>
+        <p>不再走暗黑神秘香氛。主资产改成彩色测试、玻璃折射、晶石光感和短视频开箱。</p>
+      </article>
+      <article class="card">
+        <strong>传播钩子</strong>
+        <p>用户不是随机买味道，而是在买自己的 scent sign、room mood 和 current energy。</p>
+      </article>
+      <article class="card">
+        <strong>设计边界</strong>
+        <p>黑色只做字体、瓶盖、扩香棒和对比；不做大面积暗黑背景，不碰医疗功效承诺。</p>
+      </article>
+    </section>
+
+    <section class="swatches" aria-label="Color tokens">
+      <div class="swatch" style="background:#32d6c6;">cyan</div>
+      <div class="swatch" style="background:#9ed1ff;">sky</div>
+      <div class="swatch" style="background:#f7a4d8;">pink</div>
+      <div class="swatch" style="background:#9b7cff;">lilac</div>
+      <div class="swatch" style="background:#ff6b4a;">coral</div>
+      <div class="swatch" style="background:#70e5a8;">green</div>
+      <div class="swatch black" style="background:#111111;">ink</div>
+    </section>
+
+    <footer>Saved as current VI direction on 2026-06-15. This page is a visual archive, not final packaging artwork.</footer>
+  </div>
+</body>
+</html>

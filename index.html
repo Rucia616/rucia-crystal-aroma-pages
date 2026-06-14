@@ -7,30 +7,36 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #f7f4ee;
-      --ink: #171514;
-      --muted: #706961;
-      --line: rgba(23, 21, 20, 0.16);
-      --panel: #fffaf0;
-      --panel-alpha: rgba(255, 250, 240, 0.84);
-      --teal: #166d6a;
-      --plum: #7c315f;
-      --shadow: 0 20px 55px rgba(39, 31, 21, 0.1);
-      --grid: rgba(23, 21, 20, 0.055);
+      --bg: #f8f8f4;
+      --ink: #111111;
+      --muted: #66615d;
+      --line: rgba(17, 17, 17, 0.15);
+      --panel: #ffffff;
+      --panel-alpha: rgba(255, 255, 255, 0.86);
+      --teal: #008f84;
+      --plum: #c33788;
+      --pink: #f7a4d8;
+      --blue: #9ed1ff;
+      --coral: #ff6b4a;
+      --shadow: 0 20px 55px rgba(17, 17, 17, 0.12);
+      --grid: rgba(17, 17, 17, 0.05);
     }
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
-        --bg: #101217;
-        --ink: #f6efe4;
-        --muted: #b4aa9d;
-        --line: rgba(246, 239, 228, 0.2);
-        --panel: #1b2029;
-        --panel-alpha: rgba(27, 32, 41, 0.9);
-        --teal: #83d9d1;
-        --plum: #f0a7d2;
+        --bg: #111217;
+        --ink: #faf8f2;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --panel: #1c1f27;
+        --panel-alpha: rgba(29, 31, 38, 0.9);
+        --teal: #7ceade;
+        --plum: #f7a4d8;
+        --pink: #f7a4d8;
+        --blue: #9ed1ff;
+        --coral: #ff8b72;
         --shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
-        --grid: rgba(246, 239, 228, 0.07);
+        --grid: rgba(250, 248, 242, 0.07);
       }
     }
     * { box-sizing: border-box; }
@@ -39,10 +45,12 @@
       min-width: 320px;
       color: var(--ink);
       background:
+        radial-gradient(circle at 12% 10%, rgba(247, 164, 216, 0.35), transparent 30%),
+        radial-gradient(circle at 86% 12%, rgba(50, 214, 198, 0.25), transparent 28%),
         linear-gradient(90deg, var(--grid) 1px, transparent 1px),
         linear-gradient(180deg, var(--grid) 1px, transparent 1px),
         var(--bg);
-      background-size: 72px 72px, 72px 72px, auto;
+      background-size: auto, auto, 72px 72px, 72px 72px, auto;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
       line-height: 1.55;
     }
@@ -52,7 +60,7 @@
       padding: 72px 0;
     }
     .eyebrow {
-      color: var(--plum);
+      color: var(--teal);
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
@@ -62,7 +70,8 @@
       margin: 10px 0 16px;
       font-size: clamp(42px, 7vw, 78px);
       line-height: 0.98;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.075em;
+      text-transform: uppercase;
     }
     p {
       max-width: 720px;
@@ -72,7 +81,7 @@
     }
     .links {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
       margin-top: 40px;
     }
@@ -92,6 +101,18 @@
       transform: translateY(-3px);
       border-color: rgba(22, 109, 106, 0.42);
     }
+    a.card.featured {
+      color: #111111;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.5)),
+        linear-gradient(135deg, var(--pink), var(--blue) 48%, var(--coral));
+      border-color: rgba(17, 17, 17, 0.18);
+    }
+    @media (prefers-color-scheme: dark) {
+      a.card.featured {
+        color: #111111;
+      }
+    }
     .card span {
       color: var(--teal);
       font-size: 12px;
@@ -106,6 +127,10 @@
       letter-spacing: -0.03em;
     }
     .card p { font-size: 14px; }
+    .card.featured span,
+    .card.featured p {
+      color: rgba(17, 17, 17, 0.72);
+    }
     footer {
       margin-top: 42px;
       color: var(--muted);
@@ -121,9 +146,14 @@
   <main>
     <div class="eyebrow">Rucia Crystal Aroma</div>
     <h1>玄学晶石香薰项目报告</h1>
-    <p>这里是公开阅读版，只发布报告页面；内部项目资料、成本、供应链、品牌草案仍保留在私有仓库。</p>
+    <p>这里是公开阅读版：报告页面和当前保留的品牌 VI 方向。内部项目资料、成本、供应链和未定稿草案仍保留在私有仓库。</p>
 
     <div class="links">
+      <a class="card featured" href="./brand-vi-prismatic-scent-quiz.html">
+        <span>VI Direction</span>
+        <h2>Prismatic Scent Quiz</h2>
+        <p>当前保留的品牌视觉方向：彩色测试、香氛玻璃、晶石折射、结果卡和社媒开箱。</p>
+      </a>
       <a class="card" href="./crystal-aroma-competitive-research-2026-06-14.html">
         <span>Report 01</span>
         <h2>竞品调研报告</h2>
