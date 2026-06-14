@@ -1,0 +1,189 @@
+{
+  "report": "north-america-launch-validation-crystal-aroma-2026-06-15.html",
+  "reportDate": "2026-06-15",
+  "retrievedAt": "2026-06-15",
+  "mode": "launch validation secondary research and internal synthesis",
+  "assumptions": [
+    "This report converts prior project research into launch validation decisions rather than replacing primary consumer testing.",
+    "Suggested thresholds are decision heuristics for early-stage validation, not externally proven category benchmarks.",
+    "Health and therapeutic claims should be avoided unless substantiated through qualified legal and scientific review."
+  ],
+  "sources": [
+    {
+      "id": "internal-competitive",
+      "type": "Internal Report",
+      "name": "Rucia Report 01, Competitive Research",
+      "short": "Report 01",
+      "url": "https://rucia616.github.io/rucia-crystal-aroma-pages/crystal-aroma-competitive-research-2026-06-14.html",
+      "note": "Established the competitive space, pricing anchors, and the need to avoid old witch-shop, fake-crystal, and low-trust positioning."
+    },
+    {
+      "id": "internal-consumer",
+      "type": "Internal Report",
+      "name": "Rucia Report 02, North America Consumer Research",
+      "short": "Report 02",
+      "url": "https://rucia616.github.io/rucia-crystal-aroma-pages/north-america-consumer-research-crystal-aroma-2026-06-14.html",
+      "note": "Established target motivations, light mysticism, gifting, authenticity risks, and the role of self-care entertainment."
+    },
+    {
+      "id": "internal-scent",
+      "type": "Internal Report",
+      "name": "Rucia Report 03, North America Scent Research",
+      "short": "Report 03",
+      "url": "https://rucia616.github.io/rucia-crystal-aroma-pages/north-america-scent-research-crystal-aroma-2026-06-15.html",
+      "note": "Established that fragrance is the repeat engine; proposed six scent signs and a blind scent-testing path."
+    },
+    {
+      "id": "qualtrics-concept",
+      "type": "Research Method",
+      "name": "Qualtrics, Concept Testing Guide",
+      "short": "Qualtrics",
+      "url": "https://www.qualtrics.com/articles/strategy-research/how-concept-test/",
+      "note": "Defines concept testing as early-stage market research to improve the odds of launching something people want to buy."
+    },
+    {
+      "id": "highlight-concept",
+      "type": "Research Method",
+      "name": "Highlight, Concept Testing Guide",
+      "short": "Highlight Concept",
+      "url": "https://www.letshighlight.com/blog/concept-testing-guide",
+      "note": "Recommends testing consumer acceptance, pricing strategy, brand positioning, features, purchase intent, satisfaction, and repeat purchase intention."
+    },
+    {
+      "id": "circana-launch",
+      "type": "Innovation Analytics",
+      "name": "Circana, Market Research Before Launching New Products",
+      "short": "Circana Launch",
+      "url": "https://www.circana.com/post/how-to-do-market-research-before-developing-or-launching-new-products",
+      "note": "Frames concept testing and innovation analytics as a way to reduce product launch risk by accurately measuring purchase intent."
+    },
+    {
+      "id": "kadence-concept",
+      "type": "Research Method",
+      "name": "Kadence, Concept Testing",
+      "short": "Kadence",
+      "url": "https://kadence.com/en-us/knowledge/concept-testing-how-brands-design-and-launch-winning-products/",
+      "note": "Concept testing helps brands understand real consumer reaction before investing major time, money, and resources."
+    },
+    {
+      "id": "highlight-fragrance",
+      "type": "Fragrance Testing",
+      "name": "Highlight, Best Fragrance Testing Providers",
+      "short": "Highlight Fragrance",
+      "url": "https://www.letshighlight.com/blog/best-fragrance-testing-providers",
+      "note": "For fragrance launch validation, recommends measuring initial reaction, strength, dry down, longevity, emotional response, product fit, and purchase intent."
+    },
+    {
+      "id": "blueyonder-fragrance",
+      "type": "Fragrance Testing",
+      "name": "Blue Yonder, Effective Fragrance Testing",
+      "short": "Blue Yonder",
+      "url": "https://blueyonder.agency/effective-fragrance-testing/",
+      "note": "Recommends blind fragrance testing, varied question types, benchmark fragrances, and in-context testing because fragrance perception changes with context."
+    },
+    {
+      "id": "benchmark-fragrance",
+      "type": "Fragrance Testing",
+      "name": "The Benchmarking Company, Fragrance Product Testing",
+      "short": "Benchmarking Co.",
+      "url": "https://benchmarkingcompany.com/fragrance-product-testing/",
+      "note": "Positions in-home use tests as a way to capture scent perception, product performance, emotional impact, and alignment with consumer preferences."
+    },
+    {
+      "id": "pubmed-perfume",
+      "type": "Academic Abstract",
+      "name": "PubMed, A Comparison of Product Testing Methodologies for Perfume",
+      "short": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19272121/",
+      "note": "Compares in-home tests and sniff tests for the same perfumes, illustrating limitations of sniff-only fragrance testing."
+    },
+    {
+      "id": "van-westendorp",
+      "type": "Pricing Method",
+      "name": "Conjointly, Van Westendorp Price Sensitivity Meter",
+      "short": "Van Westendorp",
+      "url": "https://conjointly.com/products/van-westendorp/",
+      "note": "Used to estimate psychologically acceptable price ranges through too-cheap, cheap, expensive, and too-expensive thresholds."
+    },
+    {
+      "id": "gabor-granger",
+      "type": "Pricing Method",
+      "name": "Conjointly, Gabor-Granger Pricing Method",
+      "short": "Gabor-Granger",
+      "url": "https://conjointly.com/products/gabor-granger/",
+      "note": "Uses purchase-intent questions at different prices to estimate willingness to pay and revenue-optimizing price points."
+    },
+    {
+      "id": "surveymonkey-pricing",
+      "type": "Pricing Method",
+      "name": "SurveyMonkey, Gabor-Granger vs. Van Westendorp",
+      "short": "SurveyMonkey",
+      "url": "https://www.surveymonkey.com/market-research/resources/gabor-granger-vs-van-westendorp/",
+      "note": "Compares price-testing methods and notes Gabor-Granger's use of purchase-intent questions at specific prices."
+    },
+    {
+      "id": "circana-genz",
+      "type": "Category Survey",
+      "name": "Circana, Gen Z Fragrance Usage",
+      "short": "Circana Gen Z",
+      "url": "https://www.circana.com/post/gen-z-accounts-for-the-highest-bump-in-fragrance-usage-circana-reports",
+      "note": "Gen Z fragrance usage rose to 83%; 80% of fragrance users say scent helps lift or enhance mood."
+    },
+    {
+      "id": "nca-facts",
+      "type": "Category Association",
+      "name": "National Candle Association, Facts & Figures",
+      "short": "NCA",
+      "url": "https://candles.org/facts-figures/",
+      "note": "Fragrance is the most important candle purchase factor, and candle use is tied to comfort, coziness, decor, relaxation, and gifting."
+    },
+    {
+      "id": "pew-astrology",
+      "type": "Survey",
+      "name": "Pew Research Center, Astrology, Tarot and Fortune Tellers",
+      "short": "Pew 2025",
+      "url": "https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/",
+      "note": "30% of U.S. adults consult astrology, tarot, or fortune tellers at least annually, with most using it for fun."
+    },
+    {
+      "id": "wsl-genz",
+      "type": "Retail Analysis",
+      "name": "WSL Strategic Retail, Gen Z Fragrance Boom",
+      "short": "WSL",
+      "url": "https://wslstrategicretail.com/blog/gen-z-fragrance-boom/",
+      "note": "Reports Circana data that 73% of Gen Z wears fragrance at least three times weekly; TikTok and Instagram strongly influence Gen Z fragrance purchase."
+    },
+    {
+      "id": "circana-perfumetok",
+      "type": "Social Commerce",
+      "name": "Circana, The Evolution of PerfumeTok",
+      "short": "PerfumeTok",
+      "url": "https://www.circana.com/post/the-evolution-of-perfumetok",
+      "note": "NPD/Circana described TikTok as a major U.S. social driver of fragrance purchases and tied with Instagram for Gen Z fragrance influence."
+    },
+    {
+      "id": "mintel-social",
+      "type": "Trend Analysis",
+      "name": "Mintel, Social Media Fuels Fragrance Sampling",
+      "short": "Mintel Social",
+      "url": "https://www.mintel.com/press-centre/fragrance-trends-2025-gen-z-gen-alpha-social-media-sampling/",
+      "note": "Gen Z and Gen Alpha seek affordable prestige and trend-recognizable scents; social media fuels fragrance sampling."
+    },
+    {
+      "id": "fda-aroma",
+      "type": "Regulatory",
+      "name": "FDA, Aromatherapy",
+      "short": "FDA",
+      "url": "https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy",
+      "note": "FDA warns that claims about treating anxiety, depression, pain, or sleep problems can move aromatherapy into drug-claim territory."
+    },
+    {
+      "id": "ftc-health",
+      "type": "Regulatory",
+      "name": "FTC, Health Products Compliance Guidance",
+      "short": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "FTC requires a reasonable basis and appropriate substantiation for advertising claims, especially health-related claims."
+    }
+  ]
+}

@@ -1,0 +1,1301 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>北美 Launch Concept & Offer Validation / 玄学能量晶石香薰 / 2026-06-15</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --surface: #ffffff;
+      --surface-2: rgba(255, 255, 255, 0.86);
+      --text: #111111;
+      --body: #333333;
+      --muted: #676767;
+      --line: rgba(17, 17, 17, 0.14);
+      --hair: rgba(17, 17, 17, 0.055);
+      --link: #006f68;
+      --cyan: #32d6c6;
+      --cyan-soft: #dcfbf7;
+      --pink: #f7a4d8;
+      --pink-soft: #ffe2f4;
+      --blue: #9ed1ff;
+      --blue-soft: #e5f2ff;
+      --lilac: #9b7cff;
+      --lilac-soft: #ebe6ff;
+      --coral: #ff6b4a;
+      --coral-soft: #ffe4dd;
+      --green: #70e5a8;
+      --green-soft: #dff8eb;
+      --warning-text: #a14a00;
+      --warning-bg: #ffe8d9;
+      --risk-text: #b42318;
+      --risk-bg: #ffe3de;
+      --success-text: #087443;
+      --success-bg: #dff8eb;
+      --inverse-bg: #111111;
+      --inverse-text: #f8f8f4;
+      --inverse-muted: rgba(248, 248, 244, 0.78);
+      --max: 1200px;
+      --radius: 14px;
+      --shadow: 0 20px 55px rgba(17, 17, 17, 0.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --surface: #1c1f27;
+        --surface-2: rgba(29, 31, 38, 0.9);
+        --text: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --hair: rgba(250, 248, 242, 0.07);
+        --link: #7ceade;
+        --cyan: #7ceade;
+        --cyan-soft: #163f3d;
+        --pink: #f7a4d8;
+        --pink-soft: #44243a;
+        --blue: #9ed1ff;
+        --blue-soft: #1d3348;
+        --lilac: #b6a0ff;
+        --lilac-soft: #30294f;
+        --coral: #ff8b72;
+        --coral-soft: #4a2825;
+        --green: #96f2bd;
+        --green-soft: #203c2a;
+        --warning-text: #ffb86b;
+        --warning-bg: #442711;
+        --risk-text: #ff9d91;
+        --risk-bg: #4a2825;
+        --success-text: #94d7a6;
+        --success-bg: #203c2a;
+        --inverse-bg: #f8f8f4;
+        --inverse-text: #111111;
+        --inverse-muted: rgba(17, 17, 17, 0.68);
+        --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+      }
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #111217;
+      --surface: #1c1f27;
+      --surface-2: rgba(29, 31, 38, 0.9);
+      --text: #faf8f2;
+      --body: #e5e0d7;
+      --muted: #bdb6aa;
+      --line: rgba(250, 248, 242, 0.18);
+      --hair: rgba(250, 248, 242, 0.07);
+      --link: #7ceade;
+      --cyan: #7ceade;
+      --cyan-soft: #163f3d;
+      --pink: #f7a4d8;
+      --pink-soft: #44243a;
+      --blue: #9ed1ff;
+      --blue-soft: #1d3348;
+      --lilac: #b6a0ff;
+      --lilac-soft: #30294f;
+      --coral: #ff8b72;
+      --coral-soft: #4a2825;
+      --green: #96f2bd;
+      --green-soft: #203c2a;
+      --warning-text: #ffb86b;
+      --warning-bg: #442711;
+      --risk-text: #ff9d91;
+      --risk-bg: #4a2825;
+      --success-text: #94d7a6;
+      --success-bg: #203c2a;
+      --inverse-bg: #f8f8f4;
+      --inverse-text: #111111;
+      --inverse-muted: rgba(17, 17, 17, 0.68);
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(247, 164, 216, 0.34), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(50, 214, 198, 0.28), transparent 30%),
+        radial-gradient(circle at 70% 78%, rgba(155, 124, 255, 0.18), transparent 32%),
+        linear-gradient(90deg, var(--hair) 1px, transparent 1px),
+        linear-gradient(180deg, var(--hair) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, auto, 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.62;
+      overflow-x: hidden;
+    }
+
+    main { overflow-x: hidden; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    p, h1, h2, h3, h4 { margin: 0; }
+    p { color: var(--body); }
+    .inner { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      min-height: 64px;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .topbar .inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      min-width: 176px;
+      color: var(--text);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 76%, transparent);
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav a:hover { color: var(--text); background: var(--cyan-soft); }
+
+    .hero {
+      padding: 64px 0 52px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+      gap: 44px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--link);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 18px;
+      max-width: 900px;
+      font-size: 72px;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero-sub {
+      margin-top: 22px;
+      max-width: 780px;
+      color: var(--body);
+      font-size: 20px;
+      line-height: 1.65;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      max-width: 760px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--pink);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      color: var(--body);
+      font-size: 15px;
+    }
+
+    .hero-card,
+    .summary-main,
+    .side-note,
+    .module-card,
+    .concept-card,
+    .callout,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card { overflow: hidden; background: var(--surface); }
+    .hero-card .head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .metric-card {
+      min-height: 150px;
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric-card:nth-child(2n) { border-right: 0; }
+    .metric-card:nth-last-child(-n + 2) { border-bottom: 0; }
+    .metric-card strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 54px;
+      line-height: 0.95;
+      font-weight: 950;
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .cite {
+      margin-left: 3px;
+      font-size: 0.72em;
+      vertical-align: super;
+    }
+
+    .cite a {
+      color: var(--link);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 54px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .kicker {
+      color: var(--link);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 8px;
+      max-width: 860px;
+      font-size: 38px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.52fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .summary-main { padding: 26px; }
+    .summary-main p + p { margin-top: 16px; }
+    .side-note {
+      padding: 24px;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--pink) 35%, transparent), transparent 42%),
+        linear-gradient(135deg, color-mix(in srgb, var(--cyan) 24%, transparent), var(--surface-2));
+    }
+
+    .side-note h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .side-note p { font-size: 14px; }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .module-card {
+      min-height: 315px;
+      padding: 22px;
+      background: var(--surface);
+    }
+
+    .module-card.cyan { border-top: 7px solid var(--cyan); }
+    .module-card.pink { border-top: 7px solid var(--pink); }
+    .module-card.lilac { border-top: 7px solid var(--lilac); }
+    .module-card.green { border-top: 7px solid var(--green); }
+    .module-card.coral { border-top: 7px solid var(--coral); }
+
+    .module-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .module-top > span,
+    .concept-card > span {
+      display: inline-flex;
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: var(--surface-2);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .source-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .source-chips a {
+      padding: 4px 7px;
+      border-radius: 999px;
+      color: var(--link);
+      background: var(--cyan-soft);
+      font-size: 11px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .module-card h3,
+    .concept-card h3,
+    .panel h3,
+    .source-card h3 {
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1.14;
+    }
+
+    .module-card p {
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .module-card strong { color: var(--text); }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .concept-card {
+      padding: 22px;
+      background: var(--surface);
+      border-top: 7px solid var(--pink);
+    }
+
+    .concept-card h3 {
+      margin-top: 16px;
+      min-height: 54px;
+    }
+
+    .concept-card .prop {
+      margin-top: 10px;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    dl {
+      margin: 20px 0 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    dt {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    dd {
+      margin: 5px 0 0;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 860px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--body);
+      font-size: 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    thead th {
+      color: var(--text);
+      background: var(--cyan-soft);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td { border-bottom: 0; }
+
+    tbody th {
+      width: 220px;
+      color: var(--text);
+      font-weight: 950;
+    }
+
+    tbody th span,
+    tbody th small {
+      display: block;
+    }
+
+    tbody th small {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .do-dont,
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .callout,
+    .panel {
+      padding: 24px;
+      background: var(--surface);
+    }
+
+    .callout.good { border-top: 7px solid var(--green); }
+    .callout.bad { border-top: 7px solid var(--risk-text); }
+    .callout h3,
+    .panel h3 { margin-bottom: 14px; font-size: 24px; }
+
+    .callout ul,
+    .panel ol,
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--body);
+    }
+
+    .callout li,
+    .panel li {
+      margin: 10px 0;
+      padding-left: 4px;
+    }
+
+    .next-step {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: #111111;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.52)),
+        linear-gradient(135deg, #f7a4d8, #9ed1ff 52%, #70e5a8);
+      box-shadow: var(--shadow);
+    }
+
+    .next-step h3 {
+      margin-bottom: 10px;
+      color: #111111;
+      font-size: 32px;
+      line-height: 1.05;
+    }
+
+    .next-step p {
+      color: rgba(17, 17, 17, 0.76);
+      font-weight: 800;
+    }
+
+    .source-list { display: grid; gap: 10px; }
+
+    .source-card {
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1fr);
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .source-index {
+      display: grid;
+      place-items: center;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--cyan-soft);
+      color: var(--link);
+      font-weight: 950;
+    }
+
+    .source-card h3 {
+      margin-bottom: 6px;
+      font-size: 17px;
+    }
+
+    .source-card p,
+    .source-card a {
+      overflow-wrap: anywhere;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .source-card p span {
+      display: inline-flex;
+      margin-right: 8px;
+      color: var(--text);
+      font-weight: 950;
+    }
+
+    footer {
+      padding: 36px 0 54px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1120px) {
+      .concept-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-head,
+      .summary,
+      .do-dont,
+      .question-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 58px; }
+    }
+
+    @media (max-width: 720px) {
+      .inner { width: min(calc(100% - 28px), var(--max)); }
+      .topbar .inner {
+        min-height: 64px;
+        padding: 10px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .brand { min-width: 0; }
+      .nav { width: 100%; }
+      .hero { padding: 42px 0 38px; }
+      h1 { font-size: 42px; line-height: 1.05; }
+      .hero-sub { font-size: 17px; }
+      .metric-grid,
+      .module-grid,
+      .concept-grid {
+        grid-template-columns: 1fr;
+      }
+      .metric-card {
+        min-height: 126px;
+        border-right: 0;
+      }
+      .metric-card:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+      .metric-card strong { font-size: 46px; }
+      section { padding: 40px 0; }
+      h2 { font-size: 30px; }
+      .source-card { grid-template-columns: 1fr; }
+      .module-top { flex-direction: column; }
+      .source-chips { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    if (new URLSearchParams(window.location.search).get("theme") === "dark") {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="./index.html">Rucia Crystal Aroma<small>Prismatic Scent Quiz</small></a>
+      <nav class="nav" aria-label="Report navigation">
+        <a href="#summary">结论</a>
+        <a href="#modules">模块</a>
+        <a href="#concepts">概念</a>
+        <a href="#sprint">路线</a>
+        <a href="#questions">问卷</a>
+        <a href="#sources">来源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="inner hero-grid">
+        <div>
+          <div class="eyebrow">Report 04 / Launch Validation</div>
+          <h1>北美 Launch Concept & Offer Validation</h1>
+          <p class="hero-sub">这份报告把前三份调研转成 launch 前的验证方案：我们不再问“这个品类有没有机会”，而是问“用哪个概念卖、先推哪几个味道、什么价格能成立、quiz 是否真的提高转化、红人怎么讲才不尴尬”。</p>
+          <p class="hero-note">核心判断：接下来最值钱的调研不是更大的市场报告，而是用小预算把五个失败风险打穿。先验证概念、香味、价格、quiz 和内容，再投入包装大货和广告。</p>
+        </div>
+        <aside class="hero-card" aria-label="Key metrics">
+          <div class="head">
+            <span>Launch Decision Dashboard</span>
+            <span>2026-06-15</span>
+          </div>
+          <div class="metric-grid">
+            
+  <article class="metric-card">
+    <strong>5</strong>
+    <span>launch risks to validate before inventory <sup class="cite"><a href="#source-highlight-concept">[5]</a></sup></span>
+  </article>
+
+  <article class="metric-card">
+    <strong>6</strong>
+    <span>scent signs should enter blind and in-home testing <sup class="cite"><a href="#source-internal-scent">[3]</a></sup></span>
+  </article>
+
+  <article class="metric-card">
+    <strong>2</strong>
+    <span>pricing methods recommended for gift kit and refill <sup class="cite"><a href="#source-surveymonkey-pricing">[14]</a></sup></span>
+  </article>
+
+  <article class="metric-card">
+    <strong>20+</strong>
+    <span>micro creator seeding assets before paid scale <sup class="cite"><a href="#source-wsl-genz">[18]</a></sup></span>
+  </article>
+
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="summary">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Executive Summary</div>
+            <h2>下一步不是继续证明市场存在，而是用低成本测试减少首发误判。</h2>
+          </div>
+          <p>前三份报告已经证明：北美消费者有 home fragrance 的稳定动机，轻玄学有娱乐和自我理解入口，香味才是复购核心。现在要把这些变成首发决策。</p>
+        </div>
+        <div class="summary">
+          <article class="summary-main">
+            <p>Report 01 已经显示，这个项目不能落入传统 crystal shop、低价能量套装、真假晶石争议和重玄学恐吓话术；我们要做的是更现代、更社媒化、更以 fragrance 为核心的礼盒品牌<sup class="cite"><a href="#source-internal-competitive">[1]</a></sup>。Report 02 进一步说明，北美目标用户多数不是严肃玄学信徒，而是把 astrology、crystals、ritual 当作娱乐、自我理解和生活小仪式的一部分<sup class="cite"><a href="#source-internal-consumer">[2]</a></sup>。Report 03 则把关键商业点说清楚：复购不太可能来自晶石本体，复购更可能来自她真的喜欢这个味道、愿意买 refill、愿意换一个 scent sign<sup class="cite"><a href="#source-internal-scent">[3]</a></sup>。</p>
+            <p>因此，下一轮调研不能再停留在“竞品好不好”“消费者喜不喜欢香薰”这种大问题。Qualtrics 将 concept testing 定义为早期市场研究，用来提高推出消费者想买产品的概率<sup class="cite"><a href="#source-qualtrics-concept">[4]</a></sup>；Highlight 也建议在 launch 前测试消费者接受度、定价策略、品牌定位、功能、购买意图和复购意图<sup class="cite"><a href="#source-highlight-concept">[5]</a></sup>。对我们来说，concept testing 不是学院派流程，而是省钱工具：在自掏钱创业的情况下，任何能在下单大货前暴露问题的测试都值得做。</p>
+            <p>这份报告建议采用五个验证模块：Concept、Scent、Price、Quiz、Creator。Concept 解决“用户到底以为我们卖什么”；Scent 解决“哪些味道能复购”；Price 解决“礼盒和 refill 能不能跑出利润”；Quiz 解决“轻玄学入口是否真的提高转化”；Creator 解决“这个产品能不能被自然讲出来”。这五个模块共同决定 launch 的成败，而不是单独由 VI 或某一个香型决定。</p>
+            <p>最重要的执行顺序是：先做 4 张 concept board，再做 6 个 scent signs 的盲闻和小型 in-home test，然后做价格与 offer 测试，最后做 quiz landing 和 micro creator seeding。这个顺序能避免一个常见错误：先被包装和玄学故事打动，后面才发现香味、价格、转化或内容传播不成立。</p>
+          </article>
+          <aside class="side-note">
+            <h3>一句话结论</h3>
+            <p>我们下一步要做的不是“再找一个大机会”，而是建立一个 launch 前的决策漏斗：只有通过概念、香味、价格、quiz、内容五关，才值得进入首批库存和广告。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Validation Modules</div>
+            <h2>首发前必须验证的 5 个风险。</h2>
+          </div>
+          <p>每个模块都要有明确方法、明确产出、明确暂停条件。否则调研会变成“看起来很努力”，但不改变决策。</p>
+        </div>
+        <div class="module-grid">
+          
+  <article class="module-card cyan">
+    <div class="module-top">
+      <span>Concept</span>
+      <div class="source-chips"><a href="#source-qualtrics-concept">Qualtrics</a><a href="#source-highlight-concept">Highlight Concept</a><a href="#source-circana-launch">Circana Launch</a></div>
+    </div>
+    <h3>用户一眼懂不懂我们卖的是什么？</h3>
+    <p><strong>Method:</strong> 4 张 concept board + 80-120 人在线测试</p>
+    <p><strong>Output:</strong> 选出最清楚、最不尴尬、最想点进来的概念表达。</p>
+    <p><strong>Gate:</strong> 如果没有一个概念能同时做到高理解度和中高购买兴趣，先不要打样大货。</p>
+  </article>
+
+  <article class="module-card pink">
+    <div class="module-top">
+      <span>Scent</span>
+      <div class="source-chips"><a href="#source-highlight-fragrance">Highlight Fragrance</a><a href="#source-blueyonder-fragrance">Blue Yonder</a><a href="#source-benchmark-fragrance">Benchmarking Co.</a><a href="#source-pubmed-perfume">PubMed</a></div>
+    </div>
+    <h3>哪两个味道能成为首发 hero scent？</h3>
+    <p><strong>Method:</strong> 6 个 scent signs 盲闻 + 24-36 人小型 in-home use test</p>
+    <p><strong>Output:</strong> 确定主推香、保留香、淘汰香，以及是否值得做 refill。</p>
+    <p><strong>Gate:</strong> 如果香味喜欢度只靠包装解释，复购风险太高。</p>
+  </article>
+
+  <article class="module-card lilac">
+    <div class="module-top">
+      <span>Price</span>
+      <div class="source-chips"><a href="#source-van-westendorp">Van Westendorp</a><a href="#source-gabor-granger">Gabor-Granger</a><a href="#source-surveymonkey-pricing">SurveyMonkey</a></div>
+    </div>
+    <h3>礼盒卖 $49、$59、$69 还是 $79？</h3>
+    <p><strong>Method:</strong> Van Westendorp 找可接受区间，Gabor-Granger 测关键价格点购买意愿</p>
+    <p><strong>Output:</strong> 确定首发套装、单品、refill、bundle 的价格梯度。</p>
+    <p><strong>Gate:</strong> 如果用户只在低价位接受，就不能做高客单礼盒，必须先改 offer 或成本结构。</p>
+  </article>
+
+  <article class="module-card green">
+    <div class="module-top">
+      <span>Quiz</span>
+      <div class="source-chips"><a href="#source-internal-consumer">Report 02</a><a href="#source-internal-scent">Report 03</a><a href="#source-pew-astrology">Pew 2025</a></div>
+    </div>
+    <h3>进站先测 current vibe 会不会提高转化？</h3>
+    <p><strong>Method:</strong> Landing page A/B：quiz-first vs product-first；room mood quiz vs astrology-first</p>
+    <p><strong>Output:</strong> 决定首页入口、题目顺序、结果卡语言和 email capture 方式。</p>
+    <p><strong>Gate:</strong> 如果 quiz 完成率低或用户觉得尴尬，必须简化成 gift finder / scent finder。</p>
+  </article>
+
+  <article class="module-card coral">
+    <div class="module-top">
+      <span>Creator</span>
+      <div class="source-chips"><a href="#source-wsl-genz">WSL</a><a href="#source-circana-perfumetok">PerfumeTok</a><a href="#source-mintel-social">Mintel Social</a></div>
+    </div>
+    <h3>哪种内容能让用户想闻、想送、想点进来？</h3>
+    <p><strong>Method:</strong> 20 位 micro creator 小样寄送，测试 first sniff、room reset、scent sign reveal 三种脚本</p>
+    <p><strong>Output:</strong> 找出能自然卖点的内容角度，再决定是否上付费广告。</p>
+    <p><strong>Gate:</strong> 如果 creator 只能讲晶石、讲不出香味，说明产品传播重心偏了。</p>
+  </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="concepts">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Concept Routes To Test</div>
+            <h2>先测 4 个概念表达，不要一开始就锁死品牌说法。</h2>
+          </div>
+          <p>同一个产品，可以被理解成香氛、礼物、quiz、玄学 ritual 或房间 mood 工具。首发前要知道哪一种最清楚、最想买。</p>
+        </div>
+        <div class="concept-grid">
+          
+  <article class="concept-card">
+    <span>最推荐先测</span>
+    <h3>A. Scent Sign Diffuser Kit</h3>
+    <p class="prop">Take a vibe quiz. Get your scent sign. Reset the room.</p>
+    <dl>
+      <div><dt>Strength</dt><dd>香氛属性最清楚，轻玄学像娱乐化选择器，不会太 witchy。</dd></div>
+      <div><dt>Risk</dt><dd>如果 visual 不够晶石，可能少了礼盒记忆点。</dd></div>
+      <div><dt>Measure</dt><dd>理解度、购买兴趣、是否想分享结果卡、是否愿意选 refill。</dd></div>
+    </dl>
+  </article>
+
+  <article class="concept-card">
+    <span>品牌核心表达</span>
+    <h3>B. Vibe-Matched Crystal Aroma</h3>
+    <p class="prop">A crystal aroma ritual matched to your current energy.</p>
+    <dl>
+      <div><dt>Strength</dt><dd>保留晶石和 current energy 的品牌感，适合包装和社媒。</dd></div>
+      <div><dt>Risk</dt><dd>如果 aroma 不够突出，用户会误以为是晶石礼盒。</dd></div>
+      <div><dt>Measure</dt><dd>用户是否能说出它是无火香薰；是否觉得贵得合理。</dd></div>
+    </dl>
+  </article>
+
+  <article class="concept-card">
+    <span>最安全转化表达</span>
+    <h3>C. Room Mood Ritual Kit</h3>
+    <p class="prop">Make your space feel like the version of you you want today.</p>
+    <dl>
+      <div><dt>Strength</dt><dd>贴近北美稳定购买理由：房间舒服、放松、小仪式。</dd></div>
+      <div><dt>Risk</dt><dd>玄学记忆点弱，可能像普通 home fragrance。</dd></div>
+      <div><dt>Measure</dt><dd>加购意愿、送礼意愿、和普通 reed diffuser 的差异感。</dd></div>
+    </dl>
+  </article>
+
+  <article class="concept-card">
+    <span>高传播但高风险</span>
+    <h3>D. Birth Chart for Your Room</h3>
+    <p class="prop">A playful scent reading for your room mood.</p>
+    <dl>
+      <div><dt>Strength</dt><dd>内容标题强，适合 TikTok/Pinterest。</dd></div>
+      <div><dt>Risk</dt><dd>容易过度 gimmick，甚至看不出产品是什么。</dd></div>
+      <div><dt>Measure</dt><dd>点击兴趣与购买兴趣的落差；是否被认为幼稚或骗人。</dd></div>
+    </dl>
+  </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="sprint">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">5-Week Research Sprint</div>
+            <h2>建议用 5 周跑完 launch validation，而不是无限调研。</h2>
+          </div>
+          <p>这是一套适合自费创业的轻量验证路径。每周都要产出一个会影响 launch 的决定。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>时间</th>
+                <th>要做什么</th>
+                <th>要做出什么决定</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+  <tr>
+    <th><span>Week 1</span><small>Concept Board Sprint</small></th>
+    <td>做 4 张同结构 concept board，统一价格未知、统一产品图，不让视觉强弱干扰概念判断。</td>
+    <td>淘汰难懂、太玄、太普通或让用户尴尬的表达。</td>
+  </tr>
+
+  <tr>
+    <th><span>Week 2</span><small>Scent Blind Test</small></th>
+    <td>6 个 scent signs 做编码盲闻；先不出现晶石、星座、包装，只测香味本身。</td>
+    <td>选出 2 个 hero scent、2 个 supporting scent、淘汰或返工其余方向。</td>
+  </tr>
+
+  <tr>
+    <th><span>Week 3</span><small>Offer + Price Test</small></th>
+    <td>测试 starter kit、gift kit、refill、duo bundle；用 Van Westendorp 和 Gabor-Granger 测价格弹性。</td>
+    <td>确定首发主 offer、价格梯度、是否能支撑 $59-$79 礼盒。</td>
+  </tr>
+
+  <tr>
+    <th><span>Week 4</span><small>Quiz + Landing Test</small></th>
+    <td>做低成本 landing page 原型，测试 quiz-first、product-first、gift-finder 三种入口。</td>
+    <td>确定首页第一屏、quiz 题目顺序、email capture 和结果卡文案。</td>
+  </tr>
+
+  <tr>
+    <th><span>Week 5</span><small>Creator Seeding Test</small></th>
+    <td>寄送小样和结果卡，不要求硬广，收集 first sniff、room update、giftability 内容。</td>
+    <td>确定首批内容脚本和是否值得进入 paid ads。</td>
+  </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="metrics">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Decision Metrics</div>
+            <h2>不是问“喜不喜欢”，而是看能不能 launch。</h2>
+          </div>
+          <p>这些是建议的内部判断指标，后续真实测试后再校准。重点是不要只看点赞式反馈。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>指标</th>
+                <th>问什么</th>
+                <th>建议判断门槛</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+  <tr>
+    <th>Concept Clarity</th>
+    <td>看完 10 秒后，她能不能说出这是“香氛/无火扩香/礼盒”？</td>
+    <td>建议门槛：75% 以上能正确复述品类。</td>
+  </tr>
+
+  <tr>
+    <th>Non-Cringe Mystic Fit</th>
+    <td>她觉得这是好玩、有自我理解，还是尴尬、骗人、太重玄学？</td>
+    <td>建议门槛：负面玄学反应低于 20%。</td>
+  </tr>
+
+  <tr>
+    <th>Scent Liking</th>
+    <td>盲闻时是否喜欢、是否愿意放在卧室/客厅/办公桌？</td>
+    <td>建议门槛：至少 2 个香型进入第一梯队。</td>
+  </tr>
+
+  <tr>
+    <th>Refill Intent</th>
+    <td>不是只买一次礼物，而是会不会买补充装？</td>
+    <td>建议门槛：主香型 refill interest 达到可继续测试水平。</td>
+  </tr>
+
+  <tr>
+    <th>Giftability</th>
+    <td>她是否能想到具体送谁、什么场景送？</td>
+    <td>建议门槛：生日、新家、宿舍、节日中至少一个场景强。</td>
+  </tr>
+
+  <tr>
+    <th>Price Confidence</th>
+    <td>什么价格让她觉得太便宜不可信、什么价格太贵？</td>
+    <td>建议门槛：礼盒价格落在可盈利且不显廉价的区间。</td>
+  </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Survey Skeleton</div>
+            <h2>下一步可以直接拿去做问卷和访谈。</h2>
+          </div>
+          <p>这些问题会逼用户用自己的话解释产品，而不是只给我们一个“looks cute”。</p>
+        </div>
+        <div class="question-grid">
+          <article class="panel">
+            <h3>Concept + Offer Questions</h3>
+            <ol><li>What do you think this product is? Please describe it in your own words.</li><li>How interested would you be in buying this for yourself?</li><li>How interested would you be in giving this as a birthday, housewarming, dorm, or holiday gift?</li><li>What feels most appealing: the scent, the quiz result, the crystal, the ritual card, the packaging, or the refill?</li><li>What feels confusing, too spiritual, too gimmicky, or not believable?</li><li>At what price would this feel too cheap to trust, a good deal, getting expensive, and too expensive?</li><li>Which scent sign would you choose first, and why?</li><li>Would you buy a refill if you liked the scent? What refill price feels reasonable?</li></ol>
+          </article>
+          <article class="next-step">
+            <h3>下一步最该做</h3>
+            <p>做 4 张统一结构的 concept board，然后招募 80-120 位北美目标用户在线测试。只有概念 winner 出来以后，再把钱花到包装打样、香味批量小样和红人寄样上。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Operating Rules</div>
+            <h2>这轮调研要坚持什么，避免什么。</h2>
+          </div>
+          <p>这是给自费创业最现实的边界：每一个测试都要保护现金和判断力。</p>
+        </div>
+        <div class="do-dont">
+          <article class="callout good">
+            <h3>必须做</h3>
+            <ul><li>先测概念和香味，再决定包装大货；不要先把钱压进库存。</li><li>所有测试都要拆开：先 blind scent，再 concept board，再 complete offer。</li><li>把 crystal 当作礼盒和内容的增值层，而不是复购主因。</li><li>所有问卷都要有 open-ended question，收集真实用户会怎么讲这个产品。</li><li>价格测试必须同时测 kit 和 refill，否则看不到长期利润。</li><li>creator seeding 先看自然表达，不要一开始用重广告脚本。</li></ul>
+          </article>
+          <article class="callout bad">
+            <h3>不要碰</h3>
+            <ul><li>不要把所有玄学符号一次性塞进首发：星座、五行、水逆、塔罗、晶石、生日全上会变乱。</li><li>不要只问“你喜不喜欢这个概念”，必须问 purchase intent、price、giftability、repeat。</li><li>不要用包装遮住香味问题；香味不过关，VI 再强也只会带来一次性购买。</li><li>不要在健康、睡眠、焦虑等方向做强 claim；合规风险不值得。</li><li>不要把 micro creator 当投放机器，要把他们当真实语言和内容格式的测试样本。</li><li>不要让首发 SKU 太多，库存复杂度会吃掉现金和判断力。</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="limitations">
+      <div class="inner">
+        <article class="panel">
+          <h3>限制和不确定性</h3>
+          <p>本报告是 launch validation 方案，不是消费者实测结果。这里的门槛和样本量是早期创业的建议值，必须在真实问卷、盲闻、小样寄送和 landing page 数据出来后调整。公开资料能支持“为什么要做这些测试”，但不能替代真实用户闻香、看 offer、输入邮箱和掏钱的行为。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Bibliography</div>
+            <h2>来源与证据登记</h2>
+          </div>
+          <p>所有来源在 2026-06-15 检索。内部报告作为项目已有证据基础，外部资料用于补充 concept testing、fragrance testing、pricing research 和合规方法。</p>
+        </div>
+        <div class="source-list">
+          
+  <article class="source-card" id="source-internal-competitive">
+    <div class="source-index">[1]</div>
+    <div>
+      <h3>Rucia Report 01, Competitive Research</h3>
+      <p><span>Internal Report</span> Established the competitive space, pricing anchors, and the need to avoid old witch-shop, fake-crystal, and low-trust positioning.</p>
+      <a href="https://rucia616.github.io/rucia-crystal-aroma-pages/crystal-aroma-competitive-research-2026-06-14.html" target="_blank" rel="noreferrer">https://rucia616.github.io/rucia-crystal-aroma-pages/crystal-aroma-competitive-research-2026-06-14.html</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-internal-consumer">
+    <div class="source-index">[2]</div>
+    <div>
+      <h3>Rucia Report 02, North America Consumer Research</h3>
+      <p><span>Internal Report</span> Established target motivations, light mysticism, gifting, authenticity risks, and the role of self-care entertainment.</p>
+      <a href="https://rucia616.github.io/rucia-crystal-aroma-pages/north-america-consumer-research-crystal-aroma-2026-06-14.html" target="_blank" rel="noreferrer">https://rucia616.github.io/rucia-crystal-aroma-pages/north-america-consumer-research-crystal-aroma-2026-06-14.html</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-internal-scent">
+    <div class="source-index">[3]</div>
+    <div>
+      <h3>Rucia Report 03, North America Scent Research</h3>
+      <p><span>Internal Report</span> Established that fragrance is the repeat engine; proposed six scent signs and a blind scent-testing path.</p>
+      <a href="https://rucia616.github.io/rucia-crystal-aroma-pages/north-america-scent-research-crystal-aroma-2026-06-15.html" target="_blank" rel="noreferrer">https://rucia616.github.io/rucia-crystal-aroma-pages/north-america-scent-research-crystal-aroma-2026-06-15.html</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-qualtrics-concept">
+    <div class="source-index">[4]</div>
+    <div>
+      <h3>Qualtrics, Concept Testing Guide</h3>
+      <p><span>Research Method</span> Defines concept testing as early-stage market research to improve the odds of launching something people want to buy.</p>
+      <a href="https://www.qualtrics.com/articles/strategy-research/how-concept-test/" target="_blank" rel="noreferrer">https://www.qualtrics.com/articles/strategy-research/how-concept-test/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-highlight-concept">
+    <div class="source-index">[5]</div>
+    <div>
+      <h3>Highlight, Concept Testing Guide</h3>
+      <p><span>Research Method</span> Recommends testing consumer acceptance, pricing strategy, brand positioning, features, purchase intent, satisfaction, and repeat purchase intention.</p>
+      <a href="https://www.letshighlight.com/blog/concept-testing-guide" target="_blank" rel="noreferrer">https://www.letshighlight.com/blog/concept-testing-guide</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-circana-launch">
+    <div class="source-index">[6]</div>
+    <div>
+      <h3>Circana, Market Research Before Launching New Products</h3>
+      <p><span>Innovation Analytics</span> Frames concept testing and innovation analytics as a way to reduce product launch risk by accurately measuring purchase intent.</p>
+      <a href="https://www.circana.com/post/how-to-do-market-research-before-developing-or-launching-new-products" target="_blank" rel="noreferrer">https://www.circana.com/post/how-to-do-market-research-before-developing-or-launching-new-products</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-kadence-concept">
+    <div class="source-index">[7]</div>
+    <div>
+      <h3>Kadence, Concept Testing</h3>
+      <p><span>Research Method</span> Concept testing helps brands understand real consumer reaction before investing major time, money, and resources.</p>
+      <a href="https://kadence.com/en-us/knowledge/concept-testing-how-brands-design-and-launch-winning-products/" target="_blank" rel="noreferrer">https://kadence.com/en-us/knowledge/concept-testing-how-brands-design-and-launch-winning-products/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-highlight-fragrance">
+    <div class="source-index">[8]</div>
+    <div>
+      <h3>Highlight, Best Fragrance Testing Providers</h3>
+      <p><span>Fragrance Testing</span> For fragrance launch validation, recommends measuring initial reaction, strength, dry down, longevity, emotional response, product fit, and purchase intent.</p>
+      <a href="https://www.letshighlight.com/blog/best-fragrance-testing-providers" target="_blank" rel="noreferrer">https://www.letshighlight.com/blog/best-fragrance-testing-providers</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-blueyonder-fragrance">
+    <div class="source-index">[9]</div>
+    <div>
+      <h3>Blue Yonder, Effective Fragrance Testing</h3>
+      <p><span>Fragrance Testing</span> Recommends blind fragrance testing, varied question types, benchmark fragrances, and in-context testing because fragrance perception changes with context.</p>
+      <a href="https://blueyonder.agency/effective-fragrance-testing/" target="_blank" rel="noreferrer">https://blueyonder.agency/effective-fragrance-testing/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-benchmark-fragrance">
+    <div class="source-index">[10]</div>
+    <div>
+      <h3>The Benchmarking Company, Fragrance Product Testing</h3>
+      <p><span>Fragrance Testing</span> Positions in-home use tests as a way to capture scent perception, product performance, emotional impact, and alignment with consumer preferences.</p>
+      <a href="https://benchmarkingcompany.com/fragrance-product-testing/" target="_blank" rel="noreferrer">https://benchmarkingcompany.com/fragrance-product-testing/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-pubmed-perfume">
+    <div class="source-index">[11]</div>
+    <div>
+      <h3>PubMed, A Comparison of Product Testing Methodologies for Perfume</h3>
+      <p><span>Academic Abstract</span> Compares in-home tests and sniff tests for the same perfumes, illustrating limitations of sniff-only fragrance testing.</p>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/19272121/" target="_blank" rel="noreferrer">https://pubmed.ncbi.nlm.nih.gov/19272121/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-van-westendorp">
+    <div class="source-index">[12]</div>
+    <div>
+      <h3>Conjointly, Van Westendorp Price Sensitivity Meter</h3>
+      <p><span>Pricing Method</span> Used to estimate psychologically acceptable price ranges through too-cheap, cheap, expensive, and too-expensive thresholds.</p>
+      <a href="https://conjointly.com/products/van-westendorp/" target="_blank" rel="noreferrer">https://conjointly.com/products/van-westendorp/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-gabor-granger">
+    <div class="source-index">[13]</div>
+    <div>
+      <h3>Conjointly, Gabor-Granger Pricing Method</h3>
+      <p><span>Pricing Method</span> Uses purchase-intent questions at different prices to estimate willingness to pay and revenue-optimizing price points.</p>
+      <a href="https://conjointly.com/products/gabor-granger/" target="_blank" rel="noreferrer">https://conjointly.com/products/gabor-granger/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-surveymonkey-pricing">
+    <div class="source-index">[14]</div>
+    <div>
+      <h3>SurveyMonkey, Gabor-Granger vs. Van Westendorp</h3>
+      <p><span>Pricing Method</span> Compares price-testing methods and notes Gabor-Granger's use of purchase-intent questions at specific prices.</p>
+      <a href="https://www.surveymonkey.com/market-research/resources/gabor-granger-vs-van-westendorp/" target="_blank" rel="noreferrer">https://www.surveymonkey.com/market-research/resources/gabor-granger-vs-van-westendorp/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-circana-genz">
+    <div class="source-index">[15]</div>
+    <div>
+      <h3>Circana, Gen Z Fragrance Usage</h3>
+      <p><span>Category Survey</span> Gen Z fragrance usage rose to 83%; 80% of fragrance users say scent helps lift or enhance mood.</p>
+      <a href="https://www.circana.com/post/gen-z-accounts-for-the-highest-bump-in-fragrance-usage-circana-reports" target="_blank" rel="noreferrer">https://www.circana.com/post/gen-z-accounts-for-the-highest-bump-in-fragrance-usage-circana-reports</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-nca-facts">
+    <div class="source-index">[16]</div>
+    <div>
+      <h3>National Candle Association, Facts &amp; Figures</h3>
+      <p><span>Category Association</span> Fragrance is the most important candle purchase factor, and candle use is tied to comfort, coziness, decor, relaxation, and gifting.</p>
+      <a href="https://candles.org/facts-figures/" target="_blank" rel="noreferrer">https://candles.org/facts-figures/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-pew-astrology">
+    <div class="source-index">[17]</div>
+    <div>
+      <h3>Pew Research Center, Astrology, Tarot and Fortune Tellers</h3>
+      <p><span>Survey</span> 30% of U.S. adults consult astrology, tarot, or fortune tellers at least annually, with most using it for fun.</p>
+      <a href="https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/" target="_blank" rel="noreferrer">https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-wsl-genz">
+    <div class="source-index">[18]</div>
+    <div>
+      <h3>WSL Strategic Retail, Gen Z Fragrance Boom</h3>
+      <p><span>Retail Analysis</span> Reports Circana data that 73% of Gen Z wears fragrance at least three times weekly; TikTok and Instagram strongly influence Gen Z fragrance purchase.</p>
+      <a href="https://wslstrategicretail.com/blog/gen-z-fragrance-boom/" target="_blank" rel="noreferrer">https://wslstrategicretail.com/blog/gen-z-fragrance-boom/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-circana-perfumetok">
+    <div class="source-index">[19]</div>
+    <div>
+      <h3>Circana, The Evolution of PerfumeTok</h3>
+      <p><span>Social Commerce</span> NPD/Circana described TikTok as a major U.S. social driver of fragrance purchases and tied with Instagram for Gen Z fragrance influence.</p>
+      <a href="https://www.circana.com/post/the-evolution-of-perfumetok" target="_blank" rel="noreferrer">https://www.circana.com/post/the-evolution-of-perfumetok</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-mintel-social">
+    <div class="source-index">[20]</div>
+    <div>
+      <h3>Mintel, Social Media Fuels Fragrance Sampling</h3>
+      <p><span>Trend Analysis</span> Gen Z and Gen Alpha seek affordable prestige and trend-recognizable scents; social media fuels fragrance sampling.</p>
+      <a href="https://www.mintel.com/press-centre/fragrance-trends-2025-gen-z-gen-alpha-social-media-sampling/" target="_blank" rel="noreferrer">https://www.mintel.com/press-centre/fragrance-trends-2025-gen-z-gen-alpha-social-media-sampling/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-fda-aroma">
+    <div class="source-index">[21]</div>
+    <div>
+      <h3>FDA, Aromatherapy</h3>
+      <p><span>Regulatory</span> FDA warns that claims about treating anxiety, depression, pain, or sleep problems can move aromatherapy into drug-claim territory.</p>
+      <a href="https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy" target="_blank" rel="noreferrer">https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-ftc-health">
+    <div class="source-index">[22]</div>
+    <div>
+      <h3>FTC, Health Products Compliance Guidance</h3>
+      <p><span>Regulatory</span> FTC requires a reasonable basis and appropriate substantiation for advertising claims, especially health-related claims.</p>
+      <a href="https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance" target="_blank" rel="noreferrer">https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance</a>
+    </div>
+  </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">Rucia Crystal Aroma / Report 04 / 2026-06-15. Visual system: Prismatic Scent Quiz.</div>
+  </footer>
+</body>
+</html>
