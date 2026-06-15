@@ -1,0 +1,616 @@
+{
+  "reportDate": "2026-06-15",
+  "generatedAt": "2026-06-15T13:45:04.615Z",
+  "fileName": "product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html",
+  "verdict": {
+    "enoughToLockProduct": false,
+    "enoughToValidateCrystalStoneFirst": true,
+    "recommendedStatus": "preferred validation hypothesis",
+    "maxNextSpend": "$35-$70 for product-form A/B, plus sample-only spend after clarity gate"
+  },
+  "sources": [
+    {
+      "id": "pickfu",
+      "type": "Internal paid consumer test",
+      "confidence": "High for language; Low for product format",
+      "name": "Rucia PickFu Concept Pilot, 50 US women 18-34",
+      "short": "PickFu 50",
+      "url": "https://www.pickfu.com/vPfCGDoZr8",
+      "observed": "A 26 / C 24. Open-ended comments support fragrance clarity, room mood language, quiz/match potential, and visual attention. The test did not isolate reed vs aroma-stone product form.",
+      "decision": "Use as concept-language evidence only; do not use as product-form proof."
+    },
+    {
+      "id": "google-trends",
+      "type": "Search trend pull",
+      "confidence": "Medium",
+      "name": "Google Trends US 12-month pull via pytrends",
+      "short": "Google Trends",
+      "url": "https://trends.google.com/trends/explore?geo=US&q=reed%20diffuser,aroma%20stone%20diffuser,crystal%20diffuser,lava%20stone%20diffuser,essential%20oil%20diffuser",
+      "observed": "Successful pull on 2026-06-15: essential oil diffuser 26.51, reed diffuser 23.04, crystal diffuser 1.94, aroma stone diffuser 0.11, lava stone diffuser 0.06 average relative interest. A later expanded pull hit Google 429 and was not used.",
+      "decision": "Search demand strongly favors known diffuser language. Aroma stone is too small to use as the main acquisition keyword."
+    },
+    {
+      "id": "grandview",
+      "type": "Market sizing",
+      "confidence": "Medium",
+      "name": "Grand View Research, Home Fragrance Market",
+      "short": "Grand View",
+      "url": "https://www.grandviewresearch.com/industry-analysis/home-fragrance-market",
+      "observed": "Home fragrance is a large and growing market; North America is identified as a leading region. Demand drivers include personalized living spaces, relaxation, home decor, and online retail.",
+      "decision": "Supports entering home fragrance broadly, not a specific proof for crystal aroma stones."
+    },
+    {
+      "id": "asinsight-reed",
+      "type": "Amazon keyword benchmark",
+      "confidence": "Medium",
+      "name": "ASINSIGHT, Reed Diffusers for Home Amazon sample",
+      "short": "Amazon Reed",
+      "url": "https://www.asinsight.com/report/US/reed-diffusers-for-home",
+      "observed": "The sample shows heavy product density and price concentration, especially $10-$20 and $20-$50 tiers.",
+      "decision": "Reed has demand proof and competition proof. It is easier to explain but more exposed to price comparison."
+    },
+    {
+      "id": "thespruce-reed",
+      "type": "Editorial testing",
+      "confidence": "Medium",
+      "name": "The Spruce, Best Reed Diffusers Tested",
+      "short": "The Spruce",
+      "url": "https://www.thespruce.com/best-reed-diffusers-5271842",
+      "observed": "Test criteria center on scent strength, space size, longevity, vessel design, oil ingredients, and refill availability. Examples span budget, design, large-room, office, bathroom, and seasonal uses.",
+      "decision": "Reed category has mature consumer evaluation criteria. Any premium product must win on performance, scent, design, and refill logic."
+    },
+    {
+      "id": "homesgardens-reed",
+      "type": "Editorial testing",
+      "confidence": "Medium",
+      "name": "Homes & Gardens, Best Reed Diffusers",
+      "short": "H&G Reed",
+      "url": "https://www.homesandgardens.com/buying-guides/best-reed-diffusers",
+      "observed": "Current guide compares tested reed diffusers from roughly $32.99 to $250, with strength ratings and use cases from affordable to luxury.",
+      "decision": "Reed can support premium prices, but premium is earned through scent quality, brand trust, vessel, longevity, and editor/social proof."
+    },
+    {
+      "id": "muji-stone",
+      "type": "Brand product page / customer summary",
+      "confidence": "Medium",
+      "name": "MUJI USA, Aroma Stone",
+      "short": "MUJI Stone",
+      "url": "https://www.muji.us/products/aroma-stone",
+      "observed": "Aroma Stone priced at $12.90. Review summary praises minimal design and pleasant scent for a few days; some users say scent fades quickly.",
+      "decision": "Aroma stone is understood as small, simple, close-space scenting. Scent duration is a known weakness."
+    },
+    {
+      "id": "dorai-stone",
+      "type": "Brand product page",
+      "confidence": "Medium",
+      "name": "Dorai Home, Scent Stone",
+      "short": "Dorai",
+      "url": "https://doraihome.com/products/scent-stone",
+      "observed": "Dorai positions Scent Stone as a minimal no-cord way to bring a soft scent into a small space. Essential oil is not included.",
+      "decision": "Stone format has modern design legitimacy, but the strongest use case is soft scent in small spaces."
+    },
+    {
+      "id": "ataroma-stone",
+      "type": "Brand product page",
+      "confidence": "Medium",
+      "name": "At-Aroma USA, Stone mini travel set",
+      "short": "At-Aroma",
+      "url": "https://www.ataromausa.com/products/stone-mini-travel-set",
+      "observed": "Usage instruction: put 3-5 drops of essential oil directly on the stone. Small number of reviews, 4.5 based on two reviews.",
+      "decision": "Stone format is credible as a travel / small personal scent object, not yet proven as a room-filling hero."
+    },
+    {
+      "id": "etsy-stone",
+      "type": "Marketplace listing",
+      "confidence": "Medium",
+      "name": "Etsy, Aroma Stone Diffuser Clean Fragrance Gift Set",
+      "short": "Etsy Stone",
+      "url": "https://www.etsy.com/listing/1215639445/essential-oil-aroma-stone-diffuser",
+      "observed": "$15 listing, Star Seller, 5-star listing signal. Materials include fragrance oil, essential oil, gift box, metal tin, and scented salt crystals. Copy frames it as giftable home fragrance and wellness gift.",
+      "decision": "Stone/crystal fragrance sets can sell as gifts, but Etsy evidence is niche marketplace proof, not mass-market proof."
+    },
+    {
+      "id": "amazon-stone-lamp",
+      "type": "Amazon listing",
+      "confidence": "Medium",
+      "name": "Amazon, Runyangshi crystal aroma stone diffuser lamp",
+      "short": "Amazon Crystal",
+      "url": "https://www.amazon.com/Runyansghi-Fluorite-Natural-Healing-Diffuser/dp/B0CNP8632B",
+      "observed": "$29.99, 3.9 stars from 13 ratings. Product combines crystal night light, gift packaging, and crystal/energy claims.",
+      "decision": "There is public marketplace supply for crystal aroma objects, but ratings/review depth are thin and claims style is riskier than Rucia should use."
+    },
+    {
+      "id": "amazon-salt-risk",
+      "type": "Amazon review evidence",
+      "confidence": "Medium",
+      "name": "Amazon, Himalayan Salt Lamp with Aromatherapy Tray",
+      "short": "Amazon Risk",
+      "url": "https://www.amazon.com/Himalayan-Salt-Aromatherapy-Dimmer-Switch/dp/B0GC3SFRZS",
+      "observed": "Positive reviews mention beauty, ambiance, sturdy lamp, and aromatherapy tray. Negative/critical evidence includes scent not being noticeable and damage/cracking in shipping.",
+      "decision": "Crystal/stone objects create visual value and shipping/performance risks at the same time."
+    },
+    {
+      "id": "walmart-stone",
+      "type": "Marketplace page",
+      "confidence": "Low-Medium",
+      "name": "Walmart, aroma stone how-to-use assortment",
+      "short": "Walmart Stone",
+      "url": "https://www.walmart.com/c/kp/aroma-stone-how-to-use",
+      "observed": "Visible aroma stone / crystal diffuser options appear at low prices such as from $5.91, $10.99, $11.39, and $17.99.",
+      "decision": "Low-price marketplace supply exists. Rucia needs strong design, scent, and gift system to avoid looking like a commodity crystal accessory."
+    },
+    {
+      "id": "scentland-supplier",
+      "type": "Supplier / OEM guide",
+      "confidence": "Medium for supply feasibility",
+      "name": "Scent Land, Custom Aroma Stone Diffuser Supplier Guide",
+      "short": "Scent Land",
+      "url": "https://www.scent-land.com/custom-aroma-stone-diffuser-supplier-guide/",
+      "observed": "Supplier guide frames aroma stones as passive diffusers for small spaces, travel, cars, wardrobes, gifts, hotel amenities, and promotional sets; typical MOQ examples include 300-1,000 pcs depending on gypsum/ceramic and customization.",
+      "decision": "Supply feasibility exists, but MOQ/material/scent performance must be quoted before any commitment."
+    },
+    {
+      "id": "pew-crystals",
+      "type": "Survey",
+      "confidence": "High for broad belief signal",
+      "name": "Pew Research Center, Spirituality Among Americans",
+      "short": "Pew",
+      "url": "https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/",
+      "observed": "26% of U.S. adults believe spiritual energy can reside in objects such as crystals, jewels, or stones.",
+      "decision": "Crystal language has cultural familiarity, but it should stay light and non-medical."
+    },
+    {
+      "id": "springtide-crystals",
+      "type": "Youth spirituality signal",
+      "confidence": "Medium",
+      "name": "Religion News Service / Springtide crystal signal",
+      "short": "Springtide",
+      "url": "https://religionnews.com/2023/01/23/for-gen-z-crystals-embed-spirituality-in-the-planet/",
+      "observed": "RNS reports Springtide data that 44% of young people ages 13-25 engage with crystals or herbs as a spiritual exercise; 21% at least weekly.",
+      "decision": "Supports light crystal/spiritual interest among young people, not proof of purchase intent for a crystal aroma kit."
+    },
+    {
+      "id": "mckinsey-wellness",
+      "type": "Consumer trend",
+      "confidence": "Medium",
+      "name": "McKinsey, Future of Wellness Trends 2025",
+      "short": "McKinsey",
+      "url": "https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends",
+      "observed": "McKinsey frames wellness as a daily, personalized practice for Gen Z and millennials and emphasizes value, quality, efficacy, and social proof.",
+      "decision": "Young buyers may try wellness-adjacent products, but Rucia must show quality and credible sensory performance."
+    },
+    {
+      "id": "wsl-genz-fragrance",
+      "type": "Fragrance behavior",
+      "confidence": "Medium",
+      "name": "WSL Strategic Retail, Gen Z Fragrance Boom",
+      "short": "WSL",
+      "url": "https://wslstrategicretail.com/blog/gen-z-fragrance-boom/",
+      "observed": "Reports Circana-linked signals: 73% of Gen Z wears fragrance at least three times per week; TikTok and Instagram are major fragrance purchase influences.",
+      "decision": "Supports fragrance and social discovery for the target audience, but this is personal fragrance evidence more than home fragrance evidence."
+    },
+    {
+      "id": "nest-line",
+      "type": "Brand product architecture",
+      "confidence": "Medium",
+      "name": "NEST New York, Reed Diffusers and Refills",
+      "short": "NEST",
+      "url": "https://www.nestnewyork.com/collections/reed-diffuser",
+      "observed": "NEST sells premium reed diffusers and diffuser refills, using scent, vessel, longevity and refill logic to justify a premium home-fragrance position.",
+      "decision": "Supports a scent-led product system where the same fragrance can create starter, performance and refill paths."
+    },
+    {
+      "id": "pf-line",
+      "type": "Brand ingredient / category architecture",
+      "confidence": "Medium",
+      "name": "P.F. Candle Co., Fresh Collection and Ingredients",
+      "short": "P.F. Candle",
+      "url": "https://pfcandleco.com/pages/ingredients",
+      "observed": "P.F. Candle Co. communicates ingredient standards for home fragrance and sells multiple fragrance formats across a recognizable scent world.",
+      "decision": "Supports transparent fragrance standards and multi-format scent worlds as trust builders."
+    },
+    {
+      "id": "voluspa-line",
+      "type": "Brand product architecture",
+      "confidence": "Medium",
+      "name": "Voluspa, Shop by Scent / Diffusers / Candles",
+      "short": "Voluspa",
+      "url": "https://voluspa.com/",
+      "observed": "Voluspa organizes home fragrance around scent families and sells formats including candles, oil diffusers and personal fragrance.",
+      "decision": "Shows that mature fragrance brands often use scent as the organizing unit, with physical formats serving different usage occasions."
+    },
+    {
+      "id": "ifra",
+      "type": "Fragrance safety standards",
+      "confidence": "High",
+      "name": "IFRA Standards",
+      "short": "IFRA",
+      "url": "https://ifrafragrance.org/initiatives-positions/safe-use-fragrance-science/ifra-standards",
+      "observed": "IFRA describes its standards as a global risk-management system for fragrance ingredients, including restrictions, limits and bans. Companies remain responsible for safe use.",
+      "decision": "Any supplier shortlist must provide IFRA documentation or equivalent fragrance compliance support before sample approval."
+    },
+    {
+      "id": "fda-aroma",
+      "type": "Claims compliance",
+      "confidence": "Medium",
+      "name": "Registrar Corp, FDA Regulations for Aromatherapy",
+      "short": "FDA Claims",
+      "url": "https://www.registrarcorp.com/blog/cosmetics/cosmetic-regulations/fda-regulations-for-aromatherapy-drug-cosmetic-both-or-neither/",
+      "observed": "Aromatherapy products can trigger drug-like regulatory scrutiny when claims imply treatment of pain, anxiety, insomnia, nausea or disease conditions.",
+      "decision": "Rucia should use room mood / vibe / ritual language and avoid medical or therapeutic outcome claims."
+    },
+    {
+      "id": "ftc-substantiation",
+      "type": "Advertising substantiation",
+      "confidence": "High",
+      "name": "FTC Policy Statement Regarding Advertising Substantiation",
+      "short": "FTC",
+      "url": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
+      "observed": "FTC policy requires advertisers to have a reasonable basis for objective claims before making them.",
+      "decision": "Claims such as room coverage, longevity, non-toxic, safe, pet-safe or mood outcomes need evidence or should be softened."
+    },
+    {
+      "id": "vca-pets",
+      "type": "Pet safety",
+      "confidence": "High",
+      "name": "VCA Hospitals, Essential Oil and Liquid Potpourri Poisoning in Cats",
+      "short": "VCA Pets",
+      "url": "https://vcahospitals.com/know-your-pet/essential-oil-and-liquid-potpourri-poisoning-in-cats",
+      "observed": "VCA warns that certain essential oils and liquid potpourri can be poisonous to cats through ingestion, skin exposure or other contact.",
+      "decision": "Do not claim pet-safe. Add keep-away warnings and avoid marketing the product for pet households without clear evidence."
+    },
+    {
+      "id": "aspca-pets",
+      "type": "Pet safety",
+      "confidence": "High",
+      "name": "ASPCA, Essentials of Essential Oils Around Pets",
+      "short": "ASPCA",
+      "url": "https://www.aspca.org/news/essentials-essential-oils-around-pets",
+      "observed": "ASPCA warns that concentrated essential oils can be dangerous for pets, depending on oil, exposure and animal.",
+      "decision": "Fragrance-oil and essential-oil safety language must include responsible placement, ventilation and keep-out-of-reach guidance."
+    },
+    {
+      "id": "cpsc-small-parts",
+      "type": "Consumer product safety",
+      "confidence": "High",
+      "name": "CPSC, Small Parts and Choking Hazard Labeling FAQs",
+      "short": "CPSC",
+      "url": "https://www.cpsc.gov/FAQ/Small-Parts-and-Choking-Hazard-Labeling-FAQs",
+      "observed": "CPSC small-parts rules address choking, aspiration and ingestion hazards for children under three.",
+      "decision": "Small crystals, chips and removable stones require clear age and choking warnings, and the product should not be positioned for children."
+    },
+    {
+      "id": "igs-gem-toxicity",
+      "type": "Gemstone safety reference",
+      "confidence": "Medium",
+      "name": "International Gem Society, Gemstone Toxicity Table",
+      "short": "IGS",
+      "url": "https://www.gemsociety.org/article/gemstone-toxicity-table/",
+      "observed": "IGS publishes a toxicity table covering hundreds of gems and describes hazards related to handling, cutting, ingestion and exposure.",
+      "decision": "Use conservative stone selection, avoid risky raw minerals and never instruct customers to put stones in drinking water or on skin."
+    },
+    {
+      "id": "natgeo-ethical-crystals",
+      "type": "Crystal sourcing ethics",
+      "confidence": "Medium",
+      "name": "National Geographic, Ethical Crystal Buying",
+      "short": "NatGeo",
+      "url": "https://www.nationalgeographic.com/environment/article/buying-ethically-sourced-healing-crystals-gemstones",
+      "observed": "National Geographic reports concerns around crystal mining, worker exploitation, armed conflict and traceability gaps.",
+      "decision": "Rucia needs a sourcing note, supplier declarations and plain stone disclosure instead of vague rare/healing-stone mystique."
+    },
+    {
+      "id": "gia-gem",
+      "type": "Gem identification reference",
+      "confidence": "High for education reference",
+      "name": "GIA Gem Encyclopedia",
+      "short": "GIA",
+      "url": "https://www.gia.edu/gem-encyclopedia",
+      "observed": "GIA provides public gem education and identification references.",
+      "decision": "Use mainstream gem names and education language for credibility; avoid exaggerated crystal-power claims."
+    },
+    {
+      "id": "rucia-1688",
+      "type": "Internal supply scan",
+      "confidence": "Medium for China supply signal",
+      "name": "Rucia 1688 screenshot scout, 2026-06-15",
+      "short": "1688 Scout",
+      "url": "./assets/product-format-evidence-audit-sources-2026-06-15.json",
+      "observed": "User-provided 1688 screenshots showed complete-looking crystal aroma gift sets roughly ¥18.5-74.5, realistic benchmark range ¥27-58, and many low-price component/bait listings below ¥10.",
+      "decision": "Supply exists. The next supplier step is itemized RFQ and samples, not MOQ commitment."
+    }
+  ],
+  "evidenceRatings": [
+    [
+      "Home fragrance category demand",
+      "Strong",
+      "Supports both",
+      "Home fragrance and fragrance usage are real; this does not pick the winning product format."
+    ],
+    [
+      "Reed diffuser demand/search",
+      "Strong",
+      "Favors reed",
+      "Reed diffuser has much stronger known search/category language."
+    ],
+    [
+      "Reed price war / competition pressure",
+      "Strong",
+      "Hurts reed",
+      "Amazon and editorial guides show mature competition from budget to luxury."
+    ],
+    [
+      "Crystal / light mystic cultural fit",
+      "Medium",
+      "Supports crystal layer",
+      "Pew/Springtide support cultural familiarity, not direct purchase intent."
+    ],
+    [
+      "Aroma stone marketplace proof",
+      "Medium-low",
+      "Supports niche/gift test",
+      "MUJI, Dorai, Etsy, Amazon, Walmart show supply and some buyer use, but small search demand and limited review depth."
+    ],
+    [
+      "Aroma stone scent performance",
+      "Weak / risky",
+      "Unresolved",
+      "Evidence repeatedly points to subtle, small-space scenting and fade risk."
+    ],
+    [
+      "Multi-format scent architecture",
+      "Medium",
+      "Supports next test",
+      "Mature fragrance brands organize around scent and sell multiple formats; Rucia still needs a small concept test before launching multiple SKUs."
+    ],
+    [
+      "Market education cost",
+      "Weak / risky",
+      "Unresolved",
+      "Aroma stone has low search demand, so visual education must do the work that search keywords cannot do."
+    ],
+    [
+      "Crystal safety / origin trust",
+      "Medium risk",
+      "Requires controls",
+      "Crystal interest exists, but origin, toxicity, small parts, pets and claims need strict guardrails."
+    ],
+    [
+      "Rucia PickFu concept proof",
+      "Medium",
+      "Supports language only",
+      "Valid for fragrance + room mood + quiz language; invalid for product-form decision."
+    ],
+    [
+      "Premium price proof for $49-$69",
+      "Weak",
+      "Unresolved",
+      "Reed has premium comparables; crystal stone needs stronger perceived value test."
+    ],
+    [
+      "Supply feasibility",
+      "Medium",
+      "Supports testing",
+      "China and OEM evidence say it can be made; docs, MOQ, leakage, breakage and scent oil quality remain unknown."
+    ]
+  ],
+  "hypotheses": [
+    [
+      "H1",
+      "北美目标用户会买 home fragrance / room scent 来改变空间状态。",
+      "Supported",
+      "大盘、媒体测试、PickFu room mood comments 均支持。",
+      "可以继续用 room reset / room mood 作为卖点。"
+    ],
+    [
+      "H2",
+      "轻玄学、晶石、scent sign 能增加记忆点和礼物感。",
+      "Partially supported",
+      "Pew/Springtide 支持文化土壤；PickFu 只弱支持 quiz/ritual，不支持晶石为主驱动。",
+      "晶石做第二层，不做主功效。"
+    ],
+    [
+      "H3",
+      "晶石扩香石比藤条有更大市场潜力。",
+      "Not proven",
+      "搜索需求和成熟购买语言目前更支持藤条。扩香石只有差异化潜力证据。",
+      "必须做产品形态 A/B 测试。"
+    ],
+    [
+      "H4",
+      "扩香石能满足 room reset 的香味表现。",
+      "Not proven / high risk",
+      "公开证据多次指向 subtle / small-space / fades quickly。",
+      "必须做 scent throw 样品测试。"
+    ],
+    [
+      "H5",
+      "用户愿意为晶石扩香石礼盒付 $49-$69。",
+      "Not proven",
+      "Etsy/MUJI/Dorai/Amazon stone benchmark多在 $13-$30；高价需要礼盒系统和香味证明。",
+      "必须做价格敏感度和 value perception 测试。"
+    ],
+    [
+      "H6",
+      "供应链可做小批量高质感礼盒。",
+      "Partially supported",
+      "1688 和 OEM guide 支持可做；合规文件、漏液、破损、MOQ 未验证。",
+      "先 RFQ + 样品，不签 MOQ。"
+    ],
+    [
+      "H7",
+      "同一香味下同时测试扩香石、藤条和全套礼盒，能降低方向选错风险。",
+      "Plausible / not proven",
+      "NEST、P.F. Candle、Voluspa 等成熟品牌支持 scent-led multi-format 逻辑；Rucia 的用户偏好还没测。",
+      "下一轮概念测试用同一香味跑三形态对照。"
+    ],
+    [
+      "H8",
+      "强视觉教育能把 Rucia 和 crystal aroma stone 这个品类绑定。",
+      "Plausible / not proven",
+      "低搜索词说明用户不会主动找；PickFu 支持视觉冲击力和概念清晰度的重要性。",
+      "测试图必须包含产品结构、3 步用法、房间场景和 scent strength 预期。"
+    ],
+    [
+      "H9",
+      "晶石安全和产地问题可以被透明规则解决。",
+      "Partially supported",
+      "IGS、CPSC、ASPCA/VCA、NatGeo 都说明有可管理风险，但需要材料选择、警示和供应商文件。",
+      "建立 Stone Safety & Sourcing Note，供应链 RFQ 必须要文件。"
+    ]
+  ],
+  "validationGates": [
+    {
+      "name": "Gate 1: 产品形态三选测试",
+      "budget": "$35-$70",
+      "method": "同一套 VI、同一 hero scent、同一画面质量，A=Crystal Aroma Stone Kit，B=Reed Room Diffuser，C=Full Room Mood Set。50-100 位美国女性 18-34。只问更想点、看得懂、相信能香、是否适合送人、是否值 $49-$79。",
+      "pass": "Stone 或 Full Set 必须赢在 click / unique / gift / visual memory；Reed 若赢在 scent belief，就把 Reed 作为性能形态保留。",
+      "stop": "Stone 被大量说成 crystal decor、doesn't look like fragrance、won't scent a room，暂停把 Stone 设为 hero。"
+    },
+    {
+      "name": "Gate 2: 真实样品 scent throw",
+      "budget": "先 2-3 家供应商样品 + 国际快递；暂不 MOQ",
+      "method": "测试扩香石、陶瓷/石膏容器、香氛油在床头、浴室、小卧室、客厅的 1h / 24h / 7d 表现。记录闻不到、刚好、太冲、是否残留油渍。",
+      "pass": "至少在小卧室/床头/浴室能稳定表达 scent presence；如果只能近距离闻到，产品定位降级为 desk/nightstand ritual。",
+      "stop": "香味 24h 内消失、油渍明显、石材破损、用户需要频繁补油且觉得麻烦。"
+    },
+    {
+      "name": "Gate 3: $49-$69 value test",
+      "budget": "$35-$70",
+      "method": "给用户看礼盒结构、香氛油容量、补充装价格和包装，做 Van Westendorp / Gabor-Granger 小样本测试。",
+      "pass": "$49 可被接受，$59 有部分可接受，$69 需要更强礼盒/赠礼理由。",
+      "stop": "用户将其锚定到 $15-$30 的 MUJI/Etsy/Amazon stone accessory。"
+    },
+    {
+      "name": "Gate 4: 供应商文件和报价",
+      "budget": "$0 RFQ",
+      "method": "向 6-8 家供应商要分项报价：容器、扩香石、晶石、香氛油、滴管瓶、卡片、内托、外盒、贴标、SDS/MSDS、IFRA、flash point、破损/漏液包装方案。",
+      "pass": "至少 2 家能给英文文件、合理 MOQ、分项成本和样品周期。",
+      "stop": "只能做国内礼品、没有文件、只会报总价、无法解释香氛油基底和运输。"
+    }
+  ],
+  "formatArchitectureRows": [
+    [
+      "Crystal Aroma Stone Kit",
+      "视觉、礼物、轻仪式、桌面/床头小空间",
+      "$49-$59 待测",
+      "差异化强，内容好拍，适合绑定 scent sign。",
+      "弱香、用户不知道怎么用、容易被锚定到 $15-$30 小摆件。",
+      "下一轮必须作为 A 方案测试，但文案先写 small-space / personal room ritual。"
+    ],
+    [
+      "Reed Room Diffuser",
+      "稳定扩香、熟悉品类、降低理解成本",
+      "$39-$59 待测",
+      "用户知道怎么用，也更相信能让房间香。",
+      "同质化强，Amazon/Target/成熟香氛品牌价格锚点明显。",
+      "下一轮作为 B 方案测试；若 scent belief 明显胜出，保留为性能形态。"
+    ],
+    [
+      "Full Room Mood Set",
+      "高客单礼盒：Stone + Reed + refill/card",
+      "$69-$79 待测",
+      "同时解决视觉记忆和扩香表现，有更强 gift / bundle 感。",
+      "SKU、成本、包装、破损和教育复杂度上升。",
+      "下一轮作为 C 方案测试；若胜出，首发可做 limited gift set，但先不大货。"
+    ],
+    [
+      "Scent Oil Refill",
+      "复购和毛利",
+      "$14-$22 待测",
+      "复购更可能来自香味，不来自晶石本体。",
+      "如果首购体验香味弱，refill 没意义。",
+      "等 scent liking 和 scent throw 过关后再验证。"
+    ],
+    [
+      "Mini Discovery / Scent Card",
+      "低价试香和内容采样",
+      "$8-$15 待测",
+      "降低试错成本，能为 creator/gift guide 提供入口。",
+      "如果太像香水小样，会削弱礼盒溢价。",
+      "暂作为后置工具，不进入首发 SKU。"
+    ]
+  ],
+  "educationRows": [
+    [
+      "首屏产品结构",
+      "一张图看到：香氛油瓶、扩香石/容器、晶石、结果卡、礼盒。",
+      "让用户 3 秒内优先识别为 home fragrance，避免看成水晶摆件。"
+    ],
+    [
+      "3 步使用图",
+      "Take quiz -> pick scent sign -> add drops / place diffuser。",
+      "降低教育成本，避免用户问“这个怎么香”。"
+    ],
+    [
+      "空间预期",
+      "明确 small space / desk / nightstand / bathroom / bedroom；客厅 coverage 需要测试通过再说。",
+      "提前管理 scent strength 预期，避免差评来自过度承诺。"
+    ],
+    [
+      "强度标尺",
+      "Soft / Medium / Room-Filling 三档图标；Stone 默认 soft-medium，Reed 默认 medium-room。",
+      "把弱香风险提前变成透明选择和购买预期。"
+    ],
+    [
+      "包装正面",
+      "用图标讲清：flameless、scent oil included、crystal card、refillable、room mood。",
+      "让 TikTok 缩略图和货架图也能被理解。"
+    ],
+    [
+      "QR 视频",
+      "15 秒视频：打开盒子、滴油、放置、刷新香味、注意事项。",
+      "用视觉教育绑定品类，不靠长文解释。"
+    ]
+  ],
+  "riskSolutionRows": [
+    [
+      "香味太弱",
+      "扩香石公开证据多指向 soft / small-space / fades quickly。",
+      "不要承诺全屋扩香；测试同香三形态；Stone 负责仪式和小空间，Reed 负责稳定 room scent；样品测试记录 1h/24h/7d。",
+      "Stone 只能近闻，且用户觉得麻烦。"
+    ],
+    [
+      "市场教育成本",
+      "aroma stone diffuser 搜索需求很低，用户不会主动找。",
+      "用 home fragrance / room scent / flameless diffuser 作为入口词；把 crystal aroma stone 做品牌化命名；页面和包装使用 3 步视觉说明。",
+      "用户仍说不清是什么，或看成 decor。"
+    ],
+    [
+      "低价锚点",
+      "MUJI、Etsy、Walmart、Amazon stone 对用户有 $13-$30 锚点。",
+      "首发卖 kit / gift / quiz / scent system，不卖单个 stone；价值必须包含香氛油、卡片、礼盒、refill path。",
+      "用户将 $49-$69 直接和普通小香薰/摆件比较。"
+    ],
+    [
+      "晶石产地和伦理",
+      "公开报道提示 crystal sourcing 有劳动、冲突和追溯风险。",
+      "只使用可解释的常见石材；要求供应商 stone declaration；公开 Stone Safety & Sourcing Note；避免 rare/healing 叙事。",
+      "供应商无法说明石材来源或把仿石当天然石。"
+    ],
+    [
+      "晶石材质安全",
+      "某些矿物可能有毒、易碎、水溶或不适合接触油/水。",
+      "首发只用保守清单：clear quartz / rose quartz / amethyst / aventurine 等抛光碎石；避免 malachite、galena、cinnabar、raw pyrite 等高风险矿物；不做 crystal water。",
+      "样品掉色、掉粉、异味、尖锐碎片或材料不明。"
+    ],
+    [
+      "宠物/儿童风险",
+      "精油/香氛油对宠物和小孩可能有误食、接触和呼吸风险。",
+      "不做 pet-safe claim；包装写 keep out of reach；小件加 choking warning；油瓶防漏；页面建议通风和避免宠物接触。",
+      "用户大量询问 pet safe，而供应商无法提供安全文件。"
+    ],
+    [
+      "香氛合规与运输",
+      "香氛油涉及 IFRA/SDS/MSDS、flash point、过敏原和运输信息。",
+      "RFQ 必要字段：SDS/MSDS、IFRA certificate、allergen list、flash point、oil base、leakage test、export packaging。",
+      "供应商只会报总价，不能提供英文文件。"
+    ],
+    [
+      "功效/玄学合规",
+      "治疗、焦虑、睡眠、净化、保护、招财等客观或医疗化承诺需要证据且风险高。",
+      "语言使用 vibe、room mood、scent sign、ritual、reset；避免 heal/cure/anxiety/sleep treatment/protection/guaranteed luck。",
+      "创作者或落地页把产品讲成治疗/转运工具。"
+    ]
+  ]
+}

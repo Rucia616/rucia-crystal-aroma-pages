@@ -11,6 +11,7 @@ Core pages:
 - `pickfu-concept-pilot-analysis-2026-06-15.html`
 - `strategy-state-shift-fragrance-memo-2026-06-15.html`
 - `product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html`
+- `product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html`
 
 Concept V2 public assets:
 
@@ -24,5 +25,6 @@ Research reports:
 - `north-america-scent-research-crystal-aroma-2026-06-15.html`
 - `north-america-launch-validation-crystal-aroma-2026-06-15.html`
 - `product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html`
+- `product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html`
 
 The private source workspace remains in `Rucia616/rucia-crystal-aroma`.
