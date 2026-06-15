@@ -254,15 +254,17 @@
       grid-template-rows: 66px 318px 1fr;
       min-width: 0;
       padding: 18px;
-      border: 4px solid #111111;
+      border: 1px solid rgba(17, 17, 17, 0.18);
       border-radius: 24px;
-      background: rgba(255, 255, 255, 0.88);
-      box-shadow: 8px 8px 0 var(--cyan);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84)),
+        #ffffff;
+      box-shadow: 0 28px 60px rgba(17, 17, 17, 0.12), inset 0 0 0 5px rgba(50, 214, 198, 0.16);
       overflow: hidden;
     }
 
-    .offer.b { box-shadow-color: var(--sky); }
-    .offer.c { box-shadow-color: var(--pink); }
+    .offer.b { box-shadow: 0 28px 60px rgba(17, 17, 17, 0.12), inset 0 0 0 5px rgba(158, 209, 255, 0.28); }
+    .offer.c { box-shadow: 0 28px 60px rgba(17, 17, 17, 0.12), inset 0 0 0 5px rgba(247, 164, 216, 0.28); }
 
     .offer:before {
       content: "";
@@ -270,7 +272,7 @@
       inset: auto -32px -48px auto;
       width: 190px;
       aspect-ratio: 1;
-      border: 4px solid #111111;
+      border: 3px solid #111111;
       border-radius: 28px;
       background: linear-gradient(135deg, var(--cyan), var(--pink) 62%, var(--green));
       transform: rotate(-11deg);
@@ -325,11 +327,14 @@
       position: relative;
       margin: 10px 0 12px;
       border-radius: 20px;
-      border: 3px solid #111111;
+      border: 1px solid rgba(17, 17, 17, 0.12);
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.76), rgba(255,255,255,0.42)),
-        linear-gradient(150deg, rgba(50,214,198,0.18), rgba(247,164,216,0.22));
+        radial-gradient(circle at 20% 78%, rgba(17, 17, 17, 0.08), transparent 28%),
+        radial-gradient(circle at 72% 82%, rgba(17, 17, 17, 0.08), transparent 26%),
+        linear-gradient(145deg, rgba(255,255,255,0.88), rgba(244,249,248,0.68)),
+        linear-gradient(150deg, rgba(50,214,198,0.12), rgba(247,164,216,0.18));
       overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
     }
 
     .mock:after {
@@ -352,13 +357,14 @@
       min-height: 28px;
       align-items: center;
       padding: 5px 9px;
-      border: 2px solid #111111;
+      border: 1px solid rgba(17,17,17,0.2);
       border-radius: 999px;
-      background: #ffffff;
+      background: rgba(255,255,255,0.86);
       color: #111111;
       font-size: 11px;
       font-weight: 950;
       text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(17,17,17,0.08);
     }
 
     .box {
@@ -367,23 +373,33 @@
       bottom: 34px;
       width: 176px;
       height: 214px;
-      border: 4px solid #111111;
-      border-radius: 16px;
-      background: linear-gradient(145deg, #ffffff, #f4fbff 58%, #c6f7ef);
-      box-shadow: 12px 12px 0 rgba(17,17,17,0.1);
+      border: 1px solid rgba(17,17,17,0.16);
+      border-radius: 18px;
+      background:
+        linear-gradient(105deg, rgba(255,255,255,0.88), rgba(255,255,255,0.26) 34%, rgba(255,255,255,0) 35%),
+        linear-gradient(145deg, #ffffff, #f4fbff 58%, #c6f7ef);
+      box-shadow: 0 26px 40px rgba(17,17,17,0.2), -10px -8px 26px rgba(255,255,255,0.64) inset;
       z-index: 2;
       transform: rotate(4deg);
     }
 
-    .box.pink { background: linear-gradient(145deg, #ffffff, #ffe9f7 58%, #9ed1ff); }
-    .box.green { background: linear-gradient(145deg, #ffffff, #e4fff5 58%, #f7a4d8); }
+    .box.pink {
+      background:
+        linear-gradient(105deg, rgba(255,255,255,0.88), rgba(255,255,255,0.26) 34%, rgba(255,255,255,0) 35%),
+        linear-gradient(145deg, #ffffff, #ffe9f7 58%, #9ed1ff);
+    }
+    .box.green {
+      background:
+        linear-gradient(105deg, rgba(255,255,255,0.88), rgba(255,255,255,0.26) 34%, rgba(255,255,255,0) 35%),
+        linear-gradient(145deg, #ffffff, #e4fff5 58%, #f7a4d8);
+    }
 
     .box b {
       position: absolute;
       left: 16px;
       top: 18px;
       color: #111111;
-      font-size: 21px;
+      font-size: 20px;
       line-height: 0.92;
       text-transform: uppercase;
     }
@@ -404,9 +420,12 @@
       bottom: 42px;
       width: 152px;
       height: 92px;
-      border: 4px solid #111111;
+      border: 1px solid rgba(17,17,17,0.2);
       border-radius: 50% 50% 42% 42%;
-      background: linear-gradient(180deg, #ffffff 0 20%, #9fe6de 20% 100%);
+      background:
+        radial-gradient(ellipse at 50% 4%, rgba(255,255,255,0.92) 0 42%, transparent 43%),
+        linear-gradient(180deg, #fbfffc 0 18%, #98ded6 18% 100%);
+      box-shadow: 0 28px 34px rgba(17,17,17,0.22), inset 0 -18px 28px rgba(17,17,17,0.08), inset 0 10px 12px rgba(255,255,255,0.64);
       z-index: 4;
     }
 
@@ -415,13 +434,14 @@
       position: absolute;
       inset: -28px 18px auto 18px;
       height: 54px;
-      border: 4px solid #111111;
+      border: 1px solid rgba(17,17,17,0.18);
       border-radius: 50%;
       background:
-        radial-gradient(circle at 18% 50%, #9b7cff 0 12px, transparent 13px),
-        radial-gradient(circle at 42% 45%, #70e5a8 0 14px, transparent 15px),
-        radial-gradient(circle at 68% 55%, #f7a4d8 0 13px, transparent 14px),
+        radial-gradient(circle at 18% 50%, #9b7cff 0 12px, rgba(155,124,255,0.24) 13px, transparent 17px),
+        radial-gradient(circle at 42% 45%, #70e5a8 0 14px, rgba(112,229,168,0.26) 15px, transparent 19px),
+        radial-gradient(circle at 68% 55%, #f7a4d8 0 13px, rgba(247,164,216,0.26) 14px, transparent 18px),
         #ffffff;
+      box-shadow: 0 10px 22px rgba(17,17,17,0.12), inset 0 8px 16px rgba(255,255,255,0.7);
     }
 
     .oil {
@@ -430,9 +450,12 @@
       bottom: 48px;
       width: 52px;
       height: 130px;
-      border: 4px solid #111111;
+      border: 1px solid rgba(17,17,17,0.28);
       border-radius: 14px 14px 12px 12px;
-      background: linear-gradient(180deg, #ffffff 0 26%, #32d6c6 26% 100%);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.82), rgba(255,255,255,0.12) 38%, transparent 39%),
+        linear-gradient(180deg, rgba(255,255,255,0.78) 0 26%, #32d6c6 26% 100%);
+      box-shadow: 0 22px 26px rgba(17,17,17,0.22), inset 0 0 18px rgba(255,255,255,0.58);
       z-index: 5;
     }
 
@@ -443,7 +466,7 @@
       top: -34px;
       width: 20px;
       height: 34px;
-      border: 4px solid #111111;
+      border: 1px solid rgba(17,17,17,0.35);
       border-bottom: 0;
       border-radius: 8px 8px 0 0;
       background: #111111;
@@ -465,9 +488,12 @@
       bottom: 42px;
       width: 132px;
       height: 168px;
-      border: 4px solid #111111;
+      border: 1px solid rgba(17,17,17,0.26);
       border-radius: 18px 18px 26px 26px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.86) 0 28%, #bff5ee 28% 100%);
+      background:
+        linear-gradient(100deg, rgba(255,255,255,0.86), rgba(255,255,255,0.18) 32%, transparent 33%),
+        linear-gradient(180deg, rgba(255,255,255,0.72) 0 28%, rgba(191,245,238,0.86) 28% 100%);
+      box-shadow: 0 28px 38px rgba(17,17,17,0.2), inset 0 0 24px rgba(255,255,255,0.62);
       z-index: 5;
     }
 
@@ -480,7 +506,8 @@
       width: 7px;
       height: 190px;
       border-radius: 999px;
-      background: #111111;
+      background: linear-gradient(180deg, #2b211f, #111111);
+      box-shadow: 0 6px 8px rgba(17,17,17,0.18);
       transform-origin: bottom center;
     }
 
@@ -494,7 +521,8 @@
       width: 7px;
       height: 180px;
       border-radius: 999px;
-      background: #111111;
+      background: linear-gradient(180deg, #2b211f, #111111);
+      box-shadow: 0 6px 8px rgba(17,17,17,0.18);
       transform: rotate(4deg);
       z-index: 4;
     }
@@ -505,9 +533,10 @@
       top: 78px;
       width: 150px;
       height: 106px;
-      border: 4px solid #111111;
+      border: 1px solid rgba(17,17,17,0.2);
       border-radius: 16px;
-      background: #ffffff;
+      background: linear-gradient(135deg, #ffffff, #faf8f2);
+      box-shadow: 0 18px 26px rgba(17,17,17,0.2);
       z-index: 5;
       transform: rotate(-7deg);
     }
