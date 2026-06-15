@@ -7,8 +7,14 @@ Core pages:
 - `index.html`
 - `brand-vi-prismatic-scent-quiz.html`
 - `concept-pilot-validation-board-2026-06-15.html`
+- `concept-v2-state-shift-test-2026-06-15.html`
 - `pickfu-concept-pilot-analysis-2026-06-15.html`
 - `strategy-state-shift-fragrance-memo-2026-06-15.html`
+
+Concept V2 public assets:
+
+- `assets/concept-v2/room-mood-diffuser-kit-state-shift-test-2026-06-15.png`
+- `assets/concept-v2/concept-v2-state-shift-test-protocol-2026-06-15.md`
 
 Research reports:
 

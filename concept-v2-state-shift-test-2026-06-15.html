@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aroma Oracle · Concept V2 State Shift Test · 2026-06-15</title>
+  <meta name="description" content="Aroma Oracle Concept V2 test asset for Room Mood Diffuser Kit, Scent Sign Quiz, and Reset the Room positioning." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --ink: #111111;
+      --body: #333333;
+      --muted: #676767;
+      --panel: #ffffff;
+      --panel-alpha: rgba(255, 255, 255, 0.9);
+      --line: rgba(17, 17, 17, 0.14);
+      --cyan: #32d6c6;
+      --pink: #f7a4d8;
+      --sky: #9ed1ff;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --green: #70e5a8;
+      --shadow: 0 24px 70px rgba(17, 17, 17, 0.13);
+      --grid: rgba(17, 17, 17, 0.055);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --ink: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --panel: #1c1f27;
+        --panel-alpha: rgba(29, 31, 38, 0.9);
+        --line: rgba(250, 248, 242, 0.18);
+        --cyan: #7ceade;
+        --pink: #f7a4d8;
+        --sky: #9ed1ff;
+        --lilac: #b6a0ff;
+        --coral: #ff8b72;
+        --green: #96f2bd;
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+        --grid: rgba(250, 248, 242, 0.07);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(112deg, rgba(247, 164, 216, 0.23), transparent 34%),
+        linear-gradient(248deg, rgba(50, 214, 198, 0.24), transparent 36%),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(calc(100% - 40px), 1180px);
+      margin: 0 auto;
+      padding: 30px 0 76px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 34px;
+      height: 34px;
+      border: 4px solid var(--ink);
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--panel) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--ink);
+      flex: 0 0 auto;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel-alpha);
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .asset-frame {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      min-height: 640px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background:
+        linear-gradient(126deg, rgba(50, 214, 198, 0.18), transparent 38%),
+        linear-gradient(292deg, rgba(247, 164, 216, 0.28), transparent 40%),
+        linear-gradient(90deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+        #f8f8f4;
+      background-size: auto, auto, 64px 64px, 64px 64px, auto;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .asset-inner {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(390px, 0.9fr);
+      gap: clamp(24px, 4vw, 54px);
+      padding: clamp(32px, 5vw, 58px);
+    }
+
+    .copy-zone {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-width: 0;
+      z-index: 2;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .pill.green { background: var(--green); }
+    .pill.pink { background: var(--pink); }
+
+    h1 {
+      max-width: 720px;
+      margin: 20px 0 14px;
+      color: #111111;
+      font-size: clamp(54px, 7.3vw, 96px);
+      line-height: 0.88;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .subhead {
+      max-width: 630px;
+      margin: 0;
+      color: #222222;
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 900;
+      line-height: 1.06;
+    }
+
+    .bodyline {
+      max-width: 560px;
+      margin: 12px 0 0;
+      color: #333333;
+      font-size: 15px;
+      font-weight: 720;
+      line-height: 1.35;
+    }
+
+    .feature-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .feature {
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      padding: 7px 10px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      color: #111111;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      color: #111111;
+      font-size: 13px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .line::before {
+      content: "";
+      width: 58px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--green));
+      border: 2px solid #111111;
+    }
+
+    .visual-zone {
+      position: relative;
+      min-width: 0;
+    }
+
+    .product-stage {
+      position: absolute;
+      inset: 0 0 4% 0;
+      min-height: 520px;
+    }
+
+    .box {
+      position: absolute;
+      right: 6%;
+      top: 9%;
+      width: 48%;
+      aspect-ratio: 0.78;
+      border: 5px solid #111111;
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.22)),
+        linear-gradient(135deg, var(--pink), var(--sky) 50%, var(--green));
+      box-shadow: 12px 12px 0 #111111;
+      transform: rotate(2deg);
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: "ROOM MOOD\\ADIFFUSER KIT";
+      white-space: pre;
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      color: #111111;
+      font-size: clamp(20px, 2.1vw, 34px);
+      font-weight: 950;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .box::after {
+      content: "QUIZ MATCHED\\AFLAMELESS SCENT";
+      white-space: pre;
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      padding: 9px 10px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 11px;
+      font-weight: 950;
+      line-height: 1.1;
+    }
+
+    .phone {
+      position: absolute;
+      right: 42%;
+      top: 13%;
+      width: 29%;
+      aspect-ratio: 0.58;
+      border: 5px solid #111111;
+      border-radius: 28px;
+      background: #ffffff;
+      box-shadow: 8px 8px 0 #111111;
+      transform: rotate(-7deg);
+      overflow: hidden;
+    }
+
+    .phone-top {
+      height: 26%;
+      background: var(--cyan);
+      border-bottom: 5px solid #111111;
+      padding: 16px;
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .quiz-card {
+      margin: 16px;
+      padding: 13px;
+      border: 3px solid #111111;
+      border-radius: 18px;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .quiz-card b {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .quiz-card strong {
+      display: block;
+      margin-top: 7px;
+      font-size: clamp(20px, 2.2vw, 33px);
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+
+    .kit-card {
+      position: absolute;
+      left: 2%;
+      bottom: 17%;
+      width: 38%;
+      min-height: 190px;
+      padding: 18px;
+      border: 5px solid #111111;
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 9px 9px 0 var(--pink);
+      transform: rotate(-1deg);
+      color: #111111;
+      z-index: 2;
+    }
+
+    .kit-card b {
+      display: inline-flex;
+      padding: 6px 8px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: var(--green);
+      color: #111111;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .kit-card strong {
+      display: block;
+      margin: 12px 0 8px;
+      font-size: clamp(24px, 3vw, 44px);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .kit-card span {
+      display: block;
+      color: #333333;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+
+    .bottle {
+      position: absolute;
+      left: 50%;
+      bottom: 19%;
+      width: 19%;
+      aspect-ratio: 0.55;
+      border: 5px solid #111111;
+      border-radius: 28px 28px 22px 22px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(50, 214, 198, 0.36) 55%, rgba(247, 164, 216, 0.5));
+      box-shadow: 10px 10px 0 #111111;
+      z-index: 4;
+    }
+
+    .bottle::before {
+      content: "";
+      position: absolute;
+      left: 31%;
+      bottom: 100%;
+      width: 38%;
+      height: 42px;
+      border: 5px solid #111111;
+      border-bottom: 0;
+      border-radius: 14px 14px 0 0;
+      background: #ffffff;
+    }
+
+    .label {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      bottom: 20%;
+      padding: 10px 8px;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      background: #ffffff;
+      color: #111111;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 950;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .reeds {
+      position: absolute;
+      left: 59%;
+      bottom: 55%;
+      width: 6px;
+      height: 250px;
+      background: #111111;
+      transform-origin: bottom center;
+      z-index: 1;
+    }
+
+    .reeds.r1 { transform: rotate(-20deg); }
+    .reeds.r2 { transform: rotate(-7deg); }
+    .reeds.r3 { transform: rotate(8deg); }
+    .reeds.r4 { transform: rotate(22deg); }
+
+    .crystal {
+      position: absolute;
+      width: 42px;
+      aspect-ratio: 1;
+      border: 3px solid #111111;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
+      clip-path: polygon(50% 0, 100% 36%, 82% 100%, 18% 100%, 0 36%);
+      z-index: 5;
+    }
+
+    .crystal.c1 { left: 28%; bottom: 21%; transform: rotate(16deg); }
+    .crystal.c2 { left: 66%; bottom: 18%; width: 34px; transform: rotate(-15deg); background: linear-gradient(135deg, var(--green), var(--sky)); }
+    .crystal.c3 { right: 9%; bottom: 28%; width: 32px; transform: rotate(25deg); background: linear-gradient(135deg, var(--lilac), var(--pink)); }
+
+    .scent-row {
+      position: absolute;
+      left: 8%;
+      right: 6%;
+      bottom: 2%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      z-index: 8;
+    }
+
+    .scent {
+      min-height: 48px;
+      padding: 10px;
+      border: 3px solid #111111;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 11px;
+      font-weight: 950;
+      line-height: 1.05;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .scent:nth-child(2) { background: var(--cyan); }
+    .scent:nth-child(3) { background: var(--pink); }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4.2vw, 50px);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      max-width: 540px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .protocol {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 14px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel-alpha);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .panel.dark {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .panel .tag,
+    .protocol-tag {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .panel.dark .tag {
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.9);
+      color: #111111;
+    }
+
+    .panel h3 {
+      margin: 16px 0 12px;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--body);
+      font-size: 15px;
+    }
+
+    .panel.dark p {
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 760;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .question {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 12px;
+      padding: 13px;
+      border: 2px solid var(--ink);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: 4px 4px 0 var(--pink);
+    }
+
+    .question:nth-child(2) { box-shadow-color: var(--cyan); }
+    .question:nth-child(3) { box-shadow-color: var(--lilac); }
+    .question:nth-child(4) { box-shadow-color: var(--green); }
+
+    .question b {
+      color: var(--ink);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .question span {
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.38;
+    }
+
+    footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .asset-frame {
+        aspect-ratio: auto;
+        min-height: 1120px;
+      }
+      .asset-inner,
+      .protocol {
+        grid-template-columns: 1fr;
+      }
+      .product-stage {
+        position: relative;
+        min-height: 560px;
+      }
+      .copy-zone {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(calc(100% - 28px), 1180px);
+        padding-top: 22px;
+      }
+      .topbar,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .asset-frame {
+        min-height: 1180px;
+        border-radius: 18px;
+      }
+      .asset-inner {
+        gap: 22px;
+        padding: 22px;
+      }
+      h1 {
+        font-size: clamp(48px, 16vw, 64px);
+      }
+      .subhead {
+        font-size: 20px;
+      }
+      .feature-chips {
+        gap: 7px;
+      }
+      .feature {
+        font-size: 11px;
+      }
+      .product-stage {
+        min-height: 530px;
+      }
+      .box {
+        right: 1%;
+        top: 6%;
+        width: 58%;
+      }
+      .phone {
+        right: 48%;
+        top: 8%;
+        width: 38%;
+      }
+      .kit-card {
+        left: 0;
+        bottom: 9%;
+        width: 54%;
+      }
+      .bottle {
+        left: 40%;
+        bottom: 9%;
+        width: 28%;
+      }
+      .scent-row {
+        left: 0;
+        right: 0;
+        grid-template-columns: 1fr;
+      }
+      .question {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <a class="nav-link" href="./index.html">Back to archive</a>
+    </div>
+
+    <section class="asset-frame" aria-label="Concept V2 test asset">
+      <div class="asset-inner">
+        <div class="copy-zone">
+          <div>
+            <div class="badge-row">
+              <span class="pill green">Aroma Oracle</span>
+              <span class="pill">Concept V2</span>
+              <span class="pill pink">State Shift Test</span>
+            </div>
+            <h1>Room Mood Diffuser Kit</h1>
+            <p class="subhead">Take the quiz. Find your Scent Sign. Reset the room.</p>
+            <p class="bodyline">A flameless room scent kit with fragrance oil, crystal chips, a mood card, and a quiz-matched scent sign for the version of your room you want today.</p>
+            <div class="feature-chips" aria-label="Kit components">
+              <span class="feature">Flameless diffuser</span>
+              <span class="feature">Crystal mood card</span>
+              <span class="feature">Scent Sign Quiz</span>
+              <span class="feature">Refill-ready scent</span>
+            </div>
+          </div>
+          <div class="line">Change the room first. Let your mood follow.</div>
+        </div>
+
+        <div class="visual-zone" aria-hidden="true">
+          <div class="product-stage">
+            <div class="reeds r1"></div>
+            <div class="reeds r2"></div>
+            <div class="reeds r3"></div>
+            <div class="reeds r4"></div>
+            <div class="box"></div>
+            <div class="phone">
+              <div class="phone-top">Scent Sign Quiz</div>
+              <div class="quiz-card">
+                <b>Your room wants</b>
+                <strong>Clean Reset</strong>
+              </div>
+              <div class="quiz-card">
+                <b>Your energy</b>
+                <strong>Fresh Aura</strong>
+              </div>
+            </div>
+            <div class="kit-card">
+              <b>Inside the kit</b>
+              <strong>Room Reset Ritual</strong>
+              <span>Fragrance oil, reeds, crystals, scent card, and reset prompt.</span>
+            </div>
+            <div class="bottle"><div class="label">Clean Reset<br />Room Mood Oil</div></div>
+            <div class="crystal c1"></div>
+            <div class="crystal c2"></div>
+            <div class="crystal c3"></div>
+            <div class="scent-row">
+              <div class="scent">Clean<br />Reset</div>
+              <div class="scent">Fresh<br />Aura</div>
+              <div class="scent">Soft<br />Grounding</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="protocol-title">
+      <div class="section-head">
+        <h2 id="protocol-title">Test Protocol</h2>
+        <p>This protocol is for Rucia before spending more money. Use the PNG asset for respondents; use this section to judge whether the next spend is justified.</p>
+      </div>
+      <div class="protocol">
+        <div class="panel dark">
+          <span class="tag">Founder Cash Rule</span>
+          <h3>Do not sample yet.</h3>
+          <p>Run this as a clarity and perceived-value test first. If people read it as a normal diffuser, a crystal gimmick, or a cheap gift item, revise the concept before buying samples, ads, or creator placements.</p>
+        </div>
+        <div class="panel">
+          <span class="protocol-tag">Respondent Questions</span>
+          <div class="question-list">
+            <div class="question"><b>Q1</b><span>What do you think this product is? Please describe it in your own words.</span></div>
+            <div class="question"><b>Q2</b><span>What feels different from a normal reed diffuser or home fragrance?</span></div>
+            <div class="question"><b>Q3</b><span>What feels appealing, confusing, or not believable?</span></div>
+            <div class="question"><b>Q4</b><span>Would this feel reasonable at $49, $59, or $69? Why?</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>Concept V2 test asset for Aroma Oracle / Rucia Crystal Aroma. Created 2026-06-15.</footer>
+  </main>
+</body>
+</html>

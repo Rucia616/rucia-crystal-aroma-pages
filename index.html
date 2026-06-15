@@ -289,6 +289,33 @@
       font-weight: 760;
     }
 
+    .inline-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .action-button {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 2px solid #ffffff;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .action-button.secondary {
+      background: transparent;
+      color: #ffffff;
+    }
+
     .gate-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -642,6 +669,10 @@
           <span class="tag">Do First</span>
           <h3>Concept V2 / State Shift Test</h3>
           <p>下一步要统一测试：Room Mood Diffuser Kit + Scent Sign Quiz + Change the room first. Let your mood follow.</p>
+          <div class="inline-actions">
+            <a class="action-button" href="./concept-v2-state-shift-test-2026-06-15.html">Open V2 Asset</a>
+            <a class="action-button secondary" href="./assets/concept-v2/concept-v2-state-shift-test-protocol-2026-06-15.md">Read Protocol</a>
+          </div>
           <div class="gate-list" aria-label="通过和停止条件">
             <div class="gate"><b>Pass Signal</b><span>用户能说清这是香氛扩香礼盒，并理解它卖的是房间状态切换。</span></div>
             <div class="gate"><b>Price Signal</b><span>用户愿意讨论 $49 / $59 / $69，而不是立刻拿它和便宜香薰比。</span></div>
@@ -652,7 +683,7 @@
         <div class="next-steps" aria-label="7-10 天行动清单">
           <div class="step-row">
             <b>Step 01</b>
-            <div><strong>做单概念 V2 测试资产</strong><span>沿用当前 VI，围绕 Room Mood Diffuser Kit / Scent Sign Quiz / Reset the room 做一张测试图或轻量页面。</span></div>
+            <div><strong>使用单概念 V2 测试资产</strong><span>沿用当前 VI，围绕 Room Mood Diffuser Kit / Scent Sign Quiz / Reset the room 做清晰度和价值感测试。</span></div>
           </div>
           <div class="step-row">
             <b>Step 02</b>
@@ -676,6 +707,12 @@
         <p>项目主入口和当前最值得外发的页面。PickFu 深度分析已放在第一屏。</p>
       </div>
       <div class="cards">
+        <a class="card analysis" href="./concept-v2-state-shift-test-2026-06-15.html">
+          <span class="tag">Concept V2</span>
+          <h3>State Shift Test Asset</h3>
+          <p>单概念测试页和测试图：Room Mood Diffuser Kit、Scent Sign Quiz、Reset the room。</p>
+          <span class="meta">2026-06-15 · Test asset</span>
+        </a>
         <a class="card analysis" href="./pickfu-concept-pilot-analysis-2026-06-15.html">
           <span class="tag">New / Analysis</span>
           <h3>PickFu 概念测试深度分析</h3>
@@ -765,6 +802,8 @@
       <div class="file-list">
         <a class="file-row" href="./README.md"><b>Project README</b><span>公开仓库说明文件。</span><em>Markdown</em></a>
         <a class="file-row" href="./assets/vi-final-prismatic-scent-quiz.png"><b>VI Board</b><span>保留版品牌视觉方向图。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-v2/room-mood-diffuser-kit-state-shift-test-2026-06-15.png"><b>Concept V2 PNG</b><span>Room Mood Diffuser Kit / State Shift Test 测试图。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-v2/concept-v2-state-shift-test-protocol-2026-06-15.md"><b>Concept V2 Protocol</b><span>单概念测试题、通过信号、停止信号和现金纪律。</span><em>Markdown</em></a>
         <a class="file-row" href="./assets/concept-pilot/all-concept-boards.png"><b>All Concept Boards</b><span>A/B/C/D 四张概念板合并预览。</span><em>PNG</em></a>
         <a class="file-row" href="./assets/concept-pilot/01-scent-sign-diffuser-kit.png"><b>Concept A</b><span>Scent Sign Diffuser Kit 概念板。</span><em>PNG</em></a>
         <a class="file-row" href="./assets/concept-pilot/02-vibe-matched-crystal-aroma.png"><b>Concept B</b><span>Vibe-Matched Crystal Aroma 概念板。</span><em>PNG</em></a>
