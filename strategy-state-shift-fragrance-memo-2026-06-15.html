@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aroma Oracle · State Shift Strategy Memo · 2026-06-15</title>
+  <meta name="description" content="Aroma Oracle / Rucia Crystal Aroma 战略修正备忘录：fragrance-first 不等于低价香薰，品类识别用香氛，品牌主张用 room state shift。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --ink: #111111;
+      --body: #343434;
+      --muted: #696969;
+      --line: rgba(17, 17, 17, 0.14);
+      --panel: #ffffff;
+      --panel-alpha: rgba(255, 255, 255, 0.9);
+      --cyan: #32d6c6;
+      --pink: #f7a4d8;
+      --sky: #9ed1ff;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --green: #70e5a8;
+      --shadow: 0 22px 60px rgba(17, 17, 17, 0.12);
+      --grid: rgba(17, 17, 17, 0.055);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --ink: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --panel: #1c1f27;
+        --panel-alpha: rgba(29, 31, 38, 0.9);
+        --cyan: #7ceade;
+        --pink: #f7a4d8;
+        --sky: #9ed1ff;
+        --lilac: #b6a0ff;
+        --coral: #ff8b72;
+        --green: #96f2bd;
+        --shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
+        --grid: rgba(250, 248, 242, 0.07);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(112deg, rgba(247, 164, 216, 0.2), transparent 34%),
+        linear-gradient(248deg, rgba(50, 214, 198, 0.2), transparent 36%),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    .wrap {
+      width: min(calc(100% - 40px), 1160px);
+      margin: 0 auto;
+      padding: 34px 0 76px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 34px;
+      height: 34px;
+      border: 4px solid var(--ink);
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--panel) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--ink);
+      flex: 0 0 auto;
+    }
+
+    .back {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel-alpha);
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .hero,
+    .panel,
+    .decision-card {
+      border: 1px solid var(--line);
+      background: var(--panel-alpha);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: clamp(28px, 5vw, 56px);
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      inset: auto -6% -120px auto;
+      width: min(460px, 60vw);
+      aspect-ratio: 1;
+      border: 4px solid var(--ink);
+      border-radius: 38px;
+      background:
+        linear-gradient(135deg, rgba(50, 214, 198, 0.86), rgba(247, 164, 216, 0.76) 54%, rgba(112, 229, 168, 0.78));
+      transform: rotate(-9deg);
+      opacity: 0.88;
+      z-index: 0;
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 7px 12px;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--green);
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin: 22px 0 18px;
+      font-size: clamp(42px, 7vw, 88px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: var(--body);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 760;
+      line-height: 1.28;
+    }
+
+    .thesis {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.46fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .quote {
+      border: 3px solid var(--ink);
+      border-radius: 18px;
+      padding: 20px;
+      background: #111111;
+      color: #ffffff;
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1.05;
+      font-weight: 950;
+      text-transform: uppercase;
+      box-shadow: 8px 8px 0 var(--pink);
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      line-height: 1.35;
+      text-transform: none;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4.2vw, 50px);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .panel,
+    .decision-card {
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .panel h3,
+    .decision-card h3 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .panel p,
+    .decision-card p {
+      margin: 0;
+      color: var(--body);
+      font-size: 15px;
+    }
+
+    .tag {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      margin-bottom: 14px;
+      padding: 5px 9px;
+      border: 1px solid rgba(17, 17, 17, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #111111;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .panel.cyan { border-top: 8px solid var(--cyan); }
+    .panel.pink { border-top: 8px solid var(--pink); }
+    .panel.green { border-top: 8px solid var(--green); }
+    .panel.lilac { border-top: 8px solid var(--lilac); }
+    .panel.coral { border-top: 8px solid var(--coral); }
+
+    .positioning {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .positioning li {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel-alpha);
+    }
+
+    .positioning b {
+      color: var(--ink);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .positioning span {
+      color: var(--body);
+      font-size: 15px;
+    }
+
+    .decision-card {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.56)),
+        linear-gradient(135deg, var(--cyan), var(--pink) 54%, var(--green));
+      color: #111111;
+      border-color: rgba(17, 17, 17, 0.18);
+    }
+
+    .decision-card p { color: rgba(17, 17, 17, 0.76); }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      min-height: 30px;
+      align-items: center;
+      padding: 6px 10px;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .thesis,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(calc(100% - 28px), 1160px);
+        padding-top: 22px;
+      }
+      .topbar,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .positioning li {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: clamp(40px, 14vw, 68px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <a class="back" href="./index.html">Back to archive</a>
+    </div>
+
+    <header class="hero">
+      <span class="eyebrow">Strategy Memo · 2026-06-15</span>
+      <h1>State Shift, Not Cheap Fragrance</h1>
+      <p class="lead">这份备忘录修正 PickFu 分析后的核心判断：fragrance-first 是品类识别，不是品牌主张。品牌真正要卖的，是用香味、房间 mood、quiz 结果和轻仪式完成一次可感知的状态切换。</p>
+      <div class="thesis">
+        <div class="quote">
+          Fragrance proves it. Room mood sells it. State shift makes it worth paying for.
+          <small>中文判断：香味负责可信和复购，房间状态负责首购想象，自我状态变化负责情绪溢价。</small>
+        </div>
+        <div class="panel cyan">
+          <span class="tag">Corrected Thesis</span>
+          <h3>不是普通 fragrance-first，而是 fragrance-proven state-shift brand。</h3>
+          <p>用户第一眼必须看懂这是香氛 / 扩香 / room scent；但她真正愿意多付钱买的，是“我可以先改变房间氛围，再改变自己此刻的状态”。</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="avoid-title">
+      <div class="section-head">
+        <h2 id="avoid-title">Avoiding Price War</h2>
+        <p>避免落入低价香薰竞争的办法，不是把香味说得更玄，而是改变消费者比较你的参照系。</p>
+      </div>
+      <div class="grid-3">
+        <div class="panel pink">
+          <span class="tag">Category Entry</span>
+          <h3>看懂是香氛，但不要只像香氛。</h3>
+          <p>包装、页面和广告必须让人一眼识别 diffuser / room scent，同时展示晶石、结果卡、quiz 和礼盒结构，让它从单瓶香薰变成一个 room mood kit。</p>
+        </div>
+        <div class="panel green">
+          <span class="tag">Price Anchor</span>
+          <h3>锚定 kit / gift / ritual system。</h3>
+          <p>首购价格不应该被拿来和 1688 同款藤条瓶比，而应该被放进“送礼、开箱、房间重置、可拍内容”的框架里。</p>
+        </div>
+        <div class="panel lilac">
+          <span class="tag">Repeat Logic</span>
+          <h3>首购靠系统，复购靠香味。</h3>
+          <p>完整礼盒负责第一次转化和溢价；refill、hero scent 和 room fit 负责后续复购。晶石是情绪和视觉钩子，不是复购发动机。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="room-title">
+      <div class="section-head">
+        <h2 id="room-title">Room First, Self Follows</h2>
+        <p>“改变房间状态”和“改变自己的状态”不是二选一，它们应该是前后关系。</p>
+      </div>
+      <div class="grid-2">
+        <div class="decision-card">
+          <span class="tag">Messaging Ladder</span>
+          <h3>Change the room first. Let your mood follow.</h3>
+          <p>表层钩子是 reset your room，情绪 payoff 是 reset your state。这样比“香薰好闻”更大，也比“买了转运”更可信。</p>
+          <div class="pill-list" aria-label="推荐语言">
+            <span class="pill">Reset the room</span>
+            <span class="pill">Find your Scent Sign</span>
+            <span class="pill">Match your current energy</span>
+            <span class="pill">Room Mood Diffuser Kit</span>
+          </div>
+        </div>
+        <div class="panel coral">
+          <span class="tag">Claim Boundary</span>
+          <h3>不要承诺玄学结果，要承诺可感知体验。</h3>
+          <p>可以讲 current vibe、room mood、energy match、soft reset；不要讲治愈、转运、保护、治疗焦虑或睡眠。这条边界会影响页面文案、包装卡片和红人口播。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="vi-title">
+      <div class="section-head">
+        <h2 id="vi-title">VI Implications</h2>
+        <p>PickFu 中 A 的优势不是要照抄 A，而是要把“手机上一眼看懂且有冲击力”的逻辑放进整个视觉系统。</p>
+      </div>
+      <ul class="positioning">
+        <li><b>Big black type</b><span>标题、包装正面、广告首屏继续使用强对比大黑字，保证 TikTok / Instagram 缩略图里也能读懂。</span></li>
+        <li><b>Product center</b><span>玻璃瓶、藤条、香氛液、晶石、结果卡、盒子必须同时出现。不要让玄学氛围盖过“这是香氛产品”。</span></li>
+        <li><b>Color-coded moods</b><span>每个香味都应该像一个状态标签，而不是普通香型名。颜色承担 SKU 识别和社媒记忆。</span></li>
+        <li><b>Quiz as interface</b><span>结果卡、选择题、badge、score、scent sign 不是装饰，是品牌机制。它们要贯穿页面、包装、开箱和红人素材。</span></li>
+        <li><b>Bright, not cheap</b><span>继续用明亮高饱和，但通过留白、黑色结构线、玻璃质感和清晰排版避免变成廉价可爱风。</span></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="decision-title">
+      <div class="section-head">
+        <h2 id="decision-title">Decision Record</h2>
+        <p>这条结论会影响命名、包装、落地页、下一轮测试和供应链筛选。</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel cyan">
+          <span class="tag">Keep</span>
+          <h3>Room Mood Diffuser Kit + Scent Sign Quiz</h3>
+          <p>产品名优先保留 room mood / diffuser / kit；机制保留 scent sign quiz。它们能同时解决品类清晰、情绪吸引和内容传播。</p>
+        </div>
+        <div class="panel pink">
+          <span class="tag">Next Test</span>
+          <h3>测试“房间状态切换”是否比“香氛礼盒”更能提高愿意点击和愿意付费。</h3>
+          <p>下一轮不急着买货。应该先用单概念 landing / 问卷测试：用户是否理解产品、是否觉得不廉价、是否愿意为 kit 结构而不是香薰液体付溢价。</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>Public strategy memo for Aroma Oracle / Rucia Crystal Aroma. Last updated: 2026-06-15.</footer>
+  </main>
+</body>
+</html>
