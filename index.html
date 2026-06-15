@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aroma Oracle · Rucia Crystal Aroma 项目公开档案</title>
-  <meta name="description" content="Aroma Oracle / Rucia Crystal Aroma 玄学能量晶石香薰项目公开档案入口：VI、竞品调研、消费者调研、香味策略、Launch 验证、PickFu 概念测试、战略备忘录和公开素材。" />
+  <meta name="description" content="Aroma Oracle / Rucia Crystal Aroma 玄学能量晶石香薰项目公开档案入口：项目阶段、下一步行动、VI、竞品调研、消费者调研、香味策略、Launch 验证、PickFu 概念测试、战略备忘录和公开素材。" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
   <style>
     :root {
@@ -245,6 +245,123 @@
       font-size: 15px;
     }
 
+    .next-board {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .next-priority,
+    .next-steps {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .next-priority {
+      padding: 22px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 54%),
+        #111111;
+      color: #ffffff;
+    }
+
+    .next-priority .tag {
+      border-color: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.9);
+      color: #111111;
+    }
+
+    .next-priority h3 {
+      max-width: 460px;
+      margin: 16px 0 14px;
+      font-size: clamp(30px, 4.2vw, 54px);
+      line-height: 0.96;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .next-priority p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 16px;
+      font-weight: 760;
+    }
+
+    .gate-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .gate {
+      min-height: 74px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .gate b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--green);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .gate span {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .next-steps {
+      display: grid;
+      gap: 10px;
+      padding: 18px;
+      background: var(--panel-alpha);
+    }
+
+    .step-row {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      min-height: 74px;
+      padding: 12px;
+      border: 2px solid var(--ink);
+      border-radius: 14px;
+      background: var(--panel);
+      color: var(--ink);
+      box-shadow: 4px 4px 0 var(--pink);
+    }
+
+    .step-row:nth-child(2) { box-shadow-color: var(--cyan); }
+    .step-row:nth-child(3) { box-shadow-color: var(--lilac); }
+    .step-row:nth-child(4) { box-shadow-color: var(--green); }
+
+    .step-row b {
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .step-row strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+      line-height: 1.08;
+    }
+
+    .step-row span {
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.38;
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -458,7 +575,8 @@
 
     @media (max-width: 980px) {
       .hero,
-      .cards {
+      .cards,
+      .next-board {
         grid-template-columns: 1fr;
       }
       .hero-copy,
@@ -478,6 +596,10 @@
         flex-direction: column;
       }
       .file-row {
+        grid-template-columns: 1fr;
+      }
+      .gate-list,
+      .step-row {
         grid-template-columns: 1fr;
       }
     }
@@ -509,6 +631,44 @@
         </div>
       </aside>
     </header>
+
+    <section class="section" aria-labelledby="next-title">
+      <div class="section-head">
+        <h2 id="next-title">Next 7-10 Days</h2>
+        <p>当前不要打样、投广告或找付费红人。先验证用户是否把它理解成 room mood / state shift system，而不是普通低价香薰。</p>
+      </div>
+      <div class="next-board">
+        <div class="next-priority">
+          <span class="tag">Do First</span>
+          <h3>Concept V2 / State Shift Test</h3>
+          <p>下一步要统一测试：Room Mood Diffuser Kit + Scent Sign Quiz + Change the room first. Let your mood follow.</p>
+          <div class="gate-list" aria-label="通过和停止条件">
+            <div class="gate"><b>Pass Signal</b><span>用户能说清这是香氛扩香礼盒，并理解它卖的是房间状态切换。</span></div>
+            <div class="gate"><b>Price Signal</b><span>用户愿意讨论 $49 / $59 / $69，而不是立刻拿它和便宜香薰比。</span></div>
+            <div class="gate"><b>Stop Signal</b><span>如果用户只看成普通 diffuser 或晶石噱头，先修正概念，不进打样。</span></div>
+            <div class="gate"><b>Cash Rule</b><span>新一轮付费验证前，不买样品、不投广告、不签供应商 MOQ。</span></div>
+          </div>
+        </div>
+        <div class="next-steps" aria-label="7-10 天行动清单">
+          <div class="step-row">
+            <b>Step 01</b>
+            <div><strong>做单概念 V2 测试资产</strong><span>沿用当前 VI，围绕 Room Mood Diffuser Kit / Scent Sign Quiz / Reset the room 做一张测试图或轻量页面。</span></div>
+          </div>
+          <div class="step-row">
+            <b>Step 02</b>
+            <div><strong>跑低成本清晰度和价值感验证</strong><span>问用户这是什么、和普通香薰有什么不同、哪里想买、哪里像噱头、$49-$69 是否合理。</span></div>
+          </div>
+          <div class="step-row">
+            <b>Step 03</b>
+            <div><strong>同步做免费供应链 RFQ</strong><span>只问规格、MOQ、贴标、彩盒、晶石、卡片、出口资料和打样费；暂不买样。</span></div>
+          </div>
+          <div class="step-row">
+            <b>Step 04</b>
+            <div><strong>锁定 2 个 hero scent brief</strong><span>优先做 Clean Reset 和 Fresh Aura 这类状态型香味，避免一开始 SKU 太散。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="section" aria-labelledby="primary-title">
       <div class="section-head">
