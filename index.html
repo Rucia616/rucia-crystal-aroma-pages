@@ -205,8 +205,18 @@
       font-weight: 950;
       box-shadow: 4px 4px 0 var(--pink);
     }
+    .mini span {
+      white-space: nowrap;
+    }
     .mini:nth-child(2) { box-shadow-color: var(--cyan); }
     .mini:nth-child(3) { box-shadow-color: var(--lilac); }
+    .mini:nth-child(4) { box-shadow-color: var(--green); }
+
+    .mini.stage {
+      background: var(--ink);
+      color: var(--panel);
+      box-shadow: 4px 4px 0 var(--green);
+    }
 
     .section {
       margin-top: 42px;
@@ -492,6 +502,7 @@
           <p>香味负责可信和复购，房间 mood 负责首购想象，自我状态变化负责情绪溢价。</p>
         </div>
         <div class="mini-stack">
+          <div class="mini stage"><span>Stage</span><span>Concept Validation</span></div>
           <div class="mini"><span>Concept Poll</span><span>A 26 / C 24</span></div>
           <div class="mini"><span>Decision</span><span>A+C Hybrid</span></div>
           <div class="mini"><span>Next</span><span>State-Shift Test</span></div>
