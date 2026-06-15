@@ -550,6 +550,46 @@
       font-size: 14px;
     }
 
+    .result-readout {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .vote-row {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .vote-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .vote-track {
+      height: 18px;
+      border: 2px solid var(--text);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 4px 4px 0 var(--text);
+    }
+
+    .vote-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+    }
+
+    .vote-fill.c {
+      background: linear-gradient(90deg, var(--green), var(--sky));
+    }
+
     .files {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -598,7 +638,8 @@
 
     @media (max-width: 960px) {
       .hero,
-      .rules {
+      .rules,
+      .result-readout {
         grid-template-columns: 1fr;
       }
 
@@ -709,6 +750,30 @@
       </div>
     </section>
 
+    <section class="section result-readout" aria-labelledby="result-title">
+      <article class="panel status-green">
+        <span class="label">Result / 50 responses</span>
+        <h2 id="result-title">A 26 / C 24</h2>
+        <p>这是 52% vs 48%，没有达到原定 55%+ 胜出门槛。结论不是 A 赢，而是 A 和 C 都有有效信号，需要合并。</p>
+        <div class="vote-row" aria-label="投票结果">
+          <div class="vote-top"><span>A · Scent Sign Diffuser Kit</span><span>26 / 52%</span></div>
+          <div class="vote-track"><div class="vote-fill" style="width: 52%"></div></div>
+          <div class="vote-top"><span>C · Room Mood Ritual Kit</span><span>24 / 48%</span></div>
+          <div class="vote-track"><div class="vote-fill c" style="width: 48%"></div></div>
+        </div>
+      </article>
+      <article class="panel status-pink">
+        <span class="label">Decision</span>
+        <h2>A+C Hybrid</h2>
+        <div class="gate-list">
+          <div class="gate"><b>Keep A</b><span>`diffuser / scent / kit` 的清晰度、可信感和视觉抓眼度。</span></div>
+          <div class="gate"><b>Keep C</b><span>`room mood` 的情绪价值、房间氛围和社媒语感。</span></div>
+          <div class="gate"><b>Change</b><span>下一版主标题改为 `Room Mood Diffuser Kit`，`Scent Sign` 作为 quiz result 机制。</span></div>
+          <div class="gate"><b>Reduce</b><span>`ritual` 不放主包装标题，放到 ritual card / insert 里，避免显得太玄或吓人。</span></div>
+        </div>
+      </article>
+    </section>
+
     <section class="section" aria-labelledby="trail-title">
       <div class="section-head">
         <h2 id="trail-title">Execution Trail</h2>
@@ -785,52 +850,60 @@
               <p>付款记录已写入本地 `finance/spend-ledger.csv` 和 receipt markdown；公开页不放付款截图。</p>
             </div>
           </li>
-          <li class="trail-item pending">
-            <span class="trail-check" aria-label="待做"></span>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
             <div>
-              <span class="trail-date">Next</span>
-              <span class="trail-title">Wait for 50/50 responses</span>
-              <p>等 PickFu 跑满样本后再看结论；0/50 或中途样本都不能判断概念胜负。</p>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">50/50 responses completed</span>
+              <p>结果为 A 26 票、C 24 票；52/48 没有达到 55%+ 胜出门槛。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Raw CSV archived privately</span>
+              <p>原始 50 条回答已保存到本地私有项目 `validation/concept-pilot/results/`，公开页只放摘要。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Responses coded</span>
+              <p>A 的优势是清晰、视觉和可信感；C 的优势是 room mood、环境变化和社媒语感。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">A/C decision made</span>
+              <p>不把 52/48 当胜利。下一步走 A+C 合并：`Room Mood Diffuser Kit` + `Scent Sign` quiz result。</p>
+            </div>
+          </li>
+          <li class="trail-item done">
+            <span class="trail-check" aria-label="已完成">&#10003;</span>
+            <div>
+              <span class="trail-date">2026-06-15</span>
+              <span class="trail-title">Board updated with evidence</span>
+              <p>投票、解释、分支决策和下一步动作已追加到本公开看板，方便后续溯源。</p>
             </div>
           </li>
           <li class="trail-item pending">
             <span class="trail-check" aria-label="待做"></span>
             <div>
               <span class="trail-date">Next</span>
-              <span class="trail-title">Export results and screenshots</span>
-              <p>保存投票比例、受访者原话、PickFu summary、结果页截图，避免后面只剩模糊印象。</p>
+              <span class="trail-title">Build A+C hybrid concept</span>
+              <p>主标题用 `Room Mood Diffuser Kit`；副线用 `Take the quiz. Find your Scent Sign. Reset the room.`</p>
             </div>
           </li>
           <li class="trail-item pending">
             <span class="trail-check" aria-label="待做"></span>
             <div>
               <span class="trail-date">Next</span>
-              <span class="trail-title">Code every response</span>
-              <p>按模板标记 clarity、fragrance recall、quiz appeal、giftability、too witchy、confusing 等信号。</p>
-            </div>
-          </li>
-          <li class="trail-item pending">
-            <span class="trail-check" aria-label="待做"></span>
-            <div>
-              <span class="trail-date">Next</span>
-              <span class="trail-title">Judge A/C with the rubric</span>
-              <p>不是只看票数；还要看用户是否真的明白这是香氛、是否喜欢 quiz、是否觉得可信。</p>
-            </div>
-          </li>
-          <li class="trail-item pending">
-            <span class="trail-check" aria-label="待做"></span>
-            <div>
-              <span class="trail-date">Next</span>
-              <span class="trail-title">Decide the branch</span>
-              <p>可能结果是 A 赢、C 赢、A+C 合并、或者两边都弱需要重做概念，不强行宣布胜利。</p>
-            </div>
-          </li>
-          <li class="trail-item pending">
-            <span class="trail-check" aria-label="待做"></span>
-            <div>
-              <span class="trail-date">Next</span>
-              <span class="trail-title">Update this board with evidence</span>
-              <p>把结果、原话摘要、下一轮动作和不做事项追加到公开看板，保持可回溯。</p>
+              <span class="trail-title">Run single-concept clarity test</span>
+              <p>不再做 A/C head-to-head；只测混合版能不能被一眼理解为 fragrance / diffuser / room scent。</p>
             </div>
           </li>
           <li class="trail-item pending">
@@ -838,15 +911,15 @@
             <div>
               <span class="trail-date">Hold</span>
               <span class="trail-title">Do not buy samples yet</span>
-              <p>概念清晰度没过之前，不进入打样、红人、广告和库存动作。</p>
+              <p>可以免费 RFQ，但在混合概念清晰度和供应商文件没过之前，不付样品费、不下 MOQ。</p>
             </div>
           </li>
           <li class="trail-item pending">
             <span class="trail-check" aria-label="待做"></span>
             <div>
               <span class="trail-date">Hold</span>
-              <span class="trail-title">Do not increase sample size yet</span>
-              <p>如果 A/C 平掉，先分析原话和混淆点，再决定是否补测，不被平台 upsell 带节奏。</p>
+              <span class="trail-title">Do not increase old poll size</span>
+              <p>旧 A/C 已经回答了它能回答的问题；继续加样本不如把钱花在混合概念清晰度测试上。</p>
             </div>
           </li>
         </ol>
