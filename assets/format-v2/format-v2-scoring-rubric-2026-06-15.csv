@@ -1,0 +1,9 @@
+field,score_0,score_1,score_2,score_3,notes
+product_understanding,not fragrance/decor only,unclear fragrance connection,mostly understands home fragrance,clearly understands room scent/diffuser kit,Must pass before spending on samples
+scent_belief,does not believe it can scent a space,believes only if very close,believes for small room/specific use,believes the use case and scent reach shown,Separate Stone soft scent from Reed steady scent
+click_appeal,would not click,maybe curious but weak,likely to click,very likely to click or save,Primary ad/gift-guide signal
+giftability,not giftable,maybe as small add-on,giftable for right person,strong gift appeal,Important for premium pricing
+uniqueness,looks generic,slightly different,clearly differentiated,memorable and ownable,Needed to avoid cheap fragrance competition
+price_acceptance,price feels absurd,too high but maybe explainable,reasonable for the option,strong value for shown price,Track separately for A/B/C
+confusion_risk,major confusion,multiple unclear parts,minor fixable confusion,no meaningful confusion,Stop if confusion is about product format
+premium_signal,cheap/commodity,mid-market only,some premium cues,strong premium cues,Must support $49-$79 direction

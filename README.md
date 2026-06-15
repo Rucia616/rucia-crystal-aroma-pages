@@ -8,10 +8,18 @@ Core pages:
 - `brand-vi-prismatic-scent-quiz.html`
 - `concept-pilot-validation-board-2026-06-15.html`
 - `concept-v2-state-shift-test-2026-06-15.html`
+- `format-v2-same-scent-3-way-test-2026-06-15.html`
 - `pickfu-concept-pilot-analysis-2026-06-15.html`
 - `strategy-state-shift-fragrance-memo-2026-06-15.html`
 - `product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html`
 - `product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html`
+
+Format V2 public assets:
+
+- `assets/format-v2/format-v2-same-scent-3-way-test-2026-06-15.png`
+- `assets/format-v2/format-v2-test-protocol-2026-06-15.md`
+- `assets/format-v2/format-v2-pickfu-questionnaire-2026-06-15.md`
+- `assets/format-v2/format-v2-scoring-rubric-2026-06-15.csv`
 
 Concept V2 public assets:
 

@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aroma Oracle · Format V2 Same-Scent 3-Way Test · 2026-06-15</title>
+  <meta name="description" content="Aroma Oracle Format V2 test asset comparing Crystal Aroma Stone Kit, Reed Room Diffuser, and Full Room Mood Set using the same scent." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --ink: #111111;
+      --paper: #fffdf7;
+      --muted: #595959;
+      --cyan: #32d6c6;
+      --pink: #f7a4d8;
+      --sky: #9ed1ff;
+      --green: #70e5a8;
+      --coral: #ff6b4a;
+      --lilac: #9b7cff;
+      --line: rgba(17, 17, 17, 0.14);
+      --shadow: 0 24px 70px rgba(17, 17, 17, 0.14);
+      --grid: rgba(17, 17, 17, 0.055);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --paper: #1c1f27;
+        --ink: #faf8f2;
+        --muted: #bdb6aa;
+        --cyan: #7ceade;
+        --pink: #f7a4d8;
+        --sky: #9ed1ff;
+        --green: #96f2bd;
+        --coral: #ff8b72;
+        --lilac: #b6a0ff;
+        --line: rgba(250, 248, 242, 0.18);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+        --grid: rgba(250, 248, 242, 0.07);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { overflow-x: hidden; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        linear-gradient(112deg, rgba(247, 164, 216, 0.22), transparent 34%),
+        linear-gradient(248deg, rgba(50, 214, 198, 0.22), transparent 36%),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    .wrap {
+      width: min(calc(100% - 40px), 1660px);
+      margin: 0 auto;
+      padding: 30px 0 72px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 34px;
+      height: 34px;
+      border: 4px solid var(--ink);
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--paper) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--ink);
+      flex: 0 0 auto;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    #test-board {
+      width: 1600px;
+      height: 1000px;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(126deg, rgba(50, 214, 198, 0.18), transparent 36%),
+        linear-gradient(292deg, rgba(247, 164, 216, 0.26), transparent 42%),
+        linear-gradient(90deg, rgba(17, 17, 17, 0.046) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(17, 17, 17, 0.046) 1px, transparent 1px),
+        #f8f8f4;
+      background-size: auto, auto, 64px 64px, 64px 64px, auto;
+      box-shadow: var(--shadow);
+      position: relative;
+      transform-origin: top center;
+    }
+
+    .board-inner {
+      position: absolute;
+      inset: 54px 58px;
+      display: grid;
+      grid-template-rows: 168px minmax(0, 1fr) 62px;
+      gap: 24px;
+    }
+
+    .headline-row {
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(360px, 0.54fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .badge-row,
+    .chips,
+    .scent-strip,
+    .choice-bar,
+    .legend {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      min-height: 31px;
+      align-items: center;
+      padding: 6px 11px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .pill.green { background: var(--green); }
+    .pill.pink { background: var(--pink); }
+    .pill.cyan { background: var(--cyan); }
+
+    h1 {
+      max-width: 980px;
+      margin: 16px 0 0;
+      color: #111111;
+      font-size: 72px;
+      line-height: 0.9;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .subhead {
+      margin: 0;
+      color: #111111;
+      font-size: 26px;
+      font-weight: 950;
+      line-height: 1.05;
+    }
+
+    .small {
+      margin: 10px 0 0;
+      color: #333333;
+      font-size: 15px;
+      font-weight: 740;
+      line-height: 1.3;
+    }
+
+    .scent-card {
+      min-height: 138px;
+      padding: 18px;
+      border: 3px solid #111111;
+      border-radius: 20px;
+      background: #111111;
+      color: #ffffff;
+      box-shadow: 7px 7px 0 var(--pink);
+    }
+
+    .scent-card h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 34px;
+      line-height: 0.96;
+      text-transform: uppercase;
+    }
+
+    .scent-card p {
+      margin: 9px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+      font-weight: 760;
+      line-height: 1.25;
+    }
+
+    .scent-strip {
+      margin-top: 12px;
+    }
+
+    .scent-strip span {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 5px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .offer {
+      position: relative;
+      display: grid;
+      grid-template-rows: 66px 318px 1fr;
+      min-width: 0;
+      padding: 18px;
+      border: 4px solid #111111;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 8px 8px 0 var(--cyan);
+      overflow: hidden;
+    }
+
+    .offer.b { box-shadow-color: var(--sky); }
+    .offer.c { box-shadow-color: var(--pink); }
+
+    .offer:before {
+      content: "";
+      position: absolute;
+      inset: auto -32px -48px auto;
+      width: 190px;
+      aspect-ratio: 1;
+      border: 4px solid #111111;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink) 62%, var(--green));
+      transform: rotate(-11deg);
+      opacity: 0.32;
+      z-index: 0;
+    }
+
+    .offer > * { position: relative; z-index: 1; }
+
+    .offer-top {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .letter {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 4px solid #111111;
+      border-radius: 50%;
+      background: var(--cyan);
+      color: #111111;
+      font-size: 22px;
+      font-weight: 950;
+    }
+
+    .offer.b .letter { background: var(--sky); }
+    .offer.c .letter { background: var(--pink); }
+
+    .offer-title h2 {
+      margin: 0;
+      color: #111111;
+      font-size: 27px;
+      line-height: 0.96;
+      text-transform: uppercase;
+    }
+
+    .price {
+      min-width: 62px;
+      padding-top: 2px;
+      color: #111111;
+      font-size: 30px;
+      font-weight: 950;
+      text-align: right;
+      line-height: 0.9;
+    }
+
+    .mock {
+      position: relative;
+      margin: 10px 0 12px;
+      border-radius: 20px;
+      border: 3px solid #111111;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.76), rgba(255,255,255,0.42)),
+        linear-gradient(150deg, rgba(50,214,198,0.18), rgba(247,164,216,0.22));
+      overflow: hidden;
+    }
+
+    .mock:after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -80px auto;
+      width: 200px;
+      aspect-ratio: 1;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.56);
+      transform: rotate(18deg);
+    }
+
+    .product-label {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      z-index: 4;
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 5px 9px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .box {
+      position: absolute;
+      right: 32px;
+      bottom: 34px;
+      width: 176px;
+      height: 214px;
+      border: 4px solid #111111;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #ffffff, #f4fbff 58%, #c6f7ef);
+      box-shadow: 12px 12px 0 rgba(17,17,17,0.1);
+      z-index: 2;
+      transform: rotate(4deg);
+    }
+
+    .box.pink { background: linear-gradient(145deg, #ffffff, #ffe9f7 58%, #9ed1ff); }
+    .box.green { background: linear-gradient(145deg, #ffffff, #e4fff5 58%, #f7a4d8); }
+
+    .box b {
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      color: #111111;
+      font-size: 21px;
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+
+    .box span {
+      position: absolute;
+      left: 16px;
+      bottom: 18px;
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .stone-bowl {
+      position: absolute;
+      left: 42px;
+      bottom: 42px;
+      width: 152px;
+      height: 92px;
+      border: 4px solid #111111;
+      border-radius: 50% 50% 42% 42%;
+      background: linear-gradient(180deg, #ffffff 0 20%, #9fe6de 20% 100%);
+      z-index: 4;
+    }
+
+    .stone-bowl:before {
+      content: "";
+      position: absolute;
+      inset: -28px 18px auto 18px;
+      height: 54px;
+      border: 4px solid #111111;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 18% 50%, #9b7cff 0 12px, transparent 13px),
+        radial-gradient(circle at 42% 45%, #70e5a8 0 14px, transparent 15px),
+        radial-gradient(circle at 68% 55%, #f7a4d8 0 13px, transparent 14px),
+        #ffffff;
+    }
+
+    .oil {
+      position: absolute;
+      left: 190px;
+      bottom: 48px;
+      width: 52px;
+      height: 130px;
+      border: 4px solid #111111;
+      border-radius: 14px 14px 12px 12px;
+      background: linear-gradient(180deg, #ffffff 0 26%, #32d6c6 26% 100%);
+      z-index: 5;
+    }
+
+    .oil:before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: -34px;
+      width: 20px;
+      height: 34px;
+      border: 4px solid #111111;
+      border-bottom: 0;
+      border-radius: 8px 8px 0 0;
+      background: #111111;
+    }
+
+    .oil:after {
+      content: "OIL";
+      position: absolute;
+      inset: auto 5px 16px;
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .reed-bottle {
+      position: absolute;
+      left: 126px;
+      bottom: 42px;
+      width: 132px;
+      height: 168px;
+      border: 4px solid #111111;
+      border-radius: 18px 18px 26px 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86) 0 28%, #bff5ee 28% 100%);
+      z-index: 5;
+    }
+
+    .reed-bottle:before,
+    .reed-bottle:after {
+      content: "";
+      position: absolute;
+      left: 57px;
+      bottom: 150px;
+      width: 7px;
+      height: 190px;
+      border-radius: 999px;
+      background: #111111;
+      transform-origin: bottom center;
+    }
+
+    .reed-bottle:before { transform: rotate(-18deg); }
+    .reed-bottle:after { transform: rotate(18deg); }
+
+    .reed-extra {
+      position: absolute;
+      left: 173px;
+      bottom: 192px;
+      width: 7px;
+      height: 180px;
+      border-radius: 999px;
+      background: #111111;
+      transform: rotate(4deg);
+      z-index: 4;
+    }
+
+    .card-ui {
+      position: absolute;
+      right: 42px;
+      top: 78px;
+      width: 150px;
+      height: 106px;
+      border: 4px solid #111111;
+      border-radius: 16px;
+      background: #ffffff;
+      z-index: 5;
+      transform: rotate(-7deg);
+    }
+
+    .card-ui b {
+      display: block;
+      margin: 16px 12px 3px;
+      color: #111111;
+      font-size: 18px;
+      line-height: 0.94;
+      text-transform: uppercase;
+    }
+
+    .card-ui span {
+      display: block;
+      margin: 0 12px;
+      color: #111111;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .bundle .stone-bowl {
+      left: 30px;
+      bottom: 34px;
+      transform: scale(0.83);
+    }
+
+    .bundle .reed-bottle {
+      left: 172px;
+      bottom: 34px;
+      transform: scale(0.86);
+    }
+
+    .bundle .oil {
+      left: 310px;
+      bottom: 48px;
+      transform: scale(0.82);
+    }
+
+    .bundle .box {
+      right: 28px;
+      bottom: 72px;
+      transform: rotate(4deg) scale(0.85);
+    }
+
+    .offer-copy {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .main-line {
+      margin: 0;
+      color: #111111;
+      font-size: 21px;
+      font-weight: 950;
+      line-height: 1.04;
+    }
+
+    .body-copy {
+      margin: 0;
+      color: #333333;
+      font-size: 15px;
+      font-weight: 720;
+      line-height: 1.28;
+    }
+
+    .chips {
+      margin-top: 2px;
+      gap: 7px;
+    }
+
+    .chip {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      padding: 5px 8px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 10px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .strength {
+      display: grid;
+      grid-template-columns: 106px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      margin-top: 2px;
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+
+    .bars i {
+      height: 12px;
+      border: 2px solid #111111;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .bars.one i:nth-child(1),
+    .bars.two i:nth-child(-n+2),
+    .bars.three i {
+      background: var(--cyan);
+    }
+
+    .choice-bar {
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 60px;
+      padding: 10px 16px;
+      border: 4px solid #111111;
+      border-radius: 18px;
+      background: #111111;
+      color: #ffffff;
+      box-shadow: 7px 7px 0 var(--green);
+    }
+
+    .choice-bar b {
+      font-size: 26px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .legend {
+      justify-content: flex-end;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .legend span {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 5px 9px;
+      border: 2px solid #ffffff;
+      border-radius: 999px;
+      color: #ffffff;
+    }
+
+    .notes {
+      margin-top: 28px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .notes h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .notes p,
+    .notes li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notes ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    @media (max-width: 1660px) {
+      #test-board {
+        height: auto;
+        aspect-ratio: 16 / 10;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      #test-board {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        border-radius: 20px;
+      }
+
+      .board-inner {
+        position: relative;
+        inset: auto;
+        display: grid;
+        grid-template-rows: auto;
+        padding: 22px;
+      }
+
+      .headline-row,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 60px);
+      }
+
+      .offer {
+        min-height: 680px;
+      }
+
+      .choice-bar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topbar">
+      <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <a class="nav-link" href="index.html">Back to project hub</a>
+    </nav>
+
+    <section id="test-board" aria-label="Format V2 same scent three-way test image">
+      <div class="board-inner">
+        <header class="headline-row">
+          <div>
+            <div class="badge-row">
+              <span class="pill green">Format V2</span>
+              <span class="pill">Same Scent Test</span>
+              <span class="pill pink">Concept, Not Final Packaging</span>
+            </div>
+            <h1>One scent. Three ways to reset the room.</h1>
+          </div>
+          <aside class="scent-card">
+            <h2>Scent Sign: Clean Reset</h2>
+            <p>A fresh room scent matched by a short vibe quiz. Same fragrance in every option.</p>
+            <div class="scent-strip">
+              <span>Citrus Peel</span>
+              <span>Mint Leaf</span>
+              <span>Sheer Musk</span>
+            </div>
+          </aside>
+        </header>
+
+        <section class="cards" aria-label="Three product format options">
+          <article class="offer a">
+            <div class="offer-top">
+              <div class="letter">A</div>
+              <div class="offer-title"><h2>Crystal Aroma Stone Kit</h2></div>
+              <div class="price">$49</div>
+            </div>
+            <div class="mock">
+              <span class="product-label">soft small-space scent</span>
+              <div class="box"><b>Clean<br>Reset</b><span>Stone Kit</span></div>
+              <div class="stone-bowl"></div>
+              <div class="oil"></div>
+              <div class="card-ui"><b>Scent<br>Sign</b><span>vibe quiz card</span></div>
+            </div>
+            <div class="offer-copy">
+              <p class="main-line">Drop scent oil onto the aroma stone. Use it on a desk, nightstand, bathroom counter, or gift shelf.</p>
+              <p class="body-copy">Built for a visible ritual, crystal detail, and close-range room mood.</p>
+              <div class="chips">
+                <span class="chip">Aroma stone</span>
+                <span class="chip">Crystal chips</span>
+                <span class="chip">10ml scent oil</span>
+                <span class="chip">Scent card</span>
+              </div>
+              <div class="strength"><span>Scent reach</span><div class="bars one"><i></i><i></i><i></i></div></div>
+            </div>
+          </article>
+
+          <article class="offer b">
+            <div class="offer-top">
+              <div class="letter">B</div>
+              <div class="offer-title"><h2>Reed Room Diffuser</h2></div>
+              <div class="price">$49</div>
+            </div>
+            <div class="mock">
+              <span class="product-label">steady room fragrance</span>
+              <div class="reed-extra"></div>
+              <div class="reed-bottle"></div>
+              <div class="box pink"><b>Clean<br>Reset</b><span>Reed Diffuser</span></div>
+              <div class="card-ui"><b>Scent<br>Sign</b><span>vibe quiz card</span></div>
+            </div>
+            <div class="offer-copy">
+              <p class="main-line">Place reeds in the bottle for a steadier fragrance presence in a bedroom, entryway, or living space.</p>
+              <p class="body-copy">Built for familiar setup, stronger scent belief, and low explanation cost.</p>
+              <div class="chips">
+                <span class="chip">Glass bottle</span>
+                <span class="chip">Reed sticks</span>
+                <span class="chip">50ml scent oil</span>
+                <span class="chip">Scent card</span>
+              </div>
+              <div class="strength"><span>Scent reach</span><div class="bars two"><i></i><i></i><i></i></div></div>
+            </div>
+          </article>
+
+          <article class="offer c">
+            <div class="offer-top">
+              <div class="letter">C</div>
+              <div class="offer-title"><h2>Full Room Mood Set</h2></div>
+              <div class="price">$79</div>
+            </div>
+            <div class="mock bundle">
+              <span class="product-label">gift set + stronger setup</span>
+              <div class="box green"><b>Clean<br>Reset</b><span>Full Set</span></div>
+              <div class="stone-bowl"></div>
+              <div class="reed-extra"></div>
+              <div class="reed-bottle"></div>
+              <div class="oil"></div>
+              <div class="card-ui"><b>Room<br>Mood</b><span>ritual card</span></div>
+            </div>
+            <div class="offer-copy">
+              <p class="main-line">Use the stone for the ritual moment and reeds for ongoing room fragrance. Gift-ready in one box.</p>
+              <p class="body-copy">Built for higher gift value, clearer usage, and a complete reset routine.</p>
+              <div class="chips">
+                <span class="chip">Stone kit</span>
+                <span class="chip">Reed diffuser</span>
+                <span class="chip">Ritual card</span>
+                <span class="chip">Gift box</span>
+              </div>
+              <div class="strength"><span>Scent reach</span><div class="bars three"><i></i><i></i><i></i></div></div>
+            </div>
+          </article>
+        </section>
+
+        <footer class="choice-bar">
+          <b>Which would you be most likely to click or buy?</b>
+          <div class="legend">
+            <span>A: ritual object</span>
+            <span>B: familiar diffuser</span>
+            <span>C: complete gift set</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>Internal use note</h2>
+      <p>This test image is intentionally render-style, not a final product render. The goal is to test product-form preference without spending on samples or packaging.</p>
+      <ul>
+        <li>Use for PickFu / survey head-to-head-to-head testing.</li>
+        <li>Do not use as final packaging or an ad creative.</li>
+        <li>Best next question: which option is clearest, most believable as fragrance, most giftable, and most worth the shown price?</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
