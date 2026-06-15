@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aroma Oracle · Concept V2 State Shift Test · 2026-06-15</title>
-  <meta name="description" content="Aroma Oracle Concept V2 test asset for Room Mood Diffuser Kit, Scent Sign Quiz, and Reset the Room positioning." />
+  <meta name="description" content="Aroma Oracle Concept V2 test asset for Crystal Aroma Stone Kit, Scent Sign Quiz, and Reset the Room positioning." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
   <style>
     :root {
@@ -134,7 +134,7 @@
       position: absolute;
       inset: 0;
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(390px, 0.9fr);
+      grid-template-columns: minmax(0, 0.92fr) minmax(390px, 0.94fr);
       gap: clamp(24px, 4vw, 54px);
       padding: clamp(32px, 5vw, 58px);
     }
@@ -254,9 +254,9 @@
 
     .box {
       position: absolute;
-      right: 6%;
-      top: 9%;
-      width: 48%;
+      right: 1%;
+      top: 10%;
+      width: 50%;
       aspect-ratio: 0.78;
       border: 5px solid #111111;
       border-radius: 30px;
@@ -269,39 +269,20 @@
     }
 
     .box::before {
-      content: "ROOM MOOD\\ADIFFUSER KIT";
-      white-space: pre;
-      position: absolute;
-      left: 22px;
-      top: 22px;
-      color: #111111;
-      font-size: clamp(20px, 2.1vw, 34px);
-      font-weight: 950;
-      line-height: 0.9;
-      text-transform: uppercase;
+      content: "";
+      display: none;
     }
 
     .box::after {
-      content: "QUIZ MATCHED\\AFLAMELESS SCENT";
-      white-space: pre;
-      position: absolute;
-      left: 22px;
-      bottom: 22px;
-      padding: 9px 10px;
-      border: 2px solid #111111;
-      border-radius: 999px;
-      background: #ffffff;
-      color: #111111;
-      font-size: 11px;
-      font-weight: 950;
-      line-height: 1.1;
+      content: "";
+      display: none;
     }
 
     .phone {
       position: absolute;
-      right: 42%;
-      top: 13%;
-      width: 29%;
+      right: 46%;
+      top: 10%;
+      width: 31%;
       aspect-ratio: 0.58;
       border: 5px solid #111111;
       border-radius: 28px;
@@ -312,12 +293,12 @@
     }
 
     .phone-top {
-      height: 26%;
+      height: 24%;
       background: var(--cyan);
       border-bottom: 5px solid #111111;
-      padding: 16px;
+      padding: 14px;
       color: #111111;
-      font-size: 12px;
+      font-size: 18px;
       font-weight: 950;
       line-height: 1.1;
       text-transform: uppercase;
@@ -325,34 +306,35 @@
 
     .quiz-card {
       margin: 16px;
-      padding: 13px;
+      padding: 15px;
       border: 3px solid #111111;
       border-radius: 18px;
       background: #ffffff;
       color: #111111;
+      display: none;
     }
 
     .quiz-card b {
       display: block;
-      font-size: 11px;
+      font-size: 16px;
       text-transform: uppercase;
     }
 
     .quiz-card strong {
       display: block;
       margin-top: 7px;
-      font-size: clamp(20px, 2.2vw, 33px);
-      line-height: 0.92;
+      font-size: clamp(30px, 3.3vw, 46px);
+      line-height: 0.9;
       text-transform: uppercase;
     }
 
     .kit-card {
       position: absolute;
-      left: 2%;
-      bottom: 17%;
+      right: 0;
+      bottom: 13%;
       width: 38%;
-      min-height: 190px;
-      padding: 18px;
+      min-height: 210px;
+      padding: 20px;
       border: 5px solid #111111;
       border-radius: 24px;
       background: #ffffff;
@@ -364,52 +346,122 @@
 
     .kit-card b {
       display: inline-flex;
-      padding: 6px 8px;
+      padding: 8px 10px;
       border: 2px solid #111111;
       border-radius: 999px;
       background: var(--green);
       color: #111111;
-      font-size: 10px;
+      font-size: 15px;
       text-transform: uppercase;
     }
 
     .kit-card strong {
       display: block;
       margin: 12px 0 8px;
-      font-size: clamp(24px, 3vw, 44px);
-      line-height: 0.9;
+      font-size: clamp(30px, 3.4vw, 52px);
+      line-height: 0.86;
       text-transform: uppercase;
     }
 
     .kit-card span {
       display: block;
       color: #333333;
-      font-size: 13px;
-      font-weight: 750;
-      line-height: 1.35;
+      font-size: 19px;
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
     }
 
-    .bottle {
+    .stone-diffuser {
       position: absolute;
-      left: 50%;
-      bottom: 19%;
-      width: 19%;
-      aspect-ratio: 0.55;
+      left: 1%;
+      bottom: 14%;
+      width: 48%;
+      height: 310px;
+      z-index: 6;
+    }
+
+    .stone-bowl {
+      position: absolute;
+      left: 8%;
+      bottom: 42px;
+      width: 74%;
+      height: 150px;
       border: 5px solid #111111;
-      border-radius: 28px 28px 22px 22px;
+      border-radius: 34px 34px 64px 64px;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(50, 214, 198, 0.36) 55%, rgba(247, 164, 216, 0.5));
-      box-shadow: 10px 10px 0 #111111;
+        linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 34%),
+        #74d7ad;
+      box-shadow: 9px 9px 0 var(--pink);
+      overflow: visible;
+    }
+
+    .stone-bowl::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      right: -5px;
+      top: -40px;
+      height: 80px;
+      border: 5px solid #111111;
+      border-radius: 50%;
+      background: #9ed1ff;
+    }
+
+    .stone-bowl::after {
+      content: "";
+      display: none;
+    }
+
+    .pedestal {
+      position: absolute;
+      left: 33%;
+      bottom: 0;
+      width: 28%;
+      height: 70px;
+      border: 5px solid #111111;
+      border-top: 0;
+      border-radius: 0 0 26px 26px;
+      background: #74d7ad;
+      box-shadow: 8px 8px 0 #111111;
+    }
+
+    .stone-chip {
+      position: absolute;
+      width: 50px;
+      height: 38px;
+      border: 4px solid #111111;
+      border-radius: 14px 14px 18px 18px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
       z-index: 4;
     }
 
-    .bottle::before {
+    .stone-chip.s1 { left: 17%; top: 52px; transform: rotate(-12deg); }
+    .stone-chip.s2 { left: 34%; top: 35px; transform: rotate(10deg); background: linear-gradient(135deg, var(--green), var(--sky)); }
+    .stone-chip.s3 { left: 49%; top: 58px; transform: rotate(-4deg); background: linear-gradient(135deg, var(--lilac), var(--pink)); }
+    .stone-chip.s4 { left: 60%; top: 30px; transform: rotate(16deg); background: linear-gradient(135deg, var(--cyan), var(--green)); }
+
+    .oil-bottle {
+      position: absolute;
+      left: 40%;
+      bottom: 18%;
+      width: 13%;
+      aspect-ratio: 0.48;
+      border: 5px solid #111111;
+      border-radius: 20px 20px 18px 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(50, 214, 198, 0.36) 55%, rgba(247, 164, 216, 0.5));
+      box-shadow: 10px 10px 0 #111111;
+      z-index: 8;
+    }
+
+    .oil-bottle::before {
       content: "";
       position: absolute;
-      left: 31%;
+      left: 25%;
       bottom: 100%;
-      width: 38%;
-      height: 42px;
+      width: 50%;
+      height: 38px;
       border: 5px solid #111111;
       border-bottom: 0;
       border-radius: 14px 14px 0 0;
@@ -418,16 +470,17 @@
 
     .label {
       position: absolute;
-      left: 12%;
-      right: 12%;
-      bottom: 20%;
-      padding: 10px 8px;
+      left: 9%;
+      right: 9%;
+      bottom: 15%;
+      padding: 8px 6px;
       border: 3px solid #111111;
       border-radius: 14px;
       background: #ffffff;
       color: #111111;
       text-align: center;
-      font-size: 10px;
+      font-size: 13px;
+      min-height: 68px;
       font-weight: 950;
       line-height: 1;
       text-transform: uppercase;
@@ -442,6 +495,7 @@
       background: #111111;
       transform-origin: bottom center;
       z-index: 1;
+      display: none;
     }
 
     .reeds.r1 { transform: rotate(-20deg); }
@@ -459,9 +513,9 @@
       z-index: 5;
     }
 
-    .crystal.c1 { left: 28%; bottom: 21%; transform: rotate(16deg); }
-    .crystal.c2 { left: 66%; bottom: 18%; width: 34px; transform: rotate(-15deg); background: linear-gradient(135deg, var(--green), var(--sky)); }
-    .crystal.c3 { right: 9%; bottom: 28%; width: 32px; transform: rotate(25deg); background: linear-gradient(135deg, var(--lilac), var(--pink)); }
+    .crystal.c1 { left: 29%; bottom: 22%; transform: rotate(16deg); }
+    .crystal.c2 { left: 47%; bottom: 15%; width: 34px; transform: rotate(-15deg); background: linear-gradient(135deg, var(--green), var(--sky)); }
+    .crystal.c3 { right: 6%; bottom: 32%; width: 32px; transform: rotate(25deg); background: linear-gradient(135deg, var(--lilac), var(--pink)); }
 
     .scent-row {
       position: absolute;
@@ -481,7 +535,7 @@
       border-radius: 999px;
       background: #ffffff;
       color: #111111;
-      font-size: 11px;
+      font-size: 15px;
       font-weight: 950;
       line-height: 1.05;
       text-align: center;
@@ -680,7 +734,7 @@
         bottom: 9%;
         width: 54%;
       }
-      .bottle {
+      .oil-bottle {
         left: 40%;
         bottom: 9%;
         width: 28%;
@@ -712,14 +766,14 @@
               <span class="pill">Concept V2</span>
               <span class="pill pink">State Shift Test</span>
             </div>
-            <h1>Room Mood Diffuser Kit</h1>
+            <h1>Crystal Aroma Stone Kit</h1>
             <p class="subhead">Take the quiz. Find your Scent Sign. Reset the room.</p>
-            <p class="bodyline">A flameless room scent kit with fragrance oil, crystal chips, a mood card, and a quiz-matched scent sign for the version of your room you want today.</p>
+            <p class="bodyline">A flameless room scent kit with an aroma stone bowl, crystal chips, fragrance oil drops, and a mood card matched to your room state.</p>
             <div class="feature-chips" aria-label="Kit components">
-              <span class="feature">Flameless diffuser</span>
-              <span class="feature">Crystal mood card</span>
+              <span class="feature">Aroma stone bowl</span>
+              <span class="feature">Crystal chips</span>
               <span class="feature">Scent Sign Quiz</span>
-              <span class="feature">Refill-ready scent</span>
+              <span class="feature">Fragrance oil drops</span>
             </div>
           </div>
           <div class="line">Change the room first. Let your mood follow.</div>
@@ -733,22 +787,27 @@
             <div class="reeds r4"></div>
             <div class="box"></div>
             <div class="phone">
-              <div class="phone-top">Scent Sign Quiz</div>
+              <div class="phone-top">Quiz Result</div>
               <div class="quiz-card">
                 <b>Your room wants</b>
                 <strong>Clean Reset</strong>
               </div>
-              <div class="quiz-card">
-                <b>Your energy</b>
-                <strong>Fresh Aura</strong>
+            </div>
+            <div class="stone-diffuser">
+              <div class="pedestal"></div>
+              <div class="stone-bowl">
+                <div class="stone-chip s1"></div>
+                <div class="stone-chip s2"></div>
+                <div class="stone-chip s3"></div>
+                <div class="stone-chip s4"></div>
               </div>
             </div>
             <div class="kit-card">
               <b>Inside the kit</b>
-              <strong>Room Reset Ritual</strong>
-              <span>Fragrance oil, reeds, crystals, scent card, and reset prompt.</span>
+              <strong>Room Mood Ritual</strong>
+              <span>Aroma stone<br />Crystals<br />Scent oil</span>
             </div>
-            <div class="bottle"><div class="label">Clean Reset<br />Room Mood Oil</div></div>
+            <div class="oil-bottle"><div class="label">Clean Reset<br />Scent Oil</div></div>
             <div class="crystal c1"></div>
             <div class="crystal c2"></div>
             <div class="crystal c3"></div>

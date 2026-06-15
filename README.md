@@ -10,10 +10,11 @@ Core pages:
 - `concept-v2-state-shift-test-2026-06-15.html`
 - `pickfu-concept-pilot-analysis-2026-06-15.html`
 - `strategy-state-shift-fragrance-memo-2026-06-15.html`
+- `product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html`
 
 Concept V2 public assets:
 
-- `assets/concept-v2/room-mood-diffuser-kit-state-shift-test-2026-06-15.png`
+- `assets/concept-v2/crystal-aroma-stone-kit-state-shift-test-2026-06-15.png`
 - `assets/concept-v2/concept-v2-state-shift-test-protocol-2026-06-15.md`
 
 Research reports:
@@ -22,5 +23,6 @@ Research reports:
 - `north-america-consumer-research-crystal-aroma-2026-06-14.html`
 - `north-america-scent-research-crystal-aroma-2026-06-15.html`
 - `north-america-launch-validation-crystal-aroma-2026-06-15.html`
+- `product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html`
 
 The private source workspace remains in `Rucia616/rucia-crystal-aroma`.

@@ -2,19 +2,19 @@
 
 Date: 2026-06-15
 Asset: `concept-v2-state-shift-test-2026-06-15.html`
-PNG: `assets/concept-v2/room-mood-diffuser-kit-state-shift-test-2026-06-15.png`
+PNG: `assets/concept-v2/crystal-aroma-stone-kit-state-shift-test-2026-06-15.png`
 
 ## Objective
 
-Validate whether North American target consumers understand Aroma Oracle as a room mood / state shift fragrance kit, not a normal low-price reed diffuser or a crystal gimmick.
+Validate whether North American target consumers understand Aroma Oracle as a room mood / state shift crystal aroma stone fragrance kit, not a normal low-price reed diffuser or a crystal gimmick.
 
 ## What The Asset Should Communicate
 
-- Product: Room Mood Diffuser Kit
+- Product: Crystal Aroma Stone Kit
 - Mechanism: Scent Sign Quiz
 - Promise: Reset the room first; mood follows
-- Category: flameless room fragrance / diffuser kit
-- Value drivers: quiz match, fragrance, crystal chips, mood card, giftable kit, refill-ready scent
+- Category: flameless room fragrance / aroma stone diffuser kit
+- Value drivers: quiz match, fragrance oil, aroma stones, crystal chips, mood card, giftable kit, refill-ready scent
 
 ## Respondent Questions
 
@@ -44,4 +44,3 @@ Validate whether North American target consumers understand Aroma Oracle as a ro
 Do not buy samples, run paid ads, or pay creators from this asset alone.
 
 Next spend is only justified if the test proves concept clarity and perceived value strong enough to make sampling worth it.
-

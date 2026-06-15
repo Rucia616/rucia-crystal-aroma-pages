@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>产品形态机会判断：藤条 vs 晶石扩香石礼盒 | Aroma Oracle</title>
+  <meta name="description" content="Rucia Crystal Aroma / Aroma Oracle 产品形态调研报告：比较藤条无火香薰与玄学晶石 + 扩香石 / 扩香容器 + 香氛油礼盒在北美市场的机会、风险、价格战、传播与验证路径。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --surface: #ffffff;
+      --surface-soft: rgba(255, 255, 255, 0.88);
+      --text: #111111;
+      --body: #343434;
+      --muted: #666666;
+      --line: rgba(17, 17, 17, 0.14);
+      --grid: rgba(17, 17, 17, 0.055);
+      --cyan: #32d6c6;
+      --pink: #f7a4d8;
+      --sky: #9ed1ff;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --green: #70e5a8;
+      --shadow: 0 22px 60px rgba(17, 17, 17, 0.12);
+      --inverse: #111111;
+      --inverse-text: #faf8f2;
+      --risk-bg: #ffe6e0;
+      --risk-text: #a72316;
+      --good-bg: #dff8eb;
+      --good-text: #07623d;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --surface: #1c1f27;
+        --surface-soft: rgba(29, 31, 38, 0.9);
+        --text: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --grid: rgba(250, 248, 242, 0.07);
+        --cyan: #7ceade;
+        --pink: #f7a4d8;
+        --sky: #9ed1ff;
+        --lilac: #b6a0ff;
+        --coral: #ff8b72;
+        --green: #96f2bd;
+        --shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
+        --inverse: #faf8f2;
+        --inverse-text: #111111;
+        --risk-bg: #4a2825;
+        --risk-text: #ffb0a4;
+        --good-bg: #203c2a;
+        --good-text: #9df1ba;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        linear-gradient(112deg, rgba(247, 164, 216, 0.22), transparent 34%),
+        linear-gradient(248deg, rgba(50, 214, 198, 0.22), transparent 36%),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 40px), 1180px); margin: 0 auto; padding: 34px 0 76px; }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 34px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 950; text-transform: uppercase; }
+    .spark {
+      width: 34px; height: 34px; border: 4px solid var(--text); border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--surface) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--text); flex: 0 0 auto;
+    }
+    .back {
+      display: inline-flex; min-height: 38px; align-items: center; padding: 7px 12px;
+      border: 1px solid var(--line); border-radius: 999px; background: var(--surface-soft);
+      color: var(--body); font-size: 13px; font-weight: 850; text-decoration: none;
+    }
+    .hero, .panel, .verdict-card, .risk-card, .validation-card, .list-card, .source-card {
+      border: 1px solid var(--line); background: var(--surface-soft); box-shadow: var(--shadow);
+    }
+    .hero {
+      display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.64fr);
+      gap: 20px; align-items: stretch;
+    }
+    .hero-main, .hero-side { border-radius: 22px; background: var(--surface-soft); box-shadow: var(--shadow); border: 1px solid var(--line); }
+    .hero-main { min-height: 530px; padding: clamp(28px, 5vw, 56px); position: relative; overflow: hidden; }
+    .hero-main:after {
+      content: ""; position: absolute; right: -80px; bottom: -110px; width: min(420px, 58vw); aspect-ratio: 1;
+      border: 4px solid var(--text); border-radius: 42px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink) 56%, var(--green));
+      transform: rotate(-9deg); opacity: 0.78; z-index: 0;
+    }
+    .hero-main > * { position: relative; z-index: 1; }
+    .hero-side { padding: 22px; background: linear-gradient(135deg, rgba(50, 214, 198, 0.18), transparent 60%), var(--surface-soft); }
+    .eyebrow {
+      display: inline-flex; align-items: center; min-height: 32px; padding: 7px 12px;
+      border: 2px solid var(--text); border-radius: 999px; background: var(--green); color: #111111;
+      font-size: 12px; font-weight: 950; text-transform: uppercase;
+    }
+    h1 {
+      max-width: 820px; margin: 24px 0 18px; font-size: clamp(42px, 6.7vw, 86px);
+      line-height: 0.95; letter-spacing: 0; text-transform: uppercase;
+    }
+    .lead { max-width: 760px; margin: 0; color: var(--body); font-size: clamp(18px, 2.1vw, 24px); font-weight: 760; line-height: 1.26; }
+    .thesis {
+      margin-top: 26px; padding: 20px; border: 3px solid var(--text); border-radius: 18px;
+      background: var(--inverse); color: var(--inverse-text); box-shadow: 7px 7px 0 var(--pink);
+    }
+    .thesis b { display: block; font-size: clamp(24px, 3.2vw, 40px); line-height: 1.03; text-transform: uppercase; }
+    .thesis p { margin: 12px 0 0; color: rgba(250, 248, 242, 0.78); font-size: 14px; }
+    @media (prefers-color-scheme: dark) { .thesis p { color: rgba(17, 17, 17, 0.72); } }
+    .side-title { font-size: 38px; line-height: 0.95; font-weight: 950; text-transform: uppercase; }
+    .side-copy { margin: 12px 0 18px; color: var(--body); font-weight: 720; }
+    .fact-stack { display: grid; gap: 10px; }
+    .fact {
+      padding: 12px; border: 2px solid var(--text); border-radius: 14px;
+      background: var(--surface); color: var(--text); box-shadow: 4px 4px 0 var(--cyan);
+    }
+    .fact:nth-child(2) { box-shadow-color: var(--pink); }
+    .fact:nth-child(3) { box-shadow-color: var(--lilac); }
+    .fact b { display: block; font-size: 18px; line-height: 1.08; }
+    .fact span { display: block; margin-top: 6px; color: var(--body); font-size: 13px; }
+    .section { margin-top: 44px; }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 22px; margin-bottom: 18px; }
+    h2 { margin: 0; font-size: clamp(30px, 4.2vw, 50px); line-height: 1; letter-spacing: 0; text-transform: uppercase; }
+    .section-head p { max-width: 560px; margin: 0; color: var(--muted); font-size: 15px; }
+    .verdict-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .verdict-card { min-height: 190px; padding: 18px; border-radius: 16px; }
+    .verdict-card span, .risk-top span {
+      display: inline-flex; padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px;
+      background: var(--surface); color: var(--body); font-size: 11px; font-weight: 950; text-transform: uppercase;
+    }
+    .split { display: grid; gap: 8px; margin: 16px 0 12px; }
+    .split b { padding: 8px 10px; border: 2px solid var(--text); border-radius: 12px; background: var(--surface); box-shadow: 3px 3px 0 var(--green); }
+    .verdict-card p, .risk-card p, .validation-card p, .list-card li { color: var(--body); font-size: 14px; }
+    .panel { border-radius: 18px; padding: 18px; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 820px; }
+    th, td { padding: 14px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--text); font-size: 14px; }
+    td { color: var(--body); font-size: 14px; }
+    td strong { display: inline-flex; padding: 6px 10px; border: 2px solid var(--text); border-radius: 999px; background: var(--surface); color: var(--text); }
+    .route {
+      display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 16px; align-items: stretch;
+    }
+    .route .panel:first-child {
+      background: #111111; color: #ffffff; border: 3px solid #111111; box-shadow: 8px 8px 0 var(--cyan);
+    }
+    .route .panel:first-child h3 { color: #ffffff; }
+    .route .panel:first-child p { color: rgba(255,255,255,0.8); }
+    .panel h3, .risk-card h3, .validation-card h3, .list-card h3 { margin: 0 0 10px; font-size: 24px; line-height: 1.05; }
+    .panel p { margin: 0 0 12px; color: var(--body); font-size: 15px; }
+    .panel p:last-child { margin-bottom: 0; }
+    .tagline { display: inline-flex; margin-bottom: 14px; padding: 7px 10px; border: 2px solid var(--text); border-radius: 999px; background: var(--green); color: #111111; font-size: 12px; font-weight: 950; text-transform: uppercase; }
+    .risk-grid, .validation-grid, .list-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .risk-card, .validation-card, .list-card { border-radius: 16px; padding: 18px; }
+    .risk-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .source-chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+    .source-chips a, .cite a {
+      display: inline-flex; padding: 4px 7px; border-radius: 999px; background: rgba(50, 214, 198, 0.18);
+      color: var(--text); font-size: 10px; font-weight: 950; text-decoration: none; text-transform: uppercase;
+    }
+    .validation-card .step {
+      display: inline-grid; place-items: center; width: 36px; height: 36px; margin-bottom: 12px;
+      border: 3px solid var(--text); border-radius: 50%; background: var(--pink); color: #111111; font-weight: 950;
+    }
+    .list-card ul { margin: 0; padding-left: 20px; }
+    .list-card li { margin: 9px 0; }
+    .language-box {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
+    }
+    .language-box .panel { min-height: 180px; }
+    .source-list { display: grid; gap: 10px; }
+    .source-card { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 14px; padding: 14px; border-radius: 14px; box-shadow: none; }
+    .source-index { font-weight: 950; color: var(--muted); }
+    .source-card h3 { margin: 0 0 4px; font-size: 16px; line-height: 1.2; }
+    .source-card p { margin: 0 0 6px; color: var(--body); font-size: 13px; }
+    .source-card span { font-weight: 900; color: var(--text); }
+    .source-card a { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+    footer { margin-top: 40px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) {
+      .hero, .route, .verdict-grid, .risk-grid, .validation-grid, .list-grid, .language-box { grid-template-columns: 1fr; }
+      .hero-main { min-height: 0; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(calc(100% - 28px), 1180px); padding-top: 24px; }
+      nav, .section-head { align-items: flex-start; flex-direction: column; }
+      h1 { font-size: clamp(40px, 15vw, 58px); }
+      h2 { font-size: clamp(28px, 11vw, 40px); }
+      .hero-side, .hero-main { border-radius: 18px; padding: 20px; }
+      .source-card { grid-template-columns: 1fr; }
+      .side-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav>
+      <div class="brand"><span class="spark"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <a class="back" href="index.html">Back to archive</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-main">
+        <span class="eyebrow">PRODUCT FORMAT REPORT · 2026-06-15</span>
+        <h1>藤条更大，晶石扩香石更适合我们。</h1>
+        <p class="lead">这份报告回答一个根本问题：我们首发到底应该做普通藤条无火香薰，还是做“玄学晶石 + 扩香石 / 扩香容器 + 香氛油”的无火香氛礼盒。</p>
+        <div class="thesis">
+          <b>结论：不把普通藤条作为首发 hero。首发应做 Crystal Aroma Stone Kit，但用清楚的 home fragrance 语言降低理解成本。</b>
+          <p>藤条是成熟大品类；晶石扩香石是小众新形态。Rucia 自费创业不应该冲进成熟品类打价格战，而应该用更有差异的产品形态建立“room state shift”的品牌资产。</p>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div>
+          <div class="side-title">Decision<br />Frame</div>
+          <p class="side-copy">“机会大”不能只看搜索量。对我们来说，要同时看理解成本、价格战压力、红人传播、礼物化、复购和供应链风险。</p>
+        </div>
+        <div class="fact-stack">
+          <div class="fact"><b>Reed diffuser = demand proof</b><span>大盘、关键词、供应链都成熟，但直接竞争很拥挤。<sup class="cite"><a href="#source-asinsight-reed-amazon">[3]</a></sup></span></div>
+          <div class="fact"><b>Crystal aroma stone = brand wedge</b><span>搜索小，但视觉、礼物和轻玄学记忆点更强。<sup class="cite"><a href="#source-etsy-crystal-aroma-stone">[6]</a></sup></span></div>
+          <div class="fact"><b>Scent oil = repeat engine</b><span>复购来自香味和 refill，不来自晶石本体。</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Executive Verdict</h2>
+        <p>如果按成熟需求，藤条赢；如果按一个新品牌能不能讲出不被低价香薰淹没的故事，晶石扩香石赢。</p>
+      </div>
+      <div class="verdict-grid">
+  <article class="verdict-card">
+    <span>已有需求</span>
+    <div class="split">
+      <b>藤条：更大</b>
+      <b>扩香石：更小</b>
+    </div>
+    <p>藤条是成熟入口；扩香石必须靠更清楚的 category bridge。</p>
+  </article>
+
+  <article class="verdict-card">
+    <span>品牌溢价</span>
+    <div class="split">
+      <b>藤条：弱</b>
+      <b>扩香石：强</b>
+    </div>
+    <p>晶石、容器、结果卡和礼盒能把产品从普通香薰里区隔出来。</p>
+  </article>
+
+  <article class="verdict-card">
+    <span>传播素材</span>
+    <div class="split">
+      <b>藤条：普通</b>
+      <b>扩香石：强</b>
+    </div>
+    <p>扩香石更适合 TikTok/Pinterest 的开箱、桌面、房间 reset 内容。</p>
+  </article>
+
+  <article class="verdict-card">
+    <span>性能风险</span>
+    <div class="split">
+      <b>藤条：低</b>
+      <b>扩香石：高</b>
+    </div>
+    <p>扩香石若只闻得到近距离，就不能承诺 full-room scent。</p>
+  </article>
+</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Market Evidence</h2>
+        <p>大盘支持 home fragrance；但不同形态的“需求规模”和“品牌机会”完全不是一回事。</p>
+      </div>
+      <div class="route">
+        <article class="panel">
+          <span class="tagline">What Is Big</span>
+          <h3>藤条无火香薰有更强的现成需求。</h3>
+          <p>Grand View Research 估计全球 home fragrance 2025 年为 USD 13.16B，并且北美是最大市场。<sup class="cite"><a href="#source-grandview-home-fragrance">[1]</a></sup> 商业报告也显示 reed diffuser 在 fragrance diffuser 里是主流形态。<sup class="cite"><a href="#source-marketdataforecast-reed">[2]</a></sup></p>
+          <p>Google Trends 过去 12 个月美国相对兴趣里，reed diffuser 明显高于 crystal diffuser / aroma stone diffuser。<sup class="cite"><a href="#source-google-trends-pytrends">[4]</a></sup></p>
+        </article>
+        <article class="panel">
+          <span class="tagline">What Is Ownable</span>
+          <h3>但成熟需求也意味着成熟价格战。</h3>
+          <p>ASINSIGHT 的 Amazon 样本显示，reed diffusers for home 的 $10-$20 占 42%，$20-$50 占 36%，并且顶部 listing 已经有大量评价和月销。<sup class="cite"><a href="#source-asinsight-reed-amazon">[3]</a></sup></p>
+          <p>对自费新品牌来说，普通藤条需要和 Amazon、Target、Bath & Body Works、NEST、Voluspa、Cocodor 这类心智或低价产品同台竞争。除非香味和渠道已经很强，否则容易被迫打折。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Scorecard</h2>
+        <p>10 分代表该维度更有优势。分数不是精确模型，是把当前证据转成商业判断。</p>
+      </div>
+      <div class="panel">
+        <table>
+          <thead>
+            <tr>
+              <th>维度</th>
+              <th>藤条无火香薰</th>
+              <th>晶石扩香石礼盒</th>
+              <th>判断依据</th>
+            </tr>
+          </thead>
+          <tbody>
+  <tr>
+    <th>现成搜索需求</th>
+    <td><strong>9/10</strong></td>
+    <td><strong>3/10</strong></td>
+    <td>Google Trends 和 Amazon 关键词都更支持 reed diffuser；aroma stone 词极小。</td>
+  </tr>
+
+  <tr>
+    <th>用户一眼理解</th>
+    <td><strong>9/10</strong></td>
+    <td><strong>5/10</strong></td>
+    <td>藤条不用解释；扩香石需要图像和一句话说明：oil drops on aroma stones.</td>
+  </tr>
+
+  <tr>
+    <th>避免价格战</th>
+    <td><strong>3/10</strong></td>
+    <td><strong>8/10</strong></td>
+    <td>藤条在 Amazon $10-$20 非常拥挤；扩香石更像新礼物形态。</td>
+  </tr>
+
+  <tr>
+    <th>品牌 VI / 红人内容</th>
+    <td><strong>4/10</strong></td>
+    <td><strong>9/10</strong></td>
+    <td>晶石、容器、油滴、结果卡、星座/quiz 更容易形成记忆画面。</td>
+  </tr>
+
+  <tr>
+    <th>礼物化</th>
+    <td><strong>6/10</strong></td>
+    <td><strong>9/10</strong></td>
+    <td>藤条可送但常见；扩香石礼盒更像“小仪式”和桌面对象。</td>
+  </tr>
+
+  <tr>
+    <th>复购路径</th>
+    <td><strong>7/10</strong></td>
+    <td><strong>6/10</strong></td>
+    <td>两者复购都靠香氛油；扩香石需要把 refill 机制设计得更明确。</td>
+  </tr>
+
+  <tr>
+    <th>供应链成熟</th>
+    <td><strong>8/10</strong></td>
+    <td><strong>6/10</strong></td>
+    <td>藤条成熟；扩香石可做但要组合香氛油、容器、石材、卡片和包装。</td>
+  </tr>
+
+  <tr>
+    <th>现金风险</th>
+    <td><strong>5/10</strong></td>
+    <td><strong>6/10</strong></td>
+    <td>藤条低风险低差异；扩香石中风险高差异。自费创业要小样本验证后再花钱。</td>
+  </tr>
+</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Product Definition</h2>
+        <p>我把前面跑偏的地方在这里纠正清楚：我们不卖“普通藤条香薰”，也不卖“晶石摆件”。</p>
+      </div>
+      <div class="language-box">
+        <article class="panel">
+          <h3>我们卖什么</h3>
+          <p><strong>Crystal Aroma Stone Kit</strong></p>
+          <p>一个无火房间香氛礼盒：扩香石/扩香容器 + 晶石碎石/矿石视觉 + 香氛油 + mood / scent sign 卡片。</p>
+        </article>
+        <article class="panel">
+          <h3>消费者怎么理解</h3>
+          <p>不是“玄学用品”，而是 <strong>flameless room scent kit</strong>。用油滴在扩香石上，让小空间、床头、书桌、浴室有一个可见的小仪式。</p>
+        </article>
+        <article class="panel">
+          <h3>品牌怎么赚钱</h3>
+          <p>首单靠礼盒、视觉和测试结果；复购靠香氛油 refill、季节香、生日/星座礼物和 quiz retake。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Core Risks</h2>
+        <p>晶石扩香石不是稳赢。它最大的风险不是“不好看”，而是闻不到、看不懂、说太玄。</p>
+      </div>
+      <div class="risk-grid">
+  <article class="risk-card">
+    <div class="risk-top">
+      <span>最高风险</span>
+      <div class="source-chips"><a href="#source-reddit-muji-aroma-stone">Reddit Stone</a><a href="#source-livingetc-lava-stone">Livingetc Stone</a></div>
+    </div>
+    <h3>扩香石可能香味太弱</h3>
+    <p>Reddit 和设计媒体都指向同一件事：aroma stone 更偏近距离、桌面、床头、小空间；不能默认能撑起客厅。首发必须写清楚适用空间，并做 24h/7d room throw test。</p>
+  </article>
+
+  <article class="risk-card">
+    <div class="risk-top">
+      <span>高风险</span>
+      <div class="source-chips"><a href="#source-google-trends-pytrends">Google Trends</a><a href="#source-amazon-crystal-stone-product">Amazon Stone</a></div>
+    </div>
+    <h3>消费者可能不知道它怎么用</h3>
+    <p>Google Trends 中 aroma stone diffuser 几乎没有自然搜索需求。测试图必须直接画出油滴、石头/容器、香氛油、结果卡，标题用 Crystal Aroma Stone Kit，而不是只写玄学晶石。</p>
+  </article>
+
+  <article class="risk-card">
+    <div class="risk-top">
+      <span>商业风险</span>
+      <div class="source-chips"><a href="#source-asinsight-reed-amazon">Amazon Reed</a></div>
+    </div>
+    <h3>藤条香薰容易变成价格战</h3>
+    <p>ASINSIGHT 样本显示 Amazon 上 reed diffusers for home 的 $10-$20 与 $20-$50 两档高度拥挤。新品牌如果只卖藤条，很容易被迫比香型、容量、评价数和优惠券。</p>
+  </article>
+
+  <article class="risk-card">
+    <div class="risk-top">
+      <span>信任风险</span>
+      <div class="source-chips"><a href="#source-rns-genz-crystals">RNS / Springtide</a><a href="#source-mckinsey-wellness-2025">McKinsey Wellness</a></div>
+    </div>
+    <h3>晶石不能成为核心功效承诺</h3>
+    <p>晶石可做自我理解、礼物和美学符号，但不能承诺转运、疗愈、治疗焦虑或睡眠。轻玄学可以传播，重功效会伤信任也可能带来合规风险。</p>
+  </article>
+</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Decision</h2>
+        <p>这个项目下一步应该验证“晶石扩香石礼盒能不能既被理解，又被相信能香”。</p>
+      </div>
+      <div class="route">
+        <article class="panel">
+          <span class="tagline">Recommended Hero</span>
+          <h3>首发做晶石扩香石礼盒。</h3>
+          <p>原因不是它搜索量大，而是它更有品牌资产：更好拍、更适合 quiz、更像礼物、更能承接轻玄学，也更能避开普通藤条的 $10-$20 价格带。</p>
+          <p>但必须把它讲成 fragrance product：香氛油、香调、适用空间、补充装、使用方式都要清楚。</p>
+        </article>
+        <article class="panel">
+          <span class="tagline">Secondary Route</span>
+          <h3>藤条可以做 backup 或后续线，不做首发主角。</h3>
+          <p>藤条的价值是教育成本低、供应链成熟、香味持续更稳定。它适合做后续“refillable reed base / larger room format”，或作为供应链 OEM 能力参考。</p>
+          <p>如果第一轮测试显示用户完全不懂扩香石，才考虑回退到藤条，但也不能是普通藤条，要保留晶石托盘、结果卡和强 VI。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Validation Plan</h2>
+        <p>严格一点，别浪费钱。下面这些是继续花钱前必须过的门槛。</p>
+      </div>
+      <div class="validation-grid">
+  <article class="validation-card">
+    <div class="step">1</div>
+    <h3>One-sentence clarity test</h3>
+    <p><strong>预算：</strong>$0-$20</p>
+    <p><strong>做法：</strong>把产品图给 20 个美国目标用户/英文母语者看 8 秒，只问：你觉得这是什么？怎么用？用在哪？</p>
+    <p><strong>通过条件：</strong>70% 以上能说出 fragrance / diffuser / scent oil / room 或 small space，否则先改命名和画面，不花钱测偏好。</p>
+  </article>
+
+  <article class="validation-card">
+    <div class="step">2</div>
+    <h3>Stone vs reed concept split</h3>
+    <p><strong>预算：</strong>$35-$70</p>
+    <p><strong>做法：</strong>同一套 VI，同一香型，同一价格，只换产品形态：A 传统藤条，B 晶石扩香石礼盒。问更想点哪个、觉得贵不贵、是否相信能让房间好闻。</p>
+    <p><strong>通过条件：</strong>晶石款需要赢在 click/gift/unique，且不能输太多在 understand/scent belief。</p>
+  </article>
+
+  <article class="validation-card">
+    <div class="step">3</div>
+    <h3>Scent throw sample test</h3>
+    <p><strong>预算：</strong>样品费 + 国际快递，先不做大货</p>
+    <p><strong>做法：</strong>找 2-3 个供应商寄扩香石/容器/油样。自己在中国先测近距离、卧室、通风、7 天；再寄给 6-10 个北美朋友或小红人测试。</p>
+    <p><strong>通过条件：</strong>如果 24h 后只剩近距离香，定位必须改成 desk/nightstand ritual，不能卖 room reset。</p>
+  </article>
+
+  <article class="validation-card">
+    <div class="step">4</div>
+    <h3>RFQ before packaging spend</h3>
+    <p><strong>预算：</strong>$0</p>
+    <p><strong>做法：</strong>要求供应商分项报价：容器、扩香石/晶石、香氛油、滴管瓶、卡片、内托、外盒、贴标、SDS/IFRA/flash point。</p>
+    <p><strong>通过条件：</strong>没有英文 SDS/MSDS、IFRA/air-care statement、漏液方案和 MOQ 分层报价的供应商，不进首批。</p>
+  </article>
+</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Do / Don't</h2>
+        <p>这是后续产品、测试图、供应链 RFQ 和落地页都要遵守的边界。</p>
+      </div>
+      <div class="list-grid">
+  <article class="list-card">
+    <h3>必须做</h3>
+    <ul><li>首发形态定义为：Crystal Aroma Stone Kit / flameless room scent kit with aroma stones, crystals, fragrance oil, and mood card.</li><li>广告和首页用高认知桥接词：home fragrance、flameless room scent、essential oil diffuser、aroma stone diffuser。</li><li>用香氛油和 scent notes 证明产品有用，用晶石、扩香容器、quiz result card 证明产品值得多付钱。</li><li>先小样验证 scent throw，再谈礼盒材质和大货 MOQ。</li><li>把 refill 设计成复购路径：30ml oil refill、seasonal scent drop、quiz retake、gift refill card。</li></ul>
+  </article>
+
+  <article class="list-card">
+    <h3>不要碰</h3>
+    <ul><li>不要把首发做成普通藤条瓶 + 几颗晶石。那会既像低价香薰，又没有真正的产品新意。</li><li>不要用 aroma stone diffuser 这个小词单独做 SEO 或广告主入口，搜索太小。</li><li>不要承诺能净化能量、治愈焦虑、改善睡眠、驱散厄运。</li><li>不要一开始做 custom mold、复杂容器、十几个香型或高 MOQ 彩盒。</li><li>不要在没有 room throw 证据前写 large room、whole-room、long-lasting 这种强性能词。</li></ul>
+  </article>
+</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Sources</h2>
+        <p>公开证据 + 内部 1688 截图整理。商业报告数据只作方向判断，不当作精确销量。</p>
+      </div>
+      <div class="source-list">
+  <article class="source-card" id="source-grandview-home-fragrance">
+    <div class="source-index">[1]</div>
+    <div>
+      <h3>Grand View Research, Home Fragrance Market 2026-2033</h3>
+      <p><span>Market sizing</span> Global home fragrance estimated at USD 13.16B in 2025, projected to USD 26.51B by 2033; North America was the largest region in 2025; demand is tied to personalized living spaces, relaxation, home decor, and online channels.</p>
+      <a href="https://www.grandviewresearch.com/industry-analysis/home-fragrance-market" target="_blank" rel="noreferrer">https://www.grandviewresearch.com/industry-analysis/home-fragrance-market</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-marketdataforecast-reed">
+    <div class="source-index">[2]</div>
+    <div>
+      <h3>Market Data Forecast, Reed Fragrance Diffusers Market</h3>
+      <p><span>Category sizing</span> Commercial market report says reed diffusers dominated fragrance diffusers with 42.3% share in 2025, supported by passive flameless scent release over weeks.</p>
+      <a href="https://www.marketdataforecast.com/market-reports/reed-fragrance-diffusers-market" target="_blank" rel="noreferrer">https://www.marketdataforecast.com/market-reports/reed-fragrance-diffusers-market</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-asinsight-reed-amazon">
+    <div class="source-index">[3]</div>
+    <div>
+      <h3>ASINSIGHT, Best Selling Reed Diffusers for Home 2026</h3>
+      <p><span>Amazon keyword benchmark</span> Amazon keyword sample shows large listing density and heavy price concentration: $10-$20 accounted for 42% of tracked products; $20-$50 for 36%; top visible listings show thousands of units sold monthly.</p>
+      <a href="https://www.asinsight.com/report/US/reed-diffusers-for-home" target="_blank" rel="noreferrer">https://www.asinsight.com/report/US/reed-diffusers-for-home</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-google-trends-pytrends">
+    <div class="source-index">[4]</div>
+    <div>
+      <h3>Google Trends US 12-month pull via pytrends</h3>
+      <p><span>Search behavior pull</span> Pulled on 2026-06-15. Mean relative interest: essential oil diffuser 26.51, reed diffuser 23.04, crystal diffuser 1.94, aroma stone diffuser 0.11, lava stone diffuser 0.06. Trends are directional, not search volume.</p>
+      <a href="https://trends.google.com/trends/explore?geo=US&amp;q=reed%20diffuser,aroma%20stone%20diffuser,crystal%20diffuser,lava%20stone%20diffuser,essential%20oil%20diffuser" target="_blank" rel="noreferrer">https://trends.google.com/trends/explore?geo=US&amp;q=reed%20diffuser,aroma%20stone%20diffuser,crystal%20diffuser,lava%20stone%20diffuser,essential%20oil%20diffuser</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-amazon-crystal-stone-product">
+    <div class="source-index">[5]</div>
+    <div>
+      <h3>Amazon, Crystal Stone Aroma Diffuser by Laplosy</h3>
+      <p><span>Marketplace listing</span> A crystal aroma stone kit listing at $26.99, 4.5 stars from 8 reviews, includes aroma stones, glass container, and 10ml oil. Product copy emphasizes home decor, giftability, small-space passive diffusion, and refill flexibility.</p>
+      <a href="https://www.amazon.com/Diffuser-Essential-Bathroom-Fragrance-Packaging%EF%BC%88Bluebell%EF%BC%89/dp/B0GFMPCTMX" target="_blank" rel="noreferrer">https://www.amazon.com/Diffuser-Essential-Bathroom-Fragrance-Packaging%EF%BC%88Bluebell%EF%BC%89/dp/B0GFMPCTMX</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-etsy-crystal-aroma-stone">
+    <div class="source-index">[6]</div>
+    <div>
+      <h3>Etsy, Crystal Aroma Stone Diffuser category page</h3>
+      <p><span>Marketplace search</span> Etsy page groups crystal aroma stone diffusers with home fragrance, metaphysical crystals, aromatherapy, reed diffusers, essential oils, and gifts; review snippets emphasize decor, scent, desk/bathroom use, and packaging.</p>
+      <a href="https://www.etsy.com/market/crystal_aroma_stone_diffuser" target="_blank" rel="noreferrer">https://www.etsy.com/market/crystal_aroma_stone_diffuser</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-livingetc-lava-stone">
+    <div class="source-index">[7]</div>
+    <div>
+      <h3>Livingetc, How to Use Lava Stone Diffusers</h3>
+      <p><span>Design media</span> Home design media frames lava stone diffusers as a stylish, display-worthy fragrance format; use pattern is 3-10 oil drops, scent lasting roughly 1-3 days, and monthly cleaning.</p>
+      <a href="https://www.livingetc.com/advice/how-to-use-lava-stone-diffusers" target="_blank" rel="noreferrer">https://www.livingetc.com/advice/how-to-use-lava-stone-diffusers</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-livingetc-reed-vs-electric">
+    <div class="source-index">[8]</div>
+    <div>
+      <h3>Livingetc, Reed Diffusers vs Electric Diffusers</h3>
+      <p><span>Expert comparison</span> Reed diffusers are described as low-maintenance, soft and steady, best for small/enclosed rooms; electric diffusers provide stronger projection and more control.</p>
+      <a href="https://www.livingetc.com/advice/reed-diffusers-vs-electric-diffusers" target="_blank" rel="noreferrer">https://www.livingetc.com/advice/reed-diffusers-vs-electric-diffusers</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-thespruce-reed">
+    <div class="source-index">[9]</div>
+    <div>
+      <h3>The Spruce, Best Reed Diffusers Tested</h3>
+      <p><span>Product review</span> Review criteria include scent strength, room size, bottle/reed size, longevity, ingredients, and fragrance preference. This supports scent performance as the real purchase proof.</p>
+      <a href="https://www.thespruce.com/best-reed-diffusers-5271842" target="_blank" rel="noreferrer">https://www.thespruce.com/best-reed-diffusers-5271842</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-reddit-muji-aroma-stone">
+    <div class="source-index">[10]</div>
+    <div>
+      <h3>Reddit r/muji, Questions on Aroma Stone / aroma stone experience</h3>
+      <p><span>Consumer voice</span> Consumer comments describe aroma stones as subtle with limited throw, useful close-up but not a full-room diffuser replacement. This is a key performance risk for aroma-stone formats.</p>
+      <a href="https://www.reddit.com/r/muji/comments/1brfjds/questions_on_aroma_stone/" target="_blank" rel="noreferrer">https://www.reddit.com/r/muji/comments/1brfjds/questions_on_aroma_stone/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-made-in-china-aroma-stone">
+    <div class="source-index">[11]</div>
+    <div>
+      <h3>Made-in-China, Aroma Stone 400+ factories verified</h3>
+      <p><span>Supplier benchmark</span> Shows hundreds of aroma-stone-related factories and OEM/ODM signals, with example product ranges such as US$2-4 per set, US$3.10-3.79 crystal aroma stone kits, and separate stones below US$1 in volume.</p>
+      <a href="https://www.made-in-china.com/factory/aroma-stone.html" target="_blank" rel="noreferrer">https://www.made-in-china.com/factory/aroma-stone.html</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-mckinsey-wellness-2025">
+    <div class="source-index">[12]</div>
+    <div>
+      <h3>McKinsey, The Future of Wellness Trends 2025</h3>
+      <p><span>Consumer trend</span> Gen Z and millennials drive disproportionate wellness spending, experiment with discretionary wellness products, and respond to social proof, value, quality, and perceived efficacy.</p>
+      <a href="https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends" target="_blank" rel="noreferrer">https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-rns-genz-crystals">
+    <div class="source-index">[13]</div>
+    <div>
+      <h3>Religion News Service, For Gen Z, crystals embed spirituality in the planet</h3>
+      <p><span>Spirituality signal</span> RNS cites Springtide data: 44% of young people ages 13-25 engage with crystals or herbs as a spiritual exercise, and 21% do so at least weekly. This supports a light-mystic hook but not medical/healing claims.</p>
+      <a href="https://religionnews.com/2023/01/23/for-gen-z-crystals-embed-spirituality-in-the-planet/" target="_blank" rel="noreferrer">https://religionnews.com/2023/01/23/for-gen-z-crystals-embed-spirituality-in-the-planet/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-herz-scent-framework">
+    <div class="source-index">[14]</div>
+    <div>
+      <h3>Herz et al., A three-factor benefits framework for scented household products</h3>
+      <p><span>Consumer psychology</span> Search-visible article data: among 2,000 US consumers, a good-smelling home made respondents feel clean, relaxed, accomplished, confident, and organized; this supports state-shift positioning.</p>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8972642/" target="_blank" rel="noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC8972642/</a>
+    </div>
+  </article>
+
+  <article class="source-card" id="source-rucia-1688-scout">
+    <div class="source-index">[15]</div>
+    <div>
+      <h3>Rucia 1688 screenshot scout, 2026-06-15</h3>
+      <p><span>Internal sourcing evidence</span> User-provided 1688 screenshots showed complete-looking crystal aroma gift sets roughly in ¥18.5-74.5, realistic benchmark range ¥27-58, and many bait/component prices below ¥10 that should not be treated as full kit COGS.</p>
+      <a href="./assets/product-format-opportunity-sources-2026-06-15.json" target="_blank" rel="noreferrer">./assets/product-format-opportunity-sources-2026-06-15.json</a>
+    </div>
+  </article>
+</div>
+    </section>
+
+    <footer>
+      Aroma Oracle / Rucia Crystal Aroma · Product format opportunity report · Updated 2026-06-15. This report separates evidence, inference, and founder hypothesis for launch decision making.
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,146 @@
+{
+  "reportDate": "2026-06-15",
+  "generatedAt": "2026-06-15T11:40:07.621Z",
+  "fileName": "product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html",
+  "trendPull": {
+    "accessed": "2026-06-15",
+    "geography": "US",
+    "timeframe": "past 12 months",
+    "tool": "pytrends",
+    "meanRelativeInterest": {
+      "essential oil diffuser": 26.51,
+      "reed diffuser": 23.04,
+      "crystal diffuser": 1.94,
+      "aroma stone diffuser": 0.11,
+      "lava stone diffuser": 0.06
+    }
+  },
+  "sources": [
+    {
+      "id": "grandview-home-fragrance",
+      "type": "Market sizing",
+      "name": "Grand View Research, Home Fragrance Market 2026-2033",
+      "short": "Grand View",
+      "url": "https://www.grandviewresearch.com/industry-analysis/home-fragrance-market",
+      "note": "Global home fragrance estimated at USD 13.16B in 2025, projected to USD 26.51B by 2033; North America was the largest region in 2025; demand is tied to personalized living spaces, relaxation, home decor, and online channels."
+    },
+    {
+      "id": "marketdataforecast-reed",
+      "type": "Category sizing",
+      "name": "Market Data Forecast, Reed Fragrance Diffusers Market",
+      "short": "Reed Market",
+      "url": "https://www.marketdataforecast.com/market-reports/reed-fragrance-diffusers-market",
+      "note": "Commercial market report says reed diffusers dominated fragrance diffusers with 42.3% share in 2025, supported by passive flameless scent release over weeks."
+    },
+    {
+      "id": "asinsight-reed-amazon",
+      "type": "Amazon keyword benchmark",
+      "name": "ASINSIGHT, Best Selling Reed Diffusers for Home 2026",
+      "short": "Amazon Reed",
+      "url": "https://www.asinsight.com/report/US/reed-diffusers-for-home",
+      "note": "Amazon keyword sample shows large listing density and heavy price concentration: $10-$20 accounted for 42% of tracked products; $20-$50 for 36%; top visible listings show thousands of units sold monthly."
+    },
+    {
+      "id": "google-trends-pytrends",
+      "type": "Search behavior pull",
+      "name": "Google Trends US 12-month pull via pytrends",
+      "short": "Google Trends",
+      "url": "https://trends.google.com/trends/explore?geo=US&q=reed%20diffuser,aroma%20stone%20diffuser,crystal%20diffuser,lava%20stone%20diffuser,essential%20oil%20diffuser",
+      "note": "Pulled on 2026-06-15. Mean relative interest: essential oil diffuser 26.51, reed diffuser 23.04, crystal diffuser 1.94, aroma stone diffuser 0.11, lava stone diffuser 0.06. Trends are directional, not search volume."
+    },
+    {
+      "id": "amazon-crystal-stone-product",
+      "type": "Marketplace listing",
+      "name": "Amazon, Crystal Stone Aroma Diffuser by Laplosy",
+      "short": "Amazon Stone",
+      "url": "https://www.amazon.com/Diffuser-Essential-Bathroom-Fragrance-Packaging%EF%BC%88Bluebell%EF%BC%89/dp/B0GFMPCTMX",
+      "note": "A crystal aroma stone kit listing at $26.99, 4.5 stars from 8 reviews, includes aroma stones, glass container, and 10ml oil. Product copy emphasizes home decor, giftability, small-space passive diffusion, and refill flexibility."
+    },
+    {
+      "id": "etsy-crystal-aroma-stone",
+      "type": "Marketplace search",
+      "name": "Etsy, Crystal Aroma Stone Diffuser category page",
+      "short": "Etsy Stone",
+      "url": "https://www.etsy.com/market/crystal_aroma_stone_diffuser",
+      "note": "Etsy page groups crystal aroma stone diffusers with home fragrance, metaphysical crystals, aromatherapy, reed diffusers, essential oils, and gifts; review snippets emphasize decor, scent, desk/bathroom use, and packaging."
+    },
+    {
+      "id": "livingetc-lava-stone",
+      "type": "Design media",
+      "name": "Livingetc, How to Use Lava Stone Diffusers",
+      "short": "Livingetc Stone",
+      "url": "https://www.livingetc.com/advice/how-to-use-lava-stone-diffusers",
+      "note": "Home design media frames lava stone diffusers as a stylish, display-worthy fragrance format; use pattern is 3-10 oil drops, scent lasting roughly 1-3 days, and monthly cleaning."
+    },
+    {
+      "id": "livingetc-reed-vs-electric",
+      "type": "Expert comparison",
+      "name": "Livingetc, Reed Diffusers vs Electric Diffusers",
+      "short": "Livingetc Reed",
+      "url": "https://www.livingetc.com/advice/reed-diffusers-vs-electric-diffusers",
+      "note": "Reed diffusers are described as low-maintenance, soft and steady, best for small/enclosed rooms; electric diffusers provide stronger projection and more control."
+    },
+    {
+      "id": "thespruce-reed",
+      "type": "Product review",
+      "name": "The Spruce, Best Reed Diffusers Tested",
+      "short": "The Spruce",
+      "url": "https://www.thespruce.com/best-reed-diffusers-5271842",
+      "note": "Review criteria include scent strength, room size, bottle/reed size, longevity, ingredients, and fragrance preference. This supports scent performance as the real purchase proof."
+    },
+    {
+      "id": "reddit-muji-aroma-stone",
+      "type": "Consumer voice",
+      "name": "Reddit r/muji, Questions on Aroma Stone / aroma stone experience",
+      "short": "Reddit Stone",
+      "url": "https://www.reddit.com/r/muji/comments/1brfjds/questions_on_aroma_stone/",
+      "note": "Consumer comments describe aroma stones as subtle with limited throw, useful close-up but not a full-room diffuser replacement. This is a key performance risk for aroma-stone formats."
+    },
+    {
+      "id": "made-in-china-aroma-stone",
+      "type": "Supplier benchmark",
+      "name": "Made-in-China, Aroma Stone 400+ factories verified",
+      "short": "MIC Stone",
+      "url": "https://www.made-in-china.com/factory/aroma-stone.html",
+      "note": "Shows hundreds of aroma-stone-related factories and OEM/ODM signals, with example product ranges such as US$2-4 per set, US$3.10-3.79 crystal aroma stone kits, and separate stones below US$1 in volume."
+    },
+    {
+      "id": "mckinsey-wellness-2025",
+      "type": "Consumer trend",
+      "name": "McKinsey, The Future of Wellness Trends 2025",
+      "short": "McKinsey Wellness",
+      "url": "https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends",
+      "note": "Gen Z and millennials drive disproportionate wellness spending, experiment with discretionary wellness products, and respond to social proof, value, quality, and perceived efficacy."
+    },
+    {
+      "id": "rns-genz-crystals",
+      "type": "Spirituality signal",
+      "name": "Religion News Service, For Gen Z, crystals embed spirituality in the planet",
+      "short": "RNS / Springtide",
+      "url": "https://religionnews.com/2023/01/23/for-gen-z-crystals-embed-spirituality-in-the-planet/",
+      "note": "RNS cites Springtide data: 44% of young people ages 13-25 engage with crystals or herbs as a spiritual exercise, and 21% do so at least weekly. This supports a light-mystic hook but not medical/healing claims."
+    },
+    {
+      "id": "herz-scent-framework",
+      "type": "Consumer psychology",
+      "name": "Herz et al., A three-factor benefits framework for scented household products",
+      "short": "Scent Framework",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8972642/",
+      "note": "Search-visible article data: among 2,000 US consumers, a good-smelling home made respondents feel clean, relaxed, accomplished, confident, and organized; this supports state-shift positioning."
+    },
+    {
+      "id": "rucia-1688-scout",
+      "type": "Internal sourcing evidence",
+      "name": "Rucia 1688 screenshot scout, 2026-06-15",
+      "short": "1688 Scout",
+      "url": "./assets/product-format-opportunity-sources-2026-06-15.json",
+      "note": "User-provided 1688 screenshots showed complete-looking crystal aroma gift sets roughly in ¥18.5-74.5, realistic benchmark range ¥27-58, and many bait/component prices below ¥10 that should not be treated as full kit COGS."
+    }
+  ],
+  "decision": {
+    "matureDemandWinner": "reed diffuser",
+    "ruciaBrandOpportunityWinner": "crystal aroma stone kit",
+    "recommendedHero": "Crystal Aroma Stone Kit",
+    "categoryBridge": "flameless room scent kit with aroma stones, crystals, fragrance oil, and mood card"
+  }
+}
