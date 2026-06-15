@@ -3,50 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>玄学晶石香薰报告</title>
+  <title>Rucia Crystal Aroma 项目公开档案</title>
+  <meta name="description" content="Rucia Crystal Aroma 玄学能量晶石香薰项目公开档案入口：VI、竞品调研、消费者调研、香味调研、Launch 验证、PickFu 概念测试和公开素材。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
   <style>
     :root {
       color-scheme: light;
       --bg: #f8f8f4;
       --ink: #111111;
-      --muted: #66615d;
-      --line: rgba(17, 17, 17, 0.15);
+      --body: #343434;
+      --muted: #676767;
+      --line: rgba(17, 17, 17, 0.14);
       --panel: #ffffff;
-      --panel-alpha: rgba(255, 255, 255, 0.86);
-      --teal: #008f84;
-      --plum: #c33788;
+      --panel-alpha: rgba(255, 255, 255, 0.88);
+      --cyan: #32d6c6;
       --pink: #f7a4d8;
-      --blue: #9ed1ff;
+      --sky: #9ed1ff;
+      --lilac: #9b7cff;
       --coral: #ff6b4a;
-      --shadow: 0 20px 55px rgba(17, 17, 17, 0.12);
-      --grid: rgba(17, 17, 17, 0.05);
+      --green: #70e5a8;
+      --shadow: 0 22px 60px rgba(17, 17, 17, 0.12);
+      --grid: rgba(17, 17, 17, 0.055);
     }
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
         --bg: #111217;
         --ink: #faf8f2;
+        --body: #e5e0d7;
         --muted: #bdb6aa;
         --line: rgba(250, 248, 242, 0.18);
         --panel: #1c1f27;
         --panel-alpha: rgba(29, 31, 38, 0.9);
-        --teal: #7ceade;
-        --plum: #f7a4d8;
+        --cyan: #7ceade;
         --pink: #f7a4d8;
-        --blue: #9ed1ff;
+        --sky: #9ed1ff;
+        --lilac: #b6a0ff;
         --coral: #ff8b72;
-        --shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
+        --green: #96f2bd;
+        --shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
         --grid: rgba(250, 248, 242, 0.07);
       }
     }
+
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-width: 320px;
       color: var(--ink);
       background:
-        radial-gradient(circle at 12% 10%, rgba(247, 164, 216, 0.35), transparent 30%),
-        radial-gradient(circle at 86% 12%, rgba(50, 214, 198, 0.25), transparent 28%),
+        linear-gradient(112deg, rgba(247, 164, 216, 0.22), transparent 34%),
+        linear-gradient(248deg, rgba(50, 214, 198, 0.22), transparent 36%),
         linear-gradient(90deg, var(--grid) 1px, transparent 1px),
         linear-gradient(180deg, var(--grid) 1px, transparent 1px),
         var(--bg);
@@ -54,134 +61,447 @@
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
       line-height: 1.55;
     }
-    main {
-      width: min(calc(100% - 40px), 1120px);
+
+    a { color: inherit; }
+    .wrap {
+      width: min(calc(100% - 40px), 1180px);
       margin: 0 auto;
-      padding: 72px 0;
+      padding: 34px 0 70px;
     }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 44px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 34px;
+      height: 34px;
+      border: 4px solid var(--ink);
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--panel) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--ink);
+      flex: 0 0 auto;
+    }
+
+    .status {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel-alpha);
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-side,
+    .card,
+    .file-row {
+      border: 1px solid var(--line);
+      background: var(--panel-alpha);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      min-height: 440px;
+      padding: clamp(28px, 5vw, 54px);
+      border-radius: 22px;
+    }
+
     .eyebrow {
-      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 7px 12px;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--green);
+      color: #111111;
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 950;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
+
     h1 {
-      margin: 10px 0 16px;
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 0.98;
-      letter-spacing: -0.075em;
+      max-width: 760px;
+      margin: 24px 0 18px;
+      font-size: clamp(46px, 7vw, 92px);
+      line-height: 0.95;
+      letter-spacing: 0;
       text-transform: uppercase;
     }
-    p {
+
+    .lead {
       max-width: 720px;
       margin: 0;
-      color: var(--muted);
-      font-size: 17px;
+      color: var(--body);
+      font-size: clamp(18px, 2.1vw, 24px);
+      font-weight: 760;
+      line-height: 1.24;
     }
-    .links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 16px;
-      margin-top: 40px;
-    }
-    a.card {
-      display: block;
-      min-height: 210px;
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 440px;
       padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      color: inherit;
-      background: var(--panel-alpha);
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(50, 214, 198, 0.2), transparent 62%),
+        var(--panel-alpha);
+    }
+
+    .hero-side strong {
+      display: block;
+      font-size: 38px;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .hero-side p {
+      margin: 12px 0 0;
+      color: var(--body);
+      font-size: 15px;
+    }
+
+    .mini-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mini {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      border: 2px solid var(--ink);
+      border-radius: 14px;
+      background: var(--panel);
+      color: var(--ink);
+      font-weight: 950;
+      box-shadow: 4px 4px 0 var(--pink);
+    }
+    .mini:nth-child(2) { box-shadow-color: var(--cyan); }
+    .mini:nth-child(3) { box-shadow-color: var(--lilac); }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4.2vw, 50px);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+      padding: 20px;
+      border-radius: 16px;
       text-decoration: none;
-      box-shadow: var(--shadow);
       transition: transform 180ms ease, border-color 180ms ease;
     }
-    a.card:hover {
+
+    .card:hover {
       transform: translateY(-3px);
-      border-color: rgba(22, 109, 106, 0.42);
+      border-color: color-mix(in srgb, var(--cyan) 54%, var(--line));
     }
-    a.card.featured {
+
+    .card.featured {
       color: #111111;
       background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.5)),
-        linear-gradient(135deg, var(--pink), var(--blue) 48%, var(--coral));
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.52)),
+        linear-gradient(135deg, var(--pink), var(--sky) 50%, var(--green));
       border-color: rgba(17, 17, 17, 0.18);
     }
-    @media (prefers-color-scheme: dark) {
-      a.card.featured {
-        color: #111111;
-      }
+
+    .card.analysis {
+      color: #111111;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5)),
+        linear-gradient(135deg, var(--cyan), var(--pink) 54%, var(--coral));
+      border-color: rgba(17, 17, 17, 0.18);
     }
-    .card span {
-      color: var(--teal);
+
+    .tag {
+      align-self: flex-start;
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 5px 9px;
+      border: 1px solid rgba(17, 17, 17, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      color: #111111;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .card:not(.featured):not(.analysis) .tag {
+      color: var(--body);
+      background: var(--panel);
+      border-color: var(--line);
+    }
+
+    .card h3 {
+      margin: 16px 0 12px;
+      font-size: 27px;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .card.featured p,
+    .card.analysis p {
+      color: rgba(17, 17, 17, 0.75);
+    }
+
+    .card .meta {
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--muted);
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
-    .card h2 {
-      margin: 12px 0 12px;
-      font-size: 26px;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+
+    .card.featured .meta,
+    .card.analysis .meta {
+      color: rgba(17, 17, 17, 0.68);
     }
-    .card p { font-size: 14px; }
-    .card.featured span,
-    .card.featured p {
-      color: rgba(17, 17, 17, 0.72);
+
+    .file-list {
+      display: grid;
+      gap: 10px;
     }
+
+    .file-row {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      min-height: 64px;
+      padding: 13px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+    }
+
+    .file-row b {
+      color: var(--ink);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .file-row span {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .file-row em {
+      color: var(--muted);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
     footer {
       margin-top: 42px;
       color: var(--muted);
       font-size: 13px;
     }
+
+    @media (max-width: 980px) {
+      .hero,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .hero-copy,
+      .hero-side {
+        min-height: 0;
+      }
+    }
+
     @media (max-width: 720px) {
-      main { width: min(calc(100% - 28px), 960px); padding: 42px 0; }
-      .links { grid-template-columns: 1fr; }
+      .wrap {
+        width: min(calc(100% - 28px), 1180px);
+        padding-top: 22px;
+      }
+      .topbar,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .file-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
-    <div class="eyebrow">Rucia Crystal Aroma</div>
-    <h1>玄学晶石香薰项目报告</h1>
-    <p>这里是公开阅读版：报告页面和当前保留的品牌 VI 方向。内部项目资料、成本、供应链和未定稿草案仍保留在私有仓库。</p>
-
-    <div class="links">
-      <a class="card featured" href="./brand-vi-prismatic-scent-quiz.html">
-        <span>VI Direction</span>
-        <h2>Prismatic Scent Quiz</h2>
-        <p>当前保留的品牌视觉方向：彩色测试、香氛玻璃、晶石折射、结果卡和社媒开箱。</p>
-      </a>
-      <a class="card featured" href="./concept-pilot-validation-board-2026-06-15.html">
-        <span>Validation Board</span>
-        <h2>Concept Pilot 看板</h2>
-        <p>第一轮美国消费者概念测试存档：4 张概念板、PickFu 问卷、评分门槛和结果模板。</p>
-      </a>
-      <a class="card" href="./crystal-aroma-competitive-research-2026-06-14.html">
-        <span>Report 01</span>
-        <h2>竞品调研报告</h2>
-        <p>中国与北美市场竞品、价格、机会点、必须做和不要碰的方向。</p>
-      </a>
-      <a class="card" href="./north-america-consumer-research-crystal-aroma-2026-06-14.html">
-        <span>Report 02</span>
-        <h2>北美消费者调研报告</h2>
-        <p>购买动机、现有方案不满、消费者证据、目标人群和验证路径。</p>
-      </a>
-      <a class="card" href="./north-america-scent-research-crystal-aroma-2026-06-15.html">
-        <span>Report 03</span>
-        <h2>北美香味调研报告</h2>
-        <p>香味购买理由、复购逻辑、轻玄学入口、首发 scent signs 和小样测试计划。</p>
-      </a>
-      <a class="card" href="./north-america-launch-validation-crystal-aroma-2026-06-15.html">
-        <span>Report 04</span>
-        <h2>Launch 验证报告</h2>
-        <p>概念、香味、价格、quiz、红人内容五个首发风险的验证路线。</p>
-      </a>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <span class="status">Public Archive · Updated 2026-06-15</span>
     </div>
 
-    <footer>Published for Rucia616. Latest archive date: 2026-06-15.</footer>
+    <header class="hero">
+      <section class="hero-copy">
+        <span class="eyebrow">Rucia Crystal Aroma</span>
+        <h1>玄学晶石香薰项目公开档案</h1>
+        <p class="lead">这里整理所有可外发页面：品牌 VI、市场调研、北美消费者证据、香味策略、Launch 验证、PickFu 概念测试和公开素材。内部供应链、成本和原始 CSV 仍保留在私有项目里。</p>
+      </section>
+      <aside class="hero-side" aria-label="项目状态摘要">
+        <div>
+          <strong>Fragrance First</strong>
+          <p>晶石和轻玄学是内容钩子，复购必须来自香味、房间适配和 refill 路径。</p>
+        </div>
+        <div class="mini-stack">
+          <div class="mini"><span>Concept Poll</span><span>A 26 / C 24</span></div>
+          <div class="mini"><span>Decision</span><span>A+C Hybrid</span></div>
+          <div class="mini"><span>Next</span><span>Clarity Test</span></div>
+        </div>
+      </aside>
+    </header>
+
+    <section class="section" aria-labelledby="primary-title">
+      <div class="section-head">
+        <h2 id="primary-title">Core Pages</h2>
+        <p>项目主入口和当前最值得外发的页面。PickFu 深度分析已放在第一屏。</p>
+      </div>
+      <div class="cards">
+        <a class="card analysis" href="./pickfu-concept-pilot-analysis-2026-06-15.html">
+          <span class="tag">New / Analysis</span>
+          <h3>PickFu 概念测试深度分析</h3>
+          <p>A 26 / C 24 不是 A 胜出，而是 A+C 合并。报告拆解统计显著性、消费者原话、购买任务和下一步验证。</p>
+          <span class="meta">2026-06-15 · Public report</span>
+        </a>
+        <a class="card featured" href="./concept-pilot-validation-board-2026-06-15.html">
+          <span class="tag">Validation Board</span>
+          <h3>Concept Pilot 看板</h3>
+          <p>第一轮概念测试的执行记录：四张概念板、PickFu 问卷、付款记录口径、结果和后续 todo。</p>
+          <span class="meta">2026-06-15 · Archive board</span>
+        </a>
+        <a class="card featured" href="./brand-vi-prismatic-scent-quiz.html">
+          <span class="tag">VI Direction</span>
+          <h3>Prismatic Scent Quiz</h3>
+          <p>当前保留的品牌视觉方向：彩色测试、香氛玻璃、晶石折射、结果卡和社媒开箱。</p>
+          <span class="meta">Current VI</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reports-title">
+      <div class="section-head">
+        <h2 id="reports-title">Research Reports</h2>
+        <p>市场、消费者、香味和 launch 风险报告都在这里。后续新增报告也放这一组。</p>
+      </div>
+      <div class="cards">
+        <a class="card" href="./crystal-aroma-competitive-research-2026-06-14.html">
+          <span class="tag">Report 01</span>
+          <h3>竞品调研报告</h3>
+          <p>中国与北美市场竞品、价格、机会点、必须做和不要碰的方向。</p>
+          <span class="meta">2026-06-14</span>
+        </a>
+        <a class="card" href="./north-america-consumer-research-crystal-aroma-2026-06-14.html">
+          <span class="tag">Report 02</span>
+          <h3>北美消费者调研报告</h3>
+          <p>购买动机、现有方案不满、消费者证据、目标人群和验证路径。</p>
+          <span class="meta">2026-06-14</span>
+        </a>
+        <a class="card" href="./north-america-scent-research-crystal-aroma-2026-06-15.html">
+          <span class="tag">Report 03</span>
+          <h3>北美香味调研报告</h3>
+          <p>香味购买理由、复购逻辑、轻玄学入口、首发 scent signs 和小样测试计划。</p>
+          <span class="meta">2026-06-15</span>
+        </a>
+        <a class="card" href="./north-america-launch-validation-crystal-aroma-2026-06-15.html">
+          <span class="tag">Report 04</span>
+          <h3>Launch 验证报告</h3>
+          <p>概念、香味、价格、quiz、红人内容五个首发风险的验证路线。</p>
+          <span class="meta">2026-06-15</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="files-title">
+      <div class="section-head">
+        <h2 id="files-title">Public Files</h2>
+        <p>这些是可以公开查看的素材和源文件。原始受访者 CSV、供应链、财务和成本不放公开页。</p>
+      </div>
+      <div class="file-list">
+        <a class="file-row" href="./README.md"><b>Project README</b><span>公开仓库说明文件。</span><em>Markdown</em></a>
+        <a class="file-row" href="./assets/vi-final-prismatic-scent-quiz.png"><b>VI Board</b><span>保留版品牌视觉方向图。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-pilot/all-concept-boards.png"><b>All Concept Boards</b><span>A/B/C/D 四张概念板合并预览。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-pilot/01-scent-sign-diffuser-kit.png"><b>Concept A</b><span>Scent Sign Diffuser Kit 概念板。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-pilot/02-vibe-matched-crystal-aroma.png"><b>Concept B</b><span>Vibe-Matched Crystal Aroma 概念板。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-pilot/03-room-mood-ritual-kit.png"><b>Concept C</b><span>Room Mood Ritual Kit 概念板。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-pilot/04-birth-chart-for-your-room.png"><b>Concept D</b><span>Birth Chart for Your Room 概念板。</span><em>PNG</em></a>
+        <a class="file-row" href="./assets/concept-pilot/README.md"><b>Concept README</b><span>概念测试执行说明。</span><em>Markdown</em></a>
+        <a class="file-row" href="./assets/concept-pilot/pickfu-questionnaire.md"><b>Questionnaire</b><span>PickFu 问卷题目和设置。</span><em>Markdown</em></a>
+        <a class="file-row" href="./assets/concept-pilot/scoring-rubric.csv"><b>Scoring Rubric</b><span>概念测试评分字段。</span><em>CSV</em></a>
+        <a class="file-row" href="./assets/concept-pilot/pickfu-results-template.csv"><b>Results Template</b><span>PickFu 结果编码模板。</span><em>CSV</em></a>
+        <a class="file-row" href="./assets/north-america-launch-validation-sources-2026-06-15.json"><b>Launch Sources</b><span>Launch 验证报告的公开来源索引。</span><em>JSON</em></a>
+        <a class="file-row" href="./assets/north-america-scent-research-sources-2026-06-15.json"><b>Scent Sources</b><span>北美香味调研报告的公开来源索引。</span><em>JSON</em></a>
+      </div>
+    </section>
+
+    <footer>Published for Rucia616. Public archive for Rucia Crystal Aroma. Last updated: 2026-06-15.</footer>
   </main>
 </body>
 </html>

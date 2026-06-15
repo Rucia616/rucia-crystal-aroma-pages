@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PickFu 概念测试深度分析 | Rucia Crystal Aroma</title>
+  <meta name="description" content="Rucia Crystal Aroma 玄学能量晶石香薰 PickFu 概念测试深度分析：A/C 结果、消费者语言、商业判断和下一步验证路径。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f8f4;
+      --surface: #ffffff;
+      --surface-soft: rgba(255, 255, 255, 0.88);
+      --text: #111111;
+      --body: #343434;
+      --muted: #676767;
+      --line: rgba(17, 17, 17, 0.14);
+      --cyan: #32d6c6;
+      --sky: #9ed1ff;
+      --pink: #f7a4d8;
+      --lilac: #9b7cff;
+      --coral: #ff6b4a;
+      --green: #70e5a8;
+      --amber: #ffbf5f;
+      --grid: rgba(17, 17, 17, 0.055);
+      --shadow: 0 24px 70px rgba(17, 17, 17, 0.12);
+      --inverse: #111111;
+      --inverse-text: #faf8f2;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #111217;
+        --surface: #1c1f27;
+        --surface-soft: rgba(29, 31, 38, 0.9);
+        --text: #faf8f2;
+        --body: #e5e0d7;
+        --muted: #bdb6aa;
+        --line: rgba(250, 248, 242, 0.18);
+        --cyan: #7ceade;
+        --sky: #9ed1ff;
+        --pink: #f7a4d8;
+        --lilac: #b6a0ff;
+        --coral: #ff8b72;
+        --green: #96f2bd;
+        --amber: #ffd082;
+        --grid: rgba(250, 248, 242, 0.07);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+        --inverse: #faf8f2;
+        --inverse-text: #111111;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        linear-gradient(112deg, rgba(247, 164, 216, 0.22), transparent 34%),
+        linear-gradient(248deg, rgba(50, 214, 198, 0.22), transparent 36%),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, 64px 64px, 64px 64px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    .wrap {
+      width: min(calc(100% - 40px), 1180px);
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .spark {
+      width: 34px;
+      height: 34px;
+      border: 4px solid var(--text);
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--surface) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--text);
+      flex: 0 0 auto;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-visual,
+    .panel,
+    .quote,
+    .route-card,
+    .gate {
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      min-height: 560px;
+      padding: clamp(28px, 5vw, 54px);
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 7px 12px;
+      border: 2px solid var(--text);
+      border-radius: 999px;
+      background: var(--green);
+      color: #111111;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 24px 0 18px;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 710px;
+      margin: 0;
+      color: var(--body);
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 760;
+      line-height: 1.24;
+    }
+
+    .hero-callout {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 30px;
+      max-width: 760px;
+    }
+
+    .stat-mini {
+      min-height: 96px;
+      padding: 14px;
+      border: 2px solid var(--text);
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 4px 4px 0 var(--cyan);
+    }
+
+    .stat-mini:nth-child(2) { box-shadow-color: var(--pink); }
+    .stat-mini:nth-child(3) { box-shadow-color: var(--lilac); }
+    .stat-mini span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+    .stat-mini strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .hero-visual {
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .visual-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .concept-shot {
+      position: relative;
+      background: var(--surface);
+    }
+
+    .concept-shot img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .concept-shot b {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--text);
+      border-radius: 50%;
+      background: var(--cyan);
+      color: #111111;
+      font-weight: 950;
+    }
+
+    .concept-shot:nth-child(2) b { background: var(--green); }
+
+    .vote-box {
+      padding: 22px;
+    }
+
+    .vote-box h2,
+    .section-head h2,
+    .panel h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .vote-row {
+      display: grid;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .vote-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .vote-track {
+      height: 20px;
+      border: 2px solid var(--text);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 4px 4px 0 var(--text);
+    }
+
+    .vote-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+    }
+
+    .vote-fill.c {
+      background: linear-gradient(90deg, var(--green), var(--sky));
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .panel {
+      min-height: 154px;
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    .panel .label,
+    .quote .label,
+    .route-card .label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .panel strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.05;
+    }
+
+    .panel p,
+    .route-card p {
+      margin: 12px 0 0;
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .accent-cyan { border-top: 8px solid var(--cyan); }
+    .accent-pink { border-top: 8px solid var(--pink); }
+    .accent-green { border-top: 8px solid var(--green); }
+    .accent-coral { border-top: 8px solid var(--coral); }
+    .accent-lilac { border-top: 8px solid var(--lilac); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-soft);
+      box-shadow: var(--shadow);
+    }
+
+    th,
+    td {
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      color: var(--body);
+      font-size: 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--text);
+      background: color-mix(in srgb, var(--cyan) 14%, var(--surface));
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .bar-cell {
+      min-width: 120px;
+    }
+
+    .mini-bar {
+      height: 14px;
+      border: 1px solid var(--text);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .mini-bar i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+    }
+
+    .mini-bar.c i {
+      background: linear-gradient(90deg, var(--green), var(--sky));
+    }
+
+    .route-card {
+      min-height: 178px;
+      padding: 22px;
+      border-radius: 16px;
+    }
+
+    .route-card h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .quote {
+      min-height: 190px;
+      padding: 20px;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(50, 214, 198, 0.14), transparent 65%),
+        var(--surface-soft);
+    }
+
+    blockquote {
+      margin: 0;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+    .quote p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .decision {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .decision-copy {
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--inverse);
+      color: var(--inverse-text);
+      box-shadow: var(--shadow);
+    }
+
+    .decision-copy span {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .decision-copy h2 {
+      margin: 14px 0;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.94;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .decision-copy p {
+      margin: 0;
+      color: color-mix(in srgb, var(--inverse-text) 78%, transparent);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .gate-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .gate {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 14px;
+      box-shadow: none;
+    }
+
+    .gate b {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.15;
+    }
+
+    .gate span {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .list {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .list li + li { margin-top: 8px; }
+
+    .source-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .source-row a {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .decision,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .quote-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy { min-height: 0; }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(calc(100% - 28px), 1180px);
+        padding-top: 22px;
+      }
+
+      nav,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero-callout {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-top {
+        grid-template-columns: 1fr;
+      }
+
+      .gate {
+        grid-template-columns: 1fr;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead { display: none; }
+      tr {
+        border-bottom: 1px solid var(--line);
+      }
+      td {
+        border-bottom: 0;
+      }
+      td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav aria-label="页面导航">
+      <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <div class="nav-links">
+        <a class="pill-link" href="./index.html">项目首页</a>
+        <a class="pill-link" href="./concept-pilot-validation-board-2026-06-15.html">测试看板</a>
+        <a class="pill-link" href="https://www.pickfu.com/vPfCGDoZr8">PickFu 原链接</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <section class="hero-copy">
+        <span class="eyebrow">Consumer Evidence / PickFu 50</span>
+        <h1>概念测试深度分析</h1>
+        <p class="lead">这不是一次“谁赢了”的投票，而是一次小额排雷：A 26 票、C 24 票，统计上没有显著胜负。真正有价值的是受访者怎么描述产品、为什么想点、哪里觉得怪。</p>
+        <div class="hero-callout" aria-label="核心读数">
+          <div class="stat-mini"><span>Vote Split</span><strong>26 / 24</strong></div>
+          <div class="stat-mini"><span>Decision</span><strong>A+C</strong></div>
+          <div class="stat-mini"><span>Next Test</span><strong>Monadic</strong></div>
+        </div>
+      </section>
+      <aside class="hero-visual" aria-label="A C 两张概念图与投票结果">
+        <div class="visual-top">
+          <div class="concept-shot">
+            <b>A</b>
+            <img src="./assets/concept-pilot/01-scent-sign-diffuser-kit.png" alt="Scent Sign Diffuser Kit concept board" />
+          </div>
+          <div class="concept-shot">
+            <b>C</b>
+            <img src="./assets/concept-pilot/03-room-mood-ritual-kit.png" alt="Room Mood Ritual Kit concept board" />
+          </div>
+        </div>
+        <div class="vote-box">
+          <h2>A 26 / C 24</h2>
+          <div class="vote-row">
+            <div class="vote-top"><span>A · Scent Sign Diffuser Kit</span><span>52%</span></div>
+            <div class="vote-track"><div class="vote-fill" style="width:52%"></div></div>
+            <div class="vote-top"><span>C · Room Mood Ritual Kit</span><span>48%</span></div>
+            <div class="vote-track"><div class="vote-fill c" style="width:48%"></div></div>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <section class="section" aria-labelledby="read-title">
+      <div class="section-head">
+        <h2 id="read-title">Executive Read</h2>
+        <p>结论要保守：这个结果不能证明 A 更好，但能告诉我们下一版应该怎么合并。</p>
+      </div>
+      <div class="grid-4">
+        <article class="panel accent-cyan">
+          <span class="label">Statistical Reality</span>
+          <strong>没有 winner</strong>
+          <p>A 只领先 2 票。95% Wilson 区间约 38.5% 到 65.2%，p 值约 0.888。</p>
+        </article>
+        <article class="panel accent-pink">
+          <span class="label">A 的价值</span>
+          <strong>更清楚</strong>
+          <p>`diffuser / scent / kit` 帮用户一眼理解这是香氛扩香产品。</p>
+        </article>
+        <article class="panel accent-green">
+          <span class="label">C 的价值</span>
+          <strong>更想点</strong>
+          <p>`room mood` 直接连接房间氛围、心情变化和社媒语感。</p>
+        </article>
+        <article class="panel accent-coral">
+          <span class="label">Decision</span>
+          <strong>合并，而不是选边</strong>
+          <p>下一版主打 `Room Mood Diffuser Kit`，把 `Scent Sign` 放到 quiz result 机制。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="stats-title">
+      <div class="section-head">
+        <h2 id="stats-title">Why We Cannot Call A The Winner</h2>
+        <p>外发时这里很关键：我们不是在包装胜利，而是在解释为什么下一步要更精确地验证。</p>
+      </div>
+      <table aria-label="统计读法">
+        <thead>
+          <tr><th>Metric</th><th>Result</th><th>Business Read</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Metric">Sample</td>
+            <td data-label="Result">50 位美国女性，18-34</td>
+            <td data-label="Business Read">够做早期排雷，不够证明市场需求或价格承受力。</td>
+          </tr>
+          <tr>
+            <td data-label="Metric">Vote Split</td>
+            <td data-label="Result">A 26 / C 24</td>
+            <td data-label="Business Read">差距只有 2 票，不能强行宣布 A 胜出。</td>
+          </tr>
+          <tr>
+            <td data-label="Metric">A Share</td>
+            <td data-label="Result">52%</td>
+            <td data-label="Business Read">没有达到预设 55%+ 胜出门槛。</td>
+          </tr>
+          <tr>
+            <td data-label="Metric">Confidence</td>
+            <td data-label="Result">Wilson 95% CI 约 38.5%-65.2%</td>
+            <td data-label="Business Read">真实偏好可能很宽，投票本身不稳定。</td>
+          </tr>
+          <tr>
+            <td data-label="Metric">Main Bias</td>
+            <td data-label="Result">大量评论提到颜色、好看、stand out</td>
+            <td data-label="Business Read">下一轮要测单概念理解，不能再让两个图互相比颜值。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" aria-labelledby="signals-title">
+      <div class="section-head">
+        <h2 id="signals-title">What The Language Tells Us</h2>
+        <p>我们真正要读的是开放回答：用户自然使用什么词，说明她们在雇佣这个产品完成什么任务。</p>
+      </div>
+      <table aria-label="语言信号编码">
+        <thead>
+          <tr><th>Signal</th><th>A</th><th>C</th><th>Interpretation</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Signal">Fragrance / scent / diffuser</td>
+            <td data-label="A" class="bar-cell">7<div class="mini-bar"><i style="width:70%"></i></div></td>
+            <td data-label="C" class="bar-cell">4<div class="mini-bar c"><i style="width:40%"></i></div></td>
+            <td data-label="Interpretation">A 更容易被看成香氛扩香产品。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">Room mood / environment / vibe</td>
+            <td data-label="A" class="bar-cell">4<div class="mini-bar"><i style="width:29%"></i></div></td>
+            <td data-label="C" class="bar-cell">14<div class="mini-bar c"><i style="width:100%"></i></div></td>
+            <td data-label="Interpretation">C 抓住了更真实的购买理由：改变房间氛围。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">Quiz / match / customization</td>
+            <td data-label="A" class="bar-cell">2<div class="mini-bar"><i style="width:40%"></i></div></td>
+            <td data-label="C" class="bar-cell">5<div class="mini-bar c"><i style="width:100%"></i></div></td>
+            <td data-label="Interpretation">C 让匹配和定制更明显，但仍需要更清楚的产品解释。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">Visual / color / attention</td>
+            <td data-label="A" class="bar-cell">17<div class="mini-bar"><i style="width:100%"></i></div></td>
+            <td data-label="C" class="bar-cell">8<div class="mini-bar c"><i style="width:47%"></i></div></td>
+            <td data-label="Interpretation">A 的票数很可能混入了视觉偏好。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">Clarity / legit / believable</td>
+            <td data-label="A" class="bar-cell">6<div class="mini-bar"><i style="width:100%"></i></div></td>
+            <td data-label="C" class="bar-cell">2<div class="mini-bar c"><i style="width:33%"></i></div></td>
+            <td data-label="Interpretation">A 的商业安全性更高，适合保留类别词。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" aria-labelledby="consumer-title">
+      <div class="section-head">
+        <h2 id="consumer-title">Six Consumer Insights</h2>
+        <p>每条都拆成 Evidence / Inference / Action，避免把创始人想法包装成消费者结论。</p>
+      </div>
+      <div class="grid-3">
+        <article class="route-card accent-cyan">
+          <span class="label">01 / Category</span>
+          <h3>用户买的不是“晶石能量”</h3>
+          <p>受访者主要说 scent、diffuser、room、mood、environment。晶石更像礼物感和视觉钩子，不是复购核心。</p>
+        </article>
+        <article class="route-card accent-green">
+          <span class="label">02 / Hook</span>
+          <h3>`Room Mood` 比 `Scent Sign` 更像购买理由</h3>
+          <p>它直接回答“我为什么要买”：让房间变好闻、变舒服、变成今天想要的状态。</p>
+        </article>
+        <article class="route-card accent-pink">
+          <span class="label">03 / Mechanism</span>
+          <h3>`Scent Sign` 可以保留，但要解释</h3>
+          <p>它适合做 quiz result 机制：Take the quiz. Find your Scent Sign. 不能单独承载第一眼标题。</p>
+        </article>
+        <article class="route-card accent-lilac">
+          <span class="label">04 / Language Risk</span>
+          <h3>`Ritual` 有内容感，也有吓人风险</h3>
+          <p>保留为卡片/内页/开箱体验，不要做主包装标题。轻玄学比重玄学更商业安全。</p>
+        </article>
+        <article class="route-card accent-coral">
+          <span class="label">05 / Safety</span>
+          <h3>Flameless 是优势，但别乱说安全</h3>
+          <p>可以说 no candle / no plug-in。不能说 pet safe / kid safe，除非配方和供应商文件支持。</p>
+        </article>
+        <article class="route-card accent-cyan">
+          <span class="label">06 / Format</span>
+          <h3>下一张图要更像产品解剖图</h3>
+          <p>必须清楚显示 fragrance oil、reeds、crystal detail、scent sign card、refill path。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="signal-title">
+      <div class="section-head">
+        <h2 id="signal-title">Positive / Negative Signals</h2>
+        <p>这部分直接回答：哪些信号让我们可以继续，哪些信号提醒我们不能跳级，以及它们分别怎么影响商业决策。</p>
+      </div>
+      <div class="grid-2">
+        <article class="panel accent-green">
+          <span class="label">Positive Signals</span>
+          <h2>可以继续验证的理由</h2>
+          <ul class="list">
+            <li><b>概念没有被拒绝：</b>A/C 几乎打平，说明两个方向都能被目标人群理解或产生兴趣。</li>
+            <li><b>香氛品类可被识别：</b>A 里更多人提到 scent、diffuser、smell，说明 fragrance-first 路线成立。</li>
+            <li><b>`Room Mood` 是强购买任务：</b>C 里大量出现 room、mood、environment、peaceful，说明“改变房间状态”比“买晶石”更有消费动机。</li>
+            <li><b>Quiz / match 有潜力：</b>部分用户能理解 quiz 帮她找到适合房间或当前心情的 scent，这是未来 email capture 和转化路径的基础。</li>
+            <li><b>视觉有点击力：</b>颜色、包装、stand out 被多次提到，说明这个 VI 在社媒流里有吸睛潜力。</li>
+            <li><b>礼盒感能被感知：</b>kit、package、gift-like 的语言说明它可以走自用 + 送礼双场景。</li>
+          </ul>
+        </article>
+        <article class="panel accent-coral">
+          <span class="label">Negative Signals</span>
+          <h2>不能立刻花大钱的理由</h2>
+          <ul class="list">
+            <li><b>没有统计胜者：</b>52/48 不能支持我们直接定品牌方向、包装或库存。</li>
+            <li><b>视觉偏好污染投票：</b>很多人因为颜色和版面选择，说明这不是纯粹的产品/概念偏好测试。</li>
+            <li><b>`Scent Sign` 有理解门槛：</b>有人明确说不知道它是什么，不能单独做主标题。</li>
+            <li><b>`Ritual` 有极化风险：</b>有人喜欢 ritual card，也有人觉得 ritual 会吓人，主包装不能太重玄学。</li>
+            <li><b>产品形态仍会被误读：</b>有人联想到 herbal incense，也有人不理解图里的小球，说明下一版必须更清楚标出 bottle / reeds / fragrance oil / crystal detail。</li>
+            <li><b>安全和功效语言不能乱说：</b>pets/kids、relaxing、anxiety 等线索提醒我们只能说 flameless / room fragrance，不能做医疗或 pet-safe 声称。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="decision-map-title">
+      <div class="section-head">
+        <h2 id="decision-map-title">How Signals Drive Decisions</h2>
+        <p>把消费者信号翻译成接下来的商业动作：产品命名、页面结构、供应链筛选、预算纪律和下一轮验证。</p>
+      </div>
+      <table aria-label="消费者信号到商业决策">
+        <thead>
+          <tr><th>Signal</th><th>Business Decision</th><th>What We Do Next</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Signal">A 更清楚地传达 scent / diffuser / kit</td>
+            <td data-label="Business Decision">品类词必须保留在第一屏和包装正面。</td>
+            <td data-label="What We Do Next">主标题使用 `Room Mood Diffuser Kit`，不要只写 `Scent Sign` 或 `Crystal Aroma`。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">C 更强地触发 room mood / environment</td>
+            <td data-label="Business Decision">情绪利益点应该从“能量晶石”转向“改变房间氛围”。</td>
+            <td data-label="What We Do Next">落地页第一屏写 `Reset the room`，内容围绕 bedroom / dorm / desk / self-care corner。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">Quiz / match 被部分用户理解</td>
+            <td data-label="Business Decision">Quiz 可以成为转化机制，但还未证明能提高购买。</td>
+            <td data-label="What We Do Next">下一版明确展示 quiz -> Scent Sign -> kit match，之后再测 email capture。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">Ritual 有人喜欢，也有人害怕</td>
+            <td data-label="Business Decision">轻玄学可以做内容层，不能压过主品类。</td>
+            <td data-label="What We Do Next">把 `ritual` 放到 card / insert / creator script，不放主包装标题。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">产品形态有误读风险</td>
+            <td data-label="Business Decision">下一版视觉必须 product anatomy first。</td>
+            <td data-label="What We Do Next">在图上标注 fragrance oil、reeds、crystal detail、scent sign card、refill path。</td>
+          </tr>
+          <tr>
+            <td data-label="Signal">价格、香味、复购都没被验证</td>
+            <td data-label="Business Decision">不能进入库存、广告、付费红人或大额样品。</td>
+            <td data-label="What We Do Next">只做 $35-45 单概念清晰度测试；供应链只做免费 RFQ。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" aria-labelledby="voice-title">
+      <div class="section-head">
+        <h2 id="voice-title">Voice Of Consumer</h2>
+        <p>精选短引语只用于说明方向，不公开完整原始数据。</p>
+      </div>
+      <div class="quote-grid">
+        <article class="quote">
+          <span class="label">Clarity / A</span>
+          <blockquote>“I can easily tell what the product is.”</blockquote>
+          <p>A 的强项是产品类别更清楚。</p>
+        </article>
+        <article class="quote">
+          <span class="label">Mood / C</span>
+          <blockquote>“change your environment based on mood.”</blockquote>
+          <p>C 的强项是房间氛围的情绪价值。</p>
+        </article>
+        <article class="quote">
+          <span class="label">Risk / Ritual</span>
+          <blockquote>“Ritual would scare me.”</blockquote>
+          <p>玄学语言要轻，不要压过香氛品类。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section decision" aria-labelledby="decision-title">
+      <article class="decision-copy">
+        <span>Strategic Decision</span>
+        <h2 id="decision-title">Room Mood Diffuser Kit</h2>
+        <p>Take the quiz. Find your Scent Sign. Reset the room.</p>
+      </article>
+      <div class="gate-list">
+        <div class="gate"><b>Keep A</b><span>`diffuser / scent / kit` 的清晰度、可信感和产品识别。</span></div>
+        <div class="gate"><b>Keep C</b><span>`room mood` 的情绪购买理由和社媒传播语言。</span></div>
+        <div class="gate"><b>Move</b><span>`Scent Sign` 从主标题移到 quiz result 机制。</span></div>
+        <div class="gate"><b>Reduce</b><span>`Ritual` 从主包装标题移到 ritual card / insert。</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="next-title">
+      <div class="section-head">
+        <h2 id="next-title">Next Validation</h2>
+        <p>下一步不是买样品，也不是加旧 poll 样本，而是把合并版拿去做单概念清晰度测试。</p>
+      </div>
+      <div class="grid-2">
+        <article class="panel accent-green">
+          <span class="label">Run Next</span>
+          <h2>Single-Concept Clarity Test</h2>
+          <ul class="list">
+            <li>样本：美国女性 18-34，50 responses。</li>
+            <li>预算：$35-45 封顶。</li>
+            <li>问题：这是什么、用来干嘛、哪里吸引、哪里不可信、自己买/送人/跳过。</li>
+            <li>目的：确认合并版是否能一眼被理解为 fragrance / diffuser / room scent。</li>
+          </ul>
+        </article>
+        <article class="panel accent-coral">
+          <span class="label">Do Not Yet</span>
+          <h2>Still Hold Cash</h2>
+          <ul class="list">
+            <li>不买样品，不下 MOQ。</li>
+            <li>不投广告，不找付费红人。</li>
+            <li>不做 custom bottle mold。</li>
+            <li>不做 full custom fragrance from scratch。</li>
+            <li>可以免费 RFQ，确认 MOQ、SDS、IFRA、flash point、漏液测试。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="limits-title">
+      <div class="section-head">
+        <h2 id="limits-title">What This Does Not Prove</h2>
+        <p>这份报告可以外发，但不能被误读成“市场已经验证成功”。</p>
+      </div>
+      <div class="grid-3">
+        <article class="panel accent-pink"><span class="label">Not Proven</span><strong>价格</strong><p>没有证明用户愿意付 $49 / $59 / $69 / $79。</p></article>
+        <article class="panel accent-lilac"><span class="label">Not Proven</span><strong>复购</strong><p>香味好不好闻、留香和 refill 意愿都还没测。</p></article>
+        <article class="panel accent-cyan"><span class="label">Not Proven</span><strong>转化</strong><p>PickFu 点击偏好不等于真实下单、订阅或等待名单。</p></article>
+      </div>
+      <div class="source-row" aria-label="来源链接">
+        <a href="https://www.pickfu.com/vPfCGDoZr8">PickFu Poll Reference</a>
+        <a href="./concept-pilot-validation-board-2026-06-15.html">Concept Pilot Board</a>
+        <a href="./brand-vi-prismatic-scent-quiz.html">Project VI</a>
+      </div>
+    </section>
+
+    <footer>Rucia Crystal Aroma public analysis. Published on 2026-06-15. Raw respondent CSV and detailed coding remain in the private project archive.</footer>
+  </div>
+</body>
+</html>
