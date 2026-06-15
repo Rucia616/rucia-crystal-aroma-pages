@@ -32,6 +32,21 @@ This asset uses controlled render-style mockups so respondents can judge the pro
 - A and B are both $49 to compare format preference
 - C is $79 to test whether a full gift set can justify a higher order value
 
+## Visual QA Gate Before Spend
+
+Do not run a paid PickFu or any paid survey until Rucia manually approves the visual asset.
+
+The asset fails the spend gate if:
+
+- Any option looks more cartoon, cheaper, less polished, or less believable than the others.
+- Key text is not readable from a normal laptop screenshot and a phone screenshot.
+- A, B, or C cannot be identified as a home-fragrance product without reading the body copy.
+- The Stone Kit does not clearly show a crystal aroma stone / aroma container plus scent oil.
+- The Reed Room Diffuser does not clearly show bottle, reeds, and room fragrance use.
+- The Full Room Mood Set looks like random clutter rather than a complete gift set.
+
+If one of these fails, revise the asset first. Do not spend to "see what happens."
+
 ## Recommended Audience
 
 - US-based women
