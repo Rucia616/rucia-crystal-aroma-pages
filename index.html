@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aroma Oracle · Rucia Crystal Aroma 项目公开档案</title>
-  <meta name="description" content="Aroma Oracle / Rucia Crystal Aroma 玄学能量晶石香薰项目公开档案入口：项目阶段、下一步行动、VI、竞品调研、消费者调研、产品形态证据审计、香味策略、Launch 验证、PickFu 概念测试、战略备忘录和公开素材。" />
+  <title>Aroma Oracle · Rucia Crystal Aroma 项目中枢</title>
+  <meta name="description" content="Aroma Oracle / Rucia Crystal Aroma 玄学能量晶石香薰项目公开中枢：当前决策、产品形态验证、核心报告、品牌 VI、测试资产和公开源文件。" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23faf8f2'/%3E%3C/svg%3E" />
   <style>
     :root {
@@ -15,7 +15,7 @@
       --muted: #676767;
       --line: rgba(17, 17, 17, 0.14);
       --panel: #ffffff;
-      --panel-alpha: rgba(255, 255, 255, 0.88);
+      --panel-alpha: rgba(255, 255, 255, 0.9);
       --cyan: #32d6c6;
       --pink: #f7a4d8;
       --sky: #9ed1ff;
@@ -25,6 +25,7 @@
       --shadow: 0 22px 60px rgba(17, 17, 17, 0.12);
       --grid: rgba(17, 17, 17, 0.055);
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
         color-scheme: dark;
@@ -34,7 +35,7 @@
         --muted: #bdb6aa;
         --line: rgba(250, 248, 242, 0.18);
         --panel: #1c1f27;
-        --panel-alpha: rgba(29, 31, 38, 0.9);
+        --panel-alpha: rgba(29, 31, 38, 0.92);
         --cyan: #7ceade;
         --pink: #f7a4d8;
         --sky: #9ed1ff;
@@ -47,9 +48,11 @@
     }
 
     * { box-sizing: border-box; }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
     body {
       margin: 0;
       min-width: 320px;
+      overflow-x: hidden;
       color: var(--ink);
       background:
         linear-gradient(112deg, rgba(247, 164, 216, 0.22), transparent 34%),
@@ -66,20 +69,28 @@
     .wrap {
       width: min(calc(100% - 40px), 1180px);
       margin: 0 auto;
-      padding: 34px 0 70px;
+      padding: 34px 0 72px;
+    }
+
+    .topbar,
+    .brand,
+    .nav-pills,
+    .pill,
+    .action-row,
+    .doc-link,
+    .mini,
+    .file-link {
+      display: flex;
+      align-items: center;
     }
 
     .topbar {
-      display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 18px;
-      margin-bottom: 44px;
+      margin-bottom: 34px;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
       gap: 12px;
       font-weight: 950;
       text-transform: uppercase;
@@ -95,10 +106,14 @@
       flex: 0 0 auto;
     }
 
-    .status {
-      display: inline-flex;
-      min-height: 38px;
-      align-items: center;
+    .nav-pills {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .pill {
+      min-height: 36px;
       padding: 7px 12px;
       border: 1px solid var(--line);
       border-radius: 999px;
@@ -106,29 +121,52 @@
       color: var(--body);
       font-size: 13px;
       font-weight: 850;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+      grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.48fr);
       gap: 20px;
       align-items: stretch;
     }
 
     .hero-copy,
     .hero-side,
-    .card,
-    .file-row {
+    .primary-card,
+    .panel,
+    .doc-link,
+    details {
       border: 1px solid var(--line);
       background: var(--panel-alpha);
       box-shadow: var(--shadow);
     }
 
     .hero-copy {
-      min-height: 440px;
+      min-height: 420px;
       padding: clamp(28px, 5vw, 54px);
       border-radius: 22px;
+      overflow: hidden;
+      position: relative;
     }
+
+    .hero-copy:after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -170px;
+      width: min(430px, 62vw);
+      aspect-ratio: 1;
+      border: 4px solid var(--ink);
+      border-radius: 42px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink) 58%, var(--green));
+      transform: rotate(-10deg);
+      opacity: 0.74;
+      z-index: 0;
+    }
+
+    .hero-copy > * { position: relative; z-index: 1; }
 
     .eyebrow {
       display: inline-flex;
@@ -145,39 +183,39 @@
     }
 
     h1 {
-      max-width: 760px;
+      max-width: 820px;
       margin: 24px 0 18px;
-      font-size: clamp(46px, 7vw, 92px);
+      font-size: clamp(48px, 7vw, 92px);
       line-height: 0.95;
       letter-spacing: 0;
       text-transform: uppercase;
     }
 
     .lead {
-      max-width: 720px;
+      max-width: 730px;
       margin: 0;
       color: var(--body);
-      font-size: clamp(18px, 2.1vw, 24px);
+      font-size: clamp(18px, 2vw, 23px);
       font-weight: 760;
-      line-height: 1.24;
+      line-height: 1.25;
     }
 
     .hero-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       gap: 18px;
-      min-height: 440px;
+      justify-content: space-between;
+      min-height: 420px;
       padding: 22px;
       border-radius: 22px;
       background:
-        linear-gradient(135deg, rgba(50, 214, 198, 0.2), transparent 62%),
+        linear-gradient(135deg, rgba(50, 214, 198, 0.2), transparent 64%),
         var(--panel-alpha);
     }
 
     .hero-side strong {
       display: block;
-      font-size: 38px;
+      font-size: 40px;
       line-height: 0.95;
       text-transform: uppercase;
     }
@@ -194,10 +232,10 @@
     }
 
     .mini {
-      display: flex;
       justify-content: space-between;
       gap: 12px;
-      padding: 12px;
+      min-height: 48px;
+      padding: 11px 12px;
       border: 2px solid var(--ink);
       border-radius: 14px;
       background: var(--panel);
@@ -205,291 +243,80 @@
       font-weight: 950;
       box-shadow: 4px 4px 0 var(--pink);
     }
-    .mini span {
-      white-space: nowrap;
-    }
-    .mini:nth-child(2) { box-shadow-color: var(--cyan); }
-    .mini:nth-child(3) { box-shadow-color: var(--lilac); }
-    .mini:nth-child(4) { box-shadow-color: var(--green); }
 
-    .mini.stage {
-      background: var(--ink);
-      color: var(--panel);
-      box-shadow: 4px 4px 0 var(--green);
-    }
+    .mini span { white-space: nowrap; }
+    .mini:nth-child(2) { box-shadow-color: var(--cyan); }
+    .mini:nth-child(3) { box-shadow-color: var(--green); }
 
     .section {
       margin-top: 42px;
     }
 
     .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.5fr);
+      gap: 24px;
+      align-items: end;
       margin-bottom: 18px;
     }
 
     h2 {
       margin: 0;
-      font-size: clamp(30px, 4.2vw, 50px);
+      font-size: clamp(30px, 4.2vw, 52px);
       line-height: 1;
       letter-spacing: 0;
       text-transform: uppercase;
     }
 
     .section-head p {
-      max-width: 520px;
       margin: 0;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .next-board {
+    .primary-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .next-priority,
-    .next-steps {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .next-priority {
-      padding: 22px;
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 54%),
-        #111111;
-      color: #ffffff;
-    }
-
-    .next-priority .tag {
-      border-color: rgba(255, 255, 255, 0.24);
-      background: rgba(255, 255, 255, 0.9);
-      color: #111111;
-    }
-
-    .next-priority h3 {
-      max-width: 460px;
-      margin: 16px 0 14px;
-      font-size: clamp(30px, 4.2vw, 54px);
-      line-height: 0.96;
-      letter-spacing: 0;
-      text-transform: uppercase;
-    }
-
-    .next-priority p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 16px;
-      font-weight: 760;
-    }
-
-    .inline-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .action-button {
-      display: inline-flex;
-      min-height: 34px;
-      align-items: center;
-      padding: 8px 12px;
-      border: 2px solid #ffffff;
-      border-radius: 999px;
-      background: #ffffff;
-      color: #111111;
-      font-size: 12px;
-      font-weight: 950;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .action-button.secondary {
-      background: transparent;
-      color: #ffffff;
-    }
-
-    .gate-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .gate {
-      min-height: 74px;
-      padding: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .gate b {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--green);
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
-    .gate span {
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .next-steps {
-      display: grid;
-      gap: 10px;
-      padding: 18px;
-      background: var(--panel-alpha);
-    }
-
-    .step-row {
-      display: grid;
-      grid-template-columns: 74px minmax(0, 1fr);
-      gap: 12px;
-      align-items: start;
-      min-height: 74px;
-      padding: 12px;
-      border: 2px solid var(--ink);
-      border-radius: 14px;
-      background: var(--panel);
-      color: var(--ink);
-      box-shadow: 4px 4px 0 var(--pink);
-    }
-
-    .step-row:nth-child(2) { box-shadow-color: var(--cyan); }
-    .step-row:nth-child(3) { box-shadow-color: var(--lilac); }
-    .step-row:nth-child(4) { box-shadow-color: var(--green); }
-
-    .step-row b {
-      font-size: 12px;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .step-row strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 18px;
-      line-height: 1.08;
-    }
-
-    .step-row span {
-      color: var(--body);
-      font-size: 13px;
-      line-height: 1.38;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1.18fr 0.92fr 0.92fr;
       gap: 14px;
     }
 
-    .card {
+    .primary-card {
       position: relative;
       display: flex;
       flex-direction: column;
-      min-height: 220px;
-      padding: 20px;
-      border-radius: 16px;
+      min-height: 260px;
+      padding: 22px;
+      border-radius: 18px;
       text-decoration: none;
-      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
     }
 
-    a.card {
-      cursor: pointer;
-      border-width: 2px;
+    .primary-card.major {
+      min-height: 320px;
+      color: #111111;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.54)),
+        linear-gradient(135deg, var(--cyan), var(--pink) 54%, var(--coral));
+      border: 2px solid rgba(17, 17, 17, 0.18);
     }
 
-    a.card::after {
-      content: "OPEN ->";
-      position: absolute;
-      right: 16px;
-      bottom: 14px;
-      display: inline-flex;
-      min-height: 28px;
-      align-items: center;
-      padding: 5px 9px;
+    .primary-card.secondary {
       border: 2px solid var(--ink);
-      border-radius: 999px;
-      background: var(--ink);
-      color: var(--panel);
-      font-size: 11px;
-      font-weight: 950;
-      letter-spacing: 0;
-      line-height: 1;
+      box-shadow: 5px 5px 0 var(--cyan), var(--shadow);
     }
 
-    a.card:hover,
-    a.card:focus-visible {
+    .primary-card:nth-child(3) { box-shadow: 5px 5px 0 var(--pink), var(--shadow); }
+
+    .primary-card:hover,
+    .primary-card:focus-visible,
+    .doc-link:hover,
+    .doc-link:focus-visible,
+    .file-link:hover,
+    .file-link:focus-visible {
       transform: translateY(-3px);
       border-color: var(--ink);
       box-shadow: 8px 8px 0 var(--ink), var(--shadow);
       outline: none;
-    }
-
-    .card:not(a) {
-      cursor: default;
-      border-style: dashed;
-      border-color: rgba(17, 17, 17, 0.28);
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.9)),
-        var(--panel-alpha);
-      box-shadow: 0 10px 28px rgba(17, 17, 17, 0.07);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .card:not(a) {
-        border-color: rgba(250, 248, 242, 0.34);
-        background:
-          linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.08)),
-          var(--panel-alpha);
-      }
-    }
-
-    .card:not(a)::after {
-      content: "NOTE";
-      position: absolute;
-      right: 16px;
-      bottom: 14px;
-      display: inline-flex;
-      min-height: 28px;
-      align-items: center;
-      padding: 5px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--panel);
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 950;
-      letter-spacing: 0;
-      line-height: 1;
-    }
-
-    .card.featured {
-      color: #111111;
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.52)),
-        linear-gradient(135deg, var(--pink), var(--sky) 50%, var(--green));
-      border-color: rgba(17, 17, 17, 0.18);
-    }
-
-    .card.analysis {
-      color: #111111;
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5)),
-        linear-gradient(135deg, var(--cyan), var(--pink) 54%, var(--coral));
-      border-color: rgba(17, 17, 17, 0.18);
     }
 
     .tag {
@@ -500,114 +327,218 @@
       padding: 5px 9px;
       border: 1px solid rgba(17, 17, 17, 0.18);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.58);
+      background: rgba(255, 255, 255, 0.64);
       color: #111111;
       font-size: 11px;
       font-weight: 950;
       text-transform: uppercase;
     }
 
-    .card:not(.featured):not(.analysis) .tag {
+    .primary-card.secondary .tag,
+    .doc-link .tag {
       color: var(--body);
       background: var(--panel);
       border-color: var(--line);
     }
 
-    .card h3 {
-      margin: 16px 0 12px;
-      font-size: 27px;
-      line-height: 1.06;
+    .primary-card h3 {
+      margin: 18px 0 12px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 0.98;
       letter-spacing: 0;
     }
 
-    .card p {
+    .primary-card.secondary h3 {
+      font-size: 28px;
+      line-height: 1.04;
+    }
+
+    .primary-card p,
+    .doc-link p,
+    .panel p {
       margin: 0;
       color: var(--body);
       font-size: 14px;
     }
 
-    .card.featured p,
-    .card.analysis p {
-      color: rgba(17, 17, 17, 0.75);
-    }
+    .primary-card.major p { color: rgba(17, 17, 17, 0.78); }
 
-    .card .meta {
+    .meta {
       margin-top: auto;
       padding-top: 18px;
-      padding-right: 72px;
       color: var(--muted);
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
     }
 
-    .card.featured .meta,
-    .card.analysis .meta {
-      color: rgba(17, 17, 17, 0.68);
+    .primary-card.major .meta { color: rgba(17, 17, 17, 0.68); }
+
+    .action-row {
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
     }
 
-    .file-list {
+    .button {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--panel);
+      font-size: 12px;
+      font-weight: 950;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .button.light {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .library {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .panel {
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .panel.dark {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .panel.dark p,
+    .panel.dark .small {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 27px;
+      line-height: 1.04;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .doc-list {
       display: grid;
       gap: 10px;
     }
 
-    .file-row {
+    .doc-link {
       display: grid;
-      grid-template-columns: 170px minmax(0, 1fr) auto;
-      gap: 14px;
+      grid-template-columns: 142px minmax(0, 1fr) auto;
+      gap: 16px;
       align-items: center;
-      min-height: 64px;
-      padding: 13px 16px;
+      min-height: 76px;
+      padding: 14px 16px;
       border-radius: 14px;
       text-decoration: none;
       transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
 
-    .file-row:hover,
-    .file-row:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--ink);
-      box-shadow: 5px 5px 0 var(--ink), var(--shadow);
-      outline: none;
+    .doc-link h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      line-height: 1.08;
     }
 
-    .file-row b {
-      color: var(--ink);
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .file-row span {
-      color: var(--body);
-      font-size: 14px;
-    }
-
-    .file-row em {
+    .doc-link em,
+    .file-link em {
       color: var(--muted);
-      font-size: 12px;
       font-style: normal;
+      font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    .file-row em::after {
-      content: " ->";
+    .doc-link em:after,
+    .file-link em:after { content: " ->"; }
+
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    details {
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 20px;
+      font-size: 24px;
+      line-height: 1.08;
+      font-weight: 950;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .file-group {
+      display: grid;
+      gap: 8px;
+      padding: 0 16px 16px;
+    }
+
+    .file-link {
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--ink);
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .file-link b {
+      font-size: 13px;
+      line-height: 1.25;
     }
 
     footer {
-      margin-top: 42px;
+      margin-top: 44px;
       color: var(--muted);
       font-size: 13px;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1040px) {
       .hero,
-      .cards,
-      .next-board {
+      .primary-grid,
+      .library,
+      .folder-grid {
         grid-template-columns: 1fr;
       }
       .hero-copy,
-      .hero-side {
+      .hero-side,
+      .primary-card.major {
         min-height: 0;
       }
     }
@@ -620,15 +551,37 @@
       .topbar,
       .section-head {
         align-items: flex-start;
+        grid-template-columns: 1fr;
         flex-direction: column;
       }
-      .file-row {
+      .nav-pills {
+        justify-content: flex-start;
+      }
+      h1 {
+        font-size: clamp(40px, 14vw, 58px);
+      }
+      h2 {
+        font-size: clamp(29px, 10vw, 40px);
+      }
+      .hero-copy,
+      .hero-side,
+      .primary-card,
+      .panel {
+        border-radius: 18px;
+        padding: 20px;
+      }
+      .doc-link {
         grid-template-columns: 1fr;
       }
-      .gate-list,
-      .step-row {
-        grid-template-columns: 1fr;
+      .doc-link em,
+      .file-link em {
+        white-space: normal;
       }
+      .mini {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .mini span { white-space: normal; }
     }
   </style>
 </head>
@@ -636,228 +589,242 @@
   <main class="wrap">
     <div class="topbar">
       <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
-      <span class="status">Public Archive · Updated 2026-06-15</span>
+      <div class="nav-pills" aria-label="页面导航">
+        <a class="pill" href="#now">Now</a>
+        <a class="pill" href="#library">Library</a>
+        <a class="pill" href="#archive">Archive</a>
+        <span class="pill">Updated 2026-06-15</span>
+      </div>
     </div>
 
     <header class="hero">
       <section class="hero-copy">
-        <span class="eyebrow">Rucia Crystal Aroma</span>
-        <h1>玄学晶石香薰项目公开档案</h1>
-        <p class="lead">这里整理所有可外发页面：品牌 VI、市场调研、北美消费者证据、香味策略、Launch 验证、PickFu 概念测试和公开素材。内部供应链、成本和原始 CSV 仍保留在私有项目里。</p>
+        <span class="eyebrow">Project Hub</span>
+        <h1>玄学晶石香薰项目中枢</h1>
+        <p class="lead">这里不再平铺所有页面。先看当前决策，再看支持证据，最后进归档。内部供应链、财务、成本和原始 CSV 仍留在私有项目里。</p>
       </section>
-      <aside class="hero-side" aria-label="项目状态摘要">
+      <aside class="hero-side" aria-label="项目阶段摘要">
         <div>
-          <strong>State Shift First</strong>
-          <p>香味负责可信和复购，房间 mood 负责首购想象，自我状态变化负责情绪溢价。</p>
+          <strong>Concept Validation</strong>
+          <p>当前还没有定案产品形态。下一步用同一个 hero scent 验证 Stone Kit、Reed Room Diffuser、Full Room Mood Set。</p>
         </div>
         <div class="mini-stack">
-          <div class="mini stage"><span>Stage</span><span>Concept Validation</span></div>
-          <div class="mini"><span>Concept Poll</span><span>A 26 / C 24</span></div>
-          <div class="mini"><span>Decision</span><span>A+C Hybrid</span></div>
-          <div class="mini"><span>Next</span><span>Format 3-Way Test</span></div>
+          <div class="mini"><span>Decision Base</span><span>Evidence Audit</span></div>
+          <div class="mini"><span>Next Test</span><span>Format 3-Way</span></div>
+          <div class="mini"><span>Cash Rule</span><span>No MOQ Before Gates</span></div>
         </div>
       </aside>
     </header>
 
-    <section class="section" aria-labelledby="next-title">
+    <section class="section" id="now" aria-labelledby="now-title">
       <div class="section-head">
-        <h2 id="next-title">Next 7-10 Days</h2>
-        <p>当前不要打样、投广告或找付费红人。先验证同一香味下，用户更相信 Stone Kit、Reed 还是 Full Set。</p>
+        <h2 id="now-title">Start Here</h2>
+        <p>首页只保留三个入口：当前决策、下一轮测试资产、第一轮消费者证据。其余都收进分类库。</p>
       </div>
-      <div class="next-board">
-        <div class="next-priority">
+      <div class="primary-grid">
+        <a class="primary-card major" href="./product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html">
+          <span class="tag">Current Decision Base</span>
+          <h3>产品形态证据审计</h3>
+          <p>回答“到底卖什么”：晶石扩香石、藤条、全套礼盒的证据强度、弱香风险、市场教育、晶石安全/产地和下一步验证。</p>
+          <div class="action-row">
+            <span class="button light">Open Report</span>
+          </div>
+          <span class="meta">Must-read before spending</span>
+        </a>
+        <a class="primary-card secondary" href="./concept-v2-state-shift-test-2026-06-15.html">
+          <span class="tag">Next Asset</span>
+          <h3>Concept V2 测试资产</h3>
+          <p>当前 VI 下的测试页。下一版需要扩展成同香三形态测试：Stone / Reed / Full Set。</p>
+          <span class="meta">Test asset</span>
+        </a>
+        <a class="primary-card secondary" href="./pickfu-concept-pilot-analysis-2026-06-15.html">
+          <span class="tag">Consumer Signal</span>
+          <h3>PickFu 深度分析</h3>
+          <p>A 26 / C 24 接近持平。有效信号是 fragrance clarity、room mood、quiz/match 和视觉冲击力。</p>
+          <span class="meta">50 US women 18-34</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="roadmap-title">
+      <div class="section-head">
+        <h2 id="roadmap-title">Next Actions</h2>
+        <p>行动项收拢成四步，避免每个报告都变成一个新的“下一步”。</p>
+      </div>
+      <div class="library">
+        <div class="panel dark">
           <span class="tag">Do First</span>
-          <h3>Format V2 / Same-Scent 3-Way Test</h3>
-          <p>下一步要统一测试：Crystal Aroma Stone Kit、Reed Room Diffuser、Full Room Mood Set。先验证物理形态，再决定打样。</p>
-          <div class="inline-actions">
-            <a class="action-button" href="./product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html">Open Evidence Audit</a>
-            <a class="action-button" href="./concept-v2-state-shift-test-2026-06-15.html">Open V2 Asset</a>
-            <a class="action-button secondary" href="./assets/concept-v2/concept-v2-state-shift-test-protocol-2026-06-15.md">Read Protocol</a>
-          </div>
-          <div class="gate-list" aria-label="通过和停止条件">
-            <div class="gate"><b>Pass Signal</b><span>Stone 或 Full Set 赢在想点、礼物感和记忆点；Reed 若赢在香味可信度，保留为性能形态。</span></div>
-            <div class="gate"><b>Price Signal</b><span>用户愿意讨论 $49 / $59 / $79，并且不会立刻拿它和低价摆件比。</span></div>
-            <div class="gate"><b>Stop Signal</b><span>如果 Stone 被看成 decor 或 scent too weak，暂停把 Stone 设为 hero。</span></div>
-            <div class="gate"><b>Cash Rule</b><span>形态测试前，不买样品、不投广告、不签供应商 MOQ。</span></div>
-          </div>
+          <h3>同香三形态验证</h3>
+          <p>同一香味、同一 VI、同一画面质量，只比较产品形态。先用低成本测试决定 hero 形态，再考虑打样。</p>
         </div>
-        <div class="next-steps" aria-label="7-10 天行动清单">
-          <div class="step-row">
-            <b>Step 01</b>
-            <div><strong>先读产品形态证据审计</strong><span>确认哪些是已证明、哪些只是方向性支持、哪些是必须花小钱验证的缺口。</span></div>
-          </div>
-          <div class="step-row">
-            <b>Step 02</b>
-            <div><strong>做同香三形态测试资产</strong><span>同一 hero scent、同一 VI、同一画面质量，只比较 Stone Kit / Reed / Full Set。</span></div>
-          </div>
-          <div class="step-row">
-            <b>Step 03</b>
-            <div><strong>跑低成本清晰度和价值感验证</strong><span>问用户这是什么、是否相信能香、哪里像噱头、$49-$79 是否合理。</span></div>
-          </div>
-          <div class="step-row">
-            <b>Step 04</b>
-            <div><strong>同步做免费供应链 RFQ</strong><span>只问规格、MOQ、贴标、彩盒、晶石、卡片、出口资料、SDS/MSDS、IFRA 和打样费。</span></div>
-          </div>
+        <div class="doc-list">
+          <a class="doc-link" href="./product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html">
+            <span class="tag">Step 01</span>
+            <div><h3>读证据审计，确认 stop / pass gate</h3><p>不要拿昨天 PickFu 当物理形态结论，先确认哪些证据能支撑花钱。</p></div>
+            <em>Report</em>
+          </a>
+          <a class="doc-link" href="./concept-v2-state-shift-test-2026-06-15.html">
+            <span class="tag">Step 02</span>
+            <div><h3>改出三形态测试图</h3><p>Stone Kit、Reed Room Diffuser、Full Room Mood Set 同屏对照。</p></div>
+            <em>Asset</em>
+          </a>
+          <a class="doc-link" href="./north-america-scent-research-crystal-aroma-2026-06-15.html">
+            <span class="tag">Step 03</span>
+            <div><h3>用香味逻辑锁 1 个 hero scent</h3><p>先围绕 Clean Reset / Fresh Aura 这类状态型香味收敛，不要铺太多 SKU。</p></div>
+            <em>Research</em>
+          </a>
+          <a class="doc-link" href="./concept-pilot-validation-board-2026-06-15.html">
+            <span class="tag">Step 04</span>
+            <div><h3>把测试记录回看板</h3><p>所有新测试、花费、结果和 todo 都回到 validation board，方便后续追溯。</p></div>
+            <em>Board</em>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="primary-title">
+    <section class="section" id="library" aria-labelledby="library-title">
       <div class="section-head">
-        <h2 id="primary-title">Core Pages</h2>
-        <p>项目主入口和当前最值得外发的页面。PickFu 深度分析已放在第一屏。</p>
+        <h2 id="library-title">Grouped Library</h2>
+        <p>按用途分类：决策、研究、验证、品牌。每组只保留真正要点，旧文件仍可从归档展开。</p>
       </div>
-      <div class="cards">
-        <a class="card analysis" href="./concept-v2-state-shift-test-2026-06-15.html">
-          <span class="tag">Concept V2</span>
-          <h3>Crystal Aroma Stone Test Asset</h3>
-          <p>单概念测试页和测试图：Crystal Aroma Stone Kit、Scent Sign Quiz、Reset the room。</p>
-          <span class="meta">2026-06-15 · Test asset</span>
-        </a>
-        <a class="card analysis" href="./product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html">
-          <span class="tag">New / Evidence Audit</span>
-          <h3>产品形态证据审计</h3>
-          <p>重新审计晶石扩香石、藤条和全套礼盒：证据强度、弱香风险、市场教育、晶石安全/产地和下一轮验证。</p>
-          <span class="meta">2026-06-15 · Must-read</span>
-        </a>
-        <a class="card analysis" href="./product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html">
-          <span class="tag">Initial / Direction</span>
-          <h3>藤条 vs 晶石扩香石初版判断</h3>
-          <p>初版机会判断。后续商业决策以新版证据审计为准：当前产品形态尚未定案。</p>
-          <span class="meta">2026-06-15 · Read with audit</span>
-        </a>
-        <a class="card analysis" href="./pickfu-concept-pilot-analysis-2026-06-15.html">
-          <span class="tag">New / Analysis</span>
-          <h3>PickFu 概念测试深度分析</h3>
-          <p>A 26 / C 24 接近持平，策略应走 A+C 合并。报告拆解统计显著性、消费者原话、购买任务和下一步验证。</p>
-          <span class="meta">2026-06-15 · Public report</span>
-        </a>
-        <a class="card featured" href="./concept-pilot-validation-board-2026-06-15.html">
-          <span class="tag">Validation Board</span>
-          <h3>Concept Pilot 看板</h3>
-          <p>第一轮概念测试的执行记录：四张概念板、PickFu 问卷、付款记录口径、结果和后续 todo。</p>
-          <span class="meta">2026-06-15 · Archive board</span>
-        </a>
-        <a class="card featured" href="./brand-vi-prismatic-scent-quiz.html">
-          <span class="tag">VI Direction</span>
-          <h3>Prismatic Scent Quiz</h3>
-          <p>当前保留的品牌视觉方向：彩色测试、香氛玻璃、晶石折射、结果卡和社媒开箱。</p>
-          <span class="meta">Current VI</span>
-        </a>
-      </div>
-    </section>
 
-    <section class="section" aria-labelledby="strategy-title">
-      <div class="section-head">
-        <h2 id="strategy-title">Strategy Memos</h2>
-        <p>这里存放会改变后续命名、包装、落地页和测试方向的关键判断。</p>
-      </div>
-      <div class="cards">
-        <a class="card analysis" href="./product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html">
-          <span class="tag">Product Format</span>
-          <h3>首发产品形态初版判断</h3>
-          <p>比较藤条无火香薰与“玄学晶石 + 扩香石 / 扩香容器 + 香氛油”礼盒的需求、溢价、传播和风险。</p>
-          <span class="meta">2026-06-15 · Initial memo</span>
-        </a>
-        <a class="card analysis" href="./product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html">
-          <span class="tag">Evidence Audit</span>
-          <h3>产品形态尚未定案</h3>
-          <p>把昨天 PickFu、搜索需求、竞品、扩香表现、晶石安全和供应链文件全部拆成可执行验证 gate。</p>
-          <span class="meta">2026-06-15 · Current decision base</span>
-        </a>
-        <a class="card analysis" href="./strategy-state-shift-fragrance-memo-2026-06-15.html">
-          <span class="tag">Strategic Update</span>
-          <h3>State Shift, Not Cheap Fragrance</h3>
-          <p>修正 fragrance-first 的边界：品类识别要香氛清晰，品牌溢价来自 room mood reset 和自我状态切换，避开低价香薰竞争。</p>
-          <span class="meta">2026-06-15 · Decision memo</span>
-        </a>
-        <div class="card">
-          <span class="tag">Positioning Rule</span>
-          <h3>Fragrance proves it. Room mood sells it.</h3>
-          <p>首购靠 kit / gift / quiz / ritual system 建立溢价；复购靠 scent liking、room fit 和 refill path。</p>
-          <span class="meta">Working thesis</span>
-        </div>
-        <div class="card">
-          <span class="tag">VI Rule</span>
-          <h3>Use A's impact, not A's exact design.</h3>
-          <p>整体 VI 继续保留大黑字、高对比色块、产品中心、结果卡和手机缩略图可读性，避免普通香薰和老气玄学。</p>
-          <span class="meta">Visual system note</span>
+      <div class="library">
+        <aside class="panel">
+          <span class="tag">01 / Decision</span>
+          <h3>当前决策层</h3>
+          <p>这组影响接下来要不要花钱、测什么、先做什么产品。</p>
+        </aside>
+        <div class="doc-list">
+          <a class="doc-link" href="./product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html">
+            <span class="tag">Current</span>
+            <div><h3>产品形态证据审计</h3><p>当前最重要报告：产品形态尚未定案，下一步做同香三形态验证。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./strategy-state-shift-fragrance-memo-2026-06-15.html">
+            <span class="tag">Positioning</span>
+            <div><h3>State Shift 香氛定位备忘录</h3><p>香味负责可信和复购，room mood 负责首购想象，自我状态变化负责情绪溢价。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html">
+            <span class="tag">Initial</span>
+            <div><h3>产品形态初版机会判断</h3><p>旧版方向判断，作为背景阅读。当前决策以证据审计为准。</p></div>
+            <em>Open</em>
+          </a>
         </div>
       </div>
+
+      <div class="library section">
+        <aside class="panel">
+          <span class="tag">02 / Research</span>
+          <h3>市场与消费者研究</h3>
+          <p>这组回答市场、用户、香味和 launch 风险。适合发给合伙人或外部讨论对象。</p>
+        </aside>
+        <div class="doc-list">
+          <a class="doc-link" href="./crystal-aroma-competitive-research-2026-06-14.html">
+            <span class="tag">Market</span>
+            <div><h3>竞品调研报告</h3><p>北美和中国竞品、价格段、机会点、必须做和不要碰的方向。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./north-america-consumer-research-crystal-aroma-2026-06-14.html">
+            <span class="tag">Consumer</span>
+            <div><h3>北美消费者调研</h3><p>购买动机、现有方案不满、目标人群、购买任务和验证路径。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./north-america-scent-research-crystal-aroma-2026-06-15.html">
+            <span class="tag">Scent</span>
+            <div><h3>北美香味调研</h3><p>香味购买理由、复购逻辑、轻玄学入口、首发 scent signs。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./north-america-launch-validation-crystal-aroma-2026-06-15.html">
+            <span class="tag">Launch</span>
+            <div><h3>Launch 验证报告</h3><p>概念、香味、价格、quiz、红人内容五个首发风险的验证路线。</p></div>
+            <em>Open</em>
+          </a>
+        </div>
+      </div>
+
+      <div class="library section">
+        <aside class="panel">
+          <span class="tag">03 / Validation</span>
+          <h3>验证资产与过程</h3>
+          <p>这组记录已经做过的测试、题目、素材和结果，方便后续复盘。</p>
+        </aside>
+        <div class="doc-list">
+          <a class="doc-link" href="./concept-pilot-validation-board-2026-06-15.html">
+            <span class="tag">Board</span>
+            <div><h3>Concept Pilot 看板</h3><p>第一轮概念测试执行记录、付款记录、结果和后续 todo。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./pickfu-concept-pilot-analysis-2026-06-15.html">
+            <span class="tag">Result</span>
+            <div><h3>PickFu 概念测试深度分析</h3><p>50 个美国女性样本的开放回答、统计显著性和下一步决策。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./concept-v2-state-shift-test-2026-06-15.html">
+            <span class="tag">Asset</span>
+            <div><h3>Concept V2 测试资产</h3><p>当前测试页和测试图，用于下一轮形态资产的基础。</p></div>
+            <em>Open</em>
+          </a>
+        </div>
+      </div>
+
+      <div class="library section">
+        <aside class="panel">
+          <span class="tag">04 / Brand</span>
+          <h3>品牌与视觉</h3>
+          <p>这组管理当前 VI，不把项目变成普通香薰或老气玄学。</p>
+        </aside>
+        <div class="doc-list">
+          <a class="doc-link" href="./brand-vi-prismatic-scent-quiz.html">
+            <span class="tag">VI</span>
+            <div><h3>Prismatic Scent Quiz</h3><p>当前保留的品牌视觉方向：大黑字、强色块、香氛玻璃、晶石折射和结果卡。</p></div>
+            <em>Open</em>
+          </a>
+          <a class="doc-link" href="./assets/vi-final-prismatic-scent-quiz.png">
+            <span class="tag">Image</span>
+            <div><h3>VI Board PNG</h3><p>保留版视觉方向图，可用于快速对齐视觉感受。</p></div>
+            <em>PNG</em>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="section" aria-labelledby="reports-title">
+    <section class="section" id="archive" aria-labelledby="archive-title">
       <div class="section-head">
-        <h2 id="reports-title">Research Reports</h2>
-        <p>市场、消费者、香味和 launch 风险报告都在这里。后续新增报告也放这一组。</p>
+        <h2 id="archive-title">Archive Files</h2>
+        <p>低频文件折叠收纳。需要追溯素材、问卷、JSON 来源时再打开。</p>
       </div>
-      <div class="cards">
-        <a class="card" href="./crystal-aroma-competitive-research-2026-06-14.html">
-          <span class="tag">Report 01</span>
-          <h3>竞品调研报告</h3>
-          <p>中国与北美市场竞品、价格、机会点、必须做和不要碰的方向。</p>
-          <span class="meta">2026-06-14</span>
-        </a>
-        <a class="card" href="./north-america-consumer-research-crystal-aroma-2026-06-14.html">
-          <span class="tag">Report 02</span>
-          <h3>北美消费者调研报告</h3>
-          <p>购买动机、现有方案不满、消费者证据、目标人群和验证路径。</p>
-          <span class="meta">2026-06-14</span>
-        </a>
-        <a class="card" href="./north-america-scent-research-crystal-aroma-2026-06-15.html">
-          <span class="tag">Report 03</span>
-          <h3>北美香味调研报告</h3>
-          <p>香味购买理由、复购逻辑、轻玄学入口、首发 scent signs 和小样测试计划。</p>
-          <span class="meta">2026-06-15</span>
-        </a>
-        <a class="card" href="./north-america-launch-validation-crystal-aroma-2026-06-15.html">
-          <span class="tag">Report 04</span>
-          <h3>Launch 验证报告</h3>
-          <p>概念、香味、价格、quiz、红人内容五个首发风险的验证路线。</p>
-          <span class="meta">2026-06-15</span>
-        </a>
-        <a class="card" href="./product-format-opportunity-reed-vs-crystal-stone-2026-06-15.html">
-          <span class="tag">Report 05</span>
-          <h3>产品形态初版机会判断</h3>
-          <p>藤条 vs 晶石扩香石礼盒的初步机会判断，需结合新版证据审计阅读。</p>
-          <span class="meta">2026-06-15</span>
-        </a>
-        <a class="card" href="./product-format-evidence-audit-crystal-stone-vs-reed-2026-06-15.html">
-          <span class="tag">Report 06</span>
-          <h3>产品形态证据审计</h3>
-          <p>拆解弱香风险、同香多形态架构、市场教育成本、晶石安全/产地和下一步验证。</p>
-          <span class="meta">2026-06-15</span>
-        </a>
+      <div class="folder-grid">
+        <details>
+          <summary>Concept Assets<span>概念板、问卷、评分表和测试素材。</span></summary>
+          <div class="file-group">
+            <a class="file-link" href="./assets/concept-v2/crystal-aroma-stone-kit-state-shift-test-2026-06-15.png"><b>Concept V2 PNG</b><em>PNG</em></a>
+            <a class="file-link" href="./assets/concept-v2/concept-v2-state-shift-test-protocol-2026-06-15.md"><b>Concept V2 Protocol</b><em>Markdown</em></a>
+            <a class="file-link" href="./assets/concept-pilot/all-concept-boards.png"><b>All Concept Boards</b><em>PNG</em></a>
+            <a class="file-link" href="./assets/concept-pilot/01-scent-sign-diffuser-kit.png"><b>Concept A</b><em>PNG</em></a>
+            <a class="file-link" href="./assets/concept-pilot/02-vibe-matched-crystal-aroma.png"><b>Concept B</b><em>PNG</em></a>
+            <a class="file-link" href="./assets/concept-pilot/03-room-mood-ritual-kit.png"><b>Concept C</b><em>PNG</em></a>
+            <a class="file-link" href="./assets/concept-pilot/04-birth-chart-for-your-room.png"><b>Concept D</b><em>PNG</em></a>
+            <a class="file-link" href="./assets/concept-pilot/pickfu-questionnaire.md"><b>PickFu Questionnaire</b><em>Markdown</em></a>
+            <a class="file-link" href="./assets/concept-pilot/scoring-rubric.csv"><b>Scoring Rubric</b><em>CSV</em></a>
+            <a class="file-link" href="./assets/concept-pilot/pickfu-results-template.csv"><b>Results Template</b><em>CSV</em></a>
+          </div>
+        </details>
+
+        <details>
+          <summary>Evidence Sources<span>公开报告的来源索引，原始 CSV 和成本资料不公开。</span></summary>
+          <div class="file-group">
+            <a class="file-link" href="./assets/north-america-launch-validation-sources-2026-06-15.json"><b>Launch Sources</b><em>JSON</em></a>
+            <a class="file-link" href="./assets/north-america-scent-research-sources-2026-06-15.json"><b>Scent Sources</b><em>JSON</em></a>
+            <a class="file-link" href="./assets/product-format-opportunity-sources-2026-06-15.json"><b>Format Opportunity Sources</b><em>JSON</em></a>
+            <a class="file-link" href="./assets/product-format-evidence-audit-sources-2026-06-15.json"><b>Format Audit Sources</b><em>JSON</em></a>
+            <a class="file-link" href="./README.md"><b>Public Repository README</b><em>Markdown</em></a>
+          </div>
+        </details>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="files-title">
-      <div class="section-head">
-        <h2 id="files-title">Public Files</h2>
-        <p>这些是可以公开查看的素材和源文件。原始受访者 CSV、供应链、财务和成本不放公开页。</p>
-      </div>
-      <div class="file-list">
-        <a class="file-row" href="./README.md"><b>Project README</b><span>公开仓库说明文件。</span><em>Markdown</em></a>
-        <a class="file-row" href="./assets/vi-final-prismatic-scent-quiz.png"><b>VI Board</b><span>保留版品牌视觉方向图。</span><em>PNG</em></a>
-        <a class="file-row" href="./assets/concept-v2/crystal-aroma-stone-kit-state-shift-test-2026-06-15.png"><b>Concept V2 PNG</b><span>Crystal Aroma Stone Kit / State Shift Test 测试图。</span><em>PNG</em></a>
-        <a class="file-row" href="./assets/concept-v2/concept-v2-state-shift-test-protocol-2026-06-15.md"><b>Concept V2 Protocol</b><span>单概念测试题、通过信号、停止信号和现金纪律。</span><em>Markdown</em></a>
-        <a class="file-row" href="./assets/concept-pilot/all-concept-boards.png"><b>All Concept Boards</b><span>A/B/C/D 四张概念板合并预览。</span><em>PNG</em></a>
-        <a class="file-row" href="./assets/concept-pilot/01-scent-sign-diffuser-kit.png"><b>Concept A</b><span>Scent Sign Diffuser Kit 概念板。</span><em>PNG</em></a>
-        <a class="file-row" href="./assets/concept-pilot/02-vibe-matched-crystal-aroma.png"><b>Concept B</b><span>Vibe-Matched Crystal Aroma 概念板。</span><em>PNG</em></a>
-        <a class="file-row" href="./assets/concept-pilot/03-room-mood-ritual-kit.png"><b>Concept C</b><span>Room Mood Ritual Kit 概念板。</span><em>PNG</em></a>
-        <a class="file-row" href="./assets/concept-pilot/04-birth-chart-for-your-room.png"><b>Concept D</b><span>Birth Chart for Your Room 概念板。</span><em>PNG</em></a>
-        <a class="file-row" href="./assets/concept-pilot/README.md"><b>Concept README</b><span>概念测试执行说明。</span><em>Markdown</em></a>
-        <a class="file-row" href="./assets/concept-pilot/pickfu-questionnaire.md"><b>Questionnaire</b><span>PickFu 问卷题目和设置。</span><em>Markdown</em></a>
-        <a class="file-row" href="./assets/concept-pilot/scoring-rubric.csv"><b>Scoring Rubric</b><span>概念测试评分字段。</span><em>CSV</em></a>
-        <a class="file-row" href="./assets/concept-pilot/pickfu-results-template.csv"><b>Results Template</b><span>PickFu 结果编码模板。</span><em>CSV</em></a>
-        <a class="file-row" href="./assets/north-america-launch-validation-sources-2026-06-15.json"><b>Launch Sources</b><span>Launch 验证报告的公开来源索引。</span><em>JSON</em></a>
-        <a class="file-row" href="./assets/north-america-scent-research-sources-2026-06-15.json"><b>Scent Sources</b><span>北美香味调研报告的公开来源索引。</span><em>JSON</em></a>
-        <a class="file-row" href="./assets/product-format-opportunity-sources-2026-06-15.json"><b>Format Sources</b><span>藤条 vs 晶石扩香石机会判断报告的公开来源索引。</span><em>JSON</em></a>
-        <a class="file-row" href="./assets/product-format-evidence-audit-sources-2026-06-15.json"><b>Format Audit Sources</b><span>产品形态证据审计报告的公开来源索引。</span><em>JSON</em></a>
-      </div>
-    </section>
-
-    <footer>Published for Rucia616. Public archive for Rucia Crystal Aroma. Last updated: 2026-06-15.</footer>
+    <footer>Published for Rucia616. Public hub for Rucia Crystal Aroma. Last updated: 2026-06-15.</footer>
   </main>
 </body>
 </html>
