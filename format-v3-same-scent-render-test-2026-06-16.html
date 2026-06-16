@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aroma Oracle · Format V3 Same-Scent Render Test · 2026-06-16</title>
+  <meta name="description" content="Aroma Oracle same-scent render validation board comparing Crystal Aroma Stone Kit, Reed Room Diffuser, and Full Room Mood Set." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111217'/%3E%3Cpath d='M10 14h24l20 20v16H30L10 30z' fill='%2332d6c6'/%3E%3Cpath d='M34 14h20v20z' fill='%23f7a4d8'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23fbfaf6'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f7f7f2;
+      --ink: #111217;
+      --body: #343741;
+      --muted: #626775;
+      --paper: #fffdf8;
+      --paper-soft: rgba(255, 253, 248, 0.9);
+      --line: rgba(17, 18, 23, 0.14);
+      --cyan: #32d6c6;
+      --mint: #88efbf;
+      --pink: #f7a4d8;
+      --sky: #a8d8ff;
+      --lilac: #a58bff;
+      --shadow: 0 24px 70px rgba(17, 18, 23, 0.14);
+      --grid: rgba(17, 18, 23, 0.052);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --page: #111217;
+        --ink: #fbfaf6;
+        --body: #e8e3dc;
+        --muted: #bdb7ad;
+        --paper: #1d2028;
+        --paper-soft: rgba(29, 32, 40, 0.92);
+        --line: rgba(251, 250, 246, 0.16);
+        --cyan: #7ceade;
+        --mint: #9af3c8;
+        --pink: #f7a4d8;
+        --sky: #a8d8ff;
+        --lilac: #b9a7ff;
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+        --grid: rgba(251, 250, 246, 0.06);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { overflow-x: hidden; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        linear-gradient(112deg, rgba(247, 164, 216, 0.2), transparent 34%),
+        linear-gradient(248deg, rgba(50, 214, 198, 0.22), transparent 36%),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(180deg, var(--grid) 1px, transparent 1px),
+        var(--page);
+      background-size: auto, auto, 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Avenir Next", "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    .wrap {
+      width: min(calc(100% - 40px), 1660px);
+      margin: 0 auto;
+      padding: 30px 0 72px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .spark {
+      width: 34px;
+      height: 34px;
+      border: 3px solid var(--ink);
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--cyan) 0 38%, var(--paper) 38% 58%, var(--pink) 58% 100%);
+      box-shadow: 5px 5px 0 var(--ink);
+      flex: 0 0 auto;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-soft);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    #test-board {
+      width: 1600px;
+      height: 1000px;
+      max-width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(17, 18, 23, 0.13);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 14% 8%, rgba(247, 164, 216, 0.28), transparent 29%),
+        radial-gradient(circle at 86% 14%, rgba(50, 214, 198, 0.28), transparent 30%),
+        linear-gradient(116deg, rgba(168, 216, 255, 0.2), transparent 31%),
+        linear-gradient(90deg, rgba(17, 18, 23, 0.046) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(17, 18, 23, 0.046) 1px, transparent 1px),
+        #f8f8f3;
+      background-size: auto, auto, auto, 64px 64px, 64px 64px, auto;
+      box-shadow: var(--shadow);
+      transform-origin: top center;
+    }
+
+    .board-inner {
+      position: absolute;
+      inset: 38px 52px 36px;
+      display: grid;
+      grid-template-rows: 158px minmax(0, 1fr) 66px;
+      gap: 18px;
+    }
+
+    .board-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 430px;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .headline-block,
+    .scent-ticket,
+    .format,
+    .question-strip,
+    .note-card {
+      border: 1px solid rgba(17, 18, 23, 0.13);
+      background: rgba(255, 253, 248, 0.88);
+      box-shadow: 0 18px 54px rgba(17, 18, 23, 0.1);
+    }
+
+    .headline-block {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 24px 30px;
+    }
+
+    .headline-block:after {
+      content: "";
+      position: absolute;
+      right: 26px;
+      top: 22px;
+      width: 160px;
+      height: 108px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(50, 214, 198, 0.72), rgba(247, 164, 216, 0.72));
+      transform: rotate(-8deg);
+      opacity: 0.42;
+    }
+
+    .kicker-row,
+    .scent-notes,
+    .option-top,
+    .meta-row,
+    .question-strip {
+      display: flex;
+      align-items: center;
+    }
+
+    .kicker-row {
+      gap: 9px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag {
+      display: inline-flex;
+      min-height: 30px;
+      align-items: center;
+      padding: 6px 10px;
+      border: 1px solid rgba(17, 18, 23, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.9);
+      color: #111217;
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tag.mint { background: var(--mint); }
+    .tag.pink { background: #ffd5ef; }
+
+    h1 {
+      max-width: 900px;
+      margin: 16px 0 0;
+      position: relative;
+      z-index: 1;
+      color: #111217;
+      font-size: 64px;
+      line-height: 0.9;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .headline-block p {
+      max-width: 760px;
+      margin: 8px 0 0;
+      position: relative;
+      z-index: 1;
+      color: #333741;
+      font-size: 17px;
+      font-weight: 760;
+      line-height: 1.22;
+    }
+
+    .scent-ticket {
+      border-radius: 28px;
+      padding: 20px 22px;
+      background:
+        linear-gradient(138deg, rgba(50, 214, 198, 0.25), rgba(247, 164, 216, 0.2) 58%, rgba(168, 216, 255, 0.22)),
+        rgba(255, 253, 248, 0.9);
+    }
+
+    .scent-ticket .label {
+      margin: 0;
+      color: #535865;
+      font-size: 13px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .scent-ticket h2 {
+      margin: 8px 0 7px;
+      color: #111217;
+      font-size: 40px;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .scent-ticket p {
+      margin: 0;
+      color: #343741;
+      font-size: 15px;
+      font-weight: 760;
+      line-height: 1.24;
+    }
+
+    .scent-notes {
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .scent-notes span {
+      display: inline-flex;
+      min-height: 29px;
+      align-items: center;
+      padding: 6px 9px;
+      border: 1px solid rgba(17, 18, 23, 0.17);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.78);
+      color: #111217;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .format {
+      display: grid;
+      grid-template-rows: 62px 402px minmax(0, 1fr);
+      gap: 12px;
+      min-width: 0;
+      padding: 16px;
+      border-radius: 28px;
+      background: rgba(255, 253, 248, 0.9);
+      overflow: hidden;
+    }
+
+    .format.a { box-shadow: inset 0 0 0 6px rgba(50, 214, 198, 0.15), 0 18px 54px rgba(17, 18, 23, 0.1); }
+    .format.b { box-shadow: inset 0 0 0 6px rgba(168, 216, 255, 0.26), 0 18px 54px rgba(17, 18, 23, 0.1); }
+    .format.c { box-shadow: inset 0 0 0 6px rgba(247, 164, 216, 0.2), 0 18px 54px rgba(17, 18, 23, 0.1); }
+
+    .option-top {
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .option-title {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 11px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .letter {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #111217;
+      border-radius: 50%;
+      background: var(--cyan);
+      color: #111217;
+      font-size: 21px;
+      font-weight: 950;
+      box-shadow: 4px 4px 0 #111217;
+    }
+
+    .format.b .letter { background: var(--sky); }
+    .format.c .letter { background: var(--pink); }
+
+    .option-title h2 {
+      margin: 0;
+      color: #111217;
+      font-size: 22px;
+      line-height: 0.96;
+      text-transform: uppercase;
+    }
+
+    .price {
+      flex: 0 0 auto;
+      display: inline-flex;
+      min-height: 41px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 2px solid #111217;
+      border-radius: 999px;
+      background: #111217;
+      color: #fbfaf6;
+      font-size: 23px;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    .product-frame {
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(17, 18, 23, 0.12);
+      border-radius: 22px;
+      background: #fbfaf6;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 253, 248, 0.88),
+        0 14px 34px rgba(17, 18, 23, 0.08);
+    }
+
+    .product-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .format-copy {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      min-height: 0;
+    }
+
+    .main-line {
+      margin: 0;
+      color: #111217;
+      font-size: 18px;
+      font-weight: 950;
+      line-height: 1.04;
+    }
+
+    .body-copy {
+      margin: 0;
+      color: #343741;
+      font-size: 14px;
+      font-weight: 760;
+      line-height: 1.26;
+    }
+
+    .meta-row {
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 1px;
+    }
+
+    .meta {
+      display: inline-flex;
+      min-height: 25px;
+      align-items: center;
+      padding: 4px 7px;
+      border: 1px solid rgba(17, 18, 23, 0.17);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.78);
+      color: #111217;
+      font-size: 10px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .question-strip {
+      justify-content: space-between;
+      gap: 22px;
+      min-height: 66px;
+      padding: 12px 18px;
+      border-radius: 22px;
+      background: #111217;
+      color: #fbfaf6;
+      box-shadow: 7px 7px 0 var(--mint);
+    }
+
+    .question-strip strong {
+      color: #fbfaf6;
+      font-size: 23px;
+      line-height: 1.02;
+      text-transform: uppercase;
+    }
+
+    .question-strip span {
+      color: rgba(251, 250, 246, 0.78);
+      font-size: 13px;
+      font-weight: 850;
+      text-align: right;
+      max-width: 560px;
+      line-height: 1.22;
+    }
+
+    .note-card {
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: 18px;
+    }
+
+    .note-card h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .note-card p,
+    .note-card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note-card ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    @media (max-width: 1660px) {
+      #test-board {
+        height: auto;
+        aspect-ratio: 16 / 10;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      #test-board {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        border-radius: 20px;
+      }
+
+      .board-inner {
+        position: relative;
+        inset: auto;
+        display: grid;
+        grid-template-rows: auto;
+        padding: 22px;
+      }
+
+      .board-head,
+      .format-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .format {
+        grid-template-rows: auto 360px auto;
+        min-height: 650px;
+      }
+
+      h1 {
+        font-size: clamp(40px, 11vw, 62px);
+      }
+
+      .question-strip {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .question-strip span {
+        max-width: none;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topbar">
+      <div class="brand"><span class="spark" aria-hidden="true"></span><span>AROMA ORACLE / RUCIA</span></div>
+      <a class="nav-link" href="index.html">Back to project hub</a>
+    </nav>
+
+    <section id="test-board" aria-label="Format V3 same scent render validation board">
+      <div class="board-inner">
+        <header class="board-head">
+          <div class="headline-block">
+            <div class="kicker-row">
+              <span class="tag mint">Option Test</span>
+              <span class="tag">Same Scent</span>
+              <span class="tag pink">Render Mockup</span>
+            </div>
+            <h1>Same scent. Pick the format.</h1>
+            <p>One Clean Reset fragrance, three product forms. Please judge the product format, value, and clarity.</p>
+          </div>
+
+          <aside class="scent-ticket">
+            <p class="label">Same Scent In All Three</p>
+            <h2>Clean Reset</h2>
+            <p>A bright room reset scent selected through a short vibe quiz. Every option uses the same scent story.</p>
+            <div class="scent-notes">
+              <span>Citrus Peel</span>
+              <span>Mint Leaf</span>
+              <span>Sheer Musk</span>
+            </div>
+          </aside>
+        </header>
+
+        <section class="format-grid" aria-label="Three product format options">
+          <article class="format a">
+            <div class="option-top">
+              <div class="option-title">
+                <div class="letter">A</div>
+                <h2>Crystal Aroma Stone Kit</h2>
+              </div>
+              <div class="price">$49</div>
+            </div>
+
+            <div class="product-frame">
+              <img src="assets/format-v3/option-a-crystal-aroma-stone-kit-clean-reset.png" alt="Crystal Aroma Stone Kit render with crystal aroma bowl, scent oil, card, and gift box" />
+            </div>
+
+            <div class="format-copy">
+              <p class="main-line">Drop scent oil onto a crystal aroma stone for a close-range room ritual.</p>
+              <p class="body-copy">A visible scent object for a desk, nightstand, bathroom counter, or gift shelf.</p>
+              <div class="meta-row">
+                <span class="meta">Aroma stone</span>
+                <span class="meta">Crystal detail</span>
+                <span class="meta">Scent oil</span>
+                <span class="meta">Scent sign card</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="format b">
+            <div class="option-top">
+              <div class="option-title">
+                <div class="letter">B</div>
+                <h2>Reed Room Diffuser</h2>
+              </div>
+              <div class="price">$49</div>
+            </div>
+
+            <div class="product-frame">
+              <img src="assets/format-v3/option-b-reed-room-diffuser-clean-reset.png" alt="Reed Room Diffuser render with glass diffuser bottle, black reeds, scent card, and gift box" />
+            </div>
+
+            <div class="format-copy">
+              <p class="main-line">Place reeds in the bottle for a familiar, steady home-fragrance setup.</p>
+              <p class="body-copy">A low-effort diffuser format for a bedroom, entryway, or living room.</p>
+              <div class="meta-row">
+                <span class="meta">Glass bottle</span>
+                <span class="meta">Reed sticks</span>
+                <span class="meta">Scent oil</span>
+                <span class="meta">Scent sign card</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="format c">
+            <div class="option-top">
+              <div class="option-title">
+                <div class="letter">C</div>
+                <h2>Full Room Mood Set</h2>
+              </div>
+              <div class="price">$79</div>
+            </div>
+
+            <div class="product-frame">
+              <img src="assets/format-v3/option-c-full-room-mood-set-clean-reset.png" alt="Full Room Mood Set render with crystal aroma bowl, reed diffuser, scent oil, card, and gift box" />
+            </div>
+
+            <div class="format-copy">
+              <p class="main-line">Pair the aroma stone ritual with a reed diffuser for a complete room reset gift.</p>
+              <p class="body-copy">A bigger giftable set for someone who wants the ritual object and ongoing scent.</p>
+              <div class="meta-row">
+                <span class="meta">Stone kit</span>
+                <span class="meta">Reed diffuser</span>
+                <span class="meta">Ritual card</span>
+                <span class="meta">Gift box</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <footer class="question-strip">
+          <strong>Which one would you click or consider buying?</strong>
+          <span>Ask what they think it is, what feels appealing, what feels confusing, and whether the price feels believable.</span>
+        </footer>
+      </div>
+    </section>
+
+    <section class="note-card">
+      <h2>Internal spend gate</h2>
+      <p>This V3 render board is a candidate validation asset. Do not run a paid test until Rucia confirms the three options feel equally polished and readable.</p>
+      <ul>
+        <li>Use this to test product format preference, not final packaging.</li>
+        <li>If users choose B mostly because A is unclear, fix A before spending more.</li>
+        <li>If users choose C but call it cluttered or expensive, test a simplified gift bundle before sampling.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
